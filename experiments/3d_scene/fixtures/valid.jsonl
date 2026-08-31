@@ -1,0 +1,4 @@
+{"record":"run_begin","schema":"3d-benchmark/v1","run_id":"demo-001","mode":"SCENE_CONTROLLER","V":32,"T":48,"M":2,"metadata":{"clock_hz":100000000,"seed":7}}
+{"record":"frame","run_id":"demo-001","frame":0,"mode":"SCENE_CONTROLLER","V":32,"T":48,"M":2,"cycles":{"active":1200,"polling":80,"wall":1500},"phases":{"transform":300,"triangle_cull":240,"painter_sort":180,"command_submit":120},"frame_latency_cycles":1500,"crc":"0x12ab34cd","status":"pass"}
+{"record":"frame","run_id":"demo-001","frame":1,"mode":"SCENE_CONTROLLER","V":32,"T":48,"M":2,"cycles":{"active":1180,"polling":60,"wall":1490},"phases":{"transform":300,"triangle_cull":238,"painter_sort":178,"command_submit":120},"frame_latency_cycles":1490,"crc":313249997,"status":"pass"}
+{"record":"run_end","schema":"3d-benchmark/v1","run_id":"demo-001","frames":2,"status":"pass"}

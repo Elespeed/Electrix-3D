@@ -1,0 +1,3 @@
+{"record":"run_begin","schema":"3d-benchmark/v1","run_id":"bad-001","mode":"CPU_MATMUL","V":32,"T":48,"M":2}
+{"record":"frame","run_id":"bad-001","frame":1,"mode":"CPU_MATMUL","V":32,"T":48,"M":2,"cycles":{"active":900,"polling":20,"wall":800},"phases":{"transform":1,"triangle_cull":2,"painter_sort":3,"command_submit":4},"frame_latency_cycles":800,"crc":"not-crc","status":"pass"}
+{"record":"run_end","schema":"3d-benchmark/v1","run_id":"bad-001","frames":1,"status":"pass"}

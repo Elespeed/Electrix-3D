@@ -1,0 +1,74 @@
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
+# Vivado / FPGA common
+*.jou
+*.str
+*.Xil/
+*.cache/
+*.gen/
+*.runs/
+*.sim/
+*.hw/
+*.ip_user_files/
+
+# Simulation
+work/
+transcript
+vsim.wlf
+*.wdb
+*.vcd
+*.fsdb
+*.vvp
+*.pb
+
+
+# Build outputs
+build/
+dist/
+out/
+
+# toolchain和software 这个是linux的以防被修改格式,我们先不上传
+sdk/toolchains/
+fpga/fpga/
+fpga/project/
+fpga/mig_ex/
+# Keep bulky/generated documentation artifacts ignored, but version the paper
+# workspace and the curated 3D engineering notes.
+
+sim/frame_output
+sim/module
+.claude/
+sim/frame_output
+fpga/modelsim/build/
+fpga/modelsim/logs
+fpga/modelsim/vcd
+
+*.mif
+!sim/test/sketch/3d/assets/multimesh_min.s3d.mif
+!assets/3d/generated/**/*.mif
+!assets/3d/packages/**/*.mif
+!assets/3d/fixtures/**/*.mif
+*.bin
+!assets/3d/generated/**/*.bin
+!assets/3d/packages/**/*.bin
+assets/3d/previews/
+*.pdf
+.vscode/
+.codex/
+
+# Python bytecode cache
+__pycache__/
+*.pyc
+fpga/projectx
+fpga/project_p
+fpga/projectxx
+.Xil
+.agents
+.claude.json
+
+AGENTS.md

@@ -1,0 +1,6258 @@
+{
+  "format": "lowpoly-model",
+  "version": 1,
+  "name": "cat1",
+  "origin": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "vertices": [
+    [
+      -25.22012085108058,
+      -6.920717977881646,
+      18.912728623969706
+    ],
+    [
+      -25.22012085108058,
+      -6.920717977881646,
+      71.18570193985747
+    ],
+    [
+      -25.22012085108058,
+      44.98036575579272,
+      18.912728623969706
+    ],
+    [
+      -25.22012085108058,
+      44.98036575579272,
+      71.18570193985747
+    ],
+    [
+      26.095342921657462,
+      -6.920717977881646,
+      18.912728623969706
+    ],
+    [
+      26.095342921657462,
+      -6.920717977881646,
+      71.18570193985747
+    ],
+    [
+      26.095342921657462,
+      44.98036575579272,
+      18.912728623969706
+    ],
+    [
+      26.095342921657462,
+      44.98036575579272,
+      71.18570193985747
+    ],
+    [
+      4.727507864736376,
+      16.871437527779605,
+      85.09474257634587
+    ],
+    [
+      4.727507864736376,
+      16.871437527779605,
+      75.90098478442495
+    ],
+    [
+      4.727507864736376,
+      7.388779846697825,
+      85.09474257634587
+    ],
+    [
+      4.727507864736376,
+      7.388779846697825,
+      75.90098478442495
+    ],
+    [
+      -6.06265243038774,
+      16.871437527779605,
+      85.09474257634587
+    ],
+    [
+      -6.06265243038774,
+      16.871437527779605,
+      75.90098478442495
+    ],
+    [
+      -6.06265243038774,
+      7.388779846697825,
+      85.09474257634587
+    ],
+    [
+      -6.06265243038774,
+      7.388779846697825,
+      75.90098478442495
+    ],
+    [
+      -17.966566325389287,
+      32.40480989109465,
+      71.01164701823618
+    ],
+    [
+      -17.966566325389287,
+      32.40480989109465,
+      75.23406684340988
+    ],
+    [
+      -17.966566325389287,
+      18.936795634954944,
+      71.01164701823618
+    ],
+    [
+      -17.966566325389287,
+      18.936795634954944,
+      75.23406684340988
+    ],
+    [
+      -6.9838380232706285,
+      32.40480989109465,
+      71.01164701823618
+    ],
+    [
+      -6.9838380232706285,
+      32.40480989109465,
+      75.23406684340988
+    ],
+    [
+      -6.9838380232706285,
+      18.936795634954944,
+      71.01164701823618
+    ],
+    [
+      -6.9838380232706285,
+      18.936795634954944,
+      75.23406684340988
+    ],
+    [
+      -7.69071869340176,
+      7.393248522477576,
+      70.95613968122913
+    ],
+    [
+      -7.69071869340176,
+      7.393248522477576,
+      83.76745011242177
+    ],
+    [
+      -7.69071869340176,
+      -4.951021451505685,
+      70.95613968122913
+    ],
+    [
+      -7.69071869340176,
+      -4.951021451505685,
+      83.76745011242177
+    ],
+    [
+      6.355574127750396,
+      7.393248522477576,
+      70.95613968122913
+    ],
+    [
+      6.355574127750396,
+      7.393248522477576,
+      83.76745011242177
+    ],
+    [
+      6.355574127750396,
+      -4.951021451505685,
+      70.95613968122913
+    ],
+    [
+      6.355574127750396,
+      -4.951021451505685,
+      83.76745011242177
+    ],
+    [
+      31.919112712504816,
+      35.087036770551855,
+      20.424194368244944
+    ],
+    [
+      31.919112712504816,
+      35.087036770551855,
+      -43.414031056764685
+    ],
+    [
+      31.919112712504816,
+      -28.751188654457778,
+      20.424194368244944
+    ],
+    [
+      31.919112712504816,
+      -28.751188654457778,
+      -43.414031056764685
+    ],
+    [
+      -31.919112712504816,
+      35.087036770551855,
+      20.424194368244944
+    ],
+    [
+      -31.919112712504816,
+      35.087036770551855,
+      -43.414031056764685
+    ],
+    [
+      -31.919112712504816,
+      -28.751188654457778,
+      20.424194368244944
+    ],
+    [
+      -31.919112712504816,
+      -28.751188654457778,
+      -43.414031056764685
+    ],
+    [
+      -10.097068681684785,
+      -3.502340601935943,
+      -85.09474257634587
+    ],
+    [
+      -10.097068681684785,
+      -3.502340601935943,
+      -43.39880564000083
+    ],
+    [
+      -10.097068681684785,
+      13.525612295029427,
+      -85.09474257634587
+    ],
+    [
+      -10.097068681684785,
+      13.525612295029427,
+      -43.39880564000083
+    ],
+    [
+      8.539415981314551,
+      -3.502340601935943,
+      -85.09474257634587
+    ],
+    [
+      8.539415981314551,
+      -3.502340601935943,
+      -43.39880564000083
+    ],
+    [
+      8.539415981314551,
+      13.525612295029427,
+      -85.09474257634587
+    ],
+    [
+      8.539415981314551,
+      13.525612295029427,
+      -43.39880564000083
+    ],
+    [
+      -3.6741452261110044,
+      44.53420039829733,
+      50.813072898199565
+    ],
+    [
+      -4.280065742732483,
+      44.535253729016844,
+      64.5165225297067
+    ],
+    [
+      -18.913255289329467,
+      44.53420039829733,
+      65.32477830181276
+    ],
+    [
+      -18.30733477270799,
+      44.535253729016844,
+      51.621328670305616
+    ],
+    [
+      -11.29368429816388,
+      60.0,
+      58.06892560000615
+    ],
+    [
+      19.806447820363488,
+      44.53420039829733,
+      50.813072898199565
+    ],
+    [
+      19.20052730374201,
+      44.535253729016844,
+      64.5165225297067
+    ],
+    [
+      4.567337757145027,
+      44.53420039829733,
+      65.32477830181276
+    ],
+    [
+      5.173258273766505,
+      44.535253729016844,
+      51.621328670305616
+    ],
+    [
+      12.186876829197901,
+      60.0,
+      58.06892560000615
+    ],
+    [
+      6.552195862059427,
+      32.08028827214662,
+      71.01164701823618
+    ],
+    [
+      6.552195862059427,
+      32.08028827214662,
+      75.23406684340988
+    ],
+    [
+      6.552195862059427,
+      18.612274016006907,
+      71.01164701823618
+    ],
+    [
+      6.552195862059427,
+      18.612274016006907,
+      75.23406684340988
+    ],
+    [
+      17.534924164178083,
+      32.08028827214662,
+      71.01164701823618
+    ],
+    [
+      17.534924164178083,
+      32.08028827214662,
+      75.23406684340988
+    ],
+    [
+      17.534924164178083,
+      18.612274016006907,
+      71.01164701823618
+    ],
+    [
+      17.534924164178083,
+      18.612274016006907,
+      75.23406684340988
+    ],
+    [
+      -28.84475953337449,
+      -60.0,
+      -40.00739991429718
+    ],
+    [
+      -28.84475953337449,
+      -60.0,
+      -26.634919562506006
+    ],
+    [
+      -28.84475953337449,
+      -28.819112526309986,
+      -40.00739991429718
+    ],
+    [
+      -28.84475953337449,
+      -28.819112526309986,
+      -26.634919562506006
+    ],
+    [
+      -14.208952619535083,
+      -60.0,
+      -40.00739991429718
+    ],
+    [
+      -14.208952619535083,
+      -60.0,
+      -26.634919562506006
+    ],
+    [
+      -14.208952619535083,
+      -28.819112526309986,
+      -40.00739991429718
+    ],
+    [
+      -14.208952619535083,
+      -28.819112526309986,
+      -26.634919562506006
+    ],
+    [
+      -28.84475953337449,
+      -60.0,
+      -1.1430074666784478
+    ],
+    [
+      -28.84475953337449,
+      -60.0,
+      12.229504804225446
+    ],
+    [
+      -28.84475953337449,
+      -28.819112526309986,
+      -1.1430074666784478
+    ],
+    [
+      -28.84475953337449,
+      -28.819112526309986,
+      12.229504804225446
+    ],
+    [
+      -14.208952619535083,
+      -60.0,
+      -1.1430074666784478
+    ],
+    [
+      -14.208952619535083,
+      -60.0,
+      12.229504804225446
+    ],
+    [
+      -14.208952619535083,
+      -28.819112526309986,
+      -1.1430074666784478
+    ],
+    [
+      -14.208952619535083,
+      -28.819112526309986,
+      12.229504804225446
+    ],
+    [
+      12.934454368037477,
+      -60.0,
+      -40.00739991429718
+    ],
+    [
+      12.934454368037477,
+      -60.0,
+      -26.634919562506006
+    ],
+    [
+      12.934454368037477,
+      -28.819112526309986,
+      -40.00739991429718
+    ],
+    [
+      12.934454368037477,
+      -28.819112526309986,
+      -26.634919562506006
+    ],
+    [
+      27.5702932009896,
+      -60.0,
+      -40.00739991429718
+    ],
+    [
+      27.5702932009896,
+      -60.0,
+      -26.634919562506006
+    ],
+    [
+      27.5702932009896,
+      -28.819112526309986,
+      -40.00739991429718
+    ],
+    [
+      27.5702932009896,
+      -28.819112526309986,
+      -26.634919562506006
+    ],
+    [
+      12.934454368037477,
+      -60.0,
+      -0.3657132339035307
+    ],
+    [
+      12.934454368037477,
+      -60.0,
+      13.006767117887652
+    ],
+    [
+      12.934454368037477,
+      -28.819112526309986,
+      -0.3657132339035307
+    ],
+    [
+      12.934454368037477,
+      -28.819112526309986,
+      13.006767117887652
+    ],
+    [
+      27.5702932009896,
+      -60.0,
+      -0.3657132339035307
+    ],
+    [
+      27.5702932009896,
+      -60.0,
+      13.006767117887652
+    ],
+    [
+      27.5702932009896,
+      -28.819112526309986,
+      -0.3657132339035307
+    ],
+    [
+      27.5702932009896,
+      -28.819112526309986,
+      13.006767117887652
+    ]
+  ],
+  "faces": [
+    {
+      "material": "材质.002",
+      "object_name": "立方体_材质.002",
+      "object_id": 1,
+      "group": "立方体_材质.002",
+      "material_id": 0,
+      "surface_id": 0,
+      "shade_group_id": 60,
+      "indices": [
+        1,
+        2,
+        0
+      ],
+      "color": "#DB6D00",
+      "name": "立方体_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体_材质.002",
+      "object_id": 1,
+      "group": "立方体_材质.002",
+      "material_id": 0,
+      "surface_id": 1,
+      "shade_group_id": 63,
+      "indices": [
+        3,
+        6,
+        2
+      ],
+      "color": "#DB6D00",
+      "name": "立方体_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体_材质.002",
+      "object_id": 1,
+      "group": "立方体_材质.002",
+      "material_id": 0,
+      "surface_id": 2,
+      "shade_group_id": 61,
+      "indices": [
+        7,
+        4,
+        6
+      ],
+      "color": "#DB6D00",
+      "name": "立方体_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体_材质.002",
+      "object_id": 1,
+      "group": "立方体_材质.002",
+      "material_id": 0,
+      "surface_id": 3,
+      "shade_group_id": 62,
+      "indices": [
+        5,
+        0,
+        4
+      ],
+      "color": "#DB6D00",
+      "name": "立方体_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体_材质.002",
+      "object_id": 1,
+      "group": "立方体_材质.002",
+      "material_id": 0,
+      "surface_id": 4,
+      "shade_group_id": 64,
+      "indices": [
+        6,
+        0,
+        2
+      ],
+      "color": "#DB6D00",
+      "name": "立方体_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体_材质.002",
+      "object_id": 1,
+      "group": "立方体_材质.002",
+      "material_id": 0,
+      "surface_id": 5,
+      "shade_group_id": 65,
+      "indices": [
+        3,
+        5,
+        7
+      ],
+      "color": "#DB6D00",
+      "name": "立方体_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体_材质.002",
+      "object_id": 1,
+      "group": "立方体_材质.002",
+      "material_id": 0,
+      "surface_id": 0,
+      "shade_group_id": 60,
+      "indices": [
+        1,
+        3,
+        2
+      ],
+      "color": "#DB6D00",
+      "name": "立方体_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体_材质.002",
+      "object_id": 1,
+      "group": "立方体_材质.002",
+      "material_id": 0,
+      "surface_id": 1,
+      "shade_group_id": 63,
+      "indices": [
+        3,
+        7,
+        6
+      ],
+      "color": "#DB6D00",
+      "name": "立方体_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体_材质.002",
+      "object_id": 1,
+      "group": "立方体_材质.002",
+      "material_id": 0,
+      "surface_id": 2,
+      "shade_group_id": 61,
+      "indices": [
+        7,
+        5,
+        4
+      ],
+      "color": "#DB6D00",
+      "name": "立方体_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体_材质.002",
+      "object_id": 1,
+      "group": "立方体_材质.002",
+      "material_id": 0,
+      "surface_id": 3,
+      "shade_group_id": 62,
+      "indices": [
+        5,
+        1,
+        0
+      ],
+      "color": "#DB6D00",
+      "name": "立方体_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体_材质.002",
+      "object_id": 1,
+      "group": "立方体_材质.002",
+      "material_id": 0,
+      "surface_id": 4,
+      "shade_group_id": 64,
+      "indices": [
+        6,
+        4,
+        0
+      ],
+      "color": "#DB6D00",
+      "name": "立方体_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体_材质.002",
+      "object_id": 1,
+      "group": "立方体_材质.002",
+      "material_id": 0,
+      "surface_id": 5,
+      "shade_group_id": 65,
+      "indices": [
+        3,
+        1,
+        5
+      ],
+      "color": "#DB6D00",
+      "name": "立方体_材质.002"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "立方体.008_材质.008",
+      "object_id": 2,
+      "group": "立方体.008_材质.008",
+      "material_id": 1,
+      "surface_id": 6,
+      "shade_group_id": 43,
+      "indices": [
+        9,
+        8,
+        10
+      ],
+      "color": "#000000",
+      "name": "立方体.008_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "立方体.008_材质.008",
+      "object_id": 2,
+      "group": "立方体.008_材质.008",
+      "material_id": 1,
+      "surface_id": 7,
+      "shade_group_id": 44,
+      "indices": [
+        11,
+        10,
+        14
+      ],
+      "color": "#000000",
+      "name": "立方体.008_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "立方体.008_材质.008",
+      "object_id": 2,
+      "group": "立方体.008_材质.008",
+      "material_id": 1,
+      "surface_id": 8,
+      "shade_group_id": 42,
+      "indices": [
+        15,
+        14,
+        12
+      ],
+      "color": "#000000",
+      "name": "立方体.008_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "立方体.008_材质.008",
+      "object_id": 2,
+      "group": "立方体.008_材质.008",
+      "material_id": 1,
+      "surface_id": 9,
+      "shade_group_id": 45,
+      "indices": [
+        13,
+        12,
+        8
+      ],
+      "color": "#000000",
+      "name": "立方体.008_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "立方体.008_材质.008",
+      "object_id": 2,
+      "group": "立方体.008_材质.008",
+      "material_id": 1,
+      "surface_id": 10,
+      "shade_group_id": 47,
+      "indices": [
+        14,
+        10,
+        8
+      ],
+      "color": "#000000",
+      "name": "立方体.008_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "立方体.008_材质.008",
+      "object_id": 2,
+      "group": "立方体.008_材质.008",
+      "material_id": 1,
+      "surface_id": 11,
+      "shade_group_id": 46,
+      "indices": [
+        11,
+        15,
+        13
+      ],
+      "color": "#000000",
+      "name": "立方体.008_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "立方体.008_材质.008",
+      "object_id": 2,
+      "group": "立方体.008_材质.008",
+      "material_id": 1,
+      "surface_id": 6,
+      "shade_group_id": 43,
+      "indices": [
+        9,
+        10,
+        11
+      ],
+      "color": "#000000",
+      "name": "立方体.008_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "立方体.008_材质.008",
+      "object_id": 2,
+      "group": "立方体.008_材质.008",
+      "material_id": 1,
+      "surface_id": 7,
+      "shade_group_id": 44,
+      "indices": [
+        11,
+        14,
+        15
+      ],
+      "color": "#000000",
+      "name": "立方体.008_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "立方体.008_材质.008",
+      "object_id": 2,
+      "group": "立方体.008_材质.008",
+      "material_id": 1,
+      "surface_id": 8,
+      "shade_group_id": 42,
+      "indices": [
+        15,
+        12,
+        13
+      ],
+      "color": "#000000",
+      "name": "立方体.008_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "立方体.008_材质.008",
+      "object_id": 2,
+      "group": "立方体.008_材质.008",
+      "material_id": 1,
+      "surface_id": 9,
+      "shade_group_id": 45,
+      "indices": [
+        13,
+        8,
+        9
+      ],
+      "color": "#000000",
+      "name": "立方体.008_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "立方体.008_材质.008",
+      "object_id": 2,
+      "group": "立方体.008_材质.008",
+      "material_id": 1,
+      "surface_id": 10,
+      "shade_group_id": 47,
+      "indices": [
+        14,
+        8,
+        12
+      ],
+      "color": "#000000",
+      "name": "立方体.008_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "立方体.008_材质.008",
+      "object_id": 2,
+      "group": "立方体.008_材质.008",
+      "material_id": 1,
+      "surface_id": 11,
+      "shade_group_id": 46,
+      "indices": [
+        11,
+        13,
+        9
+      ],
+      "color": "#000000",
+      "name": "立方体.008_材质.008"
+    },
+    {
+      "material": "材质.010",
+      "object_name": "立方体.010_材质.010",
+      "object_id": 3,
+      "group": "立方体.010_材质.010",
+      "material_id": 2,
+      "surface_id": 12,
+      "shade_group_id": 48,
+      "indices": [
+        17,
+        16,
+        18
+      ],
+      "color": "#000000",
+      "name": "立方体.010_材质.010"
+    },
+    {
+      "material": "材质.010",
+      "object_name": "立方体.010_材质.010",
+      "object_id": 3,
+      "group": "立方体.010_材质.010",
+      "material_id": 2,
+      "surface_id": 13,
+      "shade_group_id": 50,
+      "indices": [
+        19,
+        18,
+        22
+      ],
+      "color": "#000000",
+      "name": "立方体.010_材质.010"
+    },
+    {
+      "material": "材质.010",
+      "object_name": "立方体.010_材质.010",
+      "object_id": 3,
+      "group": "立方体.010_材质.010",
+      "material_id": 2,
+      "surface_id": 14,
+      "shade_group_id": 49,
+      "indices": [
+        23,
+        22,
+        20
+      ],
+      "color": "#000000",
+      "name": "立方体.010_材质.010"
+    },
+    {
+      "material": "材质.010",
+      "object_name": "立方体.010_材质.010",
+      "object_id": 3,
+      "group": "立方体.010_材质.010",
+      "material_id": 2,
+      "surface_id": 15,
+      "shade_group_id": 51,
+      "indices": [
+        21,
+        20,
+        16
+      ],
+      "color": "#000000",
+      "name": "立方体.010_材质.010"
+    },
+    {
+      "material": "材质.010",
+      "object_name": "立方体.010_材质.010",
+      "object_id": 3,
+      "group": "立方体.010_材质.010",
+      "material_id": 2,
+      "surface_id": 16,
+      "shade_group_id": 52,
+      "indices": [
+        22,
+        18,
+        16
+      ],
+      "color": "#000000",
+      "name": "立方体.010_材质.010"
+    },
+    {
+      "material": "材质.010",
+      "object_name": "立方体.010_材质.010",
+      "object_id": 3,
+      "group": "立方体.010_材质.010",
+      "material_id": 2,
+      "surface_id": 17,
+      "shade_group_id": 53,
+      "indices": [
+        19,
+        23,
+        21
+      ],
+      "color": "#000000",
+      "name": "立方体.010_材质.010"
+    },
+    {
+      "material": "材质.010",
+      "object_name": "立方体.010_材质.010",
+      "object_id": 3,
+      "group": "立方体.010_材质.010",
+      "material_id": 2,
+      "surface_id": 12,
+      "shade_group_id": 48,
+      "indices": [
+        17,
+        18,
+        19
+      ],
+      "color": "#000000",
+      "name": "立方体.010_材质.010"
+    },
+    {
+      "material": "材质.010",
+      "object_name": "立方体.010_材质.010",
+      "object_id": 3,
+      "group": "立方体.010_材质.010",
+      "material_id": 2,
+      "surface_id": 13,
+      "shade_group_id": 50,
+      "indices": [
+        19,
+        22,
+        23
+      ],
+      "color": "#000000",
+      "name": "立方体.010_材质.010"
+    },
+    {
+      "material": "材质.010",
+      "object_name": "立方体.010_材质.010",
+      "object_id": 3,
+      "group": "立方体.010_材质.010",
+      "material_id": 2,
+      "surface_id": 14,
+      "shade_group_id": 49,
+      "indices": [
+        23,
+        20,
+        21
+      ],
+      "color": "#000000",
+      "name": "立方体.010_材质.010"
+    },
+    {
+      "material": "材质.010",
+      "object_name": "立方体.010_材质.010",
+      "object_id": 3,
+      "group": "立方体.010_材质.010",
+      "material_id": 2,
+      "surface_id": 15,
+      "shade_group_id": 51,
+      "indices": [
+        21,
+        16,
+        17
+      ],
+      "color": "#000000",
+      "name": "立方体.010_材质.010"
+    },
+    {
+      "material": "材质.010",
+      "object_name": "立方体.010_材质.010",
+      "object_id": 3,
+      "group": "立方体.010_材质.010",
+      "material_id": 2,
+      "surface_id": 16,
+      "shade_group_id": 52,
+      "indices": [
+        22,
+        16,
+        20
+      ],
+      "color": "#000000",
+      "name": "立方体.010_材质.010"
+    },
+    {
+      "material": "材质.010",
+      "object_name": "立方体.010_材质.010",
+      "object_id": 3,
+      "group": "立方体.010_材质.010",
+      "material_id": 2,
+      "surface_id": 17,
+      "shade_group_id": 53,
+      "indices": [
+        19,
+        21,
+        17
+      ],
+      "color": "#000000",
+      "name": "立方体.010_材质.010"
+    },
+    {
+      "material": "材质.011",
+      "object_name": "立方体.011_材质.011",
+      "object_id": 4,
+      "group": "立方体.011_材质.011",
+      "material_id": 3,
+      "surface_id": 18,
+      "shade_group_id": 54,
+      "indices": [
+        25,
+        24,
+        26
+      ],
+      "color": "#FFFFFF",
+      "name": "立方体.011_材质.011"
+    },
+    {
+      "material": "材质.011",
+      "object_name": "立方体.011_材质.011",
+      "object_id": 4,
+      "group": "立方体.011_材质.011",
+      "material_id": 3,
+      "surface_id": 19,
+      "shade_group_id": 56,
+      "indices": [
+        27,
+        26,
+        30
+      ],
+      "color": "#FFFFFF",
+      "name": "立方体.011_材质.011"
+    },
+    {
+      "material": "材质.011",
+      "object_name": "立方体.011_材质.011",
+      "object_id": 4,
+      "group": "立方体.011_材质.011",
+      "material_id": 3,
+      "surface_id": 20,
+      "shade_group_id": 55,
+      "indices": [
+        31,
+        30,
+        28
+      ],
+      "color": "#FFFFFF",
+      "name": "立方体.011_材质.011"
+    },
+    {
+      "material": "材质.011",
+      "object_name": "立方体.011_材质.011",
+      "object_id": 4,
+      "group": "立方体.011_材质.011",
+      "material_id": 3,
+      "surface_id": 21,
+      "shade_group_id": 57,
+      "indices": [
+        29,
+        28,
+        24
+      ],
+      "color": "#FFFFFF",
+      "name": "立方体.011_材质.011"
+    },
+    {
+      "material": "材质.011",
+      "object_name": "立方体.011_材质.011",
+      "object_id": 4,
+      "group": "立方体.011_材质.011",
+      "material_id": 3,
+      "surface_id": 22,
+      "shade_group_id": 58,
+      "indices": [
+        30,
+        26,
+        24
+      ],
+      "color": "#FFFFFF",
+      "name": "立方体.011_材质.011"
+    },
+    {
+      "material": "材质.011",
+      "object_name": "立方体.011_材质.011",
+      "object_id": 4,
+      "group": "立方体.011_材质.011",
+      "material_id": 3,
+      "surface_id": 23,
+      "shade_group_id": 59,
+      "indices": [
+        27,
+        31,
+        29
+      ],
+      "color": "#FFFFFF",
+      "name": "立方体.011_材质.011"
+    },
+    {
+      "material": "材质.011",
+      "object_name": "立方体.011_材质.011",
+      "object_id": 4,
+      "group": "立方体.011_材质.011",
+      "material_id": 3,
+      "surface_id": 18,
+      "shade_group_id": 54,
+      "indices": [
+        25,
+        26,
+        27
+      ],
+      "color": "#FFFFFF",
+      "name": "立方体.011_材质.011"
+    },
+    {
+      "material": "材质.011",
+      "object_name": "立方体.011_材质.011",
+      "object_id": 4,
+      "group": "立方体.011_材质.011",
+      "material_id": 3,
+      "surface_id": 19,
+      "shade_group_id": 56,
+      "indices": [
+        27,
+        30,
+        31
+      ],
+      "color": "#FFFFFF",
+      "name": "立方体.011_材质.011"
+    },
+    {
+      "material": "材质.011",
+      "object_name": "立方体.011_材质.011",
+      "object_id": 4,
+      "group": "立方体.011_材质.011",
+      "material_id": 3,
+      "surface_id": 20,
+      "shade_group_id": 55,
+      "indices": [
+        31,
+        28,
+        29
+      ],
+      "color": "#FFFFFF",
+      "name": "立方体.011_材质.011"
+    },
+    {
+      "material": "材质.011",
+      "object_name": "立方体.011_材质.011",
+      "object_id": 4,
+      "group": "立方体.011_材质.011",
+      "material_id": 3,
+      "surface_id": 21,
+      "shade_group_id": 57,
+      "indices": [
+        29,
+        24,
+        25
+      ],
+      "color": "#FFFFFF",
+      "name": "立方体.011_材质.011"
+    },
+    {
+      "material": "材质.011",
+      "object_name": "立方体.011_材质.011",
+      "object_id": 4,
+      "group": "立方体.011_材质.011",
+      "material_id": 3,
+      "surface_id": 22,
+      "shade_group_id": 58,
+      "indices": [
+        30,
+        24,
+        28
+      ],
+      "color": "#FFFFFF",
+      "name": "立方体.011_材质.011"
+    },
+    {
+      "material": "材质.011",
+      "object_name": "立方体.011_材质.011",
+      "object_id": 4,
+      "group": "立方体.011_材质.011",
+      "material_id": 3,
+      "surface_id": 23,
+      "shade_group_id": 59,
+      "indices": [
+        27,
+        29,
+        25
+      ],
+      "color": "#FFFFFF",
+      "name": "立方体.011_材质.011"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 5,
+      "group": "Cube_Material",
+      "material_id": 4,
+      "surface_id": 24,
+      "shade_group_id": 5,
+      "indices": [
+        36,
+        34,
+        32
+      ],
+      "color": "#FF4900",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 5,
+      "group": "Cube_Material",
+      "material_id": 4,
+      "surface_id": 25,
+      "shade_group_id": 2,
+      "indices": [
+        34,
+        39,
+        35
+      ],
+      "color": "#FF4900",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 5,
+      "group": "Cube_Material",
+      "material_id": 4,
+      "surface_id": 26,
+      "shade_group_id": 0,
+      "indices": [
+        38,
+        37,
+        39
+      ],
+      "color": "#FF4900",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 5,
+      "group": "Cube_Material",
+      "material_id": 4,
+      "surface_id": 27,
+      "shade_group_id": 4,
+      "indices": [
+        33,
+        39,
+        37
+      ],
+      "color": "#FF4900",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 5,
+      "group": "Cube_Material",
+      "material_id": 4,
+      "surface_id": 28,
+      "shade_group_id": 1,
+      "indices": [
+        32,
+        35,
+        33
+      ],
+      "color": "#FF4900",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 5,
+      "group": "Cube_Material",
+      "material_id": 4,
+      "surface_id": 29,
+      "shade_group_id": 3,
+      "indices": [
+        36,
+        33,
+        37
+      ],
+      "color": "#FF4900",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 5,
+      "group": "Cube_Material",
+      "material_id": 4,
+      "surface_id": 24,
+      "shade_group_id": 5,
+      "indices": [
+        36,
+        38,
+        34
+      ],
+      "color": "#FF4900",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 5,
+      "group": "Cube_Material",
+      "material_id": 4,
+      "surface_id": 25,
+      "shade_group_id": 2,
+      "indices": [
+        34,
+        38,
+        39
+      ],
+      "color": "#FF4900",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 5,
+      "group": "Cube_Material",
+      "material_id": 4,
+      "surface_id": 26,
+      "shade_group_id": 0,
+      "indices": [
+        38,
+        36,
+        37
+      ],
+      "color": "#FF4900",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 5,
+      "group": "Cube_Material",
+      "material_id": 4,
+      "surface_id": 27,
+      "shade_group_id": 4,
+      "indices": [
+        33,
+        35,
+        39
+      ],
+      "color": "#FF4900",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 5,
+      "group": "Cube_Material",
+      "material_id": 4,
+      "surface_id": 28,
+      "shade_group_id": 1,
+      "indices": [
+        32,
+        34,
+        35
+      ],
+      "color": "#FF4900",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 5,
+      "group": "Cube_Material",
+      "material_id": 4,
+      "surface_id": 29,
+      "shade_group_id": 3,
+      "indices": [
+        36,
+        32,
+        33
+      ],
+      "color": "#FF4900",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "立方体.005_材质.007",
+      "object_id": 6,
+      "group": "立方体.005_材质.007",
+      "material_id": 5,
+      "surface_id": 30,
+      "shade_group_id": 30,
+      "indices": [
+        41,
+        42,
+        40
+      ],
+      "color": "#DBDBFF",
+      "name": "立方体.005_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "立方体.005_材质.007",
+      "object_id": 6,
+      "group": "立方体.005_材质.007",
+      "material_id": 5,
+      "surface_id": 31,
+      "shade_group_id": 33,
+      "indices": [
+        43,
+        46,
+        42
+      ],
+      "color": "#DBDBFF",
+      "name": "立方体.005_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "立方体.005_材质.007",
+      "object_id": 6,
+      "group": "立方体.005_材质.007",
+      "material_id": 5,
+      "surface_id": 32,
+      "shade_group_id": 31,
+      "indices": [
+        47,
+        44,
+        46
+      ],
+      "color": "#DBDBFF",
+      "name": "立方体.005_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "立方体.005_材质.007",
+      "object_id": 6,
+      "group": "立方体.005_材质.007",
+      "material_id": 5,
+      "surface_id": 33,
+      "shade_group_id": 32,
+      "indices": [
+        45,
+        40,
+        44
+      ],
+      "color": "#DBDBFF",
+      "name": "立方体.005_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "立方体.005_材质.007",
+      "object_id": 6,
+      "group": "立方体.005_材质.007",
+      "material_id": 5,
+      "surface_id": 34,
+      "shade_group_id": 34,
+      "indices": [
+        46,
+        40,
+        42
+      ],
+      "color": "#DBDBFF",
+      "name": "立方体.005_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "立方体.005_材质.007",
+      "object_id": 6,
+      "group": "立方体.005_材质.007",
+      "material_id": 5,
+      "surface_id": 35,
+      "shade_group_id": 35,
+      "indices": [
+        43,
+        45,
+        47
+      ],
+      "color": "#DBDBFF",
+      "name": "立方体.005_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "立方体.005_材质.007",
+      "object_id": 6,
+      "group": "立方体.005_材质.007",
+      "material_id": 5,
+      "surface_id": 30,
+      "shade_group_id": 30,
+      "indices": [
+        41,
+        43,
+        42
+      ],
+      "color": "#DBDBFF",
+      "name": "立方体.005_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "立方体.005_材质.007",
+      "object_id": 6,
+      "group": "立方体.005_材质.007",
+      "material_id": 5,
+      "surface_id": 31,
+      "shade_group_id": 33,
+      "indices": [
+        43,
+        47,
+        46
+      ],
+      "color": "#DBDBFF",
+      "name": "立方体.005_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "立方体.005_材质.007",
+      "object_id": 6,
+      "group": "立方体.005_材质.007",
+      "material_id": 5,
+      "surface_id": 32,
+      "shade_group_id": 31,
+      "indices": [
+        47,
+        45,
+        44
+      ],
+      "color": "#DBDBFF",
+      "name": "立方体.005_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "立方体.005_材质.007",
+      "object_id": 6,
+      "group": "立方体.005_材质.007",
+      "material_id": 5,
+      "surface_id": 33,
+      "shade_group_id": 32,
+      "indices": [
+        45,
+        41,
+        40
+      ],
+      "color": "#DBDBFF",
+      "name": "立方体.005_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "立方体.005_材质.007",
+      "object_id": 6,
+      "group": "立方体.005_材质.007",
+      "material_id": 5,
+      "surface_id": 34,
+      "shade_group_id": 34,
+      "indices": [
+        46,
+        44,
+        40
+      ],
+      "color": "#DBDBFF",
+      "name": "立方体.005_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "立方体.005_材质.007",
+      "object_id": 6,
+      "group": "立方体.005_材质.007",
+      "material_id": 5,
+      "surface_id": 35,
+      "shade_group_id": 35,
+      "indices": [
+        43,
+        41,
+        45
+      ],
+      "color": "#DBDBFF",
+      "name": "立方体.005_材质.007"
+    },
+    {
+      "material": "材质.019",
+      "object_name": "锥体_材质.019",
+      "object_id": 7,
+      "group": "锥体_材质.019",
+      "material_id": 6,
+      "surface_id": 36,
+      "shade_group_id": 72,
+      "indices": [
+        48,
+        52,
+        49
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.019"
+    },
+    {
+      "material": "材质.019",
+      "object_name": "锥体_材质.019",
+      "object_id": 7,
+      "group": "锥体_材质.019",
+      "material_id": 6,
+      "surface_id": 37,
+      "shade_group_id": 75,
+      "indices": [
+        49,
+        52,
+        50
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.019"
+    },
+    {
+      "material": "材质.019",
+      "object_name": "锥体_材质.019",
+      "object_id": 7,
+      "group": "锥体_材质.019",
+      "material_id": 6,
+      "surface_id": 38,
+      "shade_group_id": 71,
+      "indices": [
+        50,
+        52,
+        51
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.019"
+    },
+    {
+      "material": "材质.019",
+      "object_name": "锥体_材质.019",
+      "object_id": 7,
+      "group": "锥体_材质.019",
+      "material_id": 6,
+      "surface_id": 39,
+      "shade_group_id": 74,
+      "indices": [
+        51,
+        52,
+        48
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.019"
+    },
+    {
+      "material": "材质.019",
+      "object_name": "锥体_材质.019",
+      "object_id": 7,
+      "group": "锥体_材质.019",
+      "material_id": 6,
+      "surface_id": 40,
+      "shade_group_id": 73,
+      "indices": [
+        51,
+        49,
+        50
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.019"
+    },
+    {
+      "material": "材质.019",
+      "object_name": "锥体_材质.019",
+      "object_id": 7,
+      "group": "锥体_材质.019",
+      "material_id": 6,
+      "surface_id": 41,
+      "shade_group_id": 73,
+      "indices": [
+        51,
+        48,
+        49
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.019"
+    },
+    {
+      "material": "材质.020",
+      "object_name": "锥体.001_材质.020",
+      "object_id": 8,
+      "group": "锥体.001_材质.020",
+      "material_id": 7,
+      "surface_id": 42,
+      "shade_group_id": 67,
+      "indices": [
+        53,
+        57,
+        54
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体.001_材质.020"
+    },
+    {
+      "material": "材质.020",
+      "object_name": "锥体.001_材质.020",
+      "object_id": 8,
+      "group": "锥体.001_材质.020",
+      "material_id": 7,
+      "surface_id": 43,
+      "shade_group_id": 70,
+      "indices": [
+        54,
+        57,
+        55
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体.001_材质.020"
+    },
+    {
+      "material": "材质.020",
+      "object_name": "锥体.001_材质.020",
+      "object_id": 8,
+      "group": "锥体.001_材质.020",
+      "material_id": 7,
+      "surface_id": 44,
+      "shade_group_id": 66,
+      "indices": [
+        55,
+        57,
+        56
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体.001_材质.020"
+    },
+    {
+      "material": "材质.020",
+      "object_name": "锥体.001_材质.020",
+      "object_id": 8,
+      "group": "锥体.001_材质.020",
+      "material_id": 7,
+      "surface_id": 45,
+      "shade_group_id": 69,
+      "indices": [
+        56,
+        57,
+        53
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体.001_材质.020"
+    },
+    {
+      "material": "材质.020",
+      "object_name": "锥体.001_材质.020",
+      "object_id": 8,
+      "group": "锥体.001_材质.020",
+      "material_id": 7,
+      "surface_id": 46,
+      "shade_group_id": 68,
+      "indices": [
+        56,
+        54,
+        55
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体.001_材质.020"
+    },
+    {
+      "material": "材质.020",
+      "object_name": "锥体.001_材质.020",
+      "object_id": 8,
+      "group": "锥体.001_材质.020",
+      "material_id": 7,
+      "surface_id": 47,
+      "shade_group_id": 68,
+      "indices": [
+        56,
+        53,
+        54
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体.001_材质.020"
+    },
+    {
+      "material": "材质.022",
+      "object_name": "立方体.006_材质.022",
+      "object_id": 9,
+      "group": "立方体.006_材质.022",
+      "material_id": 8,
+      "surface_id": 48,
+      "shade_group_id": 36,
+      "indices": [
+        59,
+        58,
+        60
+      ],
+      "color": "#000000",
+      "name": "立方体.006_材质.022"
+    },
+    {
+      "material": "材质.022",
+      "object_name": "立方体.006_材质.022",
+      "object_id": 9,
+      "group": "立方体.006_材质.022",
+      "material_id": 8,
+      "surface_id": 49,
+      "shade_group_id": 38,
+      "indices": [
+        61,
+        60,
+        64
+      ],
+      "color": "#000000",
+      "name": "立方体.006_材质.022"
+    },
+    {
+      "material": "材质.022",
+      "object_name": "立方体.006_材质.022",
+      "object_id": 9,
+      "group": "立方体.006_材质.022",
+      "material_id": 8,
+      "surface_id": 50,
+      "shade_group_id": 37,
+      "indices": [
+        65,
+        64,
+        62
+      ],
+      "color": "#000000",
+      "name": "立方体.006_材质.022"
+    },
+    {
+      "material": "材质.022",
+      "object_name": "立方体.006_材质.022",
+      "object_id": 9,
+      "group": "立方体.006_材质.022",
+      "material_id": 8,
+      "surface_id": 51,
+      "shade_group_id": 39,
+      "indices": [
+        63,
+        62,
+        58
+      ],
+      "color": "#000000",
+      "name": "立方体.006_材质.022"
+    },
+    {
+      "material": "材质.022",
+      "object_name": "立方体.006_材质.022",
+      "object_id": 9,
+      "group": "立方体.006_材质.022",
+      "material_id": 8,
+      "surface_id": 52,
+      "shade_group_id": 40,
+      "indices": [
+        64,
+        60,
+        58
+      ],
+      "color": "#000000",
+      "name": "立方体.006_材质.022"
+    },
+    {
+      "material": "材质.022",
+      "object_name": "立方体.006_材质.022",
+      "object_id": 9,
+      "group": "立方体.006_材质.022",
+      "material_id": 8,
+      "surface_id": 53,
+      "shade_group_id": 41,
+      "indices": [
+        61,
+        65,
+        63
+      ],
+      "color": "#000000",
+      "name": "立方体.006_材质.022"
+    },
+    {
+      "material": "材质.022",
+      "object_name": "立方体.006_材质.022",
+      "object_id": 9,
+      "group": "立方体.006_材质.022",
+      "material_id": 8,
+      "surface_id": 48,
+      "shade_group_id": 36,
+      "indices": [
+        59,
+        60,
+        61
+      ],
+      "color": "#000000",
+      "name": "立方体.006_材质.022"
+    },
+    {
+      "material": "材质.022",
+      "object_name": "立方体.006_材质.022",
+      "object_id": 9,
+      "group": "立方体.006_材质.022",
+      "material_id": 8,
+      "surface_id": 49,
+      "shade_group_id": 38,
+      "indices": [
+        61,
+        64,
+        65
+      ],
+      "color": "#000000",
+      "name": "立方体.006_材质.022"
+    },
+    {
+      "material": "材质.022",
+      "object_name": "立方体.006_材质.022",
+      "object_id": 9,
+      "group": "立方体.006_材质.022",
+      "material_id": 8,
+      "surface_id": 50,
+      "shade_group_id": 37,
+      "indices": [
+        65,
+        62,
+        63
+      ],
+      "color": "#000000",
+      "name": "立方体.006_材质.022"
+    },
+    {
+      "material": "材质.022",
+      "object_name": "立方体.006_材质.022",
+      "object_id": 9,
+      "group": "立方体.006_材质.022",
+      "material_id": 8,
+      "surface_id": 51,
+      "shade_group_id": 39,
+      "indices": [
+        63,
+        58,
+        59
+      ],
+      "color": "#000000",
+      "name": "立方体.006_材质.022"
+    },
+    {
+      "material": "材质.022",
+      "object_name": "立方体.006_材质.022",
+      "object_id": 9,
+      "group": "立方体.006_材质.022",
+      "material_id": 8,
+      "surface_id": 52,
+      "shade_group_id": 40,
+      "indices": [
+        64,
+        58,
+        62
+      ],
+      "color": "#000000",
+      "name": "立方体.006_材质.022"
+    },
+    {
+      "material": "材质.022",
+      "object_name": "立方体.006_材质.022",
+      "object_id": 9,
+      "group": "立方体.006_材质.022",
+      "material_id": 8,
+      "surface_id": 53,
+      "shade_group_id": 41,
+      "indices": [
+        61,
+        63,
+        59
+      ],
+      "color": "#000000",
+      "name": "立方体.006_材质.022"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "立方体.004_材质.006",
+      "object_id": 10,
+      "group": "立方体.004_材质.006",
+      "material_id": 9,
+      "surface_id": 54,
+      "shade_group_id": 24,
+      "indices": [
+        67,
+        68,
+        66
+      ],
+      "color": "#DBB655",
+      "name": "立方体.004_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "立方体.004_材质.006",
+      "object_id": 10,
+      "group": "立方体.004_材质.006",
+      "material_id": 9,
+      "surface_id": 55,
+      "shade_group_id": 27,
+      "indices": [
+        69,
+        72,
+        68
+      ],
+      "color": "#DBB655",
+      "name": "立方体.004_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "立方体.004_材质.006",
+      "object_id": 10,
+      "group": "立方体.004_材质.006",
+      "material_id": 9,
+      "surface_id": 56,
+      "shade_group_id": 25,
+      "indices": [
+        73,
+        70,
+        72
+      ],
+      "color": "#DBB655",
+      "name": "立方体.004_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "立方体.004_材质.006",
+      "object_id": 10,
+      "group": "立方体.004_材质.006",
+      "material_id": 9,
+      "surface_id": 57,
+      "shade_group_id": 26,
+      "indices": [
+        71,
+        66,
+        70
+      ],
+      "color": "#DBB655",
+      "name": "立方体.004_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "立方体.004_材质.006",
+      "object_id": 10,
+      "group": "立方体.004_材质.006",
+      "material_id": 9,
+      "surface_id": 58,
+      "shade_group_id": 28,
+      "indices": [
+        72,
+        66,
+        68
+      ],
+      "color": "#DBB655",
+      "name": "立方体.004_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "立方体.004_材质.006",
+      "object_id": 10,
+      "group": "立方体.004_材质.006",
+      "material_id": 9,
+      "surface_id": 59,
+      "shade_group_id": 29,
+      "indices": [
+        69,
+        71,
+        73
+      ],
+      "color": "#DBB655",
+      "name": "立方体.004_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "立方体.004_材质.006",
+      "object_id": 10,
+      "group": "立方体.004_材质.006",
+      "material_id": 9,
+      "surface_id": 54,
+      "shade_group_id": 24,
+      "indices": [
+        67,
+        69,
+        68
+      ],
+      "color": "#DBB655",
+      "name": "立方体.004_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "立方体.004_材质.006",
+      "object_id": 10,
+      "group": "立方体.004_材质.006",
+      "material_id": 9,
+      "surface_id": 55,
+      "shade_group_id": 27,
+      "indices": [
+        69,
+        73,
+        72
+      ],
+      "color": "#DBB655",
+      "name": "立方体.004_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "立方体.004_材质.006",
+      "object_id": 10,
+      "group": "立方体.004_材质.006",
+      "material_id": 9,
+      "surface_id": 56,
+      "shade_group_id": 25,
+      "indices": [
+        73,
+        71,
+        70
+      ],
+      "color": "#DBB655",
+      "name": "立方体.004_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "立方体.004_材质.006",
+      "object_id": 10,
+      "group": "立方体.004_材质.006",
+      "material_id": 9,
+      "surface_id": 57,
+      "shade_group_id": 26,
+      "indices": [
+        71,
+        67,
+        66
+      ],
+      "color": "#DBB655",
+      "name": "立方体.004_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "立方体.004_材质.006",
+      "object_id": 10,
+      "group": "立方体.004_材质.006",
+      "material_id": 9,
+      "surface_id": 58,
+      "shade_group_id": 28,
+      "indices": [
+        72,
+        70,
+        66
+      ],
+      "color": "#DBB655",
+      "name": "立方体.004_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "立方体.004_材质.006",
+      "object_id": 10,
+      "group": "立方体.004_材质.006",
+      "material_id": 9,
+      "surface_id": 59,
+      "shade_group_id": 29,
+      "indices": [
+        69,
+        67,
+        71
+      ],
+      "color": "#DBB655",
+      "name": "立方体.004_材质.006"
+    },
+    {
+      "material": "材质.017",
+      "object_name": "立方体.003_材质.017",
+      "object_id": 11,
+      "group": "立方体.003_材质.017",
+      "material_id": 10,
+      "surface_id": 60,
+      "shade_group_id": 18,
+      "indices": [
+        75,
+        76,
+        74
+      ],
+      "color": "#DBB655",
+      "name": "立方体.003_材质.017"
+    },
+    {
+      "material": "材质.017",
+      "object_name": "立方体.003_材质.017",
+      "object_id": 11,
+      "group": "立方体.003_材质.017",
+      "material_id": 10,
+      "surface_id": 61,
+      "shade_group_id": 21,
+      "indices": [
+        77,
+        80,
+        76
+      ],
+      "color": "#DBB655",
+      "name": "立方体.003_材质.017"
+    },
+    {
+      "material": "材质.017",
+      "object_name": "立方体.003_材质.017",
+      "object_id": 11,
+      "group": "立方体.003_材质.017",
+      "material_id": 10,
+      "surface_id": 62,
+      "shade_group_id": 19,
+      "indices": [
+        81,
+        78,
+        80
+      ],
+      "color": "#DBB655",
+      "name": "立方体.003_材质.017"
+    },
+    {
+      "material": "材质.017",
+      "object_name": "立方体.003_材质.017",
+      "object_id": 11,
+      "group": "立方体.003_材质.017",
+      "material_id": 10,
+      "surface_id": 63,
+      "shade_group_id": 20,
+      "indices": [
+        79,
+        74,
+        78
+      ],
+      "color": "#DBB655",
+      "name": "立方体.003_材质.017"
+    },
+    {
+      "material": "材质.017",
+      "object_name": "立方体.003_材质.017",
+      "object_id": 11,
+      "group": "立方体.003_材质.017",
+      "material_id": 10,
+      "surface_id": 64,
+      "shade_group_id": 22,
+      "indices": [
+        80,
+        74,
+        76
+      ],
+      "color": "#DBB655",
+      "name": "立方体.003_材质.017"
+    },
+    {
+      "material": "材质.017",
+      "object_name": "立方体.003_材质.017",
+      "object_id": 11,
+      "group": "立方体.003_材质.017",
+      "material_id": 10,
+      "surface_id": 65,
+      "shade_group_id": 23,
+      "indices": [
+        77,
+        79,
+        81
+      ],
+      "color": "#DBB655",
+      "name": "立方体.003_材质.017"
+    },
+    {
+      "material": "材质.017",
+      "object_name": "立方体.003_材质.017",
+      "object_id": 11,
+      "group": "立方体.003_材质.017",
+      "material_id": 10,
+      "surface_id": 60,
+      "shade_group_id": 18,
+      "indices": [
+        75,
+        77,
+        76
+      ],
+      "color": "#DBB655",
+      "name": "立方体.003_材质.017"
+    },
+    {
+      "material": "材质.017",
+      "object_name": "立方体.003_材质.017",
+      "object_id": 11,
+      "group": "立方体.003_材质.017",
+      "material_id": 10,
+      "surface_id": 61,
+      "shade_group_id": 21,
+      "indices": [
+        77,
+        81,
+        80
+      ],
+      "color": "#DBB655",
+      "name": "立方体.003_材质.017"
+    },
+    {
+      "material": "材质.017",
+      "object_name": "立方体.003_材质.017",
+      "object_id": 11,
+      "group": "立方体.003_材质.017",
+      "material_id": 10,
+      "surface_id": 62,
+      "shade_group_id": 19,
+      "indices": [
+        81,
+        79,
+        78
+      ],
+      "color": "#DBB655",
+      "name": "立方体.003_材质.017"
+    },
+    {
+      "material": "材质.017",
+      "object_name": "立方体.003_材质.017",
+      "object_id": 11,
+      "group": "立方体.003_材质.017",
+      "material_id": 10,
+      "surface_id": 63,
+      "shade_group_id": 20,
+      "indices": [
+        79,
+        75,
+        74
+      ],
+      "color": "#DBB655",
+      "name": "立方体.003_材质.017"
+    },
+    {
+      "material": "材质.017",
+      "object_name": "立方体.003_材质.017",
+      "object_id": 11,
+      "group": "立方体.003_材质.017",
+      "material_id": 10,
+      "surface_id": 64,
+      "shade_group_id": 22,
+      "indices": [
+        80,
+        78,
+        74
+      ],
+      "color": "#DBB655",
+      "name": "立方体.003_材质.017"
+    },
+    {
+      "material": "材质.017",
+      "object_name": "立方体.003_材质.017",
+      "object_id": 11,
+      "group": "立方体.003_材质.017",
+      "material_id": 10,
+      "surface_id": 65,
+      "shade_group_id": 23,
+      "indices": [
+        77,
+        75,
+        79
+      ],
+      "color": "#DBB655",
+      "name": "立方体.003_材质.017"
+    },
+    {
+      "material": "材质.015",
+      "object_name": "立方体.001_材质.015",
+      "object_id": 12,
+      "group": "立方体.001_材质.015",
+      "material_id": 11,
+      "surface_id": 66,
+      "shade_group_id": 6,
+      "indices": [
+        83,
+        84,
+        82
+      ],
+      "color": "#DBB655",
+      "name": "立方体.001_材质.015"
+    },
+    {
+      "material": "材质.015",
+      "object_name": "立方体.001_材质.015",
+      "object_id": 12,
+      "group": "立方体.001_材质.015",
+      "material_id": 11,
+      "surface_id": 67,
+      "shade_group_id": 9,
+      "indices": [
+        85,
+        88,
+        84
+      ],
+      "color": "#DBB655",
+      "name": "立方体.001_材质.015"
+    },
+    {
+      "material": "材质.015",
+      "object_name": "立方体.001_材质.015",
+      "object_id": 12,
+      "group": "立方体.001_材质.015",
+      "material_id": 11,
+      "surface_id": 68,
+      "shade_group_id": 7,
+      "indices": [
+        89,
+        86,
+        88
+      ],
+      "color": "#DBB655",
+      "name": "立方体.001_材质.015"
+    },
+    {
+      "material": "材质.015",
+      "object_name": "立方体.001_材质.015",
+      "object_id": 12,
+      "group": "立方体.001_材质.015",
+      "material_id": 11,
+      "surface_id": 69,
+      "shade_group_id": 8,
+      "indices": [
+        87,
+        82,
+        86
+      ],
+      "color": "#DBB655",
+      "name": "立方体.001_材质.015"
+    },
+    {
+      "material": "材质.015",
+      "object_name": "立方体.001_材质.015",
+      "object_id": 12,
+      "group": "立方体.001_材质.015",
+      "material_id": 11,
+      "surface_id": 70,
+      "shade_group_id": 10,
+      "indices": [
+        88,
+        82,
+        84
+      ],
+      "color": "#DBB655",
+      "name": "立方体.001_材质.015"
+    },
+    {
+      "material": "材质.015",
+      "object_name": "立方体.001_材质.015",
+      "object_id": 12,
+      "group": "立方体.001_材质.015",
+      "material_id": 11,
+      "surface_id": 71,
+      "shade_group_id": 11,
+      "indices": [
+        85,
+        87,
+        89
+      ],
+      "color": "#DBB655",
+      "name": "立方体.001_材质.015"
+    },
+    {
+      "material": "材质.015",
+      "object_name": "立方体.001_材质.015",
+      "object_id": 12,
+      "group": "立方体.001_材质.015",
+      "material_id": 11,
+      "surface_id": 66,
+      "shade_group_id": 6,
+      "indices": [
+        83,
+        85,
+        84
+      ],
+      "color": "#DBB655",
+      "name": "立方体.001_材质.015"
+    },
+    {
+      "material": "材质.015",
+      "object_name": "立方体.001_材质.015",
+      "object_id": 12,
+      "group": "立方体.001_材质.015",
+      "material_id": 11,
+      "surface_id": 67,
+      "shade_group_id": 9,
+      "indices": [
+        85,
+        89,
+        88
+      ],
+      "color": "#DBB655",
+      "name": "立方体.001_材质.015"
+    },
+    {
+      "material": "材质.015",
+      "object_name": "立方体.001_材质.015",
+      "object_id": 12,
+      "group": "立方体.001_材质.015",
+      "material_id": 11,
+      "surface_id": 68,
+      "shade_group_id": 7,
+      "indices": [
+        89,
+        87,
+        86
+      ],
+      "color": "#DBB655",
+      "name": "立方体.001_材质.015"
+    },
+    {
+      "material": "材质.015",
+      "object_name": "立方体.001_材质.015",
+      "object_id": 12,
+      "group": "立方体.001_材质.015",
+      "material_id": 11,
+      "surface_id": 69,
+      "shade_group_id": 8,
+      "indices": [
+        87,
+        83,
+        82
+      ],
+      "color": "#DBB655",
+      "name": "立方体.001_材质.015"
+    },
+    {
+      "material": "材质.015",
+      "object_name": "立方体.001_材质.015",
+      "object_id": 12,
+      "group": "立方体.001_材质.015",
+      "material_id": 11,
+      "surface_id": 70,
+      "shade_group_id": 10,
+      "indices": [
+        88,
+        86,
+        82
+      ],
+      "color": "#DBB655",
+      "name": "立方体.001_材质.015"
+    },
+    {
+      "material": "材质.015",
+      "object_name": "立方体.001_材质.015",
+      "object_id": 12,
+      "group": "立方体.001_材质.015",
+      "material_id": 11,
+      "surface_id": 71,
+      "shade_group_id": 11,
+      "indices": [
+        85,
+        83,
+        87
+      ],
+      "color": "#DBB655",
+      "name": "立方体.001_材质.015"
+    },
+    {
+      "material": "材质.016",
+      "object_name": "立方体.002_材质.016",
+      "object_id": 13,
+      "group": "立方体.002_材质.016",
+      "material_id": 12,
+      "surface_id": 72,
+      "shade_group_id": 12,
+      "indices": [
+        91,
+        92,
+        90
+      ],
+      "color": "#DBB655",
+      "name": "立方体.002_材质.016"
+    },
+    {
+      "material": "材质.016",
+      "object_name": "立方体.002_材质.016",
+      "object_id": 13,
+      "group": "立方体.002_材质.016",
+      "material_id": 12,
+      "surface_id": 73,
+      "shade_group_id": 15,
+      "indices": [
+        93,
+        96,
+        92
+      ],
+      "color": "#DBB655",
+      "name": "立方体.002_材质.016"
+    },
+    {
+      "material": "材质.016",
+      "object_name": "立方体.002_材质.016",
+      "object_id": 13,
+      "group": "立方体.002_材质.016",
+      "material_id": 12,
+      "surface_id": 74,
+      "shade_group_id": 13,
+      "indices": [
+        97,
+        94,
+        96
+      ],
+      "color": "#DBB655",
+      "name": "立方体.002_材质.016"
+    },
+    {
+      "material": "材质.016",
+      "object_name": "立方体.002_材质.016",
+      "object_id": 13,
+      "group": "立方体.002_材质.016",
+      "material_id": 12,
+      "surface_id": 75,
+      "shade_group_id": 14,
+      "indices": [
+        95,
+        90,
+        94
+      ],
+      "color": "#DBB655",
+      "name": "立方体.002_材质.016"
+    },
+    {
+      "material": "材质.016",
+      "object_name": "立方体.002_材质.016",
+      "object_id": 13,
+      "group": "立方体.002_材质.016",
+      "material_id": 12,
+      "surface_id": 76,
+      "shade_group_id": 16,
+      "indices": [
+        96,
+        90,
+        92
+      ],
+      "color": "#DBB655",
+      "name": "立方体.002_材质.016"
+    },
+    {
+      "material": "材质.016",
+      "object_name": "立方体.002_材质.016",
+      "object_id": 13,
+      "group": "立方体.002_材质.016",
+      "material_id": 12,
+      "surface_id": 77,
+      "shade_group_id": 17,
+      "indices": [
+        93,
+        95,
+        97
+      ],
+      "color": "#DBB655",
+      "name": "立方体.002_材质.016"
+    },
+    {
+      "material": "材质.016",
+      "object_name": "立方体.002_材质.016",
+      "object_id": 13,
+      "group": "立方体.002_材质.016",
+      "material_id": 12,
+      "surface_id": 72,
+      "shade_group_id": 12,
+      "indices": [
+        91,
+        93,
+        92
+      ],
+      "color": "#DBB655",
+      "name": "立方体.002_材质.016"
+    },
+    {
+      "material": "材质.016",
+      "object_name": "立方体.002_材质.016",
+      "object_id": 13,
+      "group": "立方体.002_材质.016",
+      "material_id": 12,
+      "surface_id": 73,
+      "shade_group_id": 15,
+      "indices": [
+        93,
+        97,
+        96
+      ],
+      "color": "#DBB655",
+      "name": "立方体.002_材质.016"
+    },
+    {
+      "material": "材质.016",
+      "object_name": "立方体.002_材质.016",
+      "object_id": 13,
+      "group": "立方体.002_材质.016",
+      "material_id": 12,
+      "surface_id": 74,
+      "shade_group_id": 13,
+      "indices": [
+        97,
+        95,
+        94
+      ],
+      "color": "#DBB655",
+      "name": "立方体.002_材质.016"
+    },
+    {
+      "material": "材质.016",
+      "object_name": "立方体.002_材质.016",
+      "object_id": 13,
+      "group": "立方体.002_材质.016",
+      "material_id": 12,
+      "surface_id": 75,
+      "shade_group_id": 14,
+      "indices": [
+        95,
+        91,
+        90
+      ],
+      "color": "#DBB655",
+      "name": "立方体.002_材质.016"
+    },
+    {
+      "material": "材质.016",
+      "object_name": "立方体.002_材质.016",
+      "object_id": 13,
+      "group": "立方体.002_材质.016",
+      "material_id": 12,
+      "surface_id": 76,
+      "shade_group_id": 16,
+      "indices": [
+        96,
+        94,
+        90
+      ],
+      "color": "#DBB655",
+      "name": "立方体.002_材质.016"
+    },
+    {
+      "material": "材质.016",
+      "object_name": "立方体.002_材质.016",
+      "object_id": 13,
+      "group": "立方体.002_材质.016",
+      "material_id": 12,
+      "surface_id": 77,
+      "shade_group_id": 17,
+      "indices": [
+        93,
+        91,
+        95
+      ],
+      "color": "#DBB655",
+      "name": "立方体.002_材质.016"
+    }
+  ],
+  "metadata": {
+    "source": {
+      "obj": "cat1.obj",
+      "mtl": "cat1.mtl"
+    },
+    "objects": [],
+    "groups": [
+      "立方体_立方体",
+      "立方体_材质.002",
+      "立方体.008_立方体.008",
+      "立方体.008_材质.008",
+      "立方体.010_立方体.010",
+      "立方体.010_材质.010",
+      "立方体.011_立方体.011",
+      "立方体.011_材质.011",
+      "Cube_Cube",
+      "Cube_Material",
+      "立方体.005_立方体.005",
+      "立方体.005_材质.007",
+      "锥体_锥体",
+      "锥体_材质.019",
+      "锥体.001_锥体.001",
+      "锥体.001_材质.020",
+      "立方体.006_立方体.002",
+      "立方体.006_材质.022",
+      "立方体.004_leg_rb",
+      "立方体.004_材质.006",
+      "立方体.003_leg_rf",
+      "立方体.003_材质.017",
+      "立方体.001_leg_lb",
+      "立方体.001_材质.015",
+      "立方体.002_leg_lb.001",
+      "立方体.002_材质.016"
+    ],
+    "materials": {
+      "Material": "#F04501",
+      "材质.002": "#CC640F",
+      "材质.006": "#CCBC49",
+      "材质.007": "#CCCCCC",
+      "材质.008": "#000000",
+      "材质.010": "#000000",
+      "材质.011": "#FFFFFF",
+      "材质.015": "#CCBC49",
+      "材质.016": "#CCBC49",
+      "材质.017": "#CCBC49",
+      "材质.019": "#CCCCCC",
+      "材质.020": "#CCCCCC",
+      "材质.022": "#000000"
+    },
+    "object_table": [
+      {
+        "object_id": 1,
+        "name": "立方体_材质.002",
+        "face_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "object_id": 2,
+        "name": "立方体.008_材质.008",
+        "face_indices": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ]
+      },
+      {
+        "object_id": 3,
+        "name": "立方体.010_材质.010",
+        "face_indices": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ]
+      },
+      {
+        "object_id": 4,
+        "name": "立方体.011_材质.011",
+        "face_indices": [
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47
+        ]
+      },
+      {
+        "object_id": 5,
+        "name": "Cube_Material",
+        "face_indices": [
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59
+        ]
+      },
+      {
+        "object_id": 6,
+        "name": "立方体.005_材质.007",
+        "face_indices": [
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71
+        ]
+      },
+      {
+        "object_id": 7,
+        "name": "锥体_材质.019",
+        "face_indices": [
+          72,
+          73,
+          74,
+          75,
+          76,
+          77
+        ]
+      },
+      {
+        "object_id": 8,
+        "name": "锥体.001_材质.020",
+        "face_indices": [
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ]
+      },
+      {
+        "object_id": 9,
+        "name": "立方体.006_材质.022",
+        "face_indices": [
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95
+        ]
+      },
+      {
+        "object_id": 10,
+        "name": "立方体.004_材质.006",
+        "face_indices": [
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107
+        ]
+      },
+      {
+        "object_id": 11,
+        "name": "立方体.003_材质.017",
+        "face_indices": [
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119
+        ]
+      },
+      {
+        "object_id": 12,
+        "name": "立方体.001_材质.015",
+        "face_indices": [
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131
+        ]
+      },
+      {
+        "object_id": 13,
+        "name": "立方体.002_材质.016",
+        "face_indices": [
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143
+        ]
+      }
+    ],
+    "normalization": {
+      "target_height": 120.0,
+      "center": true,
+      "source_height": 3.759503,
+      "scale": 31.919112712504816
+    },
+    "binary_format": "SK3D0",
+    "dynamic_surface_shading": {
+      "mode": "reconstructed_surface_directional_v1",
+      "shade_levels_q15": [
+        13107,
+        19660,
+        26214,
+        32767
+      ],
+      "light_vector_q8": [
+        -89,
+        127,
+        -203
+      ],
+      "materials": [
+        {
+          "material_id": 0,
+          "name": "材质.002",
+          "base_color": "#CC640F",
+          "shade_colors": [
+            "#492400",
+            "#6D2400",
+            "#924900",
+            "#B64900"
+          ],
+          "shade_colors_rgb332": [
+            68,
+            100,
+            136,
+            168
+          ]
+        },
+        {
+          "material_id": 1,
+          "name": "材质.008",
+          "base_color": "#000000",
+          "shade_colors": [
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+          ],
+          "shade_colors_rgb332": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "material_id": 2,
+          "name": "材质.010",
+          "base_color": "#000000",
+          "shade_colors": [
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+          ],
+          "shade_colors_rgb332": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "material_id": 3,
+          "name": "材质.011",
+          "base_color": "#FFFFFF",
+          "shade_colors": [
+            "#494955",
+            "#929255",
+            "#B6B6AA",
+            "#DBDBAA"
+          ],
+          "shade_colors_rgb332": [
+            73,
+            145,
+            182,
+            218
+          ]
+        },
+        {
+          "material_id": 4,
+          "name": "Material",
+          "base_color": "#F04501",
+          "shade_colors": [
+            "#490000",
+            "#922400",
+            "#B62400",
+            "#DB2400"
+          ],
+          "shade_colors_rgb332": [
+            64,
+            132,
+            164,
+            196
+          ]
+        },
+        {
+          "material_id": 5,
+          "name": "材质.007",
+          "base_color": "#CCCCCC",
+          "shade_colors": [
+            "#494955",
+            "#6D6D55",
+            "#9292AA",
+            "#B6B6AA"
+          ],
+          "shade_colors_rgb332": [
+            73,
+            109,
+            146,
+            182
+          ]
+        },
+        {
+          "material_id": 6,
+          "name": "材质.019",
+          "base_color": "#CCCCCC",
+          "shade_colors": [
+            "#494955",
+            "#6D6D55",
+            "#9292AA",
+            "#B6B6AA"
+          ],
+          "shade_colors_rgb332": [
+            73,
+            109,
+            146,
+            182
+          ]
+        },
+        {
+          "material_id": 7,
+          "name": "材质.020",
+          "base_color": "#CCCCCC",
+          "shade_colors": [
+            "#494955",
+            "#6D6D55",
+            "#9292AA",
+            "#B6B6AA"
+          ],
+          "shade_colors_rgb332": [
+            73,
+            109,
+            146,
+            182
+          ]
+        },
+        {
+          "material_id": 8,
+          "name": "材质.022",
+          "base_color": "#000000",
+          "shade_colors": [
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+          ],
+          "shade_colors_rgb332": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "material_id": 9,
+          "name": "材质.006",
+          "base_color": "#CCBC49",
+          "shade_colors": [
+            "#492400",
+            "#6D4900",
+            "#926D00",
+            "#B69200"
+          ],
+          "shade_colors_rgb332": [
+            68,
+            104,
+            140,
+            176
+          ]
+        },
+        {
+          "material_id": 10,
+          "name": "材质.017",
+          "base_color": "#CCBC49",
+          "shade_colors": [
+            "#492400",
+            "#6D4900",
+            "#926D00",
+            "#B69200"
+          ],
+          "shade_colors_rgb332": [
+            68,
+            104,
+            140,
+            176
+          ]
+        },
+        {
+          "material_id": 11,
+          "name": "材质.015",
+          "base_color": "#CCBC49",
+          "shade_colors": [
+            "#492400",
+            "#6D4900",
+            "#926D00",
+            "#B69200"
+          ],
+          "shade_colors_rgb332": [
+            68,
+            104,
+            140,
+            176
+          ]
+        },
+        {
+          "material_id": 12,
+          "name": "材质.016",
+          "base_color": "#CCBC49",
+          "shade_colors": [
+            "#492400",
+            "#6D4900",
+            "#926D00",
+            "#B69200"
+          ],
+          "shade_colors_rgb332": [
+            68,
+            104,
+            140,
+            176
+          ]
+        }
+      ],
+      "surfaces": [
+        {
+          "surface_id": 0,
+          "face_indices": [
+            0,
+            6
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 1,
+          "face_indices": [
+            1,
+            7
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 2,
+          "face_indices": [
+            2,
+            8
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 3,
+          "face_indices": [
+            3,
+            9
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 4,
+          "face_indices": [
+            4,
+            10
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 5,
+          "face_indices": [
+            5,
+            11
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 6,
+          "face_indices": [
+            12,
+            18
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 7,
+          "face_indices": [
+            13,
+            19
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 8,
+          "face_indices": [
+            14,
+            20
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 9,
+          "face_indices": [
+            15,
+            21
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 10,
+          "face_indices": [
+            16,
+            22
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 11,
+          "face_indices": [
+            17,
+            23
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 12,
+          "face_indices": [
+            24,
+            30
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 13,
+          "face_indices": [
+            25,
+            31
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 14,
+          "face_indices": [
+            26,
+            32
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 15,
+          "face_indices": [
+            27,
+            33
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 16,
+          "face_indices": [
+            28,
+            34
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 17,
+          "face_indices": [
+            29,
+            35
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 18,
+          "face_indices": [
+            36,
+            42
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 19,
+          "face_indices": [
+            37,
+            43
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 20,
+          "face_indices": [
+            38,
+            44
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 21,
+          "face_indices": [
+            39,
+            45
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 22,
+          "face_indices": [
+            40,
+            46
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 23,
+          "face_indices": [
+            41,
+            47
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 24,
+          "face_indices": [
+            48,
+            54
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 25,
+          "face_indices": [
+            49,
+            55
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 26,
+          "face_indices": [
+            50,
+            56
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 27,
+          "face_indices": [
+            51,
+            57
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 28,
+          "face_indices": [
+            52,
+            58
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 29,
+          "face_indices": [
+            53,
+            59
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 30,
+          "face_indices": [
+            60,
+            66
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 31,
+          "face_indices": [
+            61,
+            67
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 32,
+          "face_indices": [
+            62,
+            68
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 33,
+          "face_indices": [
+            63,
+            69
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 34,
+          "face_indices": [
+            64,
+            70
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 35,
+          "face_indices": [
+            65,
+            71
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 36,
+          "face_indices": [
+            72
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            0.903625,
+            0.426459,
+            0.039922
+          ],
+          "canonical_normal_q8": [
+            231,
+            109,
+            10
+          ]
+        },
+        {
+          "surface_id": 37,
+          "face_indices": [
+            73
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            0.050427,
+            0.403724,
+            0.91349
+          ],
+          "canonical_normal_q8": [
+            13,
+            103,
+            234
+          ]
+        },
+        {
+          "surface_id": 38,
+          "face_indices": [
+            74
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            -0.903625,
+            0.426461,
+            -0.039922
+          ],
+          "canonical_normal_q8": [
+            -231,
+            109,
+            -10
+          ]
+        },
+        {
+          "surface_id": 39,
+          "face_indices": [
+            75
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            -0.050427,
+            0.403724,
+            -0.91349
+          ],
+          "canonical_normal_q8": [
+            -13,
+            103,
+            -234
+          ]
+        },
+        {
+          "surface_id": 40,
+          "face_indices": [
+            76
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            6.8e-05,
+            -1.0,
+            -7.4e-05
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 41,
+          "face_indices": [
+            77
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            -6.8e-05,
+            -1.0,
+            7.4e-05
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 42,
+          "face_indices": [
+            78
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            0.903625,
+            0.426461,
+            0.039922
+          ],
+          "canonical_normal_q8": [
+            231,
+            109,
+            10
+          ]
+        },
+        {
+          "surface_id": 43,
+          "face_indices": [
+            79
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            0.050427,
+            0.403724,
+            0.91349
+          ],
+          "canonical_normal_q8": [
+            13,
+            103,
+            234
+          ]
+        },
+        {
+          "surface_id": 44,
+          "face_indices": [
+            80
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            -0.903625,
+            0.426459,
+            -0.039922
+          ],
+          "canonical_normal_q8": [
+            -231,
+            109,
+            -10
+          ]
+        },
+        {
+          "surface_id": 45,
+          "face_indices": [
+            81
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            -0.050427,
+            0.403724,
+            -0.91349
+          ],
+          "canonical_normal_q8": [
+            -13,
+            103,
+            -234
+          ]
+        },
+        {
+          "surface_id": 46,
+          "face_indices": [
+            82
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            6.8e-05,
+            -1.0,
+            -7.4e-05
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 47,
+          "face_indices": [
+            83
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            -6.8e-05,
+            -1.0,
+            7.4e-05
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 48,
+          "face_indices": [
+            84,
+            90
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 49,
+          "face_indices": [
+            85,
+            91
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 50,
+          "face_indices": [
+            86,
+            92
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 51,
+          "face_indices": [
+            87,
+            93
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 52,
+          "face_indices": [
+            88,
+            94
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 53,
+          "face_indices": [
+            89,
+            95
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 54,
+          "face_indices": [
+            96,
+            102
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 55,
+          "face_indices": [
+            97,
+            103
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 56,
+          "face_indices": [
+            98,
+            104
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 57,
+          "face_indices": [
+            99,
+            105
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 58,
+          "face_indices": [
+            100,
+            106
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 59,
+          "face_indices": [
+            101,
+            107
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 60,
+          "face_indices": [
+            108,
+            114
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 61,
+          "face_indices": [
+            109,
+            115
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 62,
+          "face_indices": [
+            110,
+            116
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 63,
+          "face_indices": [
+            111,
+            117
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 64,
+          "face_indices": [
+            112,
+            118
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 65,
+          "face_indices": [
+            113,
+            119
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 66,
+          "face_indices": [
+            120,
+            126
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 67,
+          "face_indices": [
+            121,
+            127
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 68,
+          "face_indices": [
+            122,
+            128
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 69,
+          "face_indices": [
+            123,
+            129
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 70,
+          "face_indices": [
+            124,
+            130
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 71,
+          "face_indices": [
+            125,
+            131
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 72,
+          "face_indices": [
+            132,
+            138
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 73,
+          "face_indices": [
+            133,
+            139
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 74,
+          "face_indices": [
+            134,
+            140
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 75,
+          "face_indices": [
+            135,
+            141
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 76,
+          "face_indices": [
+            136,
+            142
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 77,
+          "face_indices": [
+            137,
+            143
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        }
+      ]
+    },
+    "dynamic_group_shading": {
+      "mode": "source_group_reference_surface_v1",
+      "shade_levels_q15": [
+        13107,
+        19660,
+        26214,
+        32767
+      ],
+      "light_vector_q8": [
+        -89,
+        127,
+        -203
+      ],
+      "shade_groups": [
+        {
+          "shade_group_id": 0,
+          "name": "Cube_Material:x_neg",
+          "part_name": "Cube_Material",
+          "orientation_key": "x_neg",
+          "surface_ids": [
+            26
+          ],
+          "reference_surface_id": 26,
+          "reference_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 1,
+          "name": "Cube_Material:x_pos",
+          "part_name": "Cube_Material",
+          "orientation_key": "x_pos",
+          "surface_ids": [
+            28
+          ],
+          "reference_surface_id": 28,
+          "reference_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 2,
+          "name": "Cube_Material:y_neg",
+          "part_name": "Cube_Material",
+          "orientation_key": "y_neg",
+          "surface_ids": [
+            25
+          ],
+          "reference_surface_id": 25,
+          "reference_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 3,
+          "name": "Cube_Material:y_pos",
+          "part_name": "Cube_Material",
+          "orientation_key": "y_pos",
+          "surface_ids": [
+            29
+          ],
+          "reference_surface_id": 29,
+          "reference_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 4,
+          "name": "Cube_Material:z_neg",
+          "part_name": "Cube_Material",
+          "orientation_key": "z_neg",
+          "surface_ids": [
+            27
+          ],
+          "reference_surface_id": 27,
+          "reference_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "shade_group_id": 5,
+          "name": "Cube_Material:z_pos",
+          "part_name": "Cube_Material",
+          "orientation_key": "z_pos",
+          "surface_ids": [
+            24
+          ],
+          "reference_surface_id": 24,
+          "reference_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "shade_group_id": 6,
+          "name": "立方体.001_材质.015:x_neg",
+          "part_name": "立方体.001_材质.015",
+          "orientation_key": "x_neg",
+          "surface_ids": [
+            66
+          ],
+          "reference_surface_id": 66,
+          "reference_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 7,
+          "name": "立方体.001_材质.015:x_pos",
+          "part_name": "立方体.001_材质.015",
+          "orientation_key": "x_pos",
+          "surface_ids": [
+            68
+          ],
+          "reference_surface_id": 68,
+          "reference_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 8,
+          "name": "立方体.001_材质.015:y_neg",
+          "part_name": "立方体.001_材质.015",
+          "orientation_key": "y_neg",
+          "surface_ids": [
+            69
+          ],
+          "reference_surface_id": 69,
+          "reference_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 9,
+          "name": "立方体.001_材质.015:y_pos",
+          "part_name": "立方体.001_材质.015",
+          "orientation_key": "y_pos",
+          "surface_ids": [
+            67
+          ],
+          "reference_surface_id": 67,
+          "reference_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 10,
+          "name": "立方体.001_材质.015:z_neg",
+          "part_name": "立方体.001_材质.015",
+          "orientation_key": "z_neg",
+          "surface_ids": [
+            70
+          ],
+          "reference_surface_id": 70,
+          "reference_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "shade_group_id": 11,
+          "name": "立方体.001_材质.015:z_pos",
+          "part_name": "立方体.001_材质.015",
+          "orientation_key": "z_pos",
+          "surface_ids": [
+            71
+          ],
+          "reference_surface_id": 71,
+          "reference_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "shade_group_id": 12,
+          "name": "立方体.002_材质.016:x_neg",
+          "part_name": "立方体.002_材质.016",
+          "orientation_key": "x_neg",
+          "surface_ids": [
+            72
+          ],
+          "reference_surface_id": 72,
+          "reference_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 13,
+          "name": "立方体.002_材质.016:x_pos",
+          "part_name": "立方体.002_材质.016",
+          "orientation_key": "x_pos",
+          "surface_ids": [
+            74
+          ],
+          "reference_surface_id": 74,
+          "reference_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 14,
+          "name": "立方体.002_材质.016:y_neg",
+          "part_name": "立方体.002_材质.016",
+          "orientation_key": "y_neg",
+          "surface_ids": [
+            75
+          ],
+          "reference_surface_id": 75,
+          "reference_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 15,
+          "name": "立方体.002_材质.016:y_pos",
+          "part_name": "立方体.002_材质.016",
+          "orientation_key": "y_pos",
+          "surface_ids": [
+            73
+          ],
+          "reference_surface_id": 73,
+          "reference_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 16,
+          "name": "立方体.002_材质.016:z_neg",
+          "part_name": "立方体.002_材质.016",
+          "orientation_key": "z_neg",
+          "surface_ids": [
+            76
+          ],
+          "reference_surface_id": 76,
+          "reference_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "shade_group_id": 17,
+          "name": "立方体.002_材质.016:z_pos",
+          "part_name": "立方体.002_材质.016",
+          "orientation_key": "z_pos",
+          "surface_ids": [
+            77
+          ],
+          "reference_surface_id": 77,
+          "reference_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "shade_group_id": 18,
+          "name": "立方体.003_材质.017:x_neg",
+          "part_name": "立方体.003_材质.017",
+          "orientation_key": "x_neg",
+          "surface_ids": [
+            60
+          ],
+          "reference_surface_id": 60,
+          "reference_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 19,
+          "name": "立方体.003_材质.017:x_pos",
+          "part_name": "立方体.003_材质.017",
+          "orientation_key": "x_pos",
+          "surface_ids": [
+            62
+          ],
+          "reference_surface_id": 62,
+          "reference_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 20,
+          "name": "立方体.003_材质.017:y_neg",
+          "part_name": "立方体.003_材质.017",
+          "orientation_key": "y_neg",
+          "surface_ids": [
+            63
+          ],
+          "reference_surface_id": 63,
+          "reference_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 21,
+          "name": "立方体.003_材质.017:y_pos",
+          "part_name": "立方体.003_材质.017",
+          "orientation_key": "y_pos",
+          "surface_ids": [
+            61
+          ],
+          "reference_surface_id": 61,
+          "reference_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 22,
+          "name": "立方体.003_材质.017:z_neg",
+          "part_name": "立方体.003_材质.017",
+          "orientation_key": "z_neg",
+          "surface_ids": [
+            64
+          ],
+          "reference_surface_id": 64,
+          "reference_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "shade_group_id": 23,
+          "name": "立方体.003_材质.017:z_pos",
+          "part_name": "立方体.003_材质.017",
+          "orientation_key": "z_pos",
+          "surface_ids": [
+            65
+          ],
+          "reference_surface_id": 65,
+          "reference_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "shade_group_id": 24,
+          "name": "立方体.004_材质.006:x_neg",
+          "part_name": "立方体.004_材质.006",
+          "orientation_key": "x_neg",
+          "surface_ids": [
+            54
+          ],
+          "reference_surface_id": 54,
+          "reference_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 25,
+          "name": "立方体.004_材质.006:x_pos",
+          "part_name": "立方体.004_材质.006",
+          "orientation_key": "x_pos",
+          "surface_ids": [
+            56
+          ],
+          "reference_surface_id": 56,
+          "reference_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 26,
+          "name": "立方体.004_材质.006:y_neg",
+          "part_name": "立方体.004_材质.006",
+          "orientation_key": "y_neg",
+          "surface_ids": [
+            57
+          ],
+          "reference_surface_id": 57,
+          "reference_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 27,
+          "name": "立方体.004_材质.006:y_pos",
+          "part_name": "立方体.004_材质.006",
+          "orientation_key": "y_pos",
+          "surface_ids": [
+            55
+          ],
+          "reference_surface_id": 55,
+          "reference_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 28,
+          "name": "立方体.004_材质.006:z_neg",
+          "part_name": "立方体.004_材质.006",
+          "orientation_key": "z_neg",
+          "surface_ids": [
+            58
+          ],
+          "reference_surface_id": 58,
+          "reference_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "shade_group_id": 29,
+          "name": "立方体.004_材质.006:z_pos",
+          "part_name": "立方体.004_材质.006",
+          "orientation_key": "z_pos",
+          "surface_ids": [
+            59
+          ],
+          "reference_surface_id": 59,
+          "reference_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "shade_group_id": 30,
+          "name": "立方体.005_材质.007:x_neg",
+          "part_name": "立方体.005_材质.007",
+          "orientation_key": "x_neg",
+          "surface_ids": [
+            30
+          ],
+          "reference_surface_id": 30,
+          "reference_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 31,
+          "name": "立方体.005_材质.007:x_pos",
+          "part_name": "立方体.005_材质.007",
+          "orientation_key": "x_pos",
+          "surface_ids": [
+            32
+          ],
+          "reference_surface_id": 32,
+          "reference_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 32,
+          "name": "立方体.005_材质.007:y_neg",
+          "part_name": "立方体.005_材质.007",
+          "orientation_key": "y_neg",
+          "surface_ids": [
+            33
+          ],
+          "reference_surface_id": 33,
+          "reference_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 33,
+          "name": "立方体.005_材质.007:y_pos",
+          "part_name": "立方体.005_材质.007",
+          "orientation_key": "y_pos",
+          "surface_ids": [
+            31
+          ],
+          "reference_surface_id": 31,
+          "reference_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 34,
+          "name": "立方体.005_材质.007:z_neg",
+          "part_name": "立方体.005_材质.007",
+          "orientation_key": "z_neg",
+          "surface_ids": [
+            34
+          ],
+          "reference_surface_id": 34,
+          "reference_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "shade_group_id": 35,
+          "name": "立方体.005_材质.007:z_pos",
+          "part_name": "立方体.005_材质.007",
+          "orientation_key": "z_pos",
+          "surface_ids": [
+            35
+          ],
+          "reference_surface_id": 35,
+          "reference_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "shade_group_id": 36,
+          "name": "立方体.006_材质.022:x_neg",
+          "part_name": "立方体.006_材质.022",
+          "orientation_key": "x_neg",
+          "surface_ids": [
+            48
+          ],
+          "reference_surface_id": 48,
+          "reference_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 37,
+          "name": "立方体.006_材质.022:x_pos",
+          "part_name": "立方体.006_材质.022",
+          "orientation_key": "x_pos",
+          "surface_ids": [
+            50
+          ],
+          "reference_surface_id": 50,
+          "reference_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 38,
+          "name": "立方体.006_材质.022:y_neg",
+          "part_name": "立方体.006_材质.022",
+          "orientation_key": "y_neg",
+          "surface_ids": [
+            49
+          ],
+          "reference_surface_id": 49,
+          "reference_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 39,
+          "name": "立方体.006_材质.022:y_pos",
+          "part_name": "立方体.006_材质.022",
+          "orientation_key": "y_pos",
+          "surface_ids": [
+            51
+          ],
+          "reference_surface_id": 51,
+          "reference_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 40,
+          "name": "立方体.006_材质.022:z_neg",
+          "part_name": "立方体.006_材质.022",
+          "orientation_key": "z_neg",
+          "surface_ids": [
+            52
+          ],
+          "reference_surface_id": 52,
+          "reference_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "shade_group_id": 41,
+          "name": "立方体.006_材质.022:z_pos",
+          "part_name": "立方体.006_材质.022",
+          "orientation_key": "z_pos",
+          "surface_ids": [
+            53
+          ],
+          "reference_surface_id": 53,
+          "reference_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "shade_group_id": 42,
+          "name": "立方体.008_材质.008:x_neg",
+          "part_name": "立方体.008_材质.008",
+          "orientation_key": "x_neg",
+          "surface_ids": [
+            8
+          ],
+          "reference_surface_id": 8,
+          "reference_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 43,
+          "name": "立方体.008_材质.008:x_pos",
+          "part_name": "立方体.008_材质.008",
+          "orientation_key": "x_pos",
+          "surface_ids": [
+            6
+          ],
+          "reference_surface_id": 6,
+          "reference_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 44,
+          "name": "立方体.008_材质.008:y_neg",
+          "part_name": "立方体.008_材质.008",
+          "orientation_key": "y_neg",
+          "surface_ids": [
+            7
+          ],
+          "reference_surface_id": 7,
+          "reference_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 45,
+          "name": "立方体.008_材质.008:y_pos",
+          "part_name": "立方体.008_材质.008",
+          "orientation_key": "y_pos",
+          "surface_ids": [
+            9
+          ],
+          "reference_surface_id": 9,
+          "reference_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 46,
+          "name": "立方体.008_材质.008:z_neg",
+          "part_name": "立方体.008_材质.008",
+          "orientation_key": "z_neg",
+          "surface_ids": [
+            11
+          ],
+          "reference_surface_id": 11,
+          "reference_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "shade_group_id": 47,
+          "name": "立方体.008_材质.008:z_pos",
+          "part_name": "立方体.008_材质.008",
+          "orientation_key": "z_pos",
+          "surface_ids": [
+            10
+          ],
+          "reference_surface_id": 10,
+          "reference_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "shade_group_id": 48,
+          "name": "立方体.010_材质.010:x_neg",
+          "part_name": "立方体.010_材质.010",
+          "orientation_key": "x_neg",
+          "surface_ids": [
+            12
+          ],
+          "reference_surface_id": 12,
+          "reference_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 49,
+          "name": "立方体.010_材质.010:x_pos",
+          "part_name": "立方体.010_材质.010",
+          "orientation_key": "x_pos",
+          "surface_ids": [
+            14
+          ],
+          "reference_surface_id": 14,
+          "reference_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 50,
+          "name": "立方体.010_材质.010:y_neg",
+          "part_name": "立方体.010_材质.010",
+          "orientation_key": "y_neg",
+          "surface_ids": [
+            13
+          ],
+          "reference_surface_id": 13,
+          "reference_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 51,
+          "name": "立方体.010_材质.010:y_pos",
+          "part_name": "立方体.010_材质.010",
+          "orientation_key": "y_pos",
+          "surface_ids": [
+            15
+          ],
+          "reference_surface_id": 15,
+          "reference_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 52,
+          "name": "立方体.010_材质.010:z_neg",
+          "part_name": "立方体.010_材质.010",
+          "orientation_key": "z_neg",
+          "surface_ids": [
+            16
+          ],
+          "reference_surface_id": 16,
+          "reference_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "shade_group_id": 53,
+          "name": "立方体.010_材质.010:z_pos",
+          "part_name": "立方体.010_材质.010",
+          "orientation_key": "z_pos",
+          "surface_ids": [
+            17
+          ],
+          "reference_surface_id": 17,
+          "reference_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "shade_group_id": 54,
+          "name": "立方体.011_材质.011:x_neg",
+          "part_name": "立方体.011_材质.011",
+          "orientation_key": "x_neg",
+          "surface_ids": [
+            18
+          ],
+          "reference_surface_id": 18,
+          "reference_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 55,
+          "name": "立方体.011_材质.011:x_pos",
+          "part_name": "立方体.011_材质.011",
+          "orientation_key": "x_pos",
+          "surface_ids": [
+            20
+          ],
+          "reference_surface_id": 20,
+          "reference_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 56,
+          "name": "立方体.011_材质.011:y_neg",
+          "part_name": "立方体.011_材质.011",
+          "orientation_key": "y_neg",
+          "surface_ids": [
+            19
+          ],
+          "reference_surface_id": 19,
+          "reference_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 57,
+          "name": "立方体.011_材质.011:y_pos",
+          "part_name": "立方体.011_材质.011",
+          "orientation_key": "y_pos",
+          "surface_ids": [
+            21
+          ],
+          "reference_surface_id": 21,
+          "reference_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 58,
+          "name": "立方体.011_材质.011:z_neg",
+          "part_name": "立方体.011_材质.011",
+          "orientation_key": "z_neg",
+          "surface_ids": [
+            22
+          ],
+          "reference_surface_id": 22,
+          "reference_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "shade_group_id": 59,
+          "name": "立方体.011_材质.011:z_pos",
+          "part_name": "立方体.011_材质.011",
+          "orientation_key": "z_pos",
+          "surface_ids": [
+            23
+          ],
+          "reference_surface_id": 23,
+          "reference_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "shade_group_id": 60,
+          "name": "立方体_材质.002:x_neg",
+          "part_name": "立方体_材质.002",
+          "orientation_key": "x_neg",
+          "surface_ids": [
+            0
+          ],
+          "reference_surface_id": 0,
+          "reference_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 61,
+          "name": "立方体_材质.002:x_pos",
+          "part_name": "立方体_材质.002",
+          "orientation_key": "x_pos",
+          "surface_ids": [
+            2
+          ],
+          "reference_surface_id": 2,
+          "reference_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 62,
+          "name": "立方体_材质.002:y_neg",
+          "part_name": "立方体_材质.002",
+          "orientation_key": "y_neg",
+          "surface_ids": [
+            3
+          ],
+          "reference_surface_id": 3,
+          "reference_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 63,
+          "name": "立方体_材质.002:y_pos",
+          "part_name": "立方体_材质.002",
+          "orientation_key": "y_pos",
+          "surface_ids": [
+            1
+          ],
+          "reference_surface_id": 1,
+          "reference_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "reference_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 64,
+          "name": "立方体_材质.002:z_neg",
+          "part_name": "立方体_材质.002",
+          "orientation_key": "z_neg",
+          "surface_ids": [
+            4
+          ],
+          "reference_surface_id": 4,
+          "reference_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "shade_group_id": 65,
+          "name": "立方体_材质.002:z_pos",
+          "part_name": "立方体_材质.002",
+          "orientation_key": "z_pos",
+          "surface_ids": [
+            5
+          ],
+          "reference_surface_id": 5,
+          "reference_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reference_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "shade_group_id": 66,
+          "name": "锥体.001_材质.020:x_neg",
+          "part_name": "锥体.001_材质.020",
+          "orientation_key": "x_neg",
+          "surface_ids": [
+            44
+          ],
+          "reference_surface_id": 44,
+          "reference_normal": [
+            -0.903625,
+            0.426459,
+            -0.039922
+          ],
+          "reference_normal_q8": [
+            -231,
+            109,
+            -10
+          ]
+        },
+        {
+          "shade_group_id": 67,
+          "name": "锥体.001_材质.020:x_pos",
+          "part_name": "锥体.001_材质.020",
+          "orientation_key": "x_pos",
+          "surface_ids": [
+            42
+          ],
+          "reference_surface_id": 42,
+          "reference_normal": [
+            0.903625,
+            0.426461,
+            0.039922
+          ],
+          "reference_normal_q8": [
+            231,
+            109,
+            10
+          ]
+        },
+        {
+          "shade_group_id": 68,
+          "name": "锥体.001_材质.020:y_neg",
+          "part_name": "锥体.001_材质.020",
+          "orientation_key": "y_neg",
+          "surface_ids": [
+            46,
+            47
+          ],
+          "reference_surface_id": 46,
+          "reference_normal": [
+            6.8e-05,
+            -1.0,
+            -7.4e-05
+          ],
+          "reference_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 69,
+          "name": "锥体.001_材质.020:z_neg",
+          "part_name": "锥体.001_材质.020",
+          "orientation_key": "z_neg",
+          "surface_ids": [
+            45
+          ],
+          "reference_surface_id": 45,
+          "reference_normal": [
+            -0.050427,
+            0.403724,
+            -0.91349
+          ],
+          "reference_normal_q8": [
+            -13,
+            103,
+            -234
+          ]
+        },
+        {
+          "shade_group_id": 70,
+          "name": "锥体.001_材质.020:z_pos",
+          "part_name": "锥体.001_材质.020",
+          "orientation_key": "z_pos",
+          "surface_ids": [
+            43
+          ],
+          "reference_surface_id": 43,
+          "reference_normal": [
+            0.050427,
+            0.403724,
+            0.91349
+          ],
+          "reference_normal_q8": [
+            13,
+            103,
+            234
+          ]
+        },
+        {
+          "shade_group_id": 71,
+          "name": "锥体_材质.019:x_neg",
+          "part_name": "锥体_材质.019",
+          "orientation_key": "x_neg",
+          "surface_ids": [
+            38
+          ],
+          "reference_surface_id": 38,
+          "reference_normal": [
+            -0.903625,
+            0.426461,
+            -0.039922
+          ],
+          "reference_normal_q8": [
+            -231,
+            109,
+            -10
+          ]
+        },
+        {
+          "shade_group_id": 72,
+          "name": "锥体_材质.019:x_pos",
+          "part_name": "锥体_材质.019",
+          "orientation_key": "x_pos",
+          "surface_ids": [
+            36
+          ],
+          "reference_surface_id": 36,
+          "reference_normal": [
+            0.903625,
+            0.426459,
+            0.039922
+          ],
+          "reference_normal_q8": [
+            231,
+            109,
+            10
+          ]
+        },
+        {
+          "shade_group_id": 73,
+          "name": "锥体_材质.019:y_neg",
+          "part_name": "锥体_材质.019",
+          "orientation_key": "y_neg",
+          "surface_ids": [
+            40,
+            41
+          ],
+          "reference_surface_id": 40,
+          "reference_normal": [
+            6.8e-05,
+            -1.0,
+            -7.4e-05
+          ],
+          "reference_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "shade_group_id": 74,
+          "name": "锥体_材质.019:z_neg",
+          "part_name": "锥体_材质.019",
+          "orientation_key": "z_neg",
+          "surface_ids": [
+            39
+          ],
+          "reference_surface_id": 39,
+          "reference_normal": [
+            -0.050427,
+            0.403724,
+            -0.91349
+          ],
+          "reference_normal_q8": [
+            -13,
+            103,
+            -234
+          ]
+        },
+        {
+          "shade_group_id": 75,
+          "name": "锥体_材质.019:z_pos",
+          "part_name": "锥体_材质.019",
+          "orientation_key": "z_pos",
+          "surface_ids": [
+            37
+          ],
+          "reference_surface_id": 37,
+          "reference_normal": [
+            0.050427,
+            0.403724,
+            0.91349
+          ],
+          "reference_normal_q8": [
+            13,
+            103,
+            234
+          ]
+        }
+      ]
+    }
+  }
+}

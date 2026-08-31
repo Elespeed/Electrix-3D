@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frame Output Check"
+  short_description: "Summarize simulation frame images clearly."
+  default_prompt: "Use $frame-output-check to summarize simulation framebuffer images and compare scene captures."

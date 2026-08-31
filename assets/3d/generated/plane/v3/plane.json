@@ -1,0 +1,2647 @@
+{
+  "format": "lowpoly-model",
+  "version": 1,
+  "name": "plane",
+  "origin": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "vertices": [
+    [
+      48.79461086066283,
+      19.721181007203903,
+      -30.113935394474396
+    ],
+    [
+      48.79461086066283,
+      -47.80685633189284,
+      -30.113935394474396
+    ],
+    [
+      48.79461086066283,
+      19.721181007203903,
+      30.12027457191162
+    ],
+    [
+      48.79461086066283,
+      -47.80685633189284,
+      30.12027457191162
+    ],
+    [
+      -47.06934837909707,
+      19.721181007203903,
+      -30.113935394474396
+    ],
+    [
+      -47.06934837909707,
+      -47.80685633189284,
+      -30.113935394474396
+    ],
+    [
+      -47.06934837909707,
+      19.721181007203903,
+      30.12027457191162
+    ],
+    [
+      -47.06934837909707,
+      -47.80685633189284,
+      30.12027457191162
+    ],
+    [
+      48.89211344695918,
+      -45.91093916884244,
+      -24.585518627098516
+    ],
+    [
+      48.85966289579243,
+      -48.0,
+      21.950735116087237
+    ],
+    [
+      48.81473523347941,
+      -6.655633199764797,
+      32.28470117926729
+    ],
+    [
+      48.80618237503236,
+      18.086981312633185,
+      11.566005322477352
+    ],
+    [
+      48.809452585615055,
+      18.298890958391816,
+      -18.520233903908217
+    ],
+    [
+      48.80261029885742,
+      -7.363860190112433,
+      -35.91101253895167
+    ],
+    [
+      124.92858468011157,
+      -16.276844288713477,
+      -1.5536267369063184
+    ],
+    [
+      -17.79442324281209,
+      -21.89260083411333,
+      -30.022117943498728
+    ],
+    [
+      -17.79442324281209,
+      -7.975138014416178,
+      -30.022117943498728
+    ],
+    [
+      -17.79442324281209,
+      -21.89260083411333,
+      -110.30951075763025
+    ],
+    [
+      -17.79442324281209,
+      -7.975138014416178,
+      -110.30951075763025
+    ],
+    [
+      24.605768777245203,
+      -21.89260083411333,
+      -30.022117943498728
+    ],
+    [
+      24.605768777245203,
+      -7.975138014416178,
+      -30.022117943498728
+    ],
+    [
+      24.605768777245203,
+      -21.89260083411333,
+      -110.30951075763025
+    ],
+    [
+      24.605768777245203,
+      -7.975138014416178,
+      -110.30951075763025
+    ],
+    [
+      -17.79442324281209,
+      -21.89260083411333,
+      110.30951075763025
+    ],
+    [
+      -17.79442324281209,
+      -7.975138014416178,
+      110.30951075763025
+    ],
+    [
+      -17.79442324281209,
+      -21.89260083411333,
+      30.022117943498728
+    ],
+    [
+      -17.79442324281209,
+      -7.975138014416178,
+      30.022117943498728
+    ],
+    [
+      24.605768777245203,
+      -21.89260083411333,
+      110.30951075763025
+    ],
+    [
+      24.605768777245203,
+      -7.975138014416178,
+      110.30951075763025
+    ],
+    [
+      24.605768777245203,
+      -21.89260083411333,
+      30.022117943498728
+    ],
+    [
+      24.605768777245203,
+      -7.975138014416178,
+      30.022117943498728
+    ],
+    [
+      -47.26083178644687,
+      -32.59001307036089,
+      16.532499289882157
+    ],
+    [
+      -99.69800443784347,
+      -32.59001307036089,
+      16.532499289882157
+    ],
+    [
+      -47.26083178644687,
+      -32.59001307036089,
+      -16.526160112444934
+    ],
+    [
+      -99.69800443784347,
+      -32.59001307036089,
+      -16.526160112444934
+    ],
+    [
+      -47.26083178644687,
+      4.504337745671947,
+      16.532499289882157
+    ],
+    [
+      -99.69800443784347,
+      4.504337745671947,
+      16.532499289882157
+    ],
+    [
+      -47.26083178644687,
+      4.504337745671947,
+      -16.526160112444934
+    ],
+    [
+      -99.69800443784347,
+      4.504337745671947,
+      -16.526160112444934
+    ],
+    [
+      -99.46672508324887,
+      -32.72595320873691,
+      -29.982623861846186
+    ],
+    [
+      -99.46672508324887,
+      -32.72595320873691,
+      30.657897191706667
+    ],
+    [
+      -124.92858468011157,
+      -32.72595320873691,
+      -29.982623861846186
+    ],
+    [
+      -124.92858468011157,
+      -32.72595320873691,
+      30.657897191706667
+    ],
+    [
+      -99.46672508324887,
+      4.3684479182279645,
+      -29.982623861846186
+    ],
+    [
+      -99.46672508324887,
+      4.3684479182279645,
+      30.657897191706667
+    ],
+    [
+      -124.92858468011157,
+      4.3684479182279645,
+      -29.982623861846186
+    ],
+    [
+      -124.92858468011157,
+      4.3684479182279645,
+      30.657897191706667
+    ],
+    [
+      -24.513096040424838,
+      18.981509684330348,
+      17.22291621028712
+    ],
+    [
+      -24.513096040424838,
+      48.00000000000001,
+      17.22291621028712
+    ],
+    [
+      -24.513096040424838,
+      18.981509684330348,
+      -17.216526721917855
+    ],
+    [
+      -24.513096040424838,
+      48.00000000000001,
+      -17.216526721917855
+    ],
+    [
+      28.002964152412773,
+      18.981509684330348,
+      17.22291621028712
+    ],
+    [
+      28.002964152412773,
+      48.00000000000001,
+      17.22291621028712
+    ],
+    [
+      28.002964152412773,
+      18.981509684330348,
+      -17.216526721917855
+    ],
+    [
+      28.002964152412773,
+      48.00000000000001,
+      -17.216526721917855
+    ]
+  ],
+  "faces": [
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 1,
+      "group": "Cube_Material",
+      "material_id": 0,
+      "surface_id": 0,
+      "indices": [
+        4,
+        2,
+        0
+      ],
+      "color": "#6D92FF",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 1,
+      "group": "Cube_Material",
+      "material_id": 0,
+      "surface_id": 1,
+      "indices": [
+        2,
+        7,
+        3
+      ],
+      "color": "#6D92FF",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 1,
+      "group": "Cube_Material",
+      "material_id": 0,
+      "surface_id": 2,
+      "indices": [
+        6,
+        5,
+        7
+      ],
+      "color": "#6D92FF",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 1,
+      "group": "Cube_Material",
+      "material_id": 0,
+      "surface_id": 3,
+      "indices": [
+        1,
+        7,
+        5
+      ],
+      "color": "#6D92FF",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 1,
+      "group": "Cube_Material",
+      "material_id": 0,
+      "surface_id": 4,
+      "indices": [
+        0,
+        3,
+        1
+      ],
+      "color": "#6D92FF",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 1,
+      "group": "Cube_Material",
+      "material_id": 0,
+      "surface_id": 5,
+      "indices": [
+        4,
+        1,
+        5
+      ],
+      "color": "#6D92FF",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 1,
+      "group": "Cube_Material",
+      "material_id": 0,
+      "surface_id": 0,
+      "indices": [
+        4,
+        6,
+        2
+      ],
+      "color": "#6D92FF",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 1,
+      "group": "Cube_Material",
+      "material_id": 0,
+      "surface_id": 1,
+      "indices": [
+        2,
+        6,
+        7
+      ],
+      "color": "#6D92FF",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 1,
+      "group": "Cube_Material",
+      "material_id": 0,
+      "surface_id": 2,
+      "indices": [
+        6,
+        4,
+        5
+      ],
+      "color": "#6D92FF",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 1,
+      "group": "Cube_Material",
+      "material_id": 0,
+      "surface_id": 3,
+      "indices": [
+        1,
+        3,
+        7
+      ],
+      "color": "#6D92FF",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 1,
+      "group": "Cube_Material",
+      "material_id": 0,
+      "surface_id": 4,
+      "indices": [
+        0,
+        2,
+        3
+      ],
+      "color": "#6D92FF",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "Cube_Material",
+      "object_id": 1,
+      "group": "Cube_Material",
+      "material_id": 0,
+      "surface_id": 5,
+      "indices": [
+        4,
+        0,
+        1
+      ],
+      "color": "#6D92FF",
+      "name": "Cube_Material"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "锥体_材质.003",
+      "object_id": 2,
+      "group": "锥体_材质.003",
+      "material_id": 1,
+      "surface_id": 6,
+      "indices": [
+        8,
+        14,
+        9
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "锥体_材质.003",
+      "object_id": 2,
+      "group": "锥体_材质.003",
+      "material_id": 1,
+      "surface_id": 7,
+      "indices": [
+        9,
+        14,
+        10
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "锥体_材质.003",
+      "object_id": 2,
+      "group": "锥体_材质.003",
+      "material_id": 1,
+      "surface_id": 8,
+      "indices": [
+        10,
+        14,
+        11
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "锥体_材质.003",
+      "object_id": 2,
+      "group": "锥体_材质.003",
+      "material_id": 1,
+      "surface_id": 9,
+      "indices": [
+        11,
+        14,
+        12
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "锥体_材质.003",
+      "object_id": 2,
+      "group": "锥体_材质.003",
+      "material_id": 1,
+      "surface_id": 10,
+      "indices": [
+        12,
+        14,
+        13
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "锥体_材质.003",
+      "object_id": 2,
+      "group": "锥体_材质.003",
+      "material_id": 1,
+      "surface_id": 11,
+      "indices": [
+        10,
+        12,
+        13
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "锥体_材质.003",
+      "object_id": 2,
+      "group": "锥体_材质.003",
+      "material_id": 1,
+      "surface_id": 12,
+      "indices": [
+        13,
+        14,
+        8
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "锥体_材质.003",
+      "object_id": 2,
+      "group": "锥体_材质.003",
+      "material_id": 1,
+      "surface_id": 13,
+      "indices": [
+        10,
+        11,
+        12
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "锥体_材质.003",
+      "object_id": 2,
+      "group": "锥体_材质.003",
+      "material_id": 1,
+      "surface_id": 14,
+      "indices": [
+        13,
+        8,
+        9
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "锥体_材质.003",
+      "object_id": 2,
+      "group": "锥体_材质.003",
+      "material_id": 1,
+      "surface_id": 15,
+      "indices": [
+        13,
+        9,
+        10
+      ],
+      "color": "#DBDBFF",
+      "name": "锥体_材质.003"
+    },
+    {
+      "material": "材质.001",
+      "object_name": "立方体_材质.001",
+      "object_id": 3,
+      "group": "立方体_材质.001",
+      "material_id": 2,
+      "surface_id": 16,
+      "indices": [
+        16,
+        17,
+        15
+      ],
+      "color": "#9292FF",
+      "name": "立方体_材质.001"
+    },
+    {
+      "material": "材质.001",
+      "object_name": "立方体_材质.001",
+      "object_id": 3,
+      "group": "立方体_材质.001",
+      "material_id": 2,
+      "surface_id": 17,
+      "indices": [
+        18,
+        21,
+        17
+      ],
+      "color": "#9292FF",
+      "name": "立方体_材质.001"
+    },
+    {
+      "material": "材质.001",
+      "object_name": "立方体_材质.001",
+      "object_id": 3,
+      "group": "立方体_材质.001",
+      "material_id": 2,
+      "surface_id": 18,
+      "indices": [
+        22,
+        19,
+        21
+      ],
+      "color": "#9292FF",
+      "name": "立方体_材质.001"
+    },
+    {
+      "material": "材质.001",
+      "object_name": "立方体_材质.001",
+      "object_id": 3,
+      "group": "立方体_材质.001",
+      "material_id": 2,
+      "surface_id": 19,
+      "indices": [
+        20,
+        15,
+        19
+      ],
+      "color": "#9292FF",
+      "name": "立方体_材质.001"
+    },
+    {
+      "material": "材质.001",
+      "object_name": "立方体_材质.001",
+      "object_id": 3,
+      "group": "立方体_材质.001",
+      "material_id": 2,
+      "surface_id": 20,
+      "indices": [
+        21,
+        15,
+        17
+      ],
+      "color": "#9292FF",
+      "name": "立方体_材质.001"
+    },
+    {
+      "material": "材质.001",
+      "object_name": "立方体_材质.001",
+      "object_id": 3,
+      "group": "立方体_材质.001",
+      "material_id": 2,
+      "surface_id": 21,
+      "indices": [
+        18,
+        20,
+        22
+      ],
+      "color": "#9292FF",
+      "name": "立方体_材质.001"
+    },
+    {
+      "material": "材质.001",
+      "object_name": "立方体_材质.001",
+      "object_id": 3,
+      "group": "立方体_材质.001",
+      "material_id": 2,
+      "surface_id": 16,
+      "indices": [
+        16,
+        18,
+        17
+      ],
+      "color": "#9292FF",
+      "name": "立方体_材质.001"
+    },
+    {
+      "material": "材质.001",
+      "object_name": "立方体_材质.001",
+      "object_id": 3,
+      "group": "立方体_材质.001",
+      "material_id": 2,
+      "surface_id": 17,
+      "indices": [
+        18,
+        22,
+        21
+      ],
+      "color": "#9292FF",
+      "name": "立方体_材质.001"
+    },
+    {
+      "material": "材质.001",
+      "object_name": "立方体_材质.001",
+      "object_id": 3,
+      "group": "立方体_材质.001",
+      "material_id": 2,
+      "surface_id": 18,
+      "indices": [
+        22,
+        20,
+        19
+      ],
+      "color": "#9292FF",
+      "name": "立方体_材质.001"
+    },
+    {
+      "material": "材质.001",
+      "object_name": "立方体_材质.001",
+      "object_id": 3,
+      "group": "立方体_材质.001",
+      "material_id": 2,
+      "surface_id": 19,
+      "indices": [
+        20,
+        16,
+        15
+      ],
+      "color": "#9292FF",
+      "name": "立方体_材质.001"
+    },
+    {
+      "material": "材质.001",
+      "object_name": "立方体_材质.001",
+      "object_id": 3,
+      "group": "立方体_材质.001",
+      "material_id": 2,
+      "surface_id": 20,
+      "indices": [
+        21,
+        19,
+        15
+      ],
+      "color": "#9292FF",
+      "name": "立方体_材质.001"
+    },
+    {
+      "material": "材质.001",
+      "object_name": "立方体_材质.001",
+      "object_id": 3,
+      "group": "立方体_材质.001",
+      "material_id": 2,
+      "surface_id": 21,
+      "indices": [
+        18,
+        16,
+        20
+      ],
+      "color": "#9292FF",
+      "name": "立方体_材质.001"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体.001_材质.002",
+      "object_id": 4,
+      "group": "立方体.001_材质.002",
+      "material_id": 3,
+      "surface_id": 22,
+      "indices": [
+        24,
+        25,
+        23
+      ],
+      "color": "#9292FF",
+      "name": "立方体.001_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体.001_材质.002",
+      "object_id": 4,
+      "group": "立方体.001_材质.002",
+      "material_id": 3,
+      "surface_id": 23,
+      "indices": [
+        26,
+        29,
+        25
+      ],
+      "color": "#9292FF",
+      "name": "立方体.001_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体.001_材质.002",
+      "object_id": 4,
+      "group": "立方体.001_材质.002",
+      "material_id": 3,
+      "surface_id": 24,
+      "indices": [
+        30,
+        27,
+        29
+      ],
+      "color": "#9292FF",
+      "name": "立方体.001_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体.001_材质.002",
+      "object_id": 4,
+      "group": "立方体.001_材质.002",
+      "material_id": 3,
+      "surface_id": 25,
+      "indices": [
+        28,
+        23,
+        27
+      ],
+      "color": "#9292FF",
+      "name": "立方体.001_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体.001_材质.002",
+      "object_id": 4,
+      "group": "立方体.001_材质.002",
+      "material_id": 3,
+      "surface_id": 26,
+      "indices": [
+        29,
+        23,
+        25
+      ],
+      "color": "#9292FF",
+      "name": "立方体.001_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体.001_材质.002",
+      "object_id": 4,
+      "group": "立方体.001_材质.002",
+      "material_id": 3,
+      "surface_id": 27,
+      "indices": [
+        26,
+        28,
+        30
+      ],
+      "color": "#9292FF",
+      "name": "立方体.001_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体.001_材质.002",
+      "object_id": 4,
+      "group": "立方体.001_材质.002",
+      "material_id": 3,
+      "surface_id": 22,
+      "indices": [
+        24,
+        26,
+        25
+      ],
+      "color": "#9292FF",
+      "name": "立方体.001_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体.001_材质.002",
+      "object_id": 4,
+      "group": "立方体.001_材质.002",
+      "material_id": 3,
+      "surface_id": 23,
+      "indices": [
+        26,
+        30,
+        29
+      ],
+      "color": "#9292FF",
+      "name": "立方体.001_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体.001_材质.002",
+      "object_id": 4,
+      "group": "立方体.001_材质.002",
+      "material_id": 3,
+      "surface_id": 24,
+      "indices": [
+        30,
+        28,
+        27
+      ],
+      "color": "#9292FF",
+      "name": "立方体.001_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体.001_材质.002",
+      "object_id": 4,
+      "group": "立方体.001_材质.002",
+      "material_id": 3,
+      "surface_id": 25,
+      "indices": [
+        28,
+        24,
+        23
+      ],
+      "color": "#9292FF",
+      "name": "立方体.001_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体.001_材质.002",
+      "object_id": 4,
+      "group": "立方体.001_材质.002",
+      "material_id": 3,
+      "surface_id": 26,
+      "indices": [
+        29,
+        27,
+        23
+      ],
+      "color": "#9292FF",
+      "name": "立方体.001_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "立方体.001_材质.002",
+      "object_id": 4,
+      "group": "立方体.001_材质.002",
+      "material_id": 3,
+      "surface_id": 27,
+      "indices": [
+        26,
+        24,
+        28
+      ],
+      "color": "#9292FF",
+      "name": "立方体.001_材质.002"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "立方体.002_材质.004",
+      "object_id": 5,
+      "group": "立方体.002_材质.004",
+      "material_id": 4,
+      "surface_id": 28,
+      "indices": [
+        32,
+        33,
+        31
+      ],
+      "color": "#9292FF",
+      "name": "立方体.002_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "立方体.002_材质.004",
+      "object_id": 5,
+      "group": "立方体.002_材质.004",
+      "material_id": 4,
+      "surface_id": 29,
+      "indices": [
+        34,
+        37,
+        33
+      ],
+      "color": "#9292FF",
+      "name": "立方体.002_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "立方体.002_材质.004",
+      "object_id": 5,
+      "group": "立方体.002_材质.004",
+      "material_id": 4,
+      "surface_id": 30,
+      "indices": [
+        38,
+        35,
+        37
+      ],
+      "color": "#9292FF",
+      "name": "立方体.002_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "立方体.002_材质.004",
+      "object_id": 5,
+      "group": "立方体.002_材质.004",
+      "material_id": 4,
+      "surface_id": 31,
+      "indices": [
+        36,
+        31,
+        35
+      ],
+      "color": "#9292FF",
+      "name": "立方体.002_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "立方体.002_材质.004",
+      "object_id": 5,
+      "group": "立方体.002_材质.004",
+      "material_id": 4,
+      "surface_id": 32,
+      "indices": [
+        37,
+        31,
+        33
+      ],
+      "color": "#9292FF",
+      "name": "立方体.002_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "立方体.002_材质.004",
+      "object_id": 5,
+      "group": "立方体.002_材质.004",
+      "material_id": 4,
+      "surface_id": 33,
+      "indices": [
+        34,
+        36,
+        38
+      ],
+      "color": "#9292FF",
+      "name": "立方体.002_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "立方体.002_材质.004",
+      "object_id": 5,
+      "group": "立方体.002_材质.004",
+      "material_id": 4,
+      "surface_id": 28,
+      "indices": [
+        32,
+        34,
+        33
+      ],
+      "color": "#9292FF",
+      "name": "立方体.002_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "立方体.002_材质.004",
+      "object_id": 5,
+      "group": "立方体.002_材质.004",
+      "material_id": 4,
+      "surface_id": 29,
+      "indices": [
+        34,
+        38,
+        37
+      ],
+      "color": "#9292FF",
+      "name": "立方体.002_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "立方体.002_材质.004",
+      "object_id": 5,
+      "group": "立方体.002_材质.004",
+      "material_id": 4,
+      "surface_id": 30,
+      "indices": [
+        38,
+        36,
+        35
+      ],
+      "color": "#9292FF",
+      "name": "立方体.002_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "立方体.002_材质.004",
+      "object_id": 5,
+      "group": "立方体.002_材质.004",
+      "material_id": 4,
+      "surface_id": 31,
+      "indices": [
+        36,
+        32,
+        31
+      ],
+      "color": "#9292FF",
+      "name": "立方体.002_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "立方体.002_材质.004",
+      "object_id": 5,
+      "group": "立方体.002_材质.004",
+      "material_id": 4,
+      "surface_id": 32,
+      "indices": [
+        37,
+        35,
+        31
+      ],
+      "color": "#9292FF",
+      "name": "立方体.002_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "立方体.002_材质.004",
+      "object_id": 5,
+      "group": "立方体.002_材质.004",
+      "material_id": 4,
+      "surface_id": 33,
+      "indices": [
+        34,
+        32,
+        36
+      ],
+      "color": "#9292FF",
+      "name": "立方体.002_材质.004"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "立方体.003_材质.005",
+      "object_id": 6,
+      "group": "立方体.003_材质.005",
+      "material_id": 5,
+      "surface_id": 34,
+      "indices": [
+        40,
+        41,
+        39
+      ],
+      "color": "#6D92FF",
+      "name": "立方体.003_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "立方体.003_材质.005",
+      "object_id": 6,
+      "group": "立方体.003_材质.005",
+      "material_id": 5,
+      "surface_id": 35,
+      "indices": [
+        42,
+        45,
+        41
+      ],
+      "color": "#6D92FF",
+      "name": "立方体.003_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "立方体.003_材质.005",
+      "object_id": 6,
+      "group": "立方体.003_材质.005",
+      "material_id": 5,
+      "surface_id": 36,
+      "indices": [
+        46,
+        43,
+        45
+      ],
+      "color": "#6D92FF",
+      "name": "立方体.003_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "立方体.003_材质.005",
+      "object_id": 6,
+      "group": "立方体.003_材质.005",
+      "material_id": 5,
+      "surface_id": 37,
+      "indices": [
+        44,
+        39,
+        43
+      ],
+      "color": "#6D92FF",
+      "name": "立方体.003_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "立方体.003_材质.005",
+      "object_id": 6,
+      "group": "立方体.003_材质.005",
+      "material_id": 5,
+      "surface_id": 38,
+      "indices": [
+        45,
+        39,
+        41
+      ],
+      "color": "#6D92FF",
+      "name": "立方体.003_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "立方体.003_材质.005",
+      "object_id": 6,
+      "group": "立方体.003_材质.005",
+      "material_id": 5,
+      "surface_id": 39,
+      "indices": [
+        42,
+        44,
+        46
+      ],
+      "color": "#6D92FF",
+      "name": "立方体.003_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "立方体.003_材质.005",
+      "object_id": 6,
+      "group": "立方体.003_材质.005",
+      "material_id": 5,
+      "surface_id": 34,
+      "indices": [
+        40,
+        42,
+        41
+      ],
+      "color": "#6D92FF",
+      "name": "立方体.003_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "立方体.003_材质.005",
+      "object_id": 6,
+      "group": "立方体.003_材质.005",
+      "material_id": 5,
+      "surface_id": 35,
+      "indices": [
+        42,
+        46,
+        45
+      ],
+      "color": "#6D92FF",
+      "name": "立方体.003_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "立方体.003_材质.005",
+      "object_id": 6,
+      "group": "立方体.003_材质.005",
+      "material_id": 5,
+      "surface_id": 36,
+      "indices": [
+        46,
+        44,
+        43
+      ],
+      "color": "#6D92FF",
+      "name": "立方体.003_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "立方体.003_材质.005",
+      "object_id": 6,
+      "group": "立方体.003_材质.005",
+      "material_id": 5,
+      "surface_id": 37,
+      "indices": [
+        44,
+        40,
+        39
+      ],
+      "color": "#6D92FF",
+      "name": "立方体.003_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "立方体.003_材质.005",
+      "object_id": 6,
+      "group": "立方体.003_材质.005",
+      "material_id": 5,
+      "surface_id": 38,
+      "indices": [
+        45,
+        43,
+        39
+      ],
+      "color": "#6D92FF",
+      "name": "立方体.003_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "立方体.003_材质.005",
+      "object_id": 6,
+      "group": "立方体.003_材质.005",
+      "material_id": 5,
+      "surface_id": 39,
+      "indices": [
+        42,
+        40,
+        44
+      ],
+      "color": "#6D92FF",
+      "name": "立方体.003_材质.005"
+    },
+    {
+      "material": "材质",
+      "object_name": "立方体.004_材质",
+      "object_id": 7,
+      "group": "立方体.004_材质",
+      "material_id": 6,
+      "surface_id": 40,
+      "indices": [
+        48,
+        49,
+        47
+      ],
+      "color": "#24FFFF",
+      "name": "立方体.004_材质"
+    },
+    {
+      "material": "材质",
+      "object_name": "立方体.004_材质",
+      "object_id": 7,
+      "group": "立方体.004_材质",
+      "material_id": 6,
+      "surface_id": 41,
+      "indices": [
+        50,
+        53,
+        49
+      ],
+      "color": "#24FFFF",
+      "name": "立方体.004_材质"
+    },
+    {
+      "material": "材质",
+      "object_name": "立方体.004_材质",
+      "object_id": 7,
+      "group": "立方体.004_材质",
+      "material_id": 6,
+      "surface_id": 42,
+      "indices": [
+        54,
+        51,
+        53
+      ],
+      "color": "#24FFFF",
+      "name": "立方体.004_材质"
+    },
+    {
+      "material": "材质",
+      "object_name": "立方体.004_材质",
+      "object_id": 7,
+      "group": "立方体.004_材质",
+      "material_id": 6,
+      "surface_id": 43,
+      "indices": [
+        52,
+        47,
+        51
+      ],
+      "color": "#24FFFF",
+      "name": "立方体.004_材质"
+    },
+    {
+      "material": "材质",
+      "object_name": "立方体.004_材质",
+      "object_id": 7,
+      "group": "立方体.004_材质",
+      "material_id": 6,
+      "surface_id": 44,
+      "indices": [
+        53,
+        47,
+        49
+      ],
+      "color": "#24FFFF",
+      "name": "立方体.004_材质"
+    },
+    {
+      "material": "材质",
+      "object_name": "立方体.004_材质",
+      "object_id": 7,
+      "group": "立方体.004_材质",
+      "material_id": 6,
+      "surface_id": 45,
+      "indices": [
+        50,
+        52,
+        54
+      ],
+      "color": "#24FFFF",
+      "name": "立方体.004_材质"
+    },
+    {
+      "material": "材质",
+      "object_name": "立方体.004_材质",
+      "object_id": 7,
+      "group": "立方体.004_材质",
+      "material_id": 6,
+      "surface_id": 40,
+      "indices": [
+        48,
+        50,
+        49
+      ],
+      "color": "#24FFFF",
+      "name": "立方体.004_材质"
+    },
+    {
+      "material": "材质",
+      "object_name": "立方体.004_材质",
+      "object_id": 7,
+      "group": "立方体.004_材质",
+      "material_id": 6,
+      "surface_id": 41,
+      "indices": [
+        50,
+        54,
+        53
+      ],
+      "color": "#24FFFF",
+      "name": "立方体.004_材质"
+    },
+    {
+      "material": "材质",
+      "object_name": "立方体.004_材质",
+      "object_id": 7,
+      "group": "立方体.004_材质",
+      "material_id": 6,
+      "surface_id": 42,
+      "indices": [
+        54,
+        52,
+        51
+      ],
+      "color": "#24FFFF",
+      "name": "立方体.004_材质"
+    },
+    {
+      "material": "材质",
+      "object_name": "立方体.004_材质",
+      "object_id": 7,
+      "group": "立方体.004_材质",
+      "material_id": 6,
+      "surface_id": 43,
+      "indices": [
+        52,
+        48,
+        47
+      ],
+      "color": "#24FFFF",
+      "name": "立方体.004_材质"
+    },
+    {
+      "material": "材质",
+      "object_name": "立方体.004_材质",
+      "object_id": 7,
+      "group": "立方体.004_材质",
+      "material_id": 6,
+      "surface_id": 44,
+      "indices": [
+        53,
+        51,
+        47
+      ],
+      "color": "#24FFFF",
+      "name": "立方体.004_材质"
+    },
+    {
+      "material": "材质",
+      "object_name": "立方体.004_材质",
+      "object_id": 7,
+      "group": "立方体.004_材质",
+      "material_id": 6,
+      "surface_id": 45,
+      "indices": [
+        50,
+        48,
+        52
+      ],
+      "color": "#24FFFF",
+      "name": "立方体.004_材质"
+    }
+  ],
+  "metadata": {
+    "source": {
+      "obj": "plane.obj",
+      "mtl": "plane.mtl"
+    },
+    "objects": [],
+    "groups": [
+      "Cube_Cube",
+      "Cube_Material",
+      "锥体_锥体",
+      "锥体_材质.003",
+      "立方体_立方体.002",
+      "立方体_材质.001",
+      "立方体.001_立方体.003",
+      "立方体.001_材质.002",
+      "立方体.002_立方体.004",
+      "立方体.002_材质.004",
+      "立方体.003_立方体.005",
+      "立方体.003_材质.005",
+      "立方体.004_立方体.006",
+      "立方体.004_材质"
+    ],
+    "materials": {
+      "Material": "#779AFF",
+      "材质": "#35FFFF",
+      "材质.001": "#9D9FFF",
+      "材质.002": "#9D9FFF",
+      "材质.003": "#CCCCCC",
+      "材质.004": "#9D9FFF",
+      "材质.005": "#779AFF"
+    },
+    "object_table": [
+      {
+        "object_id": 1,
+        "name": "Cube_Material",
+        "face_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "object_id": 2,
+        "name": "锥体_材质.003",
+        "face_indices": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ]
+      },
+      {
+        "object_id": 3,
+        "name": "立方体_材质.001",
+        "face_indices": [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ]
+      },
+      {
+        "object_id": 4,
+        "name": "立方体.001_材质.002",
+        "face_indices": [
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45
+        ]
+      },
+      {
+        "object_id": 5,
+        "name": "立方体.002_材质.004",
+        "face_indices": [
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ]
+      },
+      {
+        "object_id": 6,
+        "name": "立方体.003_材质.005",
+        "face_indices": [
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69
+        ]
+      },
+      {
+        "object_id": 7,
+        "name": "立方体.004_材质",
+        "face_indices": [
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81
+        ]
+      }
+    ],
+    "normalization": {
+      "target_height": 120.0,
+      "requested_scale": 0.8,
+      "effective_target_height": 96.0,
+      "center": true,
+      "source_height": 1.908134,
+      "scale": 50.310932041460404,
+      "sk3d_auto_fit_scale": 1.0,
+      "source_center": [
+        -0.04455699999999994,
+        0.636567,
+        0.03571150000000001
+      ]
+    },
+    "binary_format": "SK3D0",
+    "dynamic_surface_shading": {
+      "mode": "reconstructed_surface_directional_v1",
+      "shade_levels_q15": [
+        13107,
+        19660,
+        26214,
+        32767
+      ],
+      "light_vector_q8": [
+        -89,
+        127,
+        -203
+      ],
+      "materials": [
+        {
+          "material_id": 0,
+          "name": "Material",
+          "base_color": "#779AFF",
+          "shade_colors": [
+            "#242455",
+            "#244955",
+            "#496DAA",
+            "#496DAA"
+          ],
+          "shade_colors_rgb332": [
+            37,
+            41,
+            78,
+            78
+          ]
+        },
+        {
+          "material_id": 1,
+          "name": "材质.003",
+          "base_color": "#CCCCCC",
+          "shade_colors": [
+            "#494955",
+            "#6D6D55",
+            "#9292AA",
+            "#B6B6AA"
+          ],
+          "shade_colors_rgb332": [
+            73,
+            109,
+            146,
+            182
+          ]
+        },
+        {
+          "material_id": 2,
+          "name": "材质.001",
+          "base_color": "#9D9FFF",
+          "shade_colors": [
+            "#242455",
+            "#494955",
+            "#6D6DAA",
+            "#6D6DAA"
+          ],
+          "shade_colors_rgb332": [
+            37,
+            73,
+            110,
+            110
+          ]
+        },
+        {
+          "material_id": 3,
+          "name": "材质.002",
+          "base_color": "#9D9FFF",
+          "shade_colors": [
+            "#242455",
+            "#494955",
+            "#6D6DAA",
+            "#6D6DAA"
+          ],
+          "shade_colors_rgb332": [
+            37,
+            73,
+            110,
+            110
+          ]
+        },
+        {
+          "material_id": 4,
+          "name": "材质.004",
+          "base_color": "#9D9FFF",
+          "shade_colors": [
+            "#242455",
+            "#494955",
+            "#6D6DAA",
+            "#6D6DAA"
+          ],
+          "shade_colors_rgb332": [
+            37,
+            73,
+            110,
+            110
+          ]
+        },
+        {
+          "material_id": 5,
+          "name": "材质.005",
+          "base_color": "#779AFF",
+          "shade_colors": [
+            "#242455",
+            "#244955",
+            "#496DAA",
+            "#496DAA"
+          ],
+          "shade_colors_rgb332": [
+            37,
+            41,
+            78,
+            78
+          ]
+        },
+        {
+          "material_id": 6,
+          "name": "材质",
+          "base_color": "#35FFFF",
+          "shade_colors": [
+            "#004955",
+            "#009255",
+            "#00B6AA",
+            "#00DBAA"
+          ],
+          "shade_colors_rgb332": [
+            9,
+            17,
+            22,
+            26
+          ]
+        }
+      ],
+      "surfaces": [
+        {
+          "surface_id": 0,
+          "face_indices": [
+            0,
+            6
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 1,
+          "face_indices": [
+            1,
+            7
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 2,
+          "face_indices": [
+            2,
+            8
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 3,
+          "face_indices": [
+            3,
+            9
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 4,
+          "face_indices": [
+            4,
+            10
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 5,
+          "face_indices": [
+            5,
+            11
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 6,
+          "face_indices": [
+            12
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            0.373666,
+            -0.926642,
+            -0.041337
+          ],
+          "canonical_normal_q8": [
+            96,
+            -237,
+            -11
+          ]
+        },
+        {
+          "surface_id": 7,
+          "face_indices": [
+            13
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            0.371992,
+            -0.224706,
+            0.900627
+          ],
+          "canonical_normal_q8": [
+            95,
+            -58,
+            231
+          ]
+        },
+        {
+          "surface_id": 8,
+          "face_indices": [
+            14
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            0.388788,
+            0.591579,
+            0.706313
+          ],
+          "canonical_normal_q8": [
+            100,
+            151,
+            181
+          ]
+        },
+        {
+          "surface_id": 9,
+          "face_indices": [
+            15
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            0.412363,
+            0.910997,
+            0.006461
+          ],
+          "canonical_normal_q8": [
+            106,
+            233,
+            2
+          ]
+        },
+        {
+          "surface_id": 10,
+          "face_indices": [
+            16
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            0.402211,
+            0.513538,
+            -0.757961
+          ],
+          "canonical_normal_q8": [
+            103,
+            131,
+            -194
+          ]
+        },
+        {
+          "surface_id": 11,
+          "face_indices": [
+            17
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            -1.0,
+            0.000147,
+            0.000176
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 12,
+          "face_indices": [
+            18
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            0.371573,
+            -0.260917,
+            -0.890986
+          ],
+          "canonical_normal_q8": [
+            95,
+            -67,
+            -228
+          ]
+        },
+        {
+          "surface_id": 13,
+          "face_indices": [
+            19
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            -1.0,
+            -0.000439,
+            -0.000112
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 14,
+          "face_indices": [
+            20
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            -0.999996,
+            -0.002561,
+            -0.000812
+          ],
+          "canonical_normal_q8": [
+            -256,
+            -1,
+            0
+          ]
+        },
+        {
+          "surface_id": 15,
+          "face_indices": [
+            21
+          ],
+          "face_count": 1,
+          "canonical_normal": [
+            -0.999999,
+            -0.001134,
+            0.00019
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 16,
+          "face_indices": [
+            22,
+            28
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 17,
+          "face_indices": [
+            23,
+            29
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 18,
+          "face_indices": [
+            24,
+            30
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 19,
+          "face_indices": [
+            25,
+            31
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 20,
+          "face_indices": [
+            26,
+            32
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 21,
+          "face_indices": [
+            27,
+            33
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 22,
+          "face_indices": [
+            34,
+            40
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 23,
+          "face_indices": [
+            35,
+            41
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 24,
+          "face_indices": [
+            36,
+            42
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 25,
+          "face_indices": [
+            37,
+            43
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 26,
+          "face_indices": [
+            38,
+            44
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 27,
+          "face_indices": [
+            39,
+            45
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 28,
+          "face_indices": [
+            46,
+            52
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 29,
+          "face_indices": [
+            47,
+            53
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 30,
+          "face_indices": [
+            48,
+            54
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 31,
+          "face_indices": [
+            49,
+            55
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 32,
+          "face_indices": [
+            50,
+            56
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 33,
+          "face_indices": [
+            51,
+            57
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 34,
+          "face_indices": [
+            58,
+            64
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 35,
+          "face_indices": [
+            59,
+            65
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 36,
+          "face_indices": [
+            60,
+            66
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        },
+        {
+          "surface_id": 37,
+          "face_indices": [
+            61,
+            67
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 38,
+          "face_indices": [
+            62,
+            68
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 39,
+          "face_indices": [
+            63,
+            69
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 40,
+          "face_indices": [
+            70,
+            76
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            -256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 41,
+          "face_indices": [
+            71,
+            77
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            -256
+          ]
+        },
+        {
+          "surface_id": 42,
+          "face_indices": [
+            72,
+            78
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            256,
+            0,
+            0
+          ]
+        },
+        {
+          "surface_id": 43,
+          "face_indices": [
+            73,
+            79
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            0,
+            256
+          ]
+        },
+        {
+          "surface_id": 44,
+          "face_indices": [
+            74,
+            80
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            -256,
+            0
+          ]
+        },
+        {
+          "surface_id": 45,
+          "face_indices": [
+            75,
+            81
+          ],
+          "face_count": 2,
+          "canonical_normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "canonical_normal_q8": [
+            0,
+            256,
+            0
+          ]
+        }
+      ]
+    }
+  }
+}

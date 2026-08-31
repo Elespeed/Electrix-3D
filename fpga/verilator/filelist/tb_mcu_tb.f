@@ -1,0 +1,26 @@
++incdir+../../rtl/vga
++define+MODELSIM_BUILD
+-f filelist/base.f
++incdir+../../rtl/ip/APB_UART/URT
+../../sim/agents/uart_agent_pkg.sv
+../../sim/agents/uart_driver.sv
+../../sim/agents/uart_monitor.sv
+../../rtl/ip/APB_UART/URT/raminfr.v
+../../rtl/ip/APB_UART/URT/uart_tfifo.v
+../../rtl/ip/APB_UART/URT/uart_sync_flops.v
+../../rtl/ip/APB_UART/URT/uart_rfifo.v
+../../rtl/ip/APB_UART/URT/uart_regs.v
+../../rtl/ip/APB_UART/URT/uart_receiver.v
+../../rtl/ip/APB_UART/URT/uart_transmitter.v
+../../rtl/ip/APB_UART/URT/uart_top.v
+../../rtl/ip/APB_UART/apb_mux2.v
+../../rtl/ip/APB_UART/axi2apb.v
+../../rtl/ip/APB_UART/axi_uart_controller.v
+../../rtl/ip/clk_pll_lv2/clk_pll_lv2_stub.v
+../../rtl/ip/clk_pll_ddr/clk_pll_ddr_stub.v
+../../rtl/vga/graph_system_dualclk_stress_2x2.sv
+../../rtl/display/mcu_uart_status.sv
+../../rtl/display/mcu_3d_demo.sv
+../../rtl/display/mcu.sv
+../../rtl/display/mcu_top.sv
+../../sim/test/display/mcu_tb.sv

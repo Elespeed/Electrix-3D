@@ -1,0 +1,725 @@
+{
+  "schema": "sketchbook-3d-assets",
+  "schema_version": 1,
+  "assets": [
+    {
+      "asset_id": "blade",
+      "source_files": [
+        {
+          "path": "assets/3d/sources/blade/blade.mtl",
+          "sha256": "06d167fb82efb9b24571c239eddf8c38e012867c0d0b503e7bd010269847bb4c"
+        },
+        {
+          "path": "assets/3d/sources/blade/blade.obj",
+          "sha256": "e4af5aef2fbe21e1608a0c433973792a5892c0c068a2e88a5036de481d9b42cc"
+        }
+      ],
+      "variants": [
+        {
+          "id": "legacy_v3",
+          "format_version": 2,
+          "counts": {
+            "vertices": 37,
+            "triangles": 54,
+            "meshes": 1
+          },
+          "generation_command": "legacy-import: preserve the pre-migration bytes",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/blade/legacy_v3/blade.json",
+              "sha256": "4e452c1936b00668e18dc891a6e907a491dfa079d94d6d2cef213a6a237e916e"
+            },
+            {
+              "path": "assets/3d/generated/blade/legacy_v3/blade.s3d.bin",
+              "sha256": "706d25a63eb964426fdae8a313a5077a8687d8576ca586a7a005c07635fc2f79"
+            },
+            {
+              "path": "assets/3d/generated/blade/legacy_v3/blade.s3d.mif",
+              "sha256": "dc4bd6492dca0bba58975381fd95d7b61774f35532f028aa994f5c9399914347"
+            },
+            {
+              "path": "assets/3d/generated/blade/legacy_v3/blade_ref_pkg.svh",
+              "sha256": "1ed8eef77fb8414906a4e4b8543500b44fce3edaac86a5d44112de0c93780715"
+            },
+            {
+              "path": "assets/3d/generated/blade/legacy_v3/blade_shade.json",
+              "sha256": "6a6ed913d3f561348f710cb77d102f4225d9b7d7da82d88ad29a6c8d5bfee8f5"
+            },
+            {
+              "path": "assets/3d/generated/blade/legacy_v3/blade_shade.s3d.bin",
+              "sha256": "aee5638616994e26be6cd9296ca002a8127e2d6039d24ba2c05f77e602346eb9"
+            },
+            {
+              "path": "assets/3d/generated/blade/legacy_v3/blade_shade.s3d.mif",
+              "sha256": "4613d215a6aa937c41a392e8c400be9663ee612b8ec2f270effdafc84b4c9c9b"
+            },
+            {
+              "path": "assets/3d/generated/blade/legacy_v3/blade_shade_ref_pkg.svh",
+              "sha256": "76a17655e59360602abc25bd3ca6014d53e850722f2b06b3e509519d95515da2"
+            }
+          ]
+        },
+        {
+          "id": "v3",
+          "format_version": 2,
+          "counts": {
+            "vertices": 37,
+            "triangles": 54,
+            "meshes": 1
+          },
+          "generation_command": "make -f tools/3d_gen/Makefile ASSET=blade convert-v3",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/blade/v3/blade.json",
+              "sha256": "e557d9e008190a65295c36c50b89e01320fc0d517144a0a43eab7513312754c8"
+            },
+            {
+              "path": "assets/3d/generated/blade/v3/blade.s3d.bin",
+              "sha256": "706d25a63eb964426fdae8a313a5077a8687d8576ca586a7a005c07635fc2f79"
+            },
+            {
+              "path": "assets/3d/generated/blade/v3/blade.s3d.mif",
+              "sha256": "dc4bd6492dca0bba58975381fd95d7b61774f35532f028aa994f5c9399914347"
+            },
+            {
+              "path": "assets/3d/generated/blade/v3/blade_ref_pkg.svh",
+              "sha256": "1ed8eef77fb8414906a4e4b8543500b44fce3edaac86a5d44112de0c93780715"
+            },
+            {
+              "path": "assets/3d/generated/blade/v3/blade_shade.json",
+              "sha256": "30e45625f6ee5de7b168557ef3e6ae207d7bceff0577782592820ad53632dd91"
+            },
+            {
+              "path": "assets/3d/generated/blade/v3/blade_shade.s3d.bin",
+              "sha256": "a43d21263f23b672d5b4c71cafcc82e7599d91707c2091ed6e52714104ded46d"
+            },
+            {
+              "path": "assets/3d/generated/blade/v3/blade_shade.s3d.mif",
+              "sha256": "5069e8fab623bec1aff96cd1a3aae70f50736a85cc756de53838216c83498e1c"
+            },
+            {
+              "path": "assets/3d/generated/blade/v3/blade_shade_ref_pkg.svh",
+              "sha256": "76a17655e59360602abc25bd3ca6014d53e850722f2b06b3e509519d95515da2"
+            }
+          ]
+        },
+        {
+          "id": "v4",
+          "format_version": 4,
+          "counts": {
+            "vertices": 37,
+            "triangles": 54,
+            "meshes": 1
+          },
+          "generation_command": "make -f tools/3d_gen/Makefile ASSET=blade convert-v4",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/blade/v4/blade_shade.json",
+              "sha256": "47ab7d02bbf91f30ef067c96653957cbf7a618e89ddaef6d07c120ace947db27"
+            },
+            {
+              "path": "assets/3d/generated/blade/v4/blade_shade.s3d.bin",
+              "sha256": "90556ea22abbe12a8dc0e7c252d3a085d07a883834ca55ffd8c9d79605f4f7d5"
+            },
+            {
+              "path": "assets/3d/generated/blade/v4/blade_shade.s3d.mif",
+              "sha256": "77aa5be4088bbbdf3bee36631519f932889b5fdd07c06b6ba4c7052d9384d64b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "cat1",
+      "source_files": [
+        {
+          "path": "assets/3d/sources/cat1/cat1.mtl",
+          "sha256": "ac79c2665273e25e0784947b59ec4ef4875bc8b039fd565a6488de37bde4d8bc"
+        },
+        {
+          "path": "assets/3d/sources/cat1/cat1.obj",
+          "sha256": "32ad1bce9fb770326d319ec8a4ec77b02ac07862801efb721a6260ab4929de7e"
+        }
+      ],
+      "variants": [
+        {
+          "id": "legacy_v3",
+          "format_version": 2,
+          "counts": {
+            "vertices": 98,
+            "triangles": 144,
+            "meshes": 1
+          },
+          "generation_command": "legacy-import: preserve the pre-migration bytes",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/cat1/legacy_v3/cat1.json",
+              "sha256": "b8666c7e56569d91eb88f927ab97287006029cf904419bb90caf233dad293557"
+            },
+            {
+              "path": "assets/3d/generated/cat1/legacy_v3/cat1.s3d.mif",
+              "sha256": "5a2f31b9b38f6a5ef067a210a28823b247f7a75739bddf1ab5e7ac2f17de9202"
+            },
+            {
+              "path": "assets/3d/generated/cat1/legacy_v3/cat1_ref_pkg.svh",
+              "sha256": "103a3299faa7b4b8e4e58a32cc71e08b33fac385a729b238e9bd307e90b3effd"
+            },
+            {
+              "path": "assets/3d/generated/cat1/legacy_v3/cat1_shade.json",
+              "sha256": "01e5b7c587fda041526ce1369f75cabba9838d965839266106a7148c5ae5f7e5"
+            },
+            {
+              "path": "assets/3d/generated/cat1/legacy_v3/cat1_shade.s3d.mif",
+              "sha256": "29f48149c8bcf2d07be18686253aa09979f46700772d81c59179004f6bcd5a2e"
+            },
+            {
+              "path": "assets/3d/generated/cat1/legacy_v3/cat1_shade_ref_pkg.svh",
+              "sha256": "b1276563f965a6a86ecb8c8b8d4d05689d4a8b307bbde52252006d61167ae4d0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "cat1x",
+      "source_files": [
+        {
+          "path": "assets/3d/sources/cat1x/cat1x.mtl",
+          "sha256": "cdb18d8233b81e2652a064a3ba8d2afc28c1a3d95c846be08ceaf0cdc9e42180"
+        },
+        {
+          "path": "assets/3d/sources/cat1x/cat1x.obj",
+          "sha256": "909b4be05fc7cfa34abc7e3066bb340816e955ea5242979757084165ea4a148a"
+        }
+      ],
+      "variants": [
+        {
+          "id": "legacy_v3",
+          "format_version": 2,
+          "counts": {
+            "vertices": 98,
+            "triangles": 104,
+            "meshes": 1
+          },
+          "generation_command": "legacy-import: preserve the pre-migration bytes",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/cat1x/legacy_v3/cat1x.json",
+              "sha256": "967b12835899ff822304e4cff495b1666f39c5c3be40f22ae3fec08b66febdeb"
+            },
+            {
+              "path": "assets/3d/generated/cat1x/legacy_v3/cat1x.s3d.bin",
+              "sha256": "a4fac6fecee24050197964da138fda9fcfe8dded0b44586d2c87d36921556bc8"
+            },
+            {
+              "path": "assets/3d/generated/cat1x/legacy_v3/cat1x.s3d.mif",
+              "sha256": "d6610ec11a52bde04acbb1f0c732663876873f80adfe27bfadbdff4306e76e6a"
+            },
+            {
+              "path": "assets/3d/generated/cat1x/legacy_v3/cat1x_ref_pkg.svh",
+              "sha256": "f42061a5a2e8a48b0d9a17a8c8f9f9f4c755d716eae5e0842546957adc99478a"
+            },
+            {
+              "path": "assets/3d/generated/cat1x/legacy_v3/cat1x_shade.json",
+              "sha256": "635cd7f7d12f5a14075ade4f596952e88178e1107d70397673cb524194fc6ecc"
+            },
+            {
+              "path": "assets/3d/generated/cat1x/legacy_v3/cat1x_shade.s3d.bin",
+              "sha256": "cadac58e8300813168f1af043bea96fe093a1b2b9d4e6350fc4f7e8b912b1dc7"
+            },
+            {
+              "path": "assets/3d/generated/cat1x/legacy_v3/cat1x_shade.s3d.mif",
+              "sha256": "bfb4a5bd46e86fee3de689f8d58223e3f3d001fa162705ac7cebcebfc59dc7cd"
+            },
+            {
+              "path": "assets/3d/generated/cat1x/legacy_v3/cat1x_shade_ref_pkg.svh",
+              "sha256": "1087eba1d64312b95fad72c8bc5ee0642799b5bc73c4542e8e6883ac68954b2d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "plane",
+      "source_files": [
+        {
+          "path": "assets/3d/sources/plane/plane.mtl",
+          "sha256": "37715f4e58f52a8e0d896772ce7c37391e55b8273cbe4a0750940d8f07695856"
+        },
+        {
+          "path": "assets/3d/sources/plane/plane.obj",
+          "sha256": "3d75606bb4925969f651ff8a70101d28dafcc3c02e42ba65016ce30195b778b6"
+        }
+      ],
+      "variants": [
+        {
+          "id": "legacy_v3",
+          "format_version": 2,
+          "counts": {
+            "vertices": 55,
+            "triangles": 82,
+            "meshes": 1
+          },
+          "generation_command": "legacy-import: preserve the pre-migration bytes",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/plane/legacy_v3/plane.json",
+              "sha256": "f75563c1f02e1d8bd848264ceb72b98f11005f513098f56b8a8162dbb47bcd51"
+            },
+            {
+              "path": "assets/3d/generated/plane/legacy_v3/plane.s3d.bin",
+              "sha256": "59cb7e5b7e82cb512b7409ad43821b24c828a18488b6caedc4f9a5572bcc2ab9"
+            },
+            {
+              "path": "assets/3d/generated/plane/legacy_v3/plane.s3d.mif",
+              "sha256": "586f12226cb3fbdbb940242d39ef963ef3059c2f136b530d6510ed4c982548fd"
+            },
+            {
+              "path": "assets/3d/generated/plane/legacy_v3/plane_ref_pkg.svh",
+              "sha256": "71b573259f25007a8b26962b29dcaff2d898a3b1472a85817fd58e61a2d44cde"
+            },
+            {
+              "path": "assets/3d/generated/plane/legacy_v3/plane_shade.json",
+              "sha256": "72cdc91c3276f810c78776e6a51b28244fbea411e66db2d7930913524a92618c"
+            },
+            {
+              "path": "assets/3d/generated/plane/legacy_v3/plane_shade.s3d.bin",
+              "sha256": "365841229502e2082dc9cd8db70cc60906abcc0c179b8638916fa99d8982acf1"
+            },
+            {
+              "path": "assets/3d/generated/plane/legacy_v3/plane_shade.s3d.mif",
+              "sha256": "fb9112de86564f2ed2b01be36ef0425e682a1c465a4be3f5f91e8551510f1ce4"
+            },
+            {
+              "path": "assets/3d/generated/plane/legacy_v3/plane_shade_ref_pkg.svh",
+              "sha256": "ab8cc926621eb7a237c756120af2f5511e0d1d50520f5b071e7a2c762d8ff75c"
+            }
+          ]
+        },
+        {
+          "id": "v3",
+          "format_version": 2,
+          "counts": {
+            "vertices": 55,
+            "triangles": 82,
+            "meshes": 1
+          },
+          "generation_command": "make -f tools/3d_gen/Makefile ASSET=plane convert-v3",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/plane/v3/plane.json",
+              "sha256": "3f45a899209cadd7888fd6c356a9311a1e1020cf9bef26540163cff7b549a8ca"
+            },
+            {
+              "path": "assets/3d/generated/plane/v3/plane.s3d.bin",
+              "sha256": "145f517bcbdeeea4895185265f0f13121c154b997f8948d5a4ad62e5596dad0c"
+            },
+            {
+              "path": "assets/3d/generated/plane/v3/plane.s3d.mif",
+              "sha256": "1dbd2988519234df75c681f657356e24725906e61903dab3b1515ec0fc15332e"
+            },
+            {
+              "path": "assets/3d/generated/plane/v3/plane_ref_pkg.svh",
+              "sha256": "71b573259f25007a8b26962b29dcaff2d898a3b1472a85817fd58e61a2d44cde"
+            },
+            {
+              "path": "assets/3d/generated/plane/v3/plane_shade.json",
+              "sha256": "b01fa28081d936178d317808ffecbb3bc69e858ec68d746a832a88741b937470"
+            },
+            {
+              "path": "assets/3d/generated/plane/v3/plane_shade.s3d.bin",
+              "sha256": "79ab39df45cd3797cd58b590efa0decbab241bb27d01cebd99a87947d86e3d09"
+            },
+            {
+              "path": "assets/3d/generated/plane/v3/plane_shade.s3d.mif",
+              "sha256": "9bcef22ca10d47b91eea64a435f042dce27ecc1f138485725143d6bc98dbcf93"
+            },
+            {
+              "path": "assets/3d/generated/plane/v3/plane_shade_ref_pkg.svh",
+              "sha256": "ab8cc926621eb7a237c756120af2f5511e0d1d50520f5b071e7a2c762d8ff75c"
+            }
+          ]
+        },
+        {
+          "id": "v4",
+          "format_version": 4,
+          "counts": {
+            "vertices": 55,
+            "triangles": 82,
+            "meshes": 1
+          },
+          "generation_command": "make -f tools/3d_gen/Makefile ASSET=plane convert-v4",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/plane/v4/plane_shade.json",
+              "sha256": "42c1e75ec7deb511453bd66d19492b429c6ba2ca0625853e1d2d6d159525af41"
+            },
+            {
+              "path": "assets/3d/generated/plane/v4/plane_shade.s3d.bin",
+              "sha256": "e94b082a7a96c2672d3925aa0e5206efb4055bc51b3573d16d1c10e5627fa716"
+            },
+            {
+              "path": "assets/3d/generated/plane/v4/plane_shade.s3d.mif",
+              "sha256": "dbfb119aee460addb1f1663186ac75665ad432f1841a495535358915b9901b60"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "robot",
+      "source_files": [
+        {
+          "path": "assets/3d/sources/robot/robot.mtl",
+          "sha256": "c98a9c3a6cd1613e7d0267a845c8dae6599211e59720fb848f19c18f3e16d750"
+        },
+        {
+          "path": "assets/3d/sources/robot/robot.obj",
+          "sha256": "144e12f39765925a8154ea67541e5eb187c4a0f2eec642b20236c2c79fd79dd2"
+        }
+      ],
+      "variants": [
+        {
+          "id": "legacy_v3",
+          "format_version": 2,
+          "counts": {
+            "vertices": 88,
+            "triangles": 132,
+            "meshes": 1
+          },
+          "generation_command": "legacy-import: preserve the pre-migration bytes",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/robot/legacy_v3/robot.json",
+              "sha256": "bd607c9b4d9166e7f0455e147076ca847d982ee6cc726d532d0ff60e1bbcda87"
+            },
+            {
+              "path": "assets/3d/generated/robot/legacy_v3/robot.s3d.bin",
+              "sha256": "bb6139fda646f39d53d4534f4476ae78a0778814fa1729db069e4133e45365b2"
+            },
+            {
+              "path": "assets/3d/generated/robot/legacy_v3/robot.s3d.mif",
+              "sha256": "0bd823328bc38b652e851652b3fb0a8405b9ec3468862f4fd8ee6552c393b010"
+            },
+            {
+              "path": "assets/3d/generated/robot/legacy_v3/robot_ref_pkg.svh",
+              "sha256": "1f93bf217ea850f2d13f1bea042573adc3b62a7551d948c412937c5df3cde528"
+            },
+            {
+              "path": "assets/3d/generated/robot/legacy_v3/robot_shade.json",
+              "sha256": "5b0410c5f600fd25c73457555d24160e5ee8f01030911770a712e4569cadb29b"
+            },
+            {
+              "path": "assets/3d/generated/robot/legacy_v3/robot_shade.s3d.bin",
+              "sha256": "b240654fc594dff8d4ee9c194147ef8bcbaced583b1ed9217986288eb80758c6"
+            },
+            {
+              "path": "assets/3d/generated/robot/legacy_v3/robot_shade.s3d.mif",
+              "sha256": "05d3b5dbdfe39ccc6451d863fb786511e9f114592bd737cee43100e60c9af1ee"
+            },
+            {
+              "path": "assets/3d/generated/robot/legacy_v3/robot_shade_ref_pkg.svh",
+              "sha256": "c5dd9c8ef018ee5812552c7886d9952db08cf68841ec0cf2eba8c22ec03ef481"
+            }
+          ]
+        },
+        {
+          "id": "v3",
+          "format_version": 2,
+          "counts": {
+            "vertices": 88,
+            "triangles": 132,
+            "meshes": 1
+          },
+          "generation_command": "make -f tools/3d_gen/Makefile ASSET=robot convert-v3",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/robot/v3/robot.json",
+              "sha256": "427bd7202d2810ccfa0a241b1ac17e996f4478ae2fbc55f20c51a090239eb6cc"
+            },
+            {
+              "path": "assets/3d/generated/robot/v3/robot.s3d.bin",
+              "sha256": "bb6139fda646f39d53d4534f4476ae78a0778814fa1729db069e4133e45365b2"
+            },
+            {
+              "path": "assets/3d/generated/robot/v3/robot.s3d.mif",
+              "sha256": "0bd823328bc38b652e851652b3fb0a8405b9ec3468862f4fd8ee6552c393b010"
+            },
+            {
+              "path": "assets/3d/generated/robot/v3/robot_ref_pkg.svh",
+              "sha256": "1f93bf217ea850f2d13f1bea042573adc3b62a7551d948c412937c5df3cde528"
+            },
+            {
+              "path": "assets/3d/generated/robot/v3/robot_shade.json",
+              "sha256": "ece7bfe124963877837b6b9c33ce9d6151a97b21fb9bd886b8d562d271a7a141"
+            },
+            {
+              "path": "assets/3d/generated/robot/v3/robot_shade.s3d.bin",
+              "sha256": "6171964c7d7b02c1779b19aec7f4fd4bcd018a2a0d00cace7bd5cbd2dbddfe70"
+            },
+            {
+              "path": "assets/3d/generated/robot/v3/robot_shade.s3d.mif",
+              "sha256": "0b11b382801fbee0d3493d63ac836ebd6ed3222e96a6b23ee9688aa006e13644"
+            },
+            {
+              "path": "assets/3d/generated/robot/v3/robot_shade_ref_pkg.svh",
+              "sha256": "c5dd9c8ef018ee5812552c7886d9952db08cf68841ec0cf2eba8c22ec03ef481"
+            }
+          ]
+        },
+        {
+          "id": "v4",
+          "format_version": 4,
+          "counts": {
+            "vertices": 88,
+            "triangles": 132,
+            "meshes": 1
+          },
+          "generation_command": "make -f tools/3d_gen/Makefile ASSET=robot convert-v4",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/robot/v4/robot_shade.json",
+              "sha256": "ce3ff8d0b64549e7b19d46ed329a7cb652bcc50a8a54c09f600eca5a58bc0756"
+            },
+            {
+              "path": "assets/3d/generated/robot/v4/robot_shade.s3d.bin",
+              "sha256": "8d23249128fb7a544d0110ab58fab74ae9f5b19ee3758390532c7dae436df2d1"
+            },
+            {
+              "path": "assets/3d/generated/robot/v4/robot_shade.s3d.mif",
+              "sha256": "38c91bc49351c7236545c200ce0794c33a518c551c325a0b6a022feefc0dbb91"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "robotss",
+      "source_files": [
+        {
+          "path": "assets/3d/sources/robotss/robotss.mtl",
+          "sha256": "7d26153f68b5694808e2cf5b343114f1b38466611fb627c6b49afc51e1ad32ec"
+        },
+        {
+          "path": "assets/3d/sources/robotss/robotss.obj",
+          "sha256": "f56524953112bf54aeb5027336419b316ecb39b78730b7d4f10be299d1fc4499"
+        },
+        {
+          "path": "assets/3d/sources/robotss/robotss.v4.json",
+          "sha256": "9242444582518df6bba1fb7e8bd8c4c7011841d9089e7ae302b395adb3c7b4eb"
+        },
+        {
+          "path": "assets/3d/sources/robotss/robotss_pivot.json",
+          "sha256": "cb826b8dde36b29976457b624119561ad03c8e39580a2ecbd442873368adebc1"
+        }
+      ],
+      "variants": [
+        {
+          "id": "legacy_v3",
+          "format_version": 2,
+          "counts": {
+            "vertices": 88,
+            "triangles": 132,
+            "meshes": 1
+          },
+          "generation_command": "legacy-import: preserve the pre-migration bytes",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/robotss/legacy_v3/robotss.json",
+              "sha256": "fe0f73606d902d60f725fe112c0436201e435546b2b91c54fb8ba3b8a50a9f76"
+            },
+            {
+              "path": "assets/3d/generated/robotss/legacy_v3/robotss.s3d.bin",
+              "sha256": "5de02cd01d5b4237bb11536f165260ca56ea9926997b49e5cc4dc43553d15b7c"
+            },
+            {
+              "path": "assets/3d/generated/robotss/legacy_v3/robotss.s3d.mif",
+              "sha256": "b1d2d5e4af5032a0d243792af50e731428bdba914637c5b98a0bc123489b43fd"
+            },
+            {
+              "path": "assets/3d/generated/robotss/legacy_v3/robotss_ref_pkg.svh",
+              "sha256": "6e51fd38b4faf85a872a583ee03f70b43216c1f29e8dec10b411ee2259573da0"
+            },
+            {
+              "path": "assets/3d/generated/robotss/legacy_v3/robotss_shade.json",
+              "sha256": "73d1849177aa1eeab1ca99d16886c8bfb0eb8e507ddc4697eadc2c9be33dab7f"
+            },
+            {
+              "path": "assets/3d/generated/robotss/legacy_v3/robotss_shade.s3d.bin",
+              "sha256": "e48af83f1bc025ccc806e475655d18a85442cf29ee752a986a2295307a217942"
+            },
+            {
+              "path": "assets/3d/generated/robotss/legacy_v3/robotss_shade.s3d.mif",
+              "sha256": "b228b21f9cb1784c3b2cc9faf8cedee48b8f517183497bd5a612d4aa351df5e5"
+            },
+            {
+              "path": "assets/3d/generated/robotss/legacy_v3/robotss_shade_ref_pkg.svh",
+              "sha256": "39e3e79b67b27d8d8785a542a8e5a392b4a582d8df3120127f2a24807fefd0de"
+            }
+          ]
+        },
+        {
+          "id": "v3",
+          "format_version": 2,
+          "counts": {
+            "vertices": 88,
+            "triangles": 132,
+            "meshes": 1
+          },
+          "generation_command": "make -f tools/3d_gen/Makefile ASSET=robotss convert-v3",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/robotss/v3/robotss.json",
+              "sha256": "f3e1d1b8ace360a799dc238073dcec06c52bf98d44e297595e88c5e4f9b7a079"
+            },
+            {
+              "path": "assets/3d/generated/robotss/v3/robotss.s3d.bin",
+              "sha256": "5de02cd01d5b4237bb11536f165260ca56ea9926997b49e5cc4dc43553d15b7c"
+            },
+            {
+              "path": "assets/3d/generated/robotss/v3/robotss.s3d.mif",
+              "sha256": "b1d2d5e4af5032a0d243792af50e731428bdba914637c5b98a0bc123489b43fd"
+            },
+            {
+              "path": "assets/3d/generated/robotss/v3/robotss_ref_pkg.svh",
+              "sha256": "6e51fd38b4faf85a872a583ee03f70b43216c1f29e8dec10b411ee2259573da0"
+            },
+            {
+              "path": "assets/3d/generated/robotss/v3/robotss_shade.json",
+              "sha256": "6bb6694c253af6b259554bef6a6860fbe05d539f10d057aa9c068de83f01f792"
+            },
+            {
+              "path": "assets/3d/generated/robotss/v3/robotss_shade.s3d.bin",
+              "sha256": "986c3dae6f46ad34d9f0a9b1f8b32440a01a9acc865244912024216530c51c31"
+            },
+            {
+              "path": "assets/3d/generated/robotss/v3/robotss_shade.s3d.mif",
+              "sha256": "b7f6d2265f5a8b7d51e37a79fab9bc74a14602e1497b716165eb45ad96f8e870"
+            },
+            {
+              "path": "assets/3d/generated/robotss/v3/robotss_shade_ref_pkg.svh",
+              "sha256": "39e3e79b67b27d8d8785a542a8e5a392b4a582d8df3120127f2a24807fefd0de"
+            }
+          ]
+        },
+        {
+          "id": "v4",
+          "format_version": 4,
+          "counts": {
+            "vertices": 88,
+            "triangles": 132,
+            "meshes": 5
+          },
+          "generation_command": "make -f tools/3d_gen/Makefile ASSET=robotss convert-v4",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/robotss/v4/robotss_shade.json",
+              "sha256": "483d604126175cf378b53fc79499002d79f10c5eab6f6296a9e489283a0bb3d0"
+            },
+            {
+              "path": "assets/3d/generated/robotss/v4/robotss_shade.s3d.bin",
+              "sha256": "802c0ba5f6063a465fc55e8d0a2a28a117983b2295d846cad6cbab9dcb335469"
+            },
+            {
+              "path": "assets/3d/generated/robotss/v4/robotss_shade.s3d.mif",
+              "sha256": "d965c34cbfc27fa8e088af46f8d7d8536f28b7198a83a725ac0efea60f530a15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "asset_id": "robotx",
+      "source_files": [
+        {
+          "path": "assets/3d/sources/robotx/robotx.mtl",
+          "sha256": "06fea6229bf906f716f371e92316b4a865a9eb21fb9b85e288c1b404b884c774"
+        },
+        {
+          "path": "assets/3d/sources/robotx/robotx.obj",
+          "sha256": "d3236f24619d2e75be6b730c964bdaabb64d9ec02f152d4ec97f3c45a7374ccf"
+        }
+      ],
+      "variants": [
+        {
+          "id": "legacy_v3",
+          "format_version": 2,
+          "counts": {
+            "vertices": 104,
+            "triangles": 156,
+            "meshes": 1
+          },
+          "generation_command": "legacy-import: preserve the pre-migration bytes",
+          "outputs": [
+            {
+              "path": "assets/3d/generated/robotx/legacy_v3/robotx.json",
+              "sha256": "405c54d25a797008fd2b4215eb16c570771b32a074dd65ad23820e468b8aef28"
+            },
+            {
+              "path": "assets/3d/generated/robotx/legacy_v3/robotx.s3d.bin",
+              "sha256": "f8251d35c86601e810952d510a2fc5c5dab8fa3abd994d6c2ddfc0256f057367"
+            },
+            {
+              "path": "assets/3d/generated/robotx/legacy_v3/robotx.s3d.mif",
+              "sha256": "50080b02e61bdd5ba1ad2711799efa5215efed04295fc8cfdf2cb02a012c9e7f"
+            },
+            {
+              "path": "assets/3d/generated/robotx/legacy_v3/robotx_ref_pkg.svh",
+              "sha256": "ed5ee28088fd295b45fc6dc31c6a8e52b0c7645ec98da44437f94ee44ce3a26f"
+            },
+            {
+              "path": "assets/3d/generated/robotx/legacy_v3/robotx_shade.json",
+              "sha256": "b0377f6a5f20978ec226ad895d0ee6d40e1769b13c20b12adad0614d514e7df2"
+            },
+            {
+              "path": "assets/3d/generated/robotx/legacy_v3/robotx_shade.s3d.bin",
+              "sha256": "7e5a919bf2a53cb54d96c62c63e208ada841f150fd32440ad2c1196ee55123c7"
+            },
+            {
+              "path": "assets/3d/generated/robotx/legacy_v3/robotx_shade.s3d.mif",
+              "sha256": "786f95ee93fc7d99094e4cf4d38e35c4e54a4547c9a58f5e934193cc89a02b64"
+            },
+            {
+              "path": "assets/3d/generated/robotx/legacy_v3/robotx_shade_ref_pkg.svh",
+              "sha256": "6d022c650e5bdd5af21c0d56cddcf0ada9492b50c6808f64ca723c402f9a6de9"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "package_id": "br01",
+      "generation_command": "make -f tools/3d_gen/Makefile package-br01",
+      "files": [
+        {
+          "path": "assets/3d/packages/br01/br01.json",
+          "sha256": "fc55bd0424ef067252f83a0290579eb09de0afec000af823b5a8247f542b1076"
+        },
+        {
+          "path": "assets/3d/packages/br01/br01.s3dpkg.bin",
+          "sha256": "c7d8fdbe98d5f5b6f0486baffec52c4b082505f255aa7869bb77e85d61e586b8"
+        },
+        {
+          "path": "assets/3d/packages/br01/br01.s3dpkg.mif",
+          "sha256": "20006c4ea3de6de566b824631461bab545fb5d2226af7e333e5133549f20a24d"
+        },
+        {
+          "path": "assets/3d/packages/br01/br01_catalog.h",
+          "sha256": "619ccb2f4fda2aa761d9ab768596faa10d948253b79c59d796ad8a1e34ffbffd"
+        }
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "path": "assets/3d/fixtures/cat48.mif",
+      "sha256": "070b0cc5ae32818a6f5f3ed437682773afc2ae82ab8fdf499dc424791f106226"
+    },
+    {
+      "path": "assets/3d/fixtures/multimesh_min.s3d.mif",
+      "sha256": "88e633e9f53bf1db459ccb829dfdf92dfcf91f779c2ad4bed553644873d7283c"
+    }
+  ]
+}

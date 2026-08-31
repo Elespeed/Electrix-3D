@@ -1,0 +1,12 @@
+{
+  "format": "sk3d_v4_mesh_manifest",
+  "version": 1,
+  "pivot_file": "robotss_pivot.json",
+  "meshes": [
+    {"name": "leg_r", "group_prefixes": ["leg_r_"], "pivot_key": "leg_r"},
+    {"name": "leg_l", "group_prefixes": ["leg_l_"], "pivot_key": "leg_l"},
+    {"name": "arm_r", "group_prefixes": ["arm_r_"], "pivot_key": "arm_r"},
+    {"name": "arm_l", "group_prefixes": ["arm_l_"], "pivot_key": "arm_l"},
+    {"name": "body", "group_prefixes": ["body_"], "pivot_key": "body"}
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "format": "SK3D",
+  "version": 4,
+  "name": "robotss_shade",
+  "mesh_count": 5,
+  "meshes": [
+    {
+      "mesh_id": 0,
+      "name": "leg_r",
+      "pivot": [
+        -10.599992131385923,
+        -24.8219760426472,
+        -2.31722781510406
+      ],
+      "vertex_count": 8,
+      "triangle_count": 12
+    },
+    {
+      "mesh_id": 1,
+      "name": "leg_l",
+      "pivot": [
+        10.880747030414256,
+        -24.683371608356744,
+        -2.31722781510406
+      ],
+      "vertex_count": 8,
+      "triangle_count": 12
+    },
+    {
+      "mesh_id": 2,
+      "name": "arm_r",
+      "pivot": [
+        -17.883497437460406,
+        11.061666740828636,
+        -2.31722781510406
+      ],
+      "vertex_count": 8,
+      "triangle_count": 12
+    },
+    {
+      "mesh_id": 3,
+      "name": "arm_l",
+      "pivot": [
+        17.893846898417394,
+        10.890859402126203,
+        -2.31722781510406
+      ],
+      "vertex_count": 8,
+      "triangle_count": 12
+    },
+    {
+      "mesh_id": 4,
+      "name": "body",
+      "pivot": [
+        -0.41463816487426475,
+        30.62078726342831,
+        13.380100618613945
+      ],
+      "vertex_count": 56,
+      "triangle_count": 84
+    }
+  ]
+}

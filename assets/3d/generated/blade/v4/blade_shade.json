@@ -1,0 +1,19 @@
+{
+  "format": "SK3D",
+  "version": 4,
+  "name": "blade_shade",
+  "mesh_count": 1,
+  "meshes": [
+    {
+      "mesh_id": 0,
+      "name": "root",
+      "pivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertex_count": 37,
+      "triangle_count": 54
+    }
+  ]
+}

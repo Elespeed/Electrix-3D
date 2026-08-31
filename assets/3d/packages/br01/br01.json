@@ -1,0 +1,36 @@
+{
+  "format": "S3PK",
+  "version": 1,
+  "name": "br01",
+  "size": 4512,
+  "entry_count": 3,
+  "entries": [
+    {
+      "model_id": 0,
+      "name": "blade",
+      "offset": 112,
+      "size": 760,
+      "sk3d_version": 4,
+      "mesh_count": 1,
+      "crc32": "0x95ce9af6"
+    },
+    {
+      "model_id": 1,
+      "name": "robot_rigid",
+      "offset": 880,
+      "size": 1776,
+      "sk3d_version": 2,
+      "mesh_count": 1,
+      "crc32": "0xf44ec6de"
+    },
+    {
+      "model_id": 2,
+      "name": "robotss",
+      "offset": 2656,
+      "size": 1856,
+      "sk3d_version": 4,
+      "mesh_count": 5,
+      "crc32": "0x7dc28bd0"
+    }
+  ]
+}

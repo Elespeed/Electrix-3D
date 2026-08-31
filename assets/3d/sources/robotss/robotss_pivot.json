@@ -1,0 +1,78 @@
+{
+    "format": "blade_object_pivot",
+    "version": 1,
+    "coordinate_conversion": {
+        "source": "Blender",
+        "target": "OBJ",
+        "formula": "(x, y, z) -> (x, z, -y)",
+        "obj_forward": "+Z",
+        "obj_up": "+Y"
+    },
+    "objects": {
+        "arm_l": {
+            "type": "MESH",
+            "blender_pivot": [
+                0.866946,
+                0.466599,
+                0.142092
+            ],
+            "obj_pivot": [
+                0.866946,
+                0.142092,
+                -0.466599
+            ]
+        },
+        "arm_r": {
+            "type": "MESH",
+            "blender_pivot": [
+                -0.868432,
+                0.466599,
+                0.150377
+            ],
+            "obj_pivot": [
+                -0.868432,
+                0.150377,
+                -0.466599
+            ]
+        },
+        "body": {
+            "type": "MESH",
+            "blender_pivot": [
+                -0.021106,
+                -0.294799,
+                1.099091
+            ],
+            "obj_pivot": [
+                -0.021106,
+                1.099091,
+                0.294799
+            ]
+        },
+        "leg_l": {
+            "type": "MESH",
+            "blender_pivot": [
+                0.526776,
+                0.466599,
+                -1.583434
+            ],
+            "obj_pivot": [
+                0.526776,
+                -1.583434,
+                -0.466599
+            ]
+        },
+        "leg_r": {
+            "type": "MESH",
+            "blender_pivot": [
+                -0.515146,
+                0.466599,
+                -1.590157
+            ],
+            "obj_pivot": [
+                -0.515146,
+                -1.590157,
+                -0.466599
+            ]
+        }
+    }
+}

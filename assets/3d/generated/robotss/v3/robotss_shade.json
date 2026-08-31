@@ -1,0 +1,4424 @@
+{
+  "format": "lowpoly-model",
+  "version": 1,
+  "name": "robotss_shade",
+  "origin": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "vertices": [
+    [
+      -3.3857787342286243,
+      -60.0,
+      -9.229080267251119
+    ],
+    [
+      -3.3857787342286243,
+      -24.821996659103288,
+      -9.229080267251119
+    ],
+    [
+      -17.81422614499931,
+      -60.0,
+      -9.229080267251119
+    ],
+    [
+      -17.81422614499931,
+      -24.821996659103288,
+      -9.229080267251119
+    ],
+    [
+      -3.3857787342286243,
+      -60.0,
+      4.594624637042996
+    ],
+    [
+      -3.3857787342286243,
+      -24.821996659103288,
+      4.594624637042996
+    ],
+    [
+      -17.81422614499931,
+      -60.0,
+      4.594624637042996
+    ],
+    [
+      -17.81422614499931,
+      -24.821996659103288,
+      4.594624637042996
+    ],
+    [
+      18.094981044027644,
+      -59.86139556570954,
+      -9.229100883707206
+    ],
+    [
+      18.094981044027644,
+      -24.68339222481283,
+      -9.229100883707206
+    ],
+    [
+      3.6665336332569565,
+      -59.86139556570954,
+      -9.229100883707206
+    ],
+    [
+      3.6665336332569565,
+      -24.68339222481283,
+      -9.229100883707206
+    ],
+    [
+      18.094981044027644,
+      -59.86139556570954,
+      4.594624637042996
+    ],
+    [
+      18.094981044027644,
+      -24.68339222481283,
+      4.594624637042996
+    ],
+    [
+      3.6665336332569565,
+      -59.86139556570954,
+      4.594624637042996
+    ],
+    [
+      3.6665336332569565,
+      -24.68339222481283,
+      4.594624637042996
+    ],
+    [
+      -17.89384689841739,
+      -19.61427985086743,
+      -9.229080267251119
+    ],
+    [
+      -17.89384689841739,
+      15.563744106485366,
+      -9.229080267251119
+    ],
+    [
+      -32.32229430918808,
+      -19.61427985086743,
+      -9.229080267251119
+    ],
+    [
+      -32.32229430918808,
+      15.563744106485366,
+      -9.229080267251119
+    ],
+    [
+      -17.89384689841739,
+      -19.61427985086743,
+      4.594624637042996
+    ],
+    [
+      -17.89384689841739,
+      15.563744106485366,
+      4.594624637042996
+    ],
+    [
+      -32.32229430918808,
+      -19.61427985086743,
+      4.594624637042996
+    ],
+    [
+      -32.32229430918808,
+      15.563744106485366,
+      4.594624637042996
+    ],
+    [
+      32.32229430918808,
+      -19.614259234411342,
+      -9.229100883707206
+    ],
+    [
+      32.32229430918808,
+      15.563744106485366,
+      -9.229100883707206
+    ],
+    [
+      17.893846898417394,
+      -19.614259234411342,
+      -9.229100883707206
+    ],
+    [
+      17.893846898417394,
+      15.563744106485366,
+      -9.229100883707206
+    ],
+    [
+      32.32229430918808,
+      -19.614259234411342,
+      4.594624637042996
+    ],
+    [
+      32.32229430918808,
+      15.563744106485366,
+      4.594624637042996
+    ],
+    [
+      17.893846898417394,
+      -19.614259234411342,
+      4.594624637042996
+    ],
+    [
+      17.893846898417394,
+      15.563744106485366,
+      4.594624637042996
+    ],
+    [
+      3.1317633787485235,
+      22.664896858447236,
+      10.750244863367014
+    ],
+    [
+      3.1317633787485235,
+      38.576677668409374,
+      10.750244863367014
+    ],
+    [
+      -3.961039708497053,
+      22.664896858447236,
+      10.750244863367014
+    ],
+    [
+      -3.961039708497053,
+      38.576677668409374,
+      10.750244863367014
+    ],
+    [
+      3.1317633787485235,
+      22.664896858447236,
+      16.009956373860874
+    ],
+    [
+      3.1317633787485235,
+      38.576677668409374,
+      16.009956373860874
+    ],
+    [
+      -3.961039708497053,
+      22.664896858447236,
+      16.009956373860874
+    ],
+    [
+      -3.961039708497053,
+      38.576677668409374,
+      16.009956373860874
+    ],
+    [
+      15.028984160204983,
+      17.234006913041327,
+      -16.009956373860874
+    ],
+    [
+      15.029004776661074,
+      47.612251878803406,
+      -16.009956373860874
+    ],
+    [
+      -14.97428870219924,
+      17.234027529497418,
+      -16.009956373860874
+    ],
+    [
+      -14.97428870219924,
+      47.612251878803406,
+      -16.009956373860874
+    ],
+    [
+      15.028984160204983,
+      17.234006913041327,
+      11.375480127196662
+    ],
+    [
+      15.028984160204983,
+      47.612251878803406,
+      11.375480127196662
+    ],
+    [
+      -14.97428870219924,
+      17.234027529497418,
+      11.375480127196662
+    ],
+    [
+      -14.97428870219924,
+      47.612251878803406,
+      11.375480127196662
+    ],
+    [
+      22.43309573440369,
+      40.55363087575441,
+      -9.229080267251119
+    ],
+    [
+      22.43309573440369,
+      59.68815548518853,
+      -9.229080267251119
+    ],
+    [
+      15.017603876443518,
+      40.55363087575441,
+      -9.229100883707206
+    ],
+    [
+      15.017603876443518,
+      59.68815548518853,
+      -9.229100883707206
+    ],
+    [
+      22.43309573440369,
+      40.55363087575441,
+      4.594624637042996
+    ],
+    [
+      22.43309573440369,
+      59.68815548518853,
+      4.594624637042996
+    ],
+    [
+      15.017603876443518,
+      40.55363087575441,
+      4.594624637042996
+    ],
+    [
+      15.017603876443518,
+      59.68815548518853,
+      4.594624637042996
+    ],
+    [
+      -14.896708977934033,
+      40.86549600702196,
+      -9.229080267251119
+    ],
+    [
+      -14.896708977934033,
+      60.0,
+      -9.229080267251119
+    ],
+    [
+      -22.312200835894206,
+      40.86549600702196,
+      -9.229080267251119
+    ],
+    [
+      -22.312200835894206,
+      60.0,
+      -9.229080267251119
+    ],
+    [
+      -14.896708977934033,
+      40.86549600702196,
+      4.594624637042996
+    ],
+    [
+      -14.896708977934033,
+      60.0,
+      4.594624637042996
+    ],
+    [
+      -22.312200835894206,
+      40.86549600702196,
+      4.594624637042996
+    ],
+    [
+      -22.312200835894206,
+      60.0,
+      4.594624637042996
+    ],
+    [
+      11.764244639678465,
+      32.11574834385431,
+      10.750244863367014
+    ],
+    [
+      11.764265256134555,
+      39.15709275670021,
+      10.750244863367014
+    ],
+    [
+      -12.593520969426995,
+      32.11574834385431,
+      10.750244863367014
+    ],
+    [
+      -12.593520969426995,
+      39.15709275670021,
+      10.750244863367014
+    ],
+    [
+      11.764244639678465,
+      32.11574834385431,
+      16.009956373860874
+    ],
+    [
+      11.764265256134555,
+      39.15709275670021,
+      16.009956373860874
+    ],
+    [
+      -12.593520969426995,
+      32.11574834385431,
+      16.009935757404786
+    ],
+    [
+      -12.593520969426995,
+      39.15709275670021,
+      16.009935757404786
+    ],
+    [
+      -17.894589090836618,
+      17.1618287002716,
+      9.767499634487415
+    ],
+    [
+      -17.894589090836618,
+      -3.5925102476672084,
+      9.767499634487415
+    ],
+    [
+      17.94928454884236,
+      17.1618287002716,
+      9.767499634487415
+    ],
+    [
+      17.94928454884236,
+      -3.5925308641232974,
+      9.767499634487415
+    ],
+    [
+      -17.894589090836618,
+      17.1618287002716,
+      -14.401975881151627
+    ],
+    [
+      -17.894589090836618,
+      -3.5925102476672084,
+      -14.401975881151627
+    ],
+    [
+      17.94928454884236,
+      17.1618287002716,
+      -14.401955264695536
+    ],
+    [
+      17.94928454884236,
+      -3.5925308641232974,
+      -14.401955264695536
+    ],
+    [
+      -14.816078018167563,
+      -25.25688018385755,
+      -13.976472843918133
+    ],
+    [
+      -14.816078018167563,
+      -3.7366192757335916,
+      -13.976472843918133
+    ],
+    [
+      -14.816078018167563,
+      -25.25688018385755,
+      7.674558245182235
+    ],
+    [
+      -14.816078018167563,
+      -3.7366192757335916,
+      7.674558245182235
+    ],
+    [
+      14.606326193911858,
+      -25.25688018385755,
+      -13.976472843918133
+    ],
+    [
+      14.606326193911858,
+      -3.7366192757335916,
+      -13.976472843918133
+    ],
+    [
+      14.606326193911858,
+      -25.25688018385755,
+      7.674558245182235
+    ],
+    [
+      14.606326193911858,
+      -3.7366192757335916,
+      7.674558245182235
+    ]
+  ],
+  "faces": [
+    {
+      "material": "材质.008",
+      "object_name": "leg_r_材质.008",
+      "object_id": 1,
+      "group": "leg_r_材质.008",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -1015.127942
+      ],
+      "static_shade_surface_id": 0,
+      "static_shade_surface_group": "leg_r_材质.008",
+      "static_shade_surface_material": "材质.008",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -9.22908,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        1,
+        0,
+        2
+      ],
+      "color": "#494955",
+      "name": "leg_r_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "leg_r_材质.008",
+      "object_id": 1,
+      "group": "leg_r_材质.008",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -972.580675,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 1,
+      "static_shade_surface_group": "leg_r_材质.008",
+      "static_shade_surface_material": "材质.008",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -17.814226,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        3,
+        2,
+        6
+      ],
+      "color": "#242400",
+      "name": "leg_r_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "leg_r_材质.008",
+      "object_id": 1,
+      "group": "leg_r_材质.008",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1015.127942
+      ],
+      "static_shade_surface_id": 2,
+      "static_shade_surface_group": "leg_r_材质.008",
+      "static_shade_surface_material": "材质.008",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 4.594625,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        7,
+        6,
+        4
+      ],
+      "color": "#494955",
+      "name": "leg_r_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "leg_r_材质.008",
+      "object_id": 1,
+      "group": "leg_r_材质.008",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        972.580675,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 3,
+      "static_shade_surface_group": "leg_r_材质.008",
+      "static_shade_surface_material": "材质.008",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -3.385779,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        5,
+        4,
+        0
+      ],
+      "color": "#242400",
+      "name": "leg_r_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "leg_r_材质.008",
+      "object_id": 1,
+      "group": "leg_r_材质.008",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -398.909198,
+        0.0
+      ],
+      "static_shade_surface_id": 4,
+      "static_shade_surface_group": "leg_r_材质.008",
+      "static_shade_surface_material": "材质.008",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -60.0,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        6,
+        2,
+        0
+      ],
+      "color": "#242400",
+      "name": "leg_r_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "leg_r_材质.008",
+      "object_id": 1,
+      "group": "leg_r_材质.008",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        398.909198,
+        0.0
+      ],
+      "static_shade_surface_id": 5,
+      "static_shade_surface_group": "leg_r_材质.008",
+      "static_shade_surface_material": "材质.008",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -24.821997,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        3,
+        7,
+        5
+      ],
+      "color": "#494955",
+      "name": "leg_r_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "leg_r_材质.008",
+      "object_id": 1,
+      "group": "leg_r_材质.008",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -1015.127942
+      ],
+      "static_shade_surface_id": 0,
+      "static_shade_surface_group": "leg_r_材质.008",
+      "static_shade_surface_material": "材质.008",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -9.22908,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        1,
+        2,
+        3
+      ],
+      "color": "#494955",
+      "name": "leg_r_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "leg_r_材质.008",
+      "object_id": 1,
+      "group": "leg_r_材质.008",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -972.580675,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 1,
+      "static_shade_surface_group": "leg_r_材质.008",
+      "static_shade_surface_material": "材质.008",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -17.814226,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        3,
+        6,
+        7
+      ],
+      "color": "#242400",
+      "name": "leg_r_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "leg_r_材质.008",
+      "object_id": 1,
+      "group": "leg_r_材质.008",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1015.127942
+      ],
+      "static_shade_surface_id": 2,
+      "static_shade_surface_group": "leg_r_材质.008",
+      "static_shade_surface_material": "材质.008",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 4.594625,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        7,
+        4,
+        5
+      ],
+      "color": "#494955",
+      "name": "leg_r_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "leg_r_材质.008",
+      "object_id": 1,
+      "group": "leg_r_材质.008",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        972.580675,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 3,
+      "static_shade_surface_group": "leg_r_材质.008",
+      "static_shade_surface_material": "材质.008",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -3.385779,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        5,
+        0,
+        1
+      ],
+      "color": "#242400",
+      "name": "leg_r_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "leg_r_材质.008",
+      "object_id": 1,
+      "group": "leg_r_材质.008",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -398.909198,
+        0.0
+      ],
+      "static_shade_surface_id": 4,
+      "static_shade_surface_group": "leg_r_材质.008",
+      "static_shade_surface_material": "材质.008",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -60.0,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        6,
+        0,
+        4
+      ],
+      "color": "#242400",
+      "name": "leg_r_材质.008"
+    },
+    {
+      "material": "材质.008",
+      "object_name": "leg_r_材质.008",
+      "object_id": 1,
+      "group": "leg_r_材质.008",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        398.909198,
+        0.0
+      ],
+      "static_shade_surface_id": 5,
+      "static_shade_surface_group": "leg_r_材质.008",
+      "static_shade_surface_material": "材质.008",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -24.821997,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        3,
+        5,
+        1
+      ],
+      "color": "#494955",
+      "name": "leg_r_材质.008"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "leg_l_材质.007",
+      "object_id": 2,
+      "group": "leg_l_材质.007",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -1015.127942
+      ],
+      "static_shade_surface_id": 6,
+      "static_shade_surface_group": "leg_l_材质.007",
+      "static_shade_surface_material": "材质.007",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -9.229101,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        9,
+        8,
+        10
+      ],
+      "color": "#494955",
+      "name": "leg_l_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "leg_l_材质.007",
+      "object_id": 2,
+      "group": "leg_l_材质.007",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -972.582125,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 7,
+      "static_shade_surface_group": "leg_l_材质.007",
+      "static_shade_surface_material": "材质.007",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 3.666534,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        11,
+        10,
+        14
+      ],
+      "color": "#242400",
+      "name": "leg_l_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "leg_l_材质.007",
+      "object_id": 2,
+      "group": "leg_l_材质.007",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1015.127942
+      ],
+      "static_shade_surface_id": 8,
+      "static_shade_surface_group": "leg_l_材质.007",
+      "static_shade_surface_material": "材质.007",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 4.594625,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        15,
+        14,
+        12
+      ],
+      "color": "#494955",
+      "name": "leg_l_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "leg_l_材质.007",
+      "object_id": 2,
+      "group": "leg_l_材质.007",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        972.582125,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 9,
+      "static_shade_surface_group": "leg_l_材质.007",
+      "static_shade_surface_material": "材质.007",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 18.094981,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        13,
+        12,
+        8
+      ],
+      "color": "#242400",
+      "name": "leg_l_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "leg_l_材质.007",
+      "object_id": 2,
+      "group": "leg_l_材质.007",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -398.909793,
+        0.0
+      ],
+      "static_shade_surface_id": 10,
+      "static_shade_surface_group": "leg_l_材质.007",
+      "static_shade_surface_material": "材质.007",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -59.861396,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        14,
+        10,
+        8
+      ],
+      "color": "#242400",
+      "name": "leg_l_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "leg_l_材质.007",
+      "object_id": 2,
+      "group": "leg_l_材质.007",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        398.909793,
+        0.0
+      ],
+      "static_shade_surface_id": 11,
+      "static_shade_surface_group": "leg_l_材质.007",
+      "static_shade_surface_material": "材质.007",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -24.683392,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        11,
+        15,
+        13
+      ],
+      "color": "#494955",
+      "name": "leg_l_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "leg_l_材质.007",
+      "object_id": 2,
+      "group": "leg_l_材质.007",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -1015.127942
+      ],
+      "static_shade_surface_id": 6,
+      "static_shade_surface_group": "leg_l_材质.007",
+      "static_shade_surface_material": "材质.007",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -9.229101,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        9,
+        10,
+        11
+      ],
+      "color": "#494955",
+      "name": "leg_l_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "leg_l_材质.007",
+      "object_id": 2,
+      "group": "leg_l_材质.007",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -972.582125,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 7,
+      "static_shade_surface_group": "leg_l_材质.007",
+      "static_shade_surface_material": "材质.007",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 3.666534,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        11,
+        14,
+        15
+      ],
+      "color": "#242400",
+      "name": "leg_l_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "leg_l_材质.007",
+      "object_id": 2,
+      "group": "leg_l_材质.007",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1015.127942
+      ],
+      "static_shade_surface_id": 8,
+      "static_shade_surface_group": "leg_l_材质.007",
+      "static_shade_surface_material": "材质.007",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 4.594625,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        15,
+        12,
+        13
+      ],
+      "color": "#494955",
+      "name": "leg_l_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "leg_l_材质.007",
+      "object_id": 2,
+      "group": "leg_l_材质.007",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        972.582125,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 9,
+      "static_shade_surface_group": "leg_l_材质.007",
+      "static_shade_surface_material": "材质.007",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 18.094981,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        13,
+        8,
+        9
+      ],
+      "color": "#242400",
+      "name": "leg_l_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "leg_l_材质.007",
+      "object_id": 2,
+      "group": "leg_l_材质.007",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -398.909793,
+        0.0
+      ],
+      "static_shade_surface_id": 10,
+      "static_shade_surface_group": "leg_l_材质.007",
+      "static_shade_surface_material": "材质.007",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -59.861396,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        14,
+        8,
+        12
+      ],
+      "color": "#242400",
+      "name": "leg_l_材质.007"
+    },
+    {
+      "material": "材质.007",
+      "object_name": "leg_l_材质.007",
+      "object_id": 2,
+      "group": "leg_l_材质.007",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        398.909793,
+        0.0
+      ],
+      "static_shade_surface_id": 11,
+      "static_shade_surface_group": "leg_l_材质.007",
+      "static_shade_surface_material": "材质.007",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -24.683392,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        11,
+        13,
+        9
+      ],
+      "color": "#494955",
+      "name": "leg_l_材质.007"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "arm_r_材质.004",
+      "object_id": 3,
+      "group": "arm_r_材质.004",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -1015.128537
+      ],
+      "static_shade_surface_id": 12,
+      "static_shade_surface_group": "arm_r_材质.004",
+      "static_shade_surface_material": "材质.004",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -9.22908,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        17,
+        16,
+        18
+      ],
+      "color": "#9292AA",
+      "name": "arm_r_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "arm_r_材质.004",
+      "object_id": 3,
+      "group": "arm_r_材质.004",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -972.581245,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 13,
+      "static_shade_surface_group": "arm_r_材质.004",
+      "static_shade_surface_material": "材质.004",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -32.322294,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        19,
+        18,
+        22
+      ],
+      "color": "#6D6D55",
+      "name": "arm_r_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "arm_r_材质.004",
+      "object_id": 3,
+      "group": "arm_r_材质.004",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1015.128537
+      ],
+      "static_shade_surface_id": 14,
+      "static_shade_surface_group": "arm_r_材质.004",
+      "static_shade_surface_material": "材质.004",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 4.594625,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        23,
+        22,
+        20
+      ],
+      "color": "#9292AA",
+      "name": "arm_r_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "arm_r_材质.004",
+      "object_id": 3,
+      "group": "arm_r_材质.004",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        972.581245,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 15,
+      "static_shade_surface_group": "arm_r_材质.004",
+      "static_shade_surface_material": "材质.004",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -17.893847,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        21,
+        20,
+        16
+      ],
+      "color": "#6D6D55",
+      "name": "arm_r_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "arm_r_材质.004",
+      "object_id": 3,
+      "group": "arm_r_材质.004",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -398.909198,
+        0.0
+      ],
+      "static_shade_surface_id": 16,
+      "static_shade_surface_group": "arm_r_材质.004",
+      "static_shade_surface_material": "材质.004",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -19.61428,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        22,
+        18,
+        16
+      ],
+      "color": "#494955",
+      "name": "arm_r_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "arm_r_材质.004",
+      "object_id": 3,
+      "group": "arm_r_材质.004",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        398.909198,
+        0.0
+      ],
+      "static_shade_surface_id": 17,
+      "static_shade_surface_group": "arm_r_材质.004",
+      "static_shade_surface_material": "材质.004",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 15.563744,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        19,
+        23,
+        21
+      ],
+      "color": "#B6B6AA",
+      "name": "arm_r_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "arm_r_材质.004",
+      "object_id": 3,
+      "group": "arm_r_材质.004",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -1015.128537
+      ],
+      "static_shade_surface_id": 12,
+      "static_shade_surface_group": "arm_r_材质.004",
+      "static_shade_surface_material": "材质.004",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -9.22908,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        17,
+        18,
+        19
+      ],
+      "color": "#9292AA",
+      "name": "arm_r_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "arm_r_材质.004",
+      "object_id": 3,
+      "group": "arm_r_材质.004",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -972.581245,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 13,
+      "static_shade_surface_group": "arm_r_材质.004",
+      "static_shade_surface_material": "材质.004",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -32.322294,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        19,
+        22,
+        23
+      ],
+      "color": "#6D6D55",
+      "name": "arm_r_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "arm_r_材质.004",
+      "object_id": 3,
+      "group": "arm_r_材质.004",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1015.128537
+      ],
+      "static_shade_surface_id": 14,
+      "static_shade_surface_group": "arm_r_材质.004",
+      "static_shade_surface_material": "材质.004",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 4.594625,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        23,
+        20,
+        21
+      ],
+      "color": "#9292AA",
+      "name": "arm_r_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "arm_r_材质.004",
+      "object_id": 3,
+      "group": "arm_r_材质.004",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        972.581245,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 15,
+      "static_shade_surface_group": "arm_r_材质.004",
+      "static_shade_surface_material": "材质.004",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -17.893847,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        21,
+        16,
+        17
+      ],
+      "color": "#6D6D55",
+      "name": "arm_r_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "arm_r_材质.004",
+      "object_id": 3,
+      "group": "arm_r_材质.004",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -398.909198,
+        0.0
+      ],
+      "static_shade_surface_id": 16,
+      "static_shade_surface_group": "arm_r_材质.004",
+      "static_shade_surface_material": "材质.004",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -19.61428,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        22,
+        16,
+        20
+      ],
+      "color": "#494955",
+      "name": "arm_r_材质.004"
+    },
+    {
+      "material": "材质.004",
+      "object_name": "arm_r_材质.004",
+      "object_id": 3,
+      "group": "arm_r_材质.004",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        398.909198,
+        0.0
+      ],
+      "static_shade_surface_id": 17,
+      "static_shade_surface_group": "arm_r_材质.004",
+      "static_shade_surface_material": "材质.004",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 15.563744,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        19,
+        21,
+        17
+      ],
+      "color": "#B6B6AA",
+      "name": "arm_r_材质.004"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "arm_l_材质.003",
+      "object_id": 4,
+      "group": "arm_l_材质.003",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -1015.127942
+      ],
+      "static_shade_surface_id": 18,
+      "static_shade_surface_group": "arm_l_材质.003",
+      "static_shade_surface_material": "材质.003",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -9.229101,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        25,
+        24,
+        26
+      ],
+      "color": "#9292AA",
+      "name": "arm_l_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "arm_l_材质.003",
+      "object_id": 4,
+      "group": "arm_l_材质.003",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -972.582125,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 19,
+      "static_shade_surface_group": "arm_l_材质.003",
+      "static_shade_surface_material": "材质.003",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 17.893847,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        27,
+        26,
+        30
+      ],
+      "color": "#6D6D55",
+      "name": "arm_l_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "arm_l_材质.003",
+      "object_id": 4,
+      "group": "arm_l_材质.003",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1015.127942
+      ],
+      "static_shade_surface_id": 20,
+      "static_shade_surface_group": "arm_l_材质.003",
+      "static_shade_surface_material": "材质.003",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 4.594625,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        31,
+        30,
+        28
+      ],
+      "color": "#9292AA",
+      "name": "arm_l_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "arm_l_材质.003",
+      "object_id": 4,
+      "group": "arm_l_材质.003",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        972.582125,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 21,
+      "static_shade_surface_group": "arm_l_材质.003",
+      "static_shade_surface_material": "材质.003",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 32.322294,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        29,
+        28,
+        24
+      ],
+      "color": "#6D6D55",
+      "name": "arm_l_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "arm_l_材质.003",
+      "object_id": 4,
+      "group": "arm_l_材质.003",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -398.909793,
+        0.0
+      ],
+      "static_shade_surface_id": 22,
+      "static_shade_surface_group": "arm_l_材质.003",
+      "static_shade_surface_material": "材质.003",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -19.614259,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        30,
+        26,
+        24
+      ],
+      "color": "#494955",
+      "name": "arm_l_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "arm_l_材质.003",
+      "object_id": 4,
+      "group": "arm_l_材质.003",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        398.909793,
+        0.0
+      ],
+      "static_shade_surface_id": 23,
+      "static_shade_surface_group": "arm_l_材质.003",
+      "static_shade_surface_material": "材质.003",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 15.563744,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        27,
+        31,
+        29
+      ],
+      "color": "#B6B6AA",
+      "name": "arm_l_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "arm_l_材质.003",
+      "object_id": 4,
+      "group": "arm_l_材质.003",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -1015.127942
+      ],
+      "static_shade_surface_id": 18,
+      "static_shade_surface_group": "arm_l_材质.003",
+      "static_shade_surface_material": "材质.003",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -9.229101,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        25,
+        26,
+        27
+      ],
+      "color": "#9292AA",
+      "name": "arm_l_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "arm_l_材质.003",
+      "object_id": 4,
+      "group": "arm_l_材质.003",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -972.582125,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 19,
+      "static_shade_surface_group": "arm_l_材质.003",
+      "static_shade_surface_material": "材质.003",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 17.893847,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        27,
+        30,
+        31
+      ],
+      "color": "#6D6D55",
+      "name": "arm_l_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "arm_l_材质.003",
+      "object_id": 4,
+      "group": "arm_l_材质.003",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1015.127942
+      ],
+      "static_shade_surface_id": 20,
+      "static_shade_surface_group": "arm_l_材质.003",
+      "static_shade_surface_material": "材质.003",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 4.594625,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        31,
+        28,
+        29
+      ],
+      "color": "#9292AA",
+      "name": "arm_l_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "arm_l_材质.003",
+      "object_id": 4,
+      "group": "arm_l_材质.003",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        972.582125,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 21,
+      "static_shade_surface_group": "arm_l_材质.003",
+      "static_shade_surface_material": "材质.003",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 32.322294,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        29,
+        24,
+        25
+      ],
+      "color": "#6D6D55",
+      "name": "arm_l_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "arm_l_材质.003",
+      "object_id": 4,
+      "group": "arm_l_材质.003",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -398.909793,
+        0.0
+      ],
+      "static_shade_surface_id": 22,
+      "static_shade_surface_group": "arm_l_材质.003",
+      "static_shade_surface_material": "材质.003",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -19.614259,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        30,
+        24,
+        28
+      ],
+      "color": "#494955",
+      "name": "arm_l_材质.003"
+    },
+    {
+      "material": "材质.003",
+      "object_name": "arm_l_材质.003",
+      "object_id": 4,
+      "group": "arm_l_材质.003",
+      "static_shade_base_color": "#9292AA",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        398.909793,
+        0.0
+      ],
+      "static_shade_surface_id": 23,
+      "static_shade_surface_group": "arm_l_材质.003",
+      "static_shade_surface_material": "材质.003",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 15.563744,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        27,
+        29,
+        25
+      ],
+      "color": "#B6B6AA",
+      "name": "arm_l_材质.003"
+    },
+    {
+      "material": "材质.014",
+      "object_name": "body_材质.014",
+      "object_id": 5,
+      "group": "body_材质.014",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -225.718256
+      ],
+      "static_shade_surface_id": 24,
+      "static_shade_surface_group": "body_材质.014",
+      "static_shade_surface_material": "材质.014",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 10.750245,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        33,
+        32,
+        34
+      ],
+      "color": "#DB4955",
+      "name": "body_材质.014"
+    },
+    {
+      "material": "材质.014",
+      "object_name": "body_材质.014",
+      "object_id": 5,
+      "group": "body_材质.014",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -167.382753,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 25,
+      "static_shade_surface_group": "body_材质.014",
+      "static_shade_surface_material": "材质.014",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -3.96104,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        35,
+        34,
+        38
+      ],
+      "color": "#B62400",
+      "name": "body_材质.014"
+    },
+    {
+      "material": "材质.014",
+      "object_name": "body_材质.014",
+      "object_id": 5,
+      "group": "body_材质.014",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        225.718256
+      ],
+      "static_shade_surface_id": 26,
+      "static_shade_surface_group": "body_材质.014",
+      "static_shade_surface_material": "材质.014",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 16.009956,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        39,
+        38,
+        36
+      ],
+      "color": "#DB4955",
+      "name": "body_材质.014"
+    },
+    {
+      "material": "材质.014",
+      "object_name": "body_材质.014",
+      "object_id": 5,
+      "group": "body_材质.014",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        167.382753,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 27,
+      "static_shade_surface_group": "body_材质.014",
+      "static_shade_surface_material": "材质.014",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 3.131763,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        37,
+        36,
+        32
+      ],
+      "color": "#B62400",
+      "name": "body_材质.014"
+    },
+    {
+      "material": "材质.014",
+      "object_name": "body_材质.014",
+      "object_id": 5,
+      "group": "body_材质.014",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -74.612196,
+        0.0
+      ],
+      "static_shade_surface_id": 28,
+      "static_shade_surface_group": "body_材质.014",
+      "static_shade_surface_material": "材质.014",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 22.664897,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        38,
+        34,
+        32
+      ],
+      "color": "#922400",
+      "name": "body_材质.014"
+    },
+    {
+      "material": "材质.014",
+      "object_name": "body_材质.014",
+      "object_id": 5,
+      "group": "body_材质.014",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        74.612196,
+        0.0
+      ],
+      "static_shade_surface_id": 29,
+      "static_shade_surface_group": "body_材质.014",
+      "static_shade_surface_material": "材质.014",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 38.576678,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        35,
+        39,
+        37
+      ],
+      "color": "#FF4955",
+      "name": "body_材质.014"
+    },
+    {
+      "material": "材质.014",
+      "object_name": "body_材质.014",
+      "object_id": 5,
+      "group": "body_材质.014",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -225.718256
+      ],
+      "static_shade_surface_id": 24,
+      "static_shade_surface_group": "body_材质.014",
+      "static_shade_surface_material": "材质.014",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 10.750245,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        33,
+        34,
+        35
+      ],
+      "color": "#DB4955",
+      "name": "body_材质.014"
+    },
+    {
+      "material": "材质.014",
+      "object_name": "body_材质.014",
+      "object_id": 5,
+      "group": "body_材质.014",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -167.382753,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 25,
+      "static_shade_surface_group": "body_材质.014",
+      "static_shade_surface_material": "材质.014",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -3.96104,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        35,
+        38,
+        39
+      ],
+      "color": "#B62400",
+      "name": "body_材质.014"
+    },
+    {
+      "material": "材质.014",
+      "object_name": "body_材质.014",
+      "object_id": 5,
+      "group": "body_材质.014",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        225.718256
+      ],
+      "static_shade_surface_id": 26,
+      "static_shade_surface_group": "body_材质.014",
+      "static_shade_surface_material": "材质.014",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 16.009956,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        39,
+        36,
+        37
+      ],
+      "color": "#DB4955",
+      "name": "body_材质.014"
+    },
+    {
+      "material": "材质.014",
+      "object_name": "body_材质.014",
+      "object_id": 5,
+      "group": "body_材质.014",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        167.382753,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 27,
+      "static_shade_surface_group": "body_材质.014",
+      "static_shade_surface_material": "材质.014",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 3.131763,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        37,
+        32,
+        33
+      ],
+      "color": "#B62400",
+      "name": "body_材质.014"
+    },
+    {
+      "material": "材质.014",
+      "object_name": "body_材质.014",
+      "object_id": 5,
+      "group": "body_材质.014",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -74.612196,
+        0.0
+      ],
+      "static_shade_surface_id": 28,
+      "static_shade_surface_group": "body_材质.014",
+      "static_shade_surface_material": "材质.014",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 22.664897,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        38,
+        32,
+        36
+      ],
+      "color": "#922400",
+      "name": "body_材质.014"
+    },
+    {
+      "material": "材质.014",
+      "object_name": "body_材质.014",
+      "object_id": 5,
+      "group": "body_材质.014",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        74.612196,
+        0.0
+      ],
+      "static_shade_surface_id": 29,
+      "static_shade_surface_group": "body_材质.014",
+      "static_shade_surface_material": "材质.014",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 38.576678,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        35,
+        37,
+        33
+      ],
+      "color": "#FF4955",
+      "name": "body_材质.014"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "body_材质.002",
+      "object_id": 6,
+      "group": "body_材质.002",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -1822.893553
+      ],
+      "static_shade_surface_id": 30,
+      "static_shade_surface_group": "body_材质.002",
+      "static_shade_surface_material": "材质.002",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -16.009956,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        41,
+        40,
+        42
+      ],
+      "color": "#6D6D55",
+      "name": "body_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "body_材质.002",
+      "object_id": 6,
+      "group": "body_材质.002",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -1663.841868,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 31,
+      "static_shade_surface_group": "body_材质.002",
+      "static_shade_surface_material": "材质.002",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -14.974289,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        43,
+        42,
+        46
+      ],
+      "color": "#494900",
+      "name": "body_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "body_材质.002",
+      "object_id": 6,
+      "group": "body_材质.002",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1822.892927
+      ],
+      "static_shade_surface_id": 32,
+      "static_shade_surface_group": "body_材质.002",
+      "static_shade_surface_material": "材质.002",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 11.37548,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        47,
+        46,
+        44
+      ],
+      "color": "#6D6D55",
+      "name": "body_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "body_材质.002",
+      "object_id": 6,
+      "group": "body_材质.002",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        831.921499,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 33,
+      "static_shade_surface_group": "body_材质.002",
+      "static_shade_surface_material": "材质.002",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 15.028984,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        45,
+        44,
+        40
+      ],
+      "color": "#494900",
+      "name": "body_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "body_材质.002",
+      "object_id": 6,
+      "group": "body_材质.002",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        -0.000565,
+        -821.652724,
+        0.0
+      ],
+      "static_shade_surface_id": 34,
+      "static_shade_surface_group": "body_材质.002",
+      "static_shade_surface_material": "材质.002",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 17.234021,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        46,
+        42,
+        40
+      ],
+      "color": "#494900",
+      "name": "body_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "body_材质.002",
+      "object_id": 6,
+      "group": "body_材质.002",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        1643.306012,
+        0.0
+      ],
+      "static_shade_surface_id": 35,
+      "static_shade_surface_group": "body_材质.002",
+      "static_shade_surface_material": "材质.002",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 47.612252,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        43,
+        47,
+        45
+      ],
+      "color": "#929255",
+      "name": "body_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "body_材质.002",
+      "object_id": 6,
+      "group": "body_材质.002",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -1822.893553
+      ],
+      "static_shade_surface_id": 30,
+      "static_shade_surface_group": "body_材质.002",
+      "static_shade_surface_material": "材质.002",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -16.009956,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        41,
+        42,
+        43
+      ],
+      "color": "#6D6D55",
+      "name": "body_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "body_材质.002",
+      "object_id": 6,
+      "group": "body_材质.002",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -1663.841868,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 31,
+      "static_shade_surface_group": "body_材质.002",
+      "static_shade_surface_material": "材质.002",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -14.974289,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        43,
+        46,
+        47
+      ],
+      "color": "#494900",
+      "name": "body_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "body_材质.002",
+      "object_id": 6,
+      "group": "body_材质.002",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1822.892927
+      ],
+      "static_shade_surface_id": 32,
+      "static_shade_surface_group": "body_材质.002",
+      "static_shade_surface_material": "材质.002",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 11.37548,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        47,
+        44,
+        45
+      ],
+      "color": "#6D6D55",
+      "name": "body_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "body_材质.002",
+      "object_id": 6,
+      "group": "body_材质.002",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        831.921499,
+        -0.000565,
+        0.000626
+      ],
+      "static_shade_surface_id": 36,
+      "static_shade_surface_group": "body_材质.002",
+      "static_shade_surface_material": "材质.002",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 15.028991,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        45,
+        40,
+        41
+      ],
+      "color": "#494900",
+      "name": "body_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "body_材质.002",
+      "object_id": 6,
+      "group": "body_材质.002",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        -0.000565,
+        -821.652724,
+        0.0
+      ],
+      "static_shade_surface_id": 37,
+      "static_shade_surface_group": "body_材质.002",
+      "static_shade_surface_material": "材质.002",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 17.234014,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        46,
+        40,
+        44
+      ],
+      "color": "#494900",
+      "name": "body_材质.002"
+    },
+    {
+      "material": "材质.002",
+      "object_name": "body_材质.002",
+      "object_id": 6,
+      "group": "body_材质.002",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        1643.306012,
+        0.0
+      ],
+      "static_shade_surface_id": 35,
+      "static_shade_surface_group": "body_材质.002",
+      "static_shade_surface_material": "材质.002",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 47.612252,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        43,
+        45,
+        41
+      ],
+      "color": "#929255",
+      "name": "body_材质.002"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "body_材质.005",
+      "object_id": 7,
+      "group": "body_材质.005",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.000394,
+        0.0,
+        -141.891911
+      ],
+      "static_shade_surface_id": 38,
+      "static_shade_surface_group": "body_材质.005",
+      "static_shade_surface_material": "材质.005",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -9.229087,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        49,
+        48,
+        50
+      ],
+      "color": "#494955",
+      "name": "body_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "body_材质.005",
+      "object_id": 7,
+      "group": "body_材质.005",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -529.020832,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 39,
+      "static_shade_surface_group": "body_材质.005",
+      "static_shade_surface_material": "材质.005",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 15.017604,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        51,
+        50,
+        54
+      ],
+      "color": "#242400",
+      "name": "body_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "body_材质.005",
+      "object_id": 7,
+      "group": "body_材质.005",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        283.783823
+      ],
+      "static_shade_surface_id": 40,
+      "static_shade_surface_group": "body_材质.005",
+      "static_shade_surface_material": "材质.005",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 4.594625,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        55,
+        54,
+        52
+      ],
+      "color": "#494955",
+      "name": "body_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "body_材质.005",
+      "object_id": 7,
+      "group": "body_材质.005",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        529.020043,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 41,
+      "static_shade_surface_group": "body_材质.005",
+      "static_shade_surface_material": "材质.005",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 22.433096,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        53,
+        52,
+        48
+      ],
+      "color": "#242400",
+      "name": "body_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "body_材质.005",
+      "object_id": 7,
+      "group": "body_材质.005",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -205.019295,
+        0.0
+      ],
+      "static_shade_surface_id": 42,
+      "static_shade_surface_group": "body_材质.005",
+      "static_shade_surface_material": "材质.005",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 40.553631,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        54,
+        50,
+        48
+      ],
+      "color": "#242400",
+      "name": "body_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "body_材质.005",
+      "object_id": 7,
+      "group": "body_材质.005",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        205.019295,
+        0.0
+      ],
+      "static_shade_surface_id": 43,
+      "static_shade_surface_group": "body_材质.005",
+      "static_shade_surface_material": "材质.005",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 59.688155,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        51,
+        55,
+        53
+      ],
+      "color": "#494955",
+      "name": "body_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "body_材质.005",
+      "object_id": 7,
+      "group": "body_材质.005",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.000394,
+        0.0,
+        -141.891911
+      ],
+      "static_shade_surface_id": 44,
+      "static_shade_surface_group": "body_材质.005",
+      "static_shade_surface_material": "材质.005",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -9.229094,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        49,
+        50,
+        51
+      ],
+      "color": "#494955",
+      "name": "body_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "body_材质.005",
+      "object_id": 7,
+      "group": "body_材质.005",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -529.020832,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 39,
+      "static_shade_surface_group": "body_材质.005",
+      "static_shade_surface_material": "材质.005",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 15.017604,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        51,
+        54,
+        55
+      ],
+      "color": "#242400",
+      "name": "body_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "body_材质.005",
+      "object_id": 7,
+      "group": "body_材质.005",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        283.783823
+      ],
+      "static_shade_surface_id": 40,
+      "static_shade_surface_group": "body_材质.005",
+      "static_shade_surface_material": "材质.005",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 4.594625,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        55,
+        52,
+        53
+      ],
+      "color": "#494955",
+      "name": "body_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "body_材质.005",
+      "object_id": 7,
+      "group": "body_材质.005",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        529.020043,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 41,
+      "static_shade_surface_group": "body_材质.005",
+      "static_shade_surface_material": "材质.005",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 22.433096,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        53,
+        48,
+        49
+      ],
+      "color": "#242400",
+      "name": "body_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "body_材质.005",
+      "object_id": 7,
+      "group": "body_材质.005",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -205.019295,
+        0.0
+      ],
+      "static_shade_surface_id": 42,
+      "static_shade_surface_group": "body_材质.005",
+      "static_shade_surface_material": "材质.005",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 40.553631,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        54,
+        48,
+        52
+      ],
+      "color": "#242400",
+      "name": "body_材质.005"
+    },
+    {
+      "material": "材质.005",
+      "object_name": "body_材质.005",
+      "object_id": 7,
+      "group": "body_材质.005",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        205.019295,
+        0.0
+      ],
+      "static_shade_surface_id": 43,
+      "static_shade_surface_group": "body_材质.005",
+      "static_shade_surface_material": "材质.005",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 59.688155,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        51,
+        53,
+        49
+      ],
+      "color": "#494955",
+      "name": "body_材质.005"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "body_材质.006",
+      "object_id": 8,
+      "group": "body_材质.006",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -283.783517
+      ],
+      "static_shade_surface_id": 45,
+      "static_shade_surface_group": "body_材质.006",
+      "static_shade_surface_material": "材质.006",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -9.22908,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        57,
+        56,
+        58
+      ],
+      "color": "#494955",
+      "name": "body_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "body_材质.006",
+      "object_id": 8,
+      "group": "body_材质.006",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -529.019473,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 46,
+      "static_shade_surface_group": "body_材质.006",
+      "static_shade_surface_material": "材质.006",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -22.312201,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        59,
+        58,
+        62
+      ],
+      "color": "#242400",
+      "name": "body_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "body_材质.006",
+      "object_id": 8,
+      "group": "body_材质.006",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        283.783517
+      ],
+      "static_shade_surface_id": 47,
+      "static_shade_surface_group": "body_材质.006",
+      "static_shade_surface_material": "材质.006",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 4.594625,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        63,
+        62,
+        60
+      ],
+      "color": "#494955",
+      "name": "body_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "body_材质.006",
+      "object_id": 8,
+      "group": "body_材质.006",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        529.019473,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 48,
+      "static_shade_surface_group": "body_材质.006",
+      "static_shade_surface_material": "材质.006",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -14.896709,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        61,
+        60,
+        56
+      ],
+      "color": "#242400",
+      "name": "body_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "body_材质.006",
+      "object_id": 8,
+      "group": "body_材质.006",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -205.019142,
+        0.0
+      ],
+      "static_shade_surface_id": 49,
+      "static_shade_surface_group": "body_材质.006",
+      "static_shade_surface_material": "材质.006",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 40.865496,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        62,
+        58,
+        56
+      ],
+      "color": "#242400",
+      "name": "body_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "body_材质.006",
+      "object_id": 8,
+      "group": "body_材质.006",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        205.019142,
+        0.0
+      ],
+      "static_shade_surface_id": 50,
+      "static_shade_surface_group": "body_材质.006",
+      "static_shade_surface_material": "材质.006",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 60.0,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        59,
+        63,
+        61
+      ],
+      "color": "#494955",
+      "name": "body_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "body_材质.006",
+      "object_id": 8,
+      "group": "body_材质.006",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -283.783517
+      ],
+      "static_shade_surface_id": 45,
+      "static_shade_surface_group": "body_材质.006",
+      "static_shade_surface_material": "材质.006",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -9.22908,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        57,
+        58,
+        59
+      ],
+      "color": "#494955",
+      "name": "body_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "body_材质.006",
+      "object_id": 8,
+      "group": "body_材质.006",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -529.019473,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 46,
+      "static_shade_surface_group": "body_材质.006",
+      "static_shade_surface_material": "材质.006",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -22.312201,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        59,
+        62,
+        63
+      ],
+      "color": "#242400",
+      "name": "body_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "body_材质.006",
+      "object_id": 8,
+      "group": "body_材质.006",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        283.783517
+      ],
+      "static_shade_surface_id": 47,
+      "static_shade_surface_group": "body_材质.006",
+      "static_shade_surface_material": "材质.006",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 4.594625,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        63,
+        60,
+        61
+      ],
+      "color": "#494955",
+      "name": "body_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "body_材质.006",
+      "object_id": 8,
+      "group": "body_材质.006",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        529.019473,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 48,
+      "static_shade_surface_group": "body_材质.006",
+      "static_shade_surface_material": "材质.006",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -14.896709,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        61,
+        56,
+        57
+      ],
+      "color": "#242400",
+      "name": "body_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "body_材质.006",
+      "object_id": 8,
+      "group": "body_材质.006",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -205.019142,
+        0.0
+      ],
+      "static_shade_surface_id": 49,
+      "static_shade_surface_group": "body_材质.006",
+      "static_shade_surface_material": "材质.006",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 40.865496,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        62,
+        56,
+        60
+      ],
+      "color": "#242400",
+      "name": "body_材质.006"
+    },
+    {
+      "material": "材质.006",
+      "object_name": "body_材质.006",
+      "object_id": 8,
+      "group": "body_材质.006",
+      "static_shade_base_color": "#494955",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        205.019142,
+        0.0
+      ],
+      "static_shade_surface_id": 50,
+      "static_shade_surface_group": "body_材质.006",
+      "static_shade_surface_material": "材质.006",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 60.0,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        59,
+        61,
+        57
+      ],
+      "color": "#494955",
+      "name": "body_材质.006"
+    },
+    {
+      "material": "材质.013",
+      "object_name": "body_材质.013",
+      "object_id": 9,
+      "group": "body_材质.013",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -343.022979
+      ],
+      "static_shade_surface_id": 51,
+      "static_shade_surface_group": "body_材质.013",
+      "static_shade_surface_material": "材质.013",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 10.750245,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        65,
+        64,
+        66
+      ],
+      "color": "#DB4955",
+      "name": "body_材质.013"
+    },
+    {
+      "material": "材质.013",
+      "object_name": "body_材质.013",
+      "object_id": 9,
+      "group": "body_材质.013",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -74.07059,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 52,
+      "static_shade_surface_group": "body_材质.013",
+      "static_shade_surface_material": "材质.013",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -12.593521,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        67,
+        66,
+        70
+      ],
+      "color": "#B62400",
+      "name": "body_材质.013"
+    },
+    {
+      "material": "材质.013",
+      "object_name": "body_材质.013",
+      "object_id": 9,
+      "group": "body_材质.013",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        -0.000145,
+        0.0,
+        171.511417
+      ],
+      "static_shade_surface_id": 53,
+      "static_shade_surface_group": "body_材质.013",
+      "static_shade_surface_material": "材质.013",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 16.009943,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        71,
+        70,
+        68
+      ],
+      "color": "#DB4955",
+      "name": "body_材质.013"
+    },
+    {
+      "material": "材质.013",
+      "object_name": "body_材质.013",
+      "object_id": 9,
+      "group": "body_材质.013",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        37.03544,
+        -0.000108,
+        0.0
+      ],
+      "static_shade_surface_id": 54,
+      "static_shade_surface_group": "body_材质.013",
+      "static_shade_surface_material": "材质.013",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 11.764252,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        69,
+        68,
+        64
+      ],
+      "color": "#B62400",
+      "name": "body_材质.013"
+    },
+    {
+      "material": "材质.013",
+      "object_name": "body_材质.013",
+      "object_id": 9,
+      "group": "body_材质.013",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -256.229138,
+        0.0
+      ],
+      "static_shade_surface_id": 55,
+      "static_shade_surface_group": "body_材质.013",
+      "static_shade_surface_material": "材质.013",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 32.115748,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        70,
+        66,
+        64
+      ],
+      "color": "#922400",
+      "name": "body_材质.013"
+    },
+    {
+      "material": "材质.013",
+      "object_name": "body_材质.013",
+      "object_id": 9,
+      "group": "body_材质.013",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        256.229355,
+        0.0
+      ],
+      "static_shade_surface_id": 56,
+      "static_shade_surface_group": "body_材质.013",
+      "static_shade_surface_material": "材质.013",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 39.157093,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        67,
+        71,
+        69
+      ],
+      "color": "#FF4955",
+      "name": "body_材质.013"
+    },
+    {
+      "material": "材质.013",
+      "object_name": "body_材质.013",
+      "object_id": 9,
+      "group": "body_材质.013",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -343.022979
+      ],
+      "static_shade_surface_id": 51,
+      "static_shade_surface_group": "body_材质.013",
+      "static_shade_surface_material": "材质.013",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 10.750245,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        65,
+        66,
+        67
+      ],
+      "color": "#DB4955",
+      "name": "body_材质.013"
+    },
+    {
+      "material": "材质.013",
+      "object_name": "body_材质.013",
+      "object_id": 9,
+      "group": "body_材质.013",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -74.07059,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 52,
+      "static_shade_surface_group": "body_材质.013",
+      "static_shade_surface_material": "材质.013",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -12.593521,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        67,
+        70,
+        71
+      ],
+      "color": "#B62400",
+      "name": "body_材质.013"
+    },
+    {
+      "material": "材质.013",
+      "object_name": "body_材质.013",
+      "object_id": 9,
+      "group": "body_材质.013",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        -0.000145,
+        0.0,
+        171.511562
+      ],
+      "static_shade_surface_id": 57,
+      "static_shade_surface_group": "body_材质.013",
+      "static_shade_surface_material": "材质.013",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 16.00995,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        71,
+        68,
+        69
+      ],
+      "color": "#DB4955",
+      "name": "body_材质.013"
+    },
+    {
+      "material": "材质.013",
+      "object_name": "body_材质.013",
+      "object_id": 9,
+      "group": "body_材质.013",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        37.03544,
+        -0.000108,
+        0.0
+      ],
+      "static_shade_surface_id": 58,
+      "static_shade_surface_group": "body_材质.013",
+      "static_shade_surface_material": "材质.013",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 11.764258,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        69,
+        64,
+        65
+      ],
+      "color": "#B62400",
+      "name": "body_材质.013"
+    },
+    {
+      "material": "材质.013",
+      "object_name": "body_材质.013",
+      "object_id": 9,
+      "group": "body_材质.013",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -256.229138,
+        0.0
+      ],
+      "static_shade_surface_id": 55,
+      "static_shade_surface_group": "body_材质.013",
+      "static_shade_surface_material": "材质.013",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 32.115748,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        70,
+        64,
+        68
+      ],
+      "color": "#922400",
+      "name": "body_材质.013"
+    },
+    {
+      "material": "材质.013",
+      "object_name": "body_材质.013",
+      "object_id": 9,
+      "group": "body_材质.013",
+      "static_shade_base_color": "#DB4955",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        256.229355,
+        0.0
+      ],
+      "static_shade_surface_id": 56,
+      "static_shade_surface_group": "body_材质.013",
+      "static_shade_surface_material": "材质.013",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 39.157093,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        67,
+        69,
+        65
+      ],
+      "color": "#FF4955",
+      "name": "body_材质.013"
+    },
+    {
+      "material": "Material",
+      "object_name": "body_Material",
+      "object_id": 10,
+      "group": "body_Material",
+      "static_shade_base_color": "#242400",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        1732.654514,
+        0.0
+      ],
+      "static_shade_surface_id": 59,
+      "static_shade_surface_group": "body_Material",
+      "static_shade_surface_material": "Material",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 17.161829,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        76,
+        72,
+        74
+      ],
+      "color": "#242400",
+      "name": "body_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "body_Material",
+      "object_id": 10,
+      "group": "body_Material",
+      "static_shade_base_color": "#242400",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        1003.243115,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 60,
+      "static_shade_surface_group": "body_Material",
+      "static_shade_surface_material": "Material",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 17.949285,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        74,
+        75,
+        79
+      ],
+      "color": "#000000",
+      "name": "body_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "body_Material",
+      "object_id": 10,
+      "group": "body_Material",
+      "static_shade_base_color": "#242400",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.000428,
+        0.0,
+        -743.916642
+      ],
+      "static_shade_surface_id": 61,
+      "static_shade_surface_group": "body_Material",
+      "static_shade_surface_material": "Material",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -14.401962,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        78,
+        79,
+        77
+      ],
+      "color": "#242400",
+      "name": "body_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "body_Material",
+      "object_id": 10,
+      "group": "body_Material",
+      "static_shade_base_color": "#242400",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        -0.000498,
+        -866.327626,
+        0.0
+      ],
+      "static_shade_surface_id": 62,
+      "static_shade_surface_group": "body_Material",
+      "static_shade_surface_material": "Material",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -3.592517,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        73,
+        77,
+        79
+      ],
+      "color": "#000000",
+      "name": "body_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "body_Material",
+      "object_id": 10,
+      "group": "body_Material",
+      "static_shade_base_color": "#242400",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1487.832544
+      ],
+      "static_shade_surface_id": 63,
+      "static_shade_surface_group": "body_Material",
+      "static_shade_surface_material": "Material",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 9.7675,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        72,
+        73,
+        75
+      ],
+      "color": "#242400",
+      "name": "body_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "body_Material",
+      "object_id": 10,
+      "group": "body_Material",
+      "static_shade_base_color": "#242400",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -1003.242974,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 64,
+      "static_shade_surface_group": "body_Material",
+      "static_shade_surface_material": "Material",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -17.894589,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        76,
+        77,
+        73
+      ],
+      "color": "#000000",
+      "name": "body_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "body_Material",
+      "object_id": 10,
+      "group": "body_Material",
+      "static_shade_base_color": "#242400",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        1732.654514,
+        0.0
+      ],
+      "static_shade_surface_id": 59,
+      "static_shade_surface_group": "body_Material",
+      "static_shade_surface_material": "Material",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": 17.161829,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        76,
+        74,
+        78
+      ],
+      "color": "#242400",
+      "name": "body_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "body_Material",
+      "object_id": 10,
+      "group": "body_Material",
+      "static_shade_base_color": "#242400",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        1003.243115,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 60,
+      "static_shade_surface_group": "body_Material",
+      "static_shade_surface_material": "Material",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 17.949285,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        74,
+        79,
+        78
+      ],
+      "color": "#000000",
+      "name": "body_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "body_Material",
+      "object_id": 10,
+      "group": "body_Material",
+      "static_shade_base_color": "#242400",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.000428,
+        0.0,
+        -743.915903
+      ],
+      "static_shade_surface_id": 65,
+      "static_shade_surface_group": "body_Material",
+      "static_shade_surface_material": "Material",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -14.401969,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        78,
+        77,
+        76
+      ],
+      "color": "#242400",
+      "name": "body_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "body_Material",
+      "object_id": 10,
+      "group": "body_Material",
+      "static_shade_base_color": "#242400",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        -0.000498,
+        -866.326887,
+        0.0
+      ],
+      "static_shade_surface_id": 66,
+      "static_shade_surface_group": "body_Material",
+      "static_shade_surface_material": "Material",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -3.592524,
+      "static_shade_surface_face_count": 1,
+      "indices": [
+        73,
+        79,
+        75
+      ],
+      "color": "#000000",
+      "name": "body_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "body_Material",
+      "object_id": 10,
+      "group": "body_Material",
+      "static_shade_base_color": "#242400",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1487.832544
+      ],
+      "static_shade_surface_id": 63,
+      "static_shade_surface_group": "body_Material",
+      "static_shade_surface_material": "Material",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 9.7675,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        72,
+        75,
+        74
+      ],
+      "color": "#242400",
+      "name": "body_Material"
+    },
+    {
+      "material": "Material",
+      "object_name": "body_Material",
+      "object_id": 10,
+      "group": "body_Material",
+      "static_shade_base_color": "#242400",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -1003.242974,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 64,
+      "static_shade_surface_group": "body_Material",
+      "static_shade_surface_material": "Material",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -17.894589,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        76,
+        73,
+        72
+      ],
+      "color": "#000000",
+      "name": "body_Material"
+    },
+    {
+      "material": "材质.009",
+      "object_name": "body_材质.009",
+      "object_id": 11,
+      "group": "body_材质.009",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -931.871676,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 67,
+      "static_shade_surface_group": "body_材质.009",
+      "static_shade_surface_material": "材质.009",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -14.816078,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        81,
+        80,
+        82
+      ],
+      "color": "#494900",
+      "name": "body_材质.009"
+    },
+    {
+      "material": "材质.009",
+      "object_name": "body_材质.009",
+      "object_id": 11,
+      "group": "body_材质.009",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1266.35563
+      ],
+      "static_shade_surface_id": 68,
+      "static_shade_surface_group": "body_材质.009",
+      "static_shade_surface_material": "材质.009",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 7.674558,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        83,
+        82,
+        86
+      ],
+      "color": "#6D6D55",
+      "name": "body_材质.009"
+    },
+    {
+      "material": "材质.009",
+      "object_name": "body_材质.009",
+      "object_id": 11,
+      "group": "body_材质.009",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        931.871676,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 69,
+      "static_shade_surface_group": "body_材质.009",
+      "static_shade_surface_material": "材质.009",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 14.606326,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        87,
+        86,
+        84
+      ],
+      "color": "#494900",
+      "name": "body_材质.009"
+    },
+    {
+      "material": "材质.009",
+      "object_name": "body_材质.009",
+      "object_id": 11,
+      "group": "body_材质.009",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -1266.35563
+      ],
+      "static_shade_surface_id": 70,
+      "static_shade_surface_group": "body_材质.009",
+      "static_shade_surface_material": "材质.009",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -13.976473,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        85,
+        84,
+        80
+      ],
+      "color": "#6D6D55",
+      "name": "body_材质.009"
+    },
+    {
+      "material": "材质.009",
+      "object_name": "body_材质.009",
+      "object_id": 11,
+      "group": "body_材质.009",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -1274.050777,
+        0.0
+      ],
+      "static_shade_surface_id": 71,
+      "static_shade_surface_group": "body_材质.009",
+      "static_shade_surface_material": "材质.009",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -25.25688,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        86,
+        82,
+        80
+      ],
+      "color": "#494900",
+      "name": "body_材质.009"
+    },
+    {
+      "material": "材质.009",
+      "object_name": "body_材质.009",
+      "object_id": 11,
+      "group": "body_材质.009",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        1274.050777,
+        0.0
+      ],
+      "static_shade_surface_id": 72,
+      "static_shade_surface_group": "body_材质.009",
+      "static_shade_surface_material": "材质.009",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -3.736619,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        83,
+        87,
+        85
+      ],
+      "color": "#929255",
+      "name": "body_材质.009"
+    },
+    {
+      "material": "材质.009",
+      "object_name": "body_材质.009",
+      "object_id": 11,
+      "group": "body_材质.009",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        -931.871676,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 67,
+      "static_shade_surface_group": "body_材质.009",
+      "static_shade_surface_material": "材质.009",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": -14.816078,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        81,
+        82,
+        83
+      ],
+      "color": "#494900",
+      "name": "body_材质.009"
+    },
+    {
+      "material": "材质.009",
+      "object_name": "body_材质.009",
+      "object_id": 11,
+      "group": "body_材质.009",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        1266.35563
+      ],
+      "static_shade_surface_id": 68,
+      "static_shade_surface_group": "body_材质.009",
+      "static_shade_surface_material": "材质.009",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": 7.674558,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        83,
+        86,
+        87
+      ],
+      "color": "#6D6D55",
+      "name": "body_材质.009"
+    },
+    {
+      "material": "材质.009",
+      "object_name": "body_材质.009",
+      "object_id": 11,
+      "group": "body_材质.009",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "side",
+      "static_shade_intensity": 0.899991,
+      "static_shade_intensity_q15": 29490,
+      "static_shade_normal": [
+        931.871676,
+        0.0,
+        0.0
+      ],
+      "static_shade_surface_id": 69,
+      "static_shade_surface_group": "body_材质.009",
+      "static_shade_surface_material": "材质.009",
+      "static_shade_surface_axis": 0,
+      "static_shade_surface_plane": 14.606326,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        87,
+        84,
+        85
+      ],
+      "color": "#494900",
+      "name": "body_材质.009"
+    },
+    {
+      "material": "材质.009",
+      "object_name": "body_材质.009",
+      "object_id": 11,
+      "group": "body_材质.009",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "front",
+      "static_shade_intensity": 1.100009,
+      "static_shade_intensity_q15": 36044,
+      "static_shade_normal": [
+        0.0,
+        0.0,
+        -1266.35563
+      ],
+      "static_shade_surface_id": 70,
+      "static_shade_surface_group": "body_材质.009",
+      "static_shade_surface_material": "材质.009",
+      "static_shade_surface_axis": 2,
+      "static_shade_surface_plane": -13.976473,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        85,
+        80,
+        81
+      ],
+      "color": "#6D6D55",
+      "name": "body_材质.009"
+    },
+    {
+      "material": "材质.009",
+      "object_name": "body_材质.009",
+      "object_id": 11,
+      "group": "body_材质.009",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "back_bottom",
+      "static_shade_intensity": 0.700003,
+      "static_shade_intensity_q15": 22937,
+      "static_shade_normal": [
+        0.0,
+        -1274.050777,
+        0.0
+      ],
+      "static_shade_surface_id": 71,
+      "static_shade_surface_group": "body_材质.009",
+      "static_shade_surface_material": "材质.009",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -25.25688,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        86,
+        80,
+        84
+      ],
+      "color": "#494900",
+      "name": "body_材质.009"
+    },
+    {
+      "material": "材质.009",
+      "object_name": "body_材质.009",
+      "object_id": 11,
+      "group": "body_材质.009",
+      "static_shade_base_color": "#6D6D55",
+      "static_shade_bucket": "top",
+      "static_shade_intensity": 1.349986,
+      "static_shade_intensity_q15": 44235,
+      "static_shade_normal": [
+        0.0,
+        1274.050777,
+        0.0
+      ],
+      "static_shade_surface_id": 72,
+      "static_shade_surface_group": "body_材质.009",
+      "static_shade_surface_material": "材质.009",
+      "static_shade_surface_axis": 1,
+      "static_shade_surface_plane": -3.736619,
+      "static_shade_surface_face_count": 2,
+      "indices": [
+        83,
+        85,
+        81
+      ],
+      "color": "#929255",
+      "name": "body_材质.009"
+    }
+  ],
+  "metadata": {
+    "source": {
+      "obj": "robotss.obj",
+      "mtl": "robotss.mtl"
+    },
+    "objects": [],
+    "groups": [
+      "leg_r_立方体",
+      "leg_r_材质.008",
+      "leg_l_立方体.001",
+      "leg_l_材质.007",
+      "arm_r_立方体.002",
+      "arm_r_材质.004",
+      "arm_l_立方体.003",
+      "arm_l_材质.003",
+      "body_立方体.008",
+      "body_材质.014",
+      "body_材质.002",
+      "body_材质.005",
+      "body_材质.006",
+      "body_材质.013",
+      "body_Material",
+      "body_材质.009"
+    ],
+    "materials": {
+      "Material": "#3F3F3F",
+      "材质.002": "#7F7F7F",
+      "材质.003": "#8E8E8E",
+      "材质.004": "#8E8E8E",
+      "材质.005": "#414141",
+      "材质.006": "#414141",
+      "材质.007": "#414141",
+      "材质.008": "#414141",
+      "材质.009": "#666666",
+      "材质.013": "#CC4F5F",
+      "材质.014": "#CC4F5F"
+    },
+    "object_table": [
+      {
+        "object_id": 1,
+        "name": "leg_r_材质.008",
+        "face_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "object_id": 2,
+        "name": "leg_l_材质.007",
+        "face_indices": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ]
+      },
+      {
+        "object_id": 3,
+        "name": "arm_r_材质.004",
+        "face_indices": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ]
+      },
+      {
+        "object_id": 4,
+        "name": "arm_l_材质.003",
+        "face_indices": [
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47
+        ]
+      },
+      {
+        "object_id": 5,
+        "name": "body_材质.014",
+        "face_indices": [
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59
+        ]
+      },
+      {
+        "object_id": 6,
+        "name": "body_材质.002",
+        "face_indices": [
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71
+        ]
+      },
+      {
+        "object_id": 7,
+        "name": "body_材质.005",
+        "face_indices": [
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ]
+      },
+      {
+        "object_id": 8,
+        "name": "body_材质.006",
+        "face_indices": [
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95
+        ]
+      },
+      {
+        "object_id": 9,
+        "name": "body_材质.013",
+        "face_indices": [
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107
+        ]
+      },
+      {
+        "object_id": 10,
+        "name": "body_Material",
+        "face_indices": [
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119
+        ]
+      },
+      {
+        "object_id": 11,
+        "name": "body_材质.009",
+        "face_indices": [
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131
+        ]
+      }
+    ],
+    "normalization": {
+      "target_height": 120.0,
+      "requested_scale": 1.0,
+      "effective_target_height": 120.0,
+      "center": true,
+      "source_height": 5.820593000000001,
+      "scale": 20.616456089611486,
+      "sk3d_auto_fit_scale": 1.0,
+      "source_center": [
+        -0.000994000000000073,
+        -0.38616849999999986,
+        -0.3542020000000001
+      ]
+    },
+    "binary_format": "SK3D0",
+    "static_face_shading": {
+      "mode": "group_material_surface_bucket_v3",
+      "axis_convention": {
+        "front_back": "+/-Z",
+        "up": "+Y",
+        "side": "+/-X",
+        "down": "-Y"
+      },
+      "levels_q15": {
+        "front_back": 36044,
+        "top": 44235,
+        "side": 29490,
+        "bottom": 22937
+      },
+      "levels_ratio": {
+        "front_back": 1.100009,
+        "top": 1.349986,
+        "side": 0.899991,
+        "bottom": 0.700003
+      }
+    }
+  }
+}

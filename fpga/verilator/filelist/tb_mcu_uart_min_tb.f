@@ -1,0 +1,16 @@
++incdir+../../rtl
++incdir+../../rtl/ip/APB_UART/URT
++define+MODELSIM_BUILD
+../../rtl/ip/APB_UART/URT/raminfr.v
+../../rtl/ip/APB_UART/URT/uart_tfifo.v
+../../rtl/ip/APB_UART/URT/uart_sync_flops.v
+../../rtl/ip/APB_UART/URT/uart_rfifo.v
+../../rtl/ip/APB_UART/URT/uart_regs.v
+../../rtl/ip/APB_UART/URT/uart_receiver.v
+../../rtl/ip/APB_UART/URT/uart_transmitter.v
+../../rtl/ip/APB_UART/URT/uart_top.v
+../../rtl/ip/APB_UART/apb_mux2.v
+../../rtl/ip/APB_UART/axi2apb.v
+../../rtl/ip/APB_UART/axi_uart_controller.v
+../../rtl/display/mcu_uart_status.sv
+../../sim/test/display/mcu_uart_min_tb.sv
