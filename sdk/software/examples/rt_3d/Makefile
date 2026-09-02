@@ -14,7 +14,7 @@ $(error BENCH_MODE must be CPU_ONLY, CPU_MATMUL, or SCENE_CONTROLLER)
 endif
 
 CFLAGS += -O2 -g -DRTThread -DRT_USING_IDLE_HOOK
-C_SRCS := ./main.c ./rt_3d.c ./board.c ./rt3d_metrics.c
+C_SRCS := ./main.c ./rt_3d.c ./board.c ./rt3d_metrics.c ../../bsp/drivers/scene_ctrl_wait.c
 C_SRCS += $(wildcard ../sk_os/src/*.c)
 C_SRCS += $(wildcard ../sk_os/libcpu/loongarch32r/common/*.c)
 C_SRCS += $(wildcard ../sk_os/libcpu/loongarch32r/OpenLA500/*.c)
@@ -31,3 +31,10 @@ COMMON_DIR = ../../bsp
 GCC_DIR = ../../../toolchains/loongson-gnu-toolchain-8.3-x86_64-loongarch32r-linux-gnusf-v2.0
 PICOLIBC_DIR = ../../../toolchains/picolibc
 include ../../bsp/common.mk
+# The lightweight SoC CPU used by the Verilator integration does not
+# implement the cache-maintenance CACOP startup sequence; keep this image
+# uncached so reset reaches the RT-Thread scheduler in simulation.
+RT3D_SIMULATION ?= 0
+ifeq ($(RT3D_SIMULATION),1)
+CFLAGS += -Dhas_cache=0
+endif

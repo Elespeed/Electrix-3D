@@ -31,7 +31,7 @@ module scene_multimesh_cmd_top #(
     logic cmd_draw_start; logic [3:0] cmd_mesh_id,cmd_yaw,cmd_pitch,cmd_roll; logic signed [15:0] cmd_tx,cmd_ty,cmd_tz; logic [15:0] cmd_scale;
     logic [2:0] mmio_phase; logic [31:0] mmio_w0; logic present_pending;
 
-    scene_cmd_fifo #(.DEPTH(16),.WIDTH(128)) u_fifo(
+    scene_cmd_fifo #(.DEPTH(32),.WIDTH(128)) u_fifo(
         .clk,.resetn,.push_valid(cmd_valid),.push_data(cmd_data),.push_ready(cmd_ready),.level(cmd_level),.full(cmd_full),.locked(fifo_locked),
         .frame_start,.frame_complete(fifo_complete),.frame_error(fifo_error),.pop(fifo_pop),.head(fifo_head),.empty(fifo_empty));
 

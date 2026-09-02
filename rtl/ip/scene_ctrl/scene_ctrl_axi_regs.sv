@@ -23,7 +23,14 @@ module scene_ctrl_axi_regs (
     output logic cmd_mode, output logic cmd_push, output logic [127:0] cmd_data, output logic cmd_frame_start,
     input logic busy, input logic load_done, input logic render_done, input logic error, input logic gru_backpressure,
     input logic model_valid, input logic [7:0] error_code, input logic [15:0] vertex_count, input logic [15:0] triangle_count,
+    input logic [31:0] perf_load_bytes, input logic [31:0] perf_load_transactions,
+    input logic [31:0] perf_transform_cycles, input logic [31:0] perf_cull_cycles,
+    input logic [31:0] perf_sort_cycles, input logic [31:0] perf_command_cycles,
+    input logic [31:0] perf_input_triangles, input logic [31:0] perf_culled_triangles,
+    input logic [31:0] perf_output_triangles,
     input logic cmd_ready, input logic [4:0] cmd_level, input logic cmd_full, input logic cmd_locked, input logic [31:0] cmd_frame_count, input logic [3:0] cmd_mesh_count
+    ,input logic event_render_done, input logic event_frame_done, input logic event_error,
+    output logic irq, output logic [2:0] irq_status, output logic [2:0] irq_enable
 );
     logic wr_have, wr_bad; logic [31:0] wr_addr; logic [4:0] wr_id;
     wire bad_aw = (s_awlen != 0) || (s_awsize != 3'd2) || (s_awburst != 2'b01);
@@ -39,6 +46,7 @@ module scene_ctrl_axi_regs (
         model_base<=32'h0040_0000; model_size<=0; yaw<=0; pitch<=0; roll<=0; scale<=16'h0100;
         center_x<=16'd200; center_y<=16'd150; translate_z<=0; render_cfg<=6'b001111; clear_color<=8'h18;
         viewport_x<=0; viewport_y<=0; viewport_w<=16'd400; viewport_h<=16'd300; viewport_cfg<=0;
+        irq_enable<=3'b000; irq_status<=3'b000;
       end else begin
         load_start<=0; render_start<=0; abort<=0; soft_reset<=0; cmd_push<=0; cmd_frame_start<=0;
         if(s_awvalid && s_awready) begin wr_have<=1; wr_bad<=bad_aw; wr_addr<=s_awaddr; wr_id<=s_awid; end
@@ -61,8 +69,15 @@ module scene_ctrl_axi_regs (
             12'h048: cmd_data[127:96]<=s_wdata;
             12'h04c: cmd_push<=s_wdata[0] && cmd_mode && cmd_ready;
             12'h050: cmd_frame_start<=s_wdata[0] && cmd_mode && !cmd_locked && (cmd_level != 0);
+            12'h058: irq_enable<=s_wdata[2:0];
+            12'h060: irq_status<=irq_status & ~s_wdata[2:0];
             default: ; endcase
         end
+        // Sticky event capture makes completion lossless even when software
+        // is not polling.  A same-cycle event wins over a W1C clear.
+        if (event_render_done) irq_status[0] <= 1'b1;
+        if (event_frame_done)  irq_status[1] <= 1'b1;
+        if (event_error)       irq_status[2] <= 1'b1;
         if(s_bvalid && s_bready) s_bvalid<=0;
         if(s_arvalid && s_arready) begin
           s_rvalid<=1; s_rresp<=bad_ar ? 2'b10 : 2'b00;
@@ -75,9 +90,23 @@ module scene_ctrl_axi_regs (
             12'h038:s_rdata<={31'd0,cmd_mode};
             12'h03c:s_rdata<=cmd_data[31:0]; 12'h040:s_rdata<=cmd_data[63:32]; 12'h044:s_rdata<=cmd_data[95:64]; 12'h048:s_rdata<=cmd_data[127:96];
             12'h054:s_rdata<={cmd_frame_count[15:0],cmd_mesh_count,cmd_level,4'd0,cmd_locked,cmd_full,cmd_ready};
+            12'h058:s_rdata<={29'd0,irq_enable};
+            12'h05c:s_rdata<={29'd0,irq_status};
+            // Read-only performance counters; T09 IRQ registers remain at
+            // 0x058/0x05c and are intentionally not repurposed.
+            12'h064:s_rdata<=perf_load_bytes;
+            12'h068:s_rdata<=perf_load_transactions;
+            12'h06c:s_rdata<=perf_transform_cycles;
+            12'h070:s_rdata<=perf_cull_cycles;
+            12'h074:s_rdata<=perf_sort_cycles;
+            12'h078:s_rdata<=perf_command_cycles;
+            12'h07c:s_rdata<=perf_input_triangles;
+            12'h080:s_rdata<=perf_culled_triangles;
+            12'h084:s_rdata<=perf_output_triangles;
             default:s_rdata<=0; endcase
         end
         if(s_rvalid && s_rready) s_rvalid<=0;
       end
     end
+    assign irq = |(irq_enable & irq_status);
 endmodule

@@ -26,6 +26,9 @@
 #define SCENE_CTRL_REG_CMD_PUSH 0x4cu
 #define SCENE_CTRL_REG_CMD_FRAME_START 0x50u
 #define SCENE_CTRL_REG_CMD_STATUS 0x54u
+#define SCENE_CTRL_REG_IRQ_ENABLE 0x58u
+#define SCENE_CTRL_REG_IRQ_STATUS 0x5cu
+#define SCENE_CTRL_REG_IRQ_CLEAR 0x60u
 
 #define SCENE_CTRL_CTRL_ABORT 0x08u
 #define SCENE_CTRL_CTRL_LOAD_START 0x02u
@@ -35,6 +38,11 @@
 #define SCENE_CTRL_STATUS_RENDER_DONE 0x04u
 #define SCENE_CTRL_STATUS_ERROR 0x08u
 #define SCENE_CTRL_STATUS_MODEL_VALID 0x20u
+
+#define SCENE_CTRL_IRQ_RENDER_DONE 0x01u
+#define SCENE_CTRL_IRQ_FRAME_DONE 0x02u
+#define SCENE_CTRL_IRQ_ERROR 0x04u
+#define SCENE_CTRL_IRQ_ALL (SCENE_CTRL_IRQ_RENDER_DONE | SCENE_CTRL_IRQ_FRAME_DONE | SCENE_CTRL_IRQ_ERROR)
 
 #define SCENE_CTRL_RENDER_CFG_CLEAR_BEFORE 0x01u
 #define SCENE_CTRL_RENDER_CFG_AUTO_PRESENT 0x02u
@@ -87,6 +95,9 @@ static inline void scene_ctrl_set_viewport(U16 x, U16 y, U16 width, U16 height, 
 static inline void scene_ctrl_load(void) { scene_ctrl_write(SCENE_CTRL_REG_CTRL, SCENE_CTRL_CTRL_LOAD_START); }
 static inline void scene_ctrl_render(void) { scene_ctrl_write(SCENE_CTRL_REG_CTRL, SCENE_CTRL_CTRL_RENDER_START); }
 static inline void scene_ctrl_abort(void) { scene_ctrl_write(SCENE_CTRL_REG_CTRL, SCENE_CTRL_CTRL_ABORT); }
+static inline void scene_ctrl_irq_enable(U8 mask) { scene_ctrl_write(SCENE_CTRL_REG_IRQ_ENABLE, mask); }
+static inline U8 scene_ctrl_irq_status(void) { return (U8)scene_ctrl_read(SCENE_CTRL_REG_IRQ_STATUS); }
+static inline void scene_ctrl_irq_clear(U8 mask) { scene_ctrl_write(SCENE_CTRL_REG_IRQ_CLEAR, mask); }
 static inline U8 scene_ctrl_error_code(void) { return (U8)(scene_ctrl_read(SCENE_CTRL_REG_STATUS) >> 8); }
 static inline void scene_ctrl_cmd_enable(void) { scene_ctrl_write(SCENE_CTRL_REG_CMD_CFG, 1u); }
 static inline U32 scene_ctrl_cmd_status(void) { return scene_ctrl_read(SCENE_CTRL_REG_CMD_STATUS); }

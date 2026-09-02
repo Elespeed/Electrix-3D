@@ -2,20 +2,21 @@
 // queued only while a frame is being assembled; FRAME_START locks the queue
 // until the consumer reports frame_complete or frame_error.
 module scene_cmd_fifo #(
-    parameter int DEPTH = 16,
+    parameter int DEPTH = 32,
     parameter int WIDTH = 128,
-    parameter int AW = $clog2(DEPTH)
+    parameter int AW = (DEPTH <= 2) ? 1 : $clog2(DEPTH),
+    parameter int LW = (DEPTH <= 1) ? 1 : $clog2(DEPTH + 1)
 ) (
     input  logic clk, input logic resetn,
     input  logic push_valid, input logic [WIDTH-1:0] push_data,
-    output logic push_ready, output logic [$clog2(DEPTH+1)-1:0] level,
+    output logic push_ready, output logic [LW-1:0] level,
     output logic full, output logic locked,
     input  logic frame_start, input logic frame_complete, input logic frame_error,
     input  logic pop, output logic [WIDTH-1:0] head, output logic empty
 );
     (* ram_style = "block" *) logic [WIDTH-1:0] mem [0:DEPTH-1];
     logic [AW-1:0] wr_ptr, rd_ptr;
-    logic [$clog2(DEPTH+1)-1:0] count;
+    logic [LW-1:0] count;
     assign level = count;
     assign empty = (count == 0);
     assign full = (count == DEPTH);

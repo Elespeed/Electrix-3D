@@ -6,6 +6,7 @@
 #include "sketchbook.h"
 #include "matmul.h"
 #include "rt3d_metrics.h"
+#include "scene_ctrl_wait.h"
 
 #if !defined(RT3D_MODE_CPU_ONLY) && !defined(RT3D_MODE_CPU_MATMUL) && !defined(RT3D_MODE_SCENE_CONTROLLER)
 #error "Select one RT3D_MODE_* backend"
@@ -103,20 +104,29 @@ static U32 software_frame(U32 frame, const rt3d_model_t *model,
     return visible;
 }
 
-static void scene_controller_frame(U32 frame)
+static U8 scene_controller_frame(U32 frame, U8 use_irq)
 {
     U32 completed = scene_ctrl_cmd_frame_count();
     scene_ctrl_cmd_t cmd = scene_ctrl_cmd_clear(RT3D_CLEAR_COLOR);
     U8 phase = rt3d_trajectory_phase(frame);
+    scene_ctrl_wait_prepare();
+    scene_ctrl_irq_clear(SCENE_CTRL_IRQ_FRAME_DONE | SCENE_CTRL_IRQ_ERROR);
     scene_ctrl_cmd_push(&cmd);
     cmd = scene_ctrl_cmd_draw(0u, 0, 0, 0, phase, 0u, 0u, 0x0100u);
     scene_ctrl_cmd_push(&cmd);
     cmd = scene_ctrl_cmd_present();
     scene_ctrl_cmd_push(&cmd);
     scene_ctrl_cmd_start_frame();
-    while (scene_ctrl_cmd_frame_count() == completed) {
-        if (scene_ctrl_read(SCENE_CTRL_REG_STATUS) & SCENE_CTRL_STATUS_ERROR) return;
+    if (use_irq) {
+        static U32 wait_seq;
+        U8 status;
+        ++wait_seq;
+        rt_kprintf("RT3D IRQ WAIT seq=%u completed=%u\n", wait_seq, completed);
+        status = scene_ctrl_wait_irq(completed, RT_WAITING_FOREVER);
+        rt_kprintf("RT3D IRQ WAKE seq=%u status=%u\n", wait_seq, status);
+        return status;
     }
+    return scene_ctrl_wait_poll(completed);
 }
 
 void rt3d_run(void)
@@ -134,6 +144,7 @@ void rt3d_run(void)
     rt_kprintf("RT3D NOTICE CPU_MATMUL_DEFERRED: transform accelerator hook is not implemented; results are unsupported\n");
 #endif
 #if defined(RT3D_MODE_SCENE_CONTROLLER)
+    scene_ctrl_wait_init();
     scene_ctrl_cmd_enable();
     scene_ctrl_configure(RT3D_MODEL_BASE, RT3D_MODEL_BYTES);
     scene_ctrl_set_rotation(0u, 0u, 0u, 0x0100u);
@@ -151,7 +162,7 @@ void rt3d_run(void)
     for (rep = 1u; rep <= RT3D_REPETITIONS; ++rep) {
         for (frame = 0u; frame < RT3D_WARMUP_FRAMES; ++frame) {
 #if defined(RT3D_MODE_SCENE_CONTROLLER)
-            scene_controller_frame(frame);
+            (void)scene_controller_frame(frame, 1u);
 #else
             (void)software_frame(frame, &model, (rt3d_frame_metrics_t *)0);
 #if defined(RT3D_MODE_CPU_MATMUL)
@@ -166,11 +177,11 @@ void rt3d_run(void)
             rt3d_frame_begin(&metrics);
 #if defined(RT3D_MODE_SCENE_CONTROLLER)
             rt3d_stage_begin(&metrics, RT3D_STAGE_COMMAND_SUBMIT);
-            scene_controller_frame(frame);
+            (void)scene_controller_frame(frame, 1u);
             rt3d_stage_end(&metrics, RT3D_STAGE_COMMAND_SUBMIT);
-            rt3d_polling_begin(&metrics);
+            /* The primary Scene path blocks on a semaphore.  Keep the
+             * polling API above for explicitly selected control runs. */
             visible = model.triangle_count;
-            rt3d_polling_end(&metrics);
 #else
             /* Keep stage boundaries shared: software_frame performs the
              * fixed-point transform, cull, stable painter sort, and submit. */

@@ -43,6 +43,13 @@ module scene_ctrl_engine #(
     output logic [7:0] error_code,
     output logic cache_valid, output logic load_done, output logic render_done,
     output logic [15:0] model_vertex_count, output logic [15:0] model_triangle_count,
+    // Read-only per-operation performance counters.  They are deliberately
+    // observational: none of these signals feed the engine control path.
+    output logic [31:0] perf_load_bytes, output logic [31:0] perf_load_transactions,
+    output logic [31:0] perf_transform_cycles, output logic [31:0] perf_cull_cycles,
+    output logic [31:0] perf_sort_cycles, output logic [31:0] perf_command_cycles,
+    output logic [31:0] perf_input_triangles, output logic [31:0] perf_culled_triangles,
+    output logic [31:0] perf_output_triangles,
     output logic mmio_valid, output logic mmio_we, output logic [31:0] mmio_addr,
     output logic [31:0] mmio_wdata, input logic [31:0] mmio_rdata, input logic mmio_ready,
     output logic [4:0] m_axi_arid, output logic [31:0] m_axi_araddr, output logic [7:0] m_axi_arlen,
@@ -158,6 +165,15 @@ module scene_ctrl_engine #(
     // Waveform-visible debug counters for future scene-quality triage.
     logic [7:0] dbg_visible_triangles_q, dbg_overlap_hotspot_q;
     logic signed [25:0] dbg_depth_min_q, dbg_depth_max_q;
+
+    // Counters are saturating so a long-running animation cannot wrap a
+    // reported sample.  The load counters are reset on LOAD; stage/triangle
+    // counters are reset on each RENDER/DRAW and retained after completion.
+    function automatic logic [31:0] sat_inc(input logic [31:0] value, input logic [31:0] amount);
+        sat_inc = (32'hffff_ffff - value < amount) ? 32'hffff_ffff : value + amount;
+    endfunction
+    assign perf_culled_triangles = (perf_input_triangles >= perf_output_triangles) ?
+                                   perf_input_triangles - perf_output_triangles : 32'd0;
 
     function automatic logic signed [9:0] unpack_q1_8(input logic [9:0] packed_value);
         unpack_q1_8 = {packed_value[9], packed_value[8:0]};
@@ -371,10 +387,36 @@ module scene_ctrl_engine #(
             active_triangle_base <= 0; active_triangle_count <= 0;
             model_vertex_count <= 0;
             model_triangle_count <= 0;
+            perf_load_bytes <= 0;
+            perf_load_transactions <= 0;
+            perf_transform_cycles <= 0;
+            perf_cull_cycles <= 0;
+            perf_sort_cycles <= 0;
+            perf_command_cycles <= 0;
+            perf_input_triangles <= 0;
+            perf_output_triangles <= 0;
             sort_i_record <= 0;
             sort_j_record <= 0;
         end else begin
             cmd_draw_done <= 0;
+            // Pure observers.  AXI load accounting is based on accepted read
+            // addresses (the model reader issues one 32-bit beat per request).
+            if (m_axi_arvalid && m_axi_arready) begin
+                perf_load_transactions <= sat_inc(perf_load_transactions, 32'd1);
+                perf_load_bytes <= sat_inc(perf_load_bytes, 32'd4);
+            end
+            if (state == XFORM_READ || state == XFORM_LAUNCH || state == XFORM_WAIT)
+                perf_transform_cycles <= sat_inc(perf_transform_cycles, 32'd1);
+            if (state == BUILD_TRI_READ || state == BUILD_VERTEX_READ || state == BUILD || state == BUILD_CAPTURE)
+                perf_cull_cycles <= sat_inc(perf_cull_cycles, 32'd1);
+            if (state == SORT_I || state == SORT_READ || state == SORT_COMPARE ||
+                state == SORT_WRITE_I || state == SORT_WRITE_J)
+                perf_sort_cycles <= sat_inc(perf_sort_cycles, 32'd1);
+            if (state == CMD_SETUP || state == CMD_TRI_READ || state == CMD_WRITE ||
+                state == WAIT_FRAME || state == CLEAR_DONE)
+                perf_command_cycles <= sat_inc(perf_command_cycles, 32'd1);
+            if (state == BUILD_CAPTURE && frontend_visible_q)
+                perf_output_triangles <= sat_inc(perf_output_triangles, 32'd1);
             if (SCENE_CONTROLLED && scene_abort) begin
                 busy <= 0; cache_valid <= 0; load_done <= 0; render_done <= 0; state <= IDLE;
             end else begin
@@ -673,6 +715,13 @@ module scene_ctrl_engine #(
                     yaw <= yaw + 1;
                     load_index <= 0;
                     visible_count <= 0;
+                    if (SCENE_CONTROLLED && scene_animation_enable) begin
+                        perf_transform_cycles <= 0;
+                        perf_cull_cycles <= 0;
+                        perf_sort_cycles <= 0;
+                        perf_command_cycles <= 0;
+                        perf_output_triangles <= 0;
+                    end
                     if (SCENE_CONTROLLED && !scene_animation_enable) begin
                         busy <= 0;
                         render_done <= 1;
@@ -684,6 +733,13 @@ module scene_ctrl_engine #(
                     yaw <= yaw + 1;
                     load_index <= 0;
                     visible_count <= 0;
+                    if (SCENE_CONTROLLED && scene_animation_enable) begin
+                        perf_transform_cycles <= 0;
+                        perf_cull_cycles <= 0;
+                        perf_sort_cycles <= 0;
+                        perf_command_cycles <= 0;
+                        perf_output_triangles <= 0;
+                    end
                     if (cmd_mode) begin
                         busy <= 0;
                         cmd_draw_done <= 1;
@@ -702,6 +758,8 @@ module scene_ctrl_engine #(
                     // without resetting the whole subsystem.  This is the
                     // hand-off used by the S3PK catalog selector.
                     if (SCENE_CONTROLLED && scene_load_start) begin
+                        perf_load_bytes <= 0;
+                        perf_load_transactions <= 0;
                         busy <= 1;
                         error <= 0;
                         error_code <= 0;
@@ -714,6 +772,12 @@ module scene_ctrl_engine #(
                         face_group_count <= 0;
                         state <= HDR_REQ;
                     end else if (scene_render_start) begin
+                        perf_transform_cycles <= 0;
+                        perf_cull_cycles <= 0;
+                        perf_sort_cycles <= 0;
+                        perf_command_cycles <= 0;
+                        perf_input_triangles <= triangle_count;
+                        perf_output_triangles <= 0;
                         busy <= 1;
                         render_done <= 0;
                         yaw <= scene_yaw[3:0];
@@ -725,6 +789,12 @@ module scene_ctrl_engine #(
                             error_code <= 8'd8;
                             error <= 1'b1;
                         end else begin
+                            perf_transform_cycles <= 0;
+                            perf_cull_cycles <= 0;
+                            perf_sort_cycles <= 0;
+                            perf_command_cycles <= 0;
+                            perf_input_triangles <= mesh_triangle_count[cmd_mesh_id];
+                            perf_output_triangles <= 0;
                             busy <= 1;
                             active_vertex_base <= mesh_vertex_base[cmd_mesh_id];
                             active_vertex_count <= mesh_vertex_count[cmd_mesh_id];

@@ -798,8 +798,11 @@ wire [1 :0] fft_bresp  ;
 wire        fft_bvalid ;
 wire        fft_bready ;
 wire        fft_finish ;
-// FFT/IFFT is not implemented in this stage; tie off to avoid X-propagation into confreg interrupt logic.
-assign fft_finish = 1'b0;
+// The legacy FFT completion input is otherwise unused.  Route the Scene
+// controller's level IRQ through this existing, synchronized confreg source
+// (bit 6) to CPU intrpt[0].
+wire        scene_irq;
+assign fft_finish = scene_irq;
 
 // The 0x1f400000 slot is reserved for Scene in the 3D top.  Legacy SketchBook
 // builds retain the original error response for the unused FFT window.
@@ -809,7 +812,7 @@ scene_ctrl_top u_scene_ctrl (
     .s_awvalid(fft_awvalid), .s_awready(fft_awready), .s_awaddr(fft_awaddr), .s_awid(fft_awid), .s_awlen(fft_awlen), .s_awsize(fft_awsize), .s_awburst(fft_awburst), .s_awlock(fft_awlock), .s_awcache(fft_awcache), .s_awprot(fft_awprot),
     .s_wvalid(fft_wvalid), .s_wready(fft_wready), .s_wdata(fft_wdata), .s_wstrb(fft_wstrb), .s_wlast(fft_wlast), .s_bvalid(fft_bvalid), .s_bready(fft_bready), .s_bid(fft_bid), .s_bresp(fft_bresp),
     .s_arvalid(fft_arvalid), .s_arready(fft_arready), .s_araddr(fft_araddr), .s_arid(fft_arid), .s_arlen(fft_arlen), .s_arsize(fft_arsize), .s_arburst(fft_arburst), .s_arlock(fft_arlock), .s_arcache(fft_arcache), .s_arprot(fft_arprot), .s_rvalid(fft_rvalid), .s_rready(fft_rready), .s_rdata(fft_rdata), .s_rid(fft_rid), .s_rresp(fft_rresp), .s_rlast(fft_rlast),
-    .mmio_valid(scene_mmio_valid), .mmio_we(scene_mmio_we), .mmio_addr(scene_mmio_addr), .mmio_wdata(scene_mmio_wdata), .mmio_rdata(scene_mmio_rdata), .mmio_ready(scene_mmio_ready),
+    .mmio_valid(scene_mmio_valid), .mmio_we(scene_mmio_we), .mmio_addr(scene_mmio_addr), .mmio_wdata(scene_mmio_wdata), .mmio_rdata(scene_mmio_rdata), .mmio_ready(scene_mmio_ready), .irq(scene_irq),
     .m_axi_arid(dma_m_arid), .m_axi_araddr(scene_m_araddr), .m_axi_arlen(dma_m_arlen), .m_axi_arsize(dma_m_arsize), .m_axi_arburst(dma_m_arburst), .m_axi_arlock(dma_m_arlock), .m_axi_arcache(dma_m_arcache), .m_axi_arprot(dma_m_arprot), .m_axi_arvalid(dma_m_arvalid), .m_axi_arready(dma_m_arready), .m_axi_rid({1'b0,dma_m_rid}), .m_axi_rdata(dma_m_rdata), .m_axi_rresp(dma_m_rresp), .m_axi_rlast(dma_m_rlast), .m_axi_rvalid(dma_m_rvalid), .m_axi_rready(dma_m_rready)
 );
 // Keep the complete SoC physical address here.  The crossbar must see the
@@ -886,6 +889,7 @@ axi_err_slave #(
     .bresp   (fft_bresp)
 );
 assign scene_busy = 1'b0;
+assign scene_irq = 1'b0;
 assign scene_mmio_valid = 1'b0;
 assign scene_mmio_we = 1'b0;
 assign scene_mmio_addr = '0;

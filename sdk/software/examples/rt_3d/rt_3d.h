@@ -3,9 +3,15 @@
 
 #include "common_func.h"
 
+#ifndef RT3D_WARMUP_FRAMES
 #define RT3D_WARMUP_FRAMES 30u
+#endif
+#ifndef RT3D_FORMAL_FRAMES
 #define RT3D_FORMAL_FRAMES 300u
+#endif
+#ifndef RT3D_REPETITIONS
 #define RT3D_REPETITIONS 5u
+#endif
 #define RT3D_TRAJECTORY_LENGTH 16u
 #define RT3D_MODEL_MAGIC 0x33445452u /* RTD3, little endian */
 
