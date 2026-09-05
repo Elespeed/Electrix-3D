@@ -1,0 +1,13 @@
+{
+  "schema": "scene-controller-experiment/v1",
+  "simulator": "verilator",
+  "cpu_clock_hz": 33000000,
+  "rtl_clock_hz": 50000000,
+  "warmup_frames": 30,
+  "formal_frames": 300,
+  "repetitions": 5,
+  "trajectory_length": 16,
+  "frame_budget_ns": 33333333,
+  "frame_dump_limit": 0,
+  "golden_policy": "approved_crc_required"
+}

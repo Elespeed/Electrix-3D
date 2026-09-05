@@ -1,5 +1,21 @@
 `timescale 1ns/1ps
-module rt_3d_soc_tb;
+module rt_3d_soc_tb #(
+`ifdef RT3D_MODEL_S0
+    parameter string SCENE_EXT_INIT_FILE = "../../experiments/3d_scene/assets/S0/model.s3d.mif"
+`elsif RT3D_MODEL_S1
+    parameter string SCENE_EXT_INIT_FILE = "../../experiments/3d_scene/assets/S1/model.s3d.mif"
+`elsif RT3D_MODEL_S2
+    parameter string SCENE_EXT_INIT_FILE = "../../experiments/3d_scene/assets/S2/model.s3d.mif"
+`elsif RT3D_MODEL_S3
+    parameter string SCENE_EXT_INIT_FILE = "../../experiments/3d_scene/assets/S3/model.s3d.mif"
+`elsif RT3D_MODEL_S4
+    parameter string SCENE_EXT_INIT_FILE = "../../experiments/3d_scene/assets/S4/model.s3d.mif"
+`elsif MODELSIM_BUILD
+    parameter string SCENE_EXT_INIT_FILE = "../../../assets/3d/generated/blade/v4/blade_shade.s3d.mif"
+`else
+    parameter string SCENE_EXT_INIT_FILE = "../../assets/3d/generated/blade/v4/blade_shade.s3d.mif"
+`endif
+);
     import uart_agent_pkg::*;
     localparam int UART_WAIT_TIMEOUT = 2_000_000;
     logic clk = 1'b0, reset = 1'b1;
@@ -38,11 +54,6 @@ module rt_3d_soc_tb;
     sram_sp #(.AW(18), .Init_File("../../sdk/axi_ram.mif")) base_sram_sp (
         .ram_addr(base_ram_addr), .ram_be_n(base_ram_be_n), .ram_ce_n(base_ram_ce_n),
         .ram_oe_n(base_ram_oe_n), .ram_we_n(base_ram_we_n), .ram_data(base_ram_data));
-`ifdef MODELSIM_BUILD
-    localparam string SCENE_EXT_INIT_FILE = "../../../assets/3d/generated/blade/v4/blade_shade.s3d.mif";
-`else
-    localparam string SCENE_EXT_INIT_FILE = "../../assets/3d/generated/blade/v4/blade_shade.s3d.mif";
-`endif
     sram_sp #(.AW(18), .Init_File(SCENE_EXT_INIT_FILE)) ext_sram_sp (
         .ram_addr(ext_ram_addr), .ram_be_n(ext_ram_be_n), .ram_ce_n(ext_ram_ce_n),
         .ram_oe_n(ext_ram_oe_n), .ram_we_n(ext_ram_we_n), .ram_data(ext_ram_data));
@@ -52,12 +63,12 @@ module rt_3d_soc_tb;
         .apb_pwrite(dut.u_axi_uart_controller.uart0.PWRITE),
         .apb_paddr(dut.u_axi_uart_controller.uart0.PADDR[7:0]),
         .apb_pwdata(dut.u_axi_uart_controller.uart0.PWDATA[7:0]));
-    always @(posedge dut.confreg_int) if (!reset) begin
-        irq_edges = irq_edges + 1;
-        irq_status_seen = dut.g_scene_ctrl.u_scene_ctrl.irq_status;
-    end
+    always @(posedge dut.confreg_int) if (!reset) irq_edges = irq_edges + 1;
     always @(posedge dut.ext_irq) if (!reset) cpu_irq_edges = cpu_irq_edges + 1;
     always @(posedge dut.sys_clk) begin
+        // IRQ is level-sensitive.  Sample sticky status every system clock so
+        // an earlier RENDER_DONE edge cannot hide the subsequent FRAME_DONE.
+        if (!reset) irq_status_seen = irq_status_seen | dut.g_scene_ctrl.u_scene_ctrl.irq_status;
         if (!reset && dut.dma_m_arvalid && dut.dma_m_arready) scene_reads = scene_reads + 1;
         if (!reset && dut.scene_mmio_valid && dut.scene_mmio_ready && dut.scene_mmio_we)
             scene_cmds = scene_cmds + 1;

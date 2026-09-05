@@ -1,4 +1,10 @@
-# 3D benchmark JSONL v1
+# Scene Controller experiment system
+
+The current phase records only `SCENE_CONTROLLER`; `CPU_ONLY` and
+`CPU_MATMUL` are intentionally excluded. Generate deterministic S0--S4
+SK3D-v4 assets with `make -C experiments/3d_scene assets`. Formal evidence is
+written to ignored `runs/<run_id>/`; its manifest retains asset and config
+hashes.
 
 Each benchmark output is UTF-8 JSON Lines. Blank lines are ignored. Records
 must occur in this order:

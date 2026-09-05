@@ -1,0 +1,51 @@
+{
+  "schema": "scene-controller-assets/v1",
+  "generator": "generate_bench_assets.py/v1",
+  "models": [
+    {
+      "id": "S0",
+      "V": 16,
+      "T": 24,
+      "M": 1,
+      "bytes": 352,
+      "path": "experiments/3d_scene/assets/S0/model.s3d.bin",
+      "sha256": "293cb41e9f9f6d168b65ec008a52a24e6cb6aef1b77953ec244930ffc3a918a9"
+    },
+    {
+      "id": "S1",
+      "V": 32,
+      "T": 48,
+      "M": 2,
+      "bytes": 688,
+      "path": "experiments/3d_scene/assets/S1/model.s3d.bin",
+      "sha256": "b77137be87d3e8de1e502ad619a420d1218b70d282159fb8082673538788524b"
+    },
+    {
+      "id": "S2",
+      "V": 64,
+      "T": 96,
+      "M": 4,
+      "bytes": 1360,
+      "path": "experiments/3d_scene/assets/S2/model.s3d.bin",
+      "sha256": "3416a41362100bcc75dbe793ff79e102cc43e40cb754390bd45fbd4a24378c1f"
+    },
+    {
+      "id": "S3",
+      "V": 96,
+      "T": 144,
+      "M": 8,
+      "bytes": 2064,
+      "path": "experiments/3d_scene/assets/S3/model.s3d.bin",
+      "sha256": "6001a419621d7f94289ca6b8a66f50247ac13a5ca8f3a155c0a52dbba582fa48"
+    },
+    {
+      "id": "S4",
+      "V": 128,
+      "T": 192,
+      "M": 16,
+      "bytes": 2832,
+      "path": "experiments/3d_scene/assets/S4/model.s3d.bin",
+      "sha256": "2f1274706bc3b40ed801c7eaa43654c62e28ddb1b8db3f5dd9cb5c286657e7f9"
+    }
+  ]
+}

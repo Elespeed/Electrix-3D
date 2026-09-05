@@ -64,6 +64,11 @@ assets/3d/previews/
 # Python bytecode cache
 __pycache__/
 *.pyc
+
+# Reproducible Scene Controller experiment evidence.  The recipes, schemas,
+# manifests and approved summaries are versioned; raw UART/log/PPM/VCD output
+# is intentionally local and addressed by hashes in the run manifest.
+experiments/3d_scene/runs/
 fpga/projectx
 fpga/project_p
 fpga/projectxx

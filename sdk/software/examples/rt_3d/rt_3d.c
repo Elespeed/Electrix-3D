@@ -13,13 +13,38 @@
 #endif
 
 #define RT3D_MODEL_BASE 0x1c400000u
-#define RT3D_MODEL_BYTES 1536u
+#ifndef RT3D_MODEL_V
+#define RT3D_MODEL_V 16u
+#define RT3D_MODEL_T 24u
+#define RT3D_MODEL_M 1u
+#endif
+#define RT3D_MODEL_BYTES (16u + ((U32)RT3D_MODEL_M * 16u) + ((U32)RT3D_MODEL_V * 8u) + ((U32)RT3D_MODEL_T * 8u))
 #define RT3D_CLEAR_COLOR 0x18u
 #define RT3D_VIEW_W 400u
 #define RT3D_VIEW_H 300u
 
+#ifndef RT3D_ASSET_ID
+#define RT3D_ASSET_ID "UNFROZEN"
+#endif
+#ifndef RT3D_ASSET_SHA256
+#define RT3D_ASSET_SHA256 "UNFROZEN"
+#endif
+#ifndef RT3D_CONFIG_HASH
+#define RT3D_CONFIG_HASH "UNFROZEN"
+#endif
+
+static U32 rt3d_command_crc(U32 phase)
+{
+    /* FNV-1a over the three deterministic command words/records. */
+    U32 h = 2166136261u;
+    U32 values[5] = { SCENE_CTRL_CMD_CLEAR, RT3D_CLEAR_COLOR, SCENE_CTRL_CMD_DRAW, phase, SCENE_CTRL_CMD_PRESENT };
+    U32 i;
+    for (i = 0; i < 5u; ++i) { h ^= values[i]; h *= 16777619u; }
+    return h;
+}
+
 static const U8 model_blob[] = {
-    0x52,0x54,0x44,0x33, 16,0, 24,0, 1,0
+    0x52,0x54,0x44,0x33, RT3D_MODEL_V,0, RT3D_MODEL_T,0, RT3D_MODEL_M,0
 };
 
 int rt3d_model_parse(const U8 *blob, U32 bytes, rt3d_model_t *out)
@@ -104,7 +129,7 @@ static U32 software_frame(U32 frame, const rt3d_model_t *model,
     return visible;
 }
 
-static U8 scene_controller_frame(U32 frame, U8 use_irq)
+static U8 scene_controller_frame(U32 frame, U8 use_irq, rt3d_frame_metrics_t *metrics)
 {
     U32 completed = scene_ctrl_cmd_frame_count();
     scene_ctrl_cmd_t cmd = scene_ctrl_cmd_clear(RT3D_CLEAR_COLOR);
@@ -122,7 +147,9 @@ static U8 scene_controller_frame(U32 frame, U8 use_irq)
         U8 status;
         ++wait_seq;
         rt_kprintf("RT3D IRQ WAIT seq=%u completed=%u\n", wait_seq, completed);
+        U32 blocked_start = get_cpu_clock_count();
         status = scene_ctrl_wait_irq(completed, RT_WAITING_FOREVER);
+        rt3d_blocked_add(metrics, get_cpu_clock_count() - blocked_start);
         rt_kprintf("RT3D IRQ WAKE seq=%u status=%u\n", wait_seq, status);
         return status;
     }
@@ -162,7 +189,7 @@ void rt3d_run(void)
     for (rep = 1u; rep <= RT3D_REPETITIONS; ++rep) {
         for (frame = 0u; frame < RT3D_WARMUP_FRAMES; ++frame) {
 #if defined(RT3D_MODE_SCENE_CONTROLLER)
-            (void)scene_controller_frame(frame, 1u);
+            (void)scene_controller_frame(frame, 1u, (rt3d_frame_metrics_t *)0);
 #else
             (void)software_frame(frame, &model, (rt3d_frame_metrics_t *)0);
 #if defined(RT3D_MODE_CPU_MATMUL)
@@ -174,14 +201,19 @@ void rt3d_run(void)
         for (frame = 0u; frame < RT3D_FORMAL_FRAMES; ++frame) {
             rt3d_frame_metrics_t metrics;
             rt3d_background_metrics_t bg;
+#if defined(RT3D_MODE_SCENE_CONTROLLER)
+            U8 scene_status;
+            scene_ctrl_perf_t scene_perf;
+#endif
             rt3d_frame_begin(&metrics);
 #if defined(RT3D_MODE_SCENE_CONTROLLER)
             rt3d_stage_begin(&metrics, RT3D_STAGE_COMMAND_SUBMIT);
-            (void)scene_controller_frame(frame, 1u);
+            scene_status = scene_controller_frame(frame, 1u, &metrics);
             rt3d_stage_end(&metrics, RT3D_STAGE_COMMAND_SUBMIT);
             /* The primary Scene path blocks on a semaphore.  Keep the
              * polling API above for explicitly selected control runs. */
-            visible = model.triangle_count;
+            scene_ctrl_perf_read(&scene_perf);
+            visible = scene_perf.output_triangles;
 #else
             /* Keep stage boundaries shared: software_frame performs the
              * fixed-point transform, cull, stable painter sort, and submit. */
@@ -203,6 +235,13 @@ void rt3d_run(void)
                        metrics.frame_latency_ns, idle.idle_cycles,
                        rt3d_idle_rate_permille(&idle), bg.units,
                        bg.units_per_second);
+#if defined(RT3D_MODE_SCENE_CONTROLLER)
+            rt_kprintf("RT3D JSON {\"record\":\"frame\",\"schema\":\"scene-controller-experiment/v1\",\"run_id\":\"firmware\",\"mode\":\"SCENE_CONTROLLER\",\"rep\":%u,\"frame\":%u,\"asset\":{\"id\":\"%s\",\"sha256\":\"%s\",\"V\":%u,\"T\":%u,\"M\":%u},\"config_hash\":\"%s\",\"cycles\":{\"active\":%u,\"polling\":%u,\"blocked\":%u,\"wall\":%u,\"latency_ns\":%u},\"scene\":{\"load_bytes\":%u,\"axi_transactions\":%u,\"transform_cycles\":%u,\"cull_cycles\":%u,\"sort_cycles\":%u,\"command_cycles\":%u,\"input_triangles\":%u,\"culled_triangles\":%u,\"output_triangles\":%u,\"command_crc\":%u,\"frame_crc\":0},\"rtos\":{\"idle_rate_permille\":%u,\"background_units\":%u},\"equivalence\":\"PENDING\",\"error\":\"%s\",\"timeout\":false,\"status\":\"%s\"}\n",
+                       rep, frame + 1u, RT3D_ASSET_ID, RT3D_ASSET_SHA256, model.vertex_count, model.triangle_count, model.mesh_count, RT3D_CONFIG_HASH,
+                       metrics.active_cycles, metrics.polling_cycles, metrics.blocked_cycles, metrics.wall_cycles, metrics.frame_latency_ns,
+                       scene_perf.load_bytes, scene_perf.load_transactions, scene_perf.transform_cycles, scene_perf.cull_cycles, scene_perf.sort_cycles, scene_perf.command_cycles, scene_perf.input_triangles, scene_perf.culled_triangles, scene_perf.output_triangles, rt3d_command_crc(frame), rt3d_idle_rate_permille(&idle), bg.units,
+                       scene_status & SCENE_CTRL_IRQ_ERROR ? "SCENE_ERROR" : "NONE", scene_status & SCENE_CTRL_IRQ_ERROR ? "FAIL" : "PENDING");
+#endif
         }
     }
 }
