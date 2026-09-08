@@ -2,7 +2,6 @@
 #include <rtthread.h>
 #include "rt_3d.h"
 #include "scene_ctrl.h"
-#include "gru_3d.h"
 #include "sketchbook.h"
 #include "matmul.h"
 #include "rt3d_metrics.h"
@@ -13,16 +12,10 @@
 #endif
 
 #define RT3D_MODEL_BASE 0x1c400000u
-#ifndef RT3D_MODEL_V
-#define RT3D_MODEL_V 16u
-#define RT3D_MODEL_T 24u
-#define RT3D_MODEL_M 1u
-#endif
-#define RT3D_MODEL_BYTES (16u + ((U32)RT3D_MODEL_M * 16u) + ((U32)RT3D_MODEL_V * 8u) + ((U32)RT3D_MODEL_T * 8u))
 #define RT3D_CLEAR_COLOR 0x18u
-#define RT3D_VIEW_W 400u
-#define RT3D_VIEW_H 300u
-
+#define RT3D_MAX_VERTICES 128u
+#define RT3D_MAX_TRIANGLES 192u
+#define Q8_ONE 256
 #ifndef RT3D_ASSET_ID
 #define RT3D_ASSET_ID "UNFROZEN"
 #endif
@@ -33,215 +26,180 @@
 #define RT3D_CONFIG_HASH "UNFROZEN"
 #endif
 
-static U32 rt3d_command_crc(U32 phase)
+typedef struct { S32 x, y, z; } vec_t;
+typedef struct { S16 x, y; S32 z; } screen_t;
+typedef struct { U8 i0, i1, i2, color, source; S32 depth; } tri_t;
+static vec_t transformed[RT3D_MAX_VERTICES];
+static screen_t screen_vertices[RT3D_MAX_VERTICES];
+static tri_t visible_triangles[RT3D_MAX_TRIANGLES];
+static sketchbook_t display;
+static const S16 sin_q8[16] = {0,98,181,237,256,237,181,98,0,-98,-181,-237,-256,-237,-181,-98};
+
+static volatile const U32 *model_words(void) { return (volatile const U32 *)RT3D_MODEL_BASE; }
+static S32 signed16(U32 value, U8 high) { return (S32)(S16)(high ? value >> 16 : value); }
+static U8 phase_of(U32 frame) { return (U8)(frame & 15u); }
+U16 rt3d_sin_q14(U8 phase) { return (U16)((S32)sin_q8[phase & 15u] << 6); }
+U16 rt3d_cos_q14(U8 phase) { return rt3d_sin_q14((U8)(phase + 4u)); }
+U8 rt3d_trajectory_phase(U32 frame) { return phase_of(frame); }
+
+int rt3d_model_parse(const U8 *ignored, U32 bytes, rt3d_model_t *out)
 {
-    /* FNV-1a over the three deterministic command words/records. */
-    U32 h = 2166136261u;
-    U32 values[5] = { SCENE_CTRL_CMD_CLEAR, RT3D_CLEAR_COLOR, SCENE_CTRL_CMD_DRAW, phase, SCENE_CTRL_CMD_PRESENT };
-    U32 i;
-    for (i = 0; i < 5u; ++i) { h ^= values[i]; h *= 16777619u; }
-    return h;
+    const volatile U32 *words = model_words();
+    U32 format;
+    (void)ignored;
+    if (!out || bytes < 16u || words[0] != RT3D_MODEL_MAGIC) return 0;
+    format = words[3];
+    out->vertex_count = (U16)words[1]; out->triangle_count = (U16)words[2];
+    out->mesh_count = (U8)(format >> 8); out->reserved = (U8)format;
+    return out->reserved == 4u && out->vertex_count > 0u && out->vertex_count <= RT3D_MAX_VERTICES &&
+           out->triangle_count > 0u && out->triangle_count <= RT3D_MAX_TRIANGLES && out->mesh_count > 0u;
 }
-
-static const U8 model_blob[] = {
-    0x52,0x54,0x44,0x33, RT3D_MODEL_V,0, RT3D_MODEL_T,0, RT3D_MODEL_M,0
-};
-
-int rt3d_model_parse(const U8 *blob, U32 bytes, rt3d_model_t *out)
-{
-    if (!blob || !out || bytes < 9u) return 0;
-    if (((U32)blob[0] | ((U32)blob[1] << 8) | ((U32)blob[2] << 16) |
-         ((U32)blob[3] << 24)) != RT3D_MODEL_MAGIC) return 0;
-    out->vertex_count = (U16)blob[4] | ((U16)blob[5] << 8);
-    out->triangle_count = (U16)blob[6] | ((U16)blob[7] << 8);
-    out->mesh_count = blob[8];
-    out->reserved = 0;
-    return out->vertex_count != 0u && out->triangle_count != 0u && out->mesh_count != 0u;
-}
-
-static const U16 sin_lut_q14[16] = {
-    0, 6270, 11585, 15137, 16384, 15137, 11585, 6270,
-    0, (U16)-6270, (U16)-11585, (U16)-15137, (U16)-16384,
-    (U16)-15137, (U16)-11585, (U16)-6270
-};
-
-U16 rt3d_sin_q14(U8 phase) { return sin_lut_q14[phase & 15u]; }
-U16 rt3d_cos_q14(U8 phase) { return sin_lut_q14[(phase + 4u) & 15u]; }
-U8 rt3d_trajectory_phase(U32 frame) { return (U8)(frame & 15u); }
 
 const char *rt3d_backend_name(void)
 {
 #if defined(RT3D_MODE_CPU_ONLY)
     return "CPU_ONLY";
 #elif defined(RT3D_MODE_CPU_MATMUL)
-    return "CPU_MATMUL_DEFERRED";
+    return "CPU_MATMUL";
 #else
     return "SCENE_CONTROLLER";
 #endif
 }
 
-static U32 stable_sort_depths(S32 *depths, U8 *ids, U32 count)
+static void make_matrix(U8 phase, S32 m[4][4])
 {
-    U32 i, j;
-    U32 swaps = 0;
-    for (i = 1; i < count; ++i) {
-        S32 d = depths[i]; U8 id = ids[i]; j = i;
-        while (j && (depths[j - 1u] < d ||
-               (depths[j - 1u] == d && ids[j - 1u] > id))) {
-            depths[j] = depths[j - 1u]; ids[j] = ids[j - 1u]; --j; ++swaps;
+    U32 r, c; S32 s = sin_q8[phase], co = sin_q8[(phase + 4u) & 15u];
+    for (r = 0; r < 4u; ++r) for (c = 0; c < 4u; ++c) m[r][c] = 0;
+    m[0][0] = co; m[0][2] = s; m[1][1] = Q8_ONE; m[2][0] = -s; m[2][2] = co; m[3][3] = Q8_ONE;
+}
+
+static void transform_cpu(const rt3d_model_t *model, const S32 m[4][4])
+{
+    const volatile U32 *words = model_words();
+    U32 base = 4u + 4u * model->mesh_count, i, r, k;
+    for (i = 0; i < model->vertex_count; ++i) {
+        U32 xy = words[base + i * 2u]; S32 in[4];
+        in[0] = signed16(xy, 1u); in[1] = signed16(xy, 0u); in[2] = signed16(words[base + i * 2u + 1u], 0u); in[3] = Q8_ONE;
+        for (r = 0; r < 3u; ++r) {
+            long long acc = 0; for (k = 0; k < 4u; ++k) acc += (long long)m[r][k] * in[k];
+            if (r == 0u) transformed[i].x = (S32)(acc >> 8); else if (r == 1u) transformed[i].y = (S32)(acc >> 8); else transformed[i].z = (S32)(acc >> 8);
         }
-        depths[j] = d; ids[j] = id;
     }
-    return swaps;
 }
 
-static U32 software_frame(U32 frame, const rt3d_model_t *model,
-                          rt3d_frame_metrics_t *metrics)
+static U8 transform_matmul(const rt3d_model_t *model, const S32 m[4][4])
 {
-    S32 depth[24]; U8 ids[24]; U32 i, visible = 0;
-    U8 phase = rt3d_trajectory_phase(frame);
+    const volatile U32 *words = model_words();
+    U32 base = 4u + 4u * model->mesh_count, batch, row, col;
+    matmul_set_mode_fixed_q8_8();
+    for (row = 0; row < 4u; ++row) for (col = 0; col < 4u; ++col) matmul_load_a_word(row * 4u + col, (U32)m[row][col]);
+    for (batch = 0; batch < model->vertex_count; batch += 4u) {
+        for (col = 0; col < 4u; ++col) {
+            U32 i = batch + col; S32 in[4] = {0, 0, 0, 0};
+            if (i < model->vertex_count) { U32 xy = words[base + i * 2u]; in[0] = signed16(xy, 1u); in[1] = signed16(xy, 0u); in[2] = signed16(words[base + i * 2u + 1u], 0u); in[3] = Q8_ONE; }
+            for (row = 0; row < 4u; ++row) matmul_load_b_word(row * 4u + col, (U32)in[row]);
+        }
+        matmul_start();
+        if (matmul_wait_done() & MATMUL_STATUS_ERROR) return 0u;
+        for (col = 0; col < 4u && batch + col < model->vertex_count; ++col) {
+            transformed[batch + col].x = (S32)matmul_read_fixed_c_word(col);
+            transformed[batch + col].y = (S32)matmul_read_fixed_c_word(4u + col);
+            transformed[batch + col].z = (S32)matmul_read_fixed_c_word(8u + col);
+        }
+    }
+    return 1u;
+}
+
+static U32 build_triangles(const rt3d_model_t *model)
+{
+    const volatile U32 *words = model_words();
+    U32 vertex_base = 4u + 4u * model->mesh_count, triangle_base = vertex_base + 2u * model->vertex_count, i, count = 0;
+    for (i = 0; i < model->vertex_count; ++i) { screen_vertices[i].x = (S16)(200 + (transformed[i].x >> 8)); screen_vertices[i].y = (S16)(150 - (transformed[i].y >> 8)); screen_vertices[i].z = transformed[i].z; }
+    for (i = 0; i < model->triangle_count; ++i) {
+        U32 packed = words[triangle_base + 2u * i]; U8 i0 = (U8)packed, i1 = (U8)(packed >> 8), i2 = (U8)(packed >> 16); S32 area;
+        if (i0 >= model->vertex_count || i1 >= model->vertex_count || i2 >= model->vertex_count) continue;
+        area = ((S32)screen_vertices[i1].x - screen_vertices[i0].x) * ((S32)screen_vertices[i2].y - screen_vertices[i0].y) - ((S32)screen_vertices[i1].y - screen_vertices[i0].y) * ((S32)screen_vertices[i2].x - screen_vertices[i0].x);
+        if (area >= 0 || count == RT3D_MAX_TRIANGLES) continue;
+        visible_triangles[count].i0 = i0; visible_triangles[count].i1 = i1; visible_triangles[count].i2 = i2; visible_triangles[count].color = (U8)(words[triangle_base + 2u * i + 1u] | 1u); visible_triangles[count].source = (U8)i; visible_triangles[count].depth = screen_vertices[i0].z + screen_vertices[i1].z + screen_vertices[i2].z; ++count;
+    }
+    return count;
+}
+
+static void sort_triangles(U32 count)
+{
+    U32 i;
+    for (i = 1u; i < count; ++i) { tri_t value = visible_triangles[i]; U32 j = i; while (j && (visible_triangles[j - 1u].depth < value.depth || (visible_triangles[j - 1u].depth == value.depth && visible_triangles[j - 1u].source > value.source))) { visible_triangles[j] = visible_triangles[j - 1u]; --j; } visible_triangles[j] = value; }
+}
+
+static U32 command_crc(U8 phase, U32 count)
+{
+    U32 h = 2166136261u, i; h ^= RT3D_CLEAR_COLOR; h *= 16777619u;
+    for (i = 0; i < count; ++i) { h ^= visible_triangles[i].i0; h *= 16777619u; h ^= visible_triangles[i].i1; h *= 16777619u; h ^= visible_triangles[i].i2; h *= 16777619u; h ^= visible_triangles[i].color; h *= 16777619u; }
+    h ^= phase; h *= 16777619u; h ^= SKETCHBOOK_CMD_PRESENT; return h * 16777619u;
+}
+
+static U32 cpu_frame(U32 frame, const rt3d_model_t *model, rt3d_frame_metrics_t *metrics, U8 *ok)
+{
+    S32 matrix[4][4]; U32 count, i; make_matrix(phase_of(frame), matrix); *ok = 1u;
     rt3d_stage_begin(metrics, RT3D_STAGE_TRANSFORM);
-    /* Fixed-point transform proxy uses the shared phase LUT. */
-    (void)rt3d_sin_q14(phase);
+#if defined(RT3D_MODE_CPU_MATMUL)
+    *ok = transform_matmul(model, matrix);
+#else
+    transform_cpu(model, matrix);
+#endif
     rt3d_stage_end(metrics, RT3D_STAGE_TRANSFORM);
-    rt3d_stage_begin(metrics, RT3D_STAGE_TRIANGLE_CULL);
-    for (i = 0; i < model->triangle_count && i < 24u; ++i) {
-        /* Deterministic back-face proxy: winding changes with the fixed LUT. */
-        if (((i + phase) & 3u) == 0u) continue;
-        depth[visible] = (S32)(i * 17u) + (S16)rt3d_cos_q14(phase);
-        ids[visible++] = (U8)i;
-    }
-    rt3d_stage_end(metrics, RT3D_STAGE_TRIANGLE_CULL);
-    rt3d_stage_begin(metrics, RT3D_STAGE_PAINTER_SORT);
-    (void)stable_sort_depths(depth, ids, visible);
-    rt3d_stage_end(metrics, RT3D_STAGE_PAINTER_SORT);
-    rt3d_stage_begin(metrics, RT3D_STAGE_COMMAND_SUBMIT);
-    /* The actual triangle backend is shared by CPU_ONLY and CPU_MATMUL. */
-    for (i = 0; i < visible; ++i) {
-        S16 x = (S16)(200 + (S16)((S32)rt3d_sin_q14((U8)(phase + ids[i])) >> 8));
-        S16 y = (S16)(150 + (S16)((S32)rt3d_cos_q14((U8)(phase + ids[i])) >> 8));
-        gru_triangle_z(x, y, (U16)(depth[i] & 0xffff), x + 8, y + 4,
-                       (U16)(depth[i] & 0xffff), x - 4, y + 9,
-                       (U16)(depth[i] & 0xffff),
-                       (U8)(ids[i] & 7u));
-    }
-    rt3d_stage_end(metrics, RT3D_STAGE_COMMAND_SUBMIT);
-    return visible;
+    rt3d_stage_begin(metrics, RT3D_STAGE_TRIANGLE_CULL); count = build_triangles(model); rt3d_stage_end(metrics, RT3D_STAGE_TRIANGLE_CULL);
+    rt3d_stage_begin(metrics, RT3D_STAGE_PAINTER_SORT); sort_triangles(count); rt3d_stage_end(metrics, RT3D_STAGE_PAINTER_SORT);
+    rt3d_stage_begin(metrics, RT3D_STAGE_COMMAND_SUBMIT); sketchbook_clear(&display, RT3D_CLEAR_COLOR);
+    for (i = 0; i < count; ++i) { tri_t *t = &visible_triangles[i]; sketchbook_triangle_flat(&display, screen_vertices[t->i0].x, screen_vertices[t->i0].y, screen_vertices[t->i1].x, screen_vertices[t->i1].y, screen_vertices[t->i2].x, screen_vertices[t->i2].y, t->color); }
+    sketchbook_present(&display); rt3d_stage_end(metrics, RT3D_STAGE_COMMAND_SUBMIT);
+    rt3d_polling_begin(metrics); sketchbook_wait_frame_done(&display); rt3d_polling_end(metrics); return count;
 }
 
-static U8 scene_controller_frame(U32 frame, U8 use_irq, rt3d_frame_metrics_t *metrics)
+static U8 scene_frame(U32 frame, rt3d_frame_metrics_t *metrics)
 {
-    U32 completed = scene_ctrl_cmd_frame_count();
-    scene_ctrl_cmd_t cmd = scene_ctrl_cmd_clear(RT3D_CLEAR_COLOR);
-    U8 phase = rt3d_trajectory_phase(frame);
-    scene_ctrl_wait_prepare();
-    scene_ctrl_irq_clear(SCENE_CTRL_IRQ_FRAME_DONE | SCENE_CTRL_IRQ_ERROR);
-    scene_ctrl_cmd_push(&cmd);
-    cmd = scene_ctrl_cmd_draw(0u, 0, 0, 0, phase, 0u, 0u, 0x0100u);
-    scene_ctrl_cmd_push(&cmd);
-    cmd = scene_ctrl_cmd_present();
-    scene_ctrl_cmd_push(&cmd);
-    scene_ctrl_cmd_start_frame();
-    if (use_irq) {
-        static U32 wait_seq;
-        U8 status;
-        ++wait_seq;
-        rt_kprintf("RT3D IRQ WAIT seq=%u completed=%u\n", wait_seq, completed);
-        U32 blocked_start = get_cpu_clock_count();
-        status = scene_ctrl_wait_irq(completed, RT_WAITING_FOREVER);
-        rt3d_blocked_add(metrics, get_cpu_clock_count() - blocked_start);
-        rt_kprintf("RT3D IRQ WAKE seq=%u status=%u\n", wait_seq, status);
-        return status;
-    }
-    return scene_ctrl_wait_poll(completed);
+    U32 completed = scene_ctrl_cmd_frame_count(); scene_ctrl_cmd_t cmd = scene_ctrl_cmd_clear(RT3D_CLEAR_COLOR); U8 phase = phase_of(frame), status; U32 start;
+    scene_ctrl_wait_prepare(); scene_ctrl_irq_clear(SCENE_CTRL_IRQ_FRAME_DONE | SCENE_CTRL_IRQ_ERROR); scene_ctrl_cmd_push(&cmd); cmd = scene_ctrl_cmd_draw(0u, 0, 0, 0, phase, 0u, 0u, 0x0100u); scene_ctrl_cmd_push(&cmd); cmd = scene_ctrl_cmd_present(); scene_ctrl_cmd_push(&cmd); scene_ctrl_cmd_start_frame();
+    /* Keep the IRQ wait observable in the UART transcript.  The SoC smoke TB
+       uses these markers to prove that completion took the intended
+       interrupt path, rather than merely observing a later JSON record. */
+    rt_kprintf("RT3D IRQ WAIT seq=%u\n", frame + 1u);
+    start = get_cpu_clock_count(); status = scene_ctrl_wait_irq(completed, RT_WAITING_FOREVER); rt3d_blocked_add(metrics, get_cpu_clock_count() - start);
+    rt_kprintf("RT3D IRQ WAKE seq=%u\n", frame + 1u);
+    return status;
 }
 
 void rt3d_run(void)
 {
-    rt3d_model_t model;
-    rt3d_idle_metrics_t idle;
-    U32 rep, frame, visible;
-    if (!rt3d_model_parse(model_blob, sizeof(model_blob), &model)) {
-        rt_kprintf("RT3D INVALID model\n"); return;
-    }
-    rt3d_idle_init(&idle);
-    (void)rt_thread_idle_sethook(rt3d_idle_hook);
-    rt3d_background_reset();
-#if defined(RT3D_MODE_CPU_MATMUL)
-    rt_kprintf("RT3D NOTICE CPU_MATMUL_DEFERRED: transform accelerator hook is not implemented; results are unsupported\n");
-#endif
+    rt3d_model_t model; rt3d_idle_metrics_t idle; U32 rep, frame;
+    if (!rt3d_model_parse(0, 16u, &model)) { rt_kprintf("RT3D INVALID model\n"); return; }
+    rt3d_idle_init(&idle); (void)rt_thread_idle_sethook(rt3d_idle_hook); rt3d_background_reset();
 #if defined(RT3D_MODE_SCENE_CONTROLLER)
-    scene_ctrl_wait_init();
-    scene_ctrl_cmd_enable();
-    scene_ctrl_configure(RT3D_MODEL_BASE, RT3D_MODEL_BYTES);
-    scene_ctrl_set_rotation(0u, 0u, 0u, 0x0100u);
-    scene_ctrl_set_position(200u, 150u, 0u);
-    scene_ctrl_set_render_cfg(SCENE_CTRL_RENDER_CFG_CLEAR_BEFORE |
-                               SCENE_CTRL_RENDER_CFG_BACKFACE_CULL |
-                               SCENE_CTRL_RENDER_CFG_DEPTH_SORT,
-                               RT3D_CLEAR_COLOR);
-    scene_ctrl_load();
-    while (scene_ctrl_read(SCENE_CTRL_REG_STATUS) & SCENE_CTRL_STATUS_BUSY) {}
-    if (scene_ctrl_read(SCENE_CTRL_REG_STATUS) & SCENE_CTRL_STATUS_ERROR) {
-        rt_kprintf("RT3D INVALID scene_load\n"); return;
-    }
+    scene_ctrl_wait_init(); scene_ctrl_cmd_enable(); scene_ctrl_configure(RT3D_MODEL_BASE, 16u + 16u * model.mesh_count + 8u * model.vertex_count + 8u * model.triangle_count); scene_ctrl_set_rotation(0u, 0u, 0u, 0x0100u); scene_ctrl_set_position(200u, 150u, 0u); scene_ctrl_set_render_cfg(SCENE_CTRL_RENDER_CFG_CLEAR_BEFORE | SCENE_CTRL_RENDER_CFG_BACKFACE_CULL | SCENE_CTRL_RENDER_CFG_DEPTH_SORT, RT3D_CLEAR_COLOR); scene_ctrl_load(); while (scene_ctrl_read(SCENE_CTRL_REG_STATUS) & SCENE_CTRL_STATUS_BUSY) {} if (scene_ctrl_read(SCENE_CTRL_REG_STATUS) & SCENE_CTRL_STATUS_ERROR) { rt_kprintf("RT3D INVALID scene_load\n"); return; }
+#else
+    sketchbook_init(&display, SKETCHBOOK_BASE_ADDR);
 #endif
     for (rep = 1u; rep <= RT3D_REPETITIONS; ++rep) {
-        for (frame = 0u; frame < RT3D_WARMUP_FRAMES; ++frame) {
+        for (frame = 0; frame < RT3D_WARMUP_FRAMES; ++frame) {
+            rt3d_frame_metrics_t discard;
+            U8 ok;
+            rt3d_frame_begin(&discard);
 #if defined(RT3D_MODE_SCENE_CONTROLLER)
-            (void)scene_controller_frame(frame, 1u, (rt3d_frame_metrics_t *)0);
+            (void)scene_frame(frame, &discard);
 #else
-            (void)software_frame(frame, &model, (rt3d_frame_metrics_t *)0);
-#if defined(RT3D_MODE_CPU_MATMUL)
-            /* Hook is intentionally explicit: MMIO load/wait/read belongs in T13. */
-            matmul_soft_reset();
-#endif
+            (void)cpu_frame(frame, &model, &discard, &ok);
 #endif
         }
-        for (frame = 0u; frame < RT3D_FORMAL_FRAMES; ++frame) {
-            rt3d_frame_metrics_t metrics;
-            rt3d_background_metrics_t bg;
-#if defined(RT3D_MODE_SCENE_CONTROLLER)
-            U8 scene_status;
-            scene_ctrl_perf_t scene_perf;
-#endif
+        for (frame = 0; frame < RT3D_FORMAL_FRAMES; ++frame) {
+            rt3d_frame_metrics_t metrics; rt3d_background_metrics_t bg; U32 count, crc; U8 error = 0u, ok = 1u;
             rt3d_frame_begin(&metrics);
 #if defined(RT3D_MODE_SCENE_CONTROLLER)
-            rt3d_stage_begin(&metrics, RT3D_STAGE_COMMAND_SUBMIT);
-            scene_status = scene_controller_frame(frame, 1u, &metrics);
-            rt3d_stage_end(&metrics, RT3D_STAGE_COMMAND_SUBMIT);
-            /* The primary Scene path blocks on a semaphore.  Keep the
-             * polling API above for explicitly selected control runs. */
-            scene_ctrl_perf_read(&scene_perf);
-            visible = scene_perf.output_triangles;
+            rt3d_stage_begin(&metrics, RT3D_STAGE_COMMAND_SUBMIT); error = scene_frame(frame, &metrics); rt3d_stage_end(&metrics, RT3D_STAGE_COMMAND_SUBMIT); count = scene_ctrl_read(SCENE_CTRL_REG_PERF_OUTPUT_TRIANGLES); crc = 0u;
 #else
-            /* Keep stage boundaries shared: software_frame performs the
-             * fixed-point transform, cull, stable painter sort, and submit. */
-            visible = software_frame(frame, &model, &metrics);
+            count = cpu_frame(frame, &model, &metrics, &ok); crc = command_crc(phase_of(frame), count); if (!ok) error = SCENE_CTRL_IRQ_ERROR;
 #endif
-            rt3d_frame_end(&metrics);
-            rt3d_idle_sample(&idle);
-            rt3d_background_sample(&bg);
-            rt_kprintf("RT3D CSV,backend=%s,rep=%u,frame=%u,V=%u,T=%u,M=%u,culled=%u,output=%u,transform_cycles=%u,triangle_cull_cycles=%u,painter_sort_cycles=%u,command_submit_cycles=%u,polling_cycles=%u,active_cycles=%u,blocked_cycles=%u,wall_cycles=%u,frame_latency_ns=%u,idle_cycles=%u,idle_rate_permille=%u,background_units=%u,background_units_per_second=%u\n",
-                       rt3d_backend_name(), rep, frame + 1u,
-                       model.vertex_count, model.triangle_count, model.mesh_count,
-                       (U32)model.triangle_count - visible, visible,
-                       metrics.stage_cycles[RT3D_STAGE_TRANSFORM],
-                       metrics.stage_cycles[RT3D_STAGE_TRIANGLE_CULL],
-                       metrics.stage_cycles[RT3D_STAGE_PAINTER_SORT],
-                       metrics.stage_cycles[RT3D_STAGE_COMMAND_SUBMIT],
-                       metrics.polling_cycles, metrics.active_cycles,
-                       metrics.blocked_cycles, metrics.wall_cycles,
-                       metrics.frame_latency_ns, idle.idle_cycles,
-                       rt3d_idle_rate_permille(&idle), bg.units,
-                       bg.units_per_second);
-#if defined(RT3D_MODE_SCENE_CONTROLLER)
-            rt_kprintf("RT3D JSON {\"record\":\"frame\",\"schema\":\"scene-controller-experiment/v1\",\"run_id\":\"firmware\",\"mode\":\"SCENE_CONTROLLER\",\"rep\":%u,\"frame\":%u,\"asset\":{\"id\":\"%s\",\"sha256\":\"%s\",\"V\":%u,\"T\":%u,\"M\":%u},\"config_hash\":\"%s\",\"cycles\":{\"active\":%u,\"polling\":%u,\"blocked\":%u,\"wall\":%u,\"latency_ns\":%u},\"scene\":{\"load_bytes\":%u,\"axi_transactions\":%u,\"transform_cycles\":%u,\"cull_cycles\":%u,\"sort_cycles\":%u,\"command_cycles\":%u,\"input_triangles\":%u,\"culled_triangles\":%u,\"output_triangles\":%u,\"command_crc\":%u,\"frame_crc\":0},\"rtos\":{\"idle_rate_permille\":%u,\"background_units\":%u},\"equivalence\":\"PENDING\",\"error\":\"%s\",\"timeout\":false,\"status\":\"%s\"}\n",
-                       rep, frame + 1u, RT3D_ASSET_ID, RT3D_ASSET_SHA256, model.vertex_count, model.triangle_count, model.mesh_count, RT3D_CONFIG_HASH,
-                       metrics.active_cycles, metrics.polling_cycles, metrics.blocked_cycles, metrics.wall_cycles, metrics.frame_latency_ns,
-                       scene_perf.load_bytes, scene_perf.load_transactions, scene_perf.transform_cycles, scene_perf.cull_cycles, scene_perf.sort_cycles, scene_perf.command_cycles, scene_perf.input_triangles, scene_perf.culled_triangles, scene_perf.output_triangles, rt3d_command_crc(frame), rt3d_idle_rate_permille(&idle), bg.units,
-                       scene_status & SCENE_CTRL_IRQ_ERROR ? "SCENE_ERROR" : "NONE", scene_status & SCENE_CTRL_IRQ_ERROR ? "FAIL" : "PENDING");
-#endif
+            rt3d_frame_end(&metrics); rt3d_idle_sample(&idle); rt3d_background_sample(&bg);
+            rt_kprintf("RT3D JSON {\"record\":\"frame\",\"schema\":\"scene-controller-experiment/v1\",\"run_id\":\"firmware\",\"mode\":\"%s\",\"rep\":%u,\"frame\":%u,\"asset\":{\"id\":\"%s\",\"sha256\":\"%s\",\"V\":%u,\"T\":%u,\"M\":%u},\"config_hash\":\"%s\",\"cycles\":{\"active\":%u,\"polling\":%u,\"blocked\":%u,\"wall\":%u,\"latency_ns\":%u},\"scene\":{\"load_bytes\":0,\"axi_transactions\":0,\"transform_cycles\":%u,\"cull_cycles\":%u,\"sort_cycles\":%u,\"command_cycles\":%u,\"input_triangles\":%u,\"culled_triangles\":%u,\"output_triangles\":%u,\"command_crc\":%u,\"frame_crc\":0},\"rtos\":{\"idle_rate_permille\":%u,\"background_units\":%u},\"equivalence\":\"PENDING\",\"error\":\"%s\",\"timeout\":false,\"status\":\"%s\"}\n", rt3d_backend_name(), rep, frame + 1u, RT3D_ASSET_ID, RT3D_ASSET_SHA256, model.vertex_count, model.triangle_count, model.mesh_count, RT3D_CONFIG_HASH, metrics.active_cycles, metrics.polling_cycles, metrics.blocked_cycles, metrics.wall_cycles, metrics.frame_latency_ns, metrics.stage_cycles[RT3D_STAGE_TRANSFORM], metrics.stage_cycles[RT3D_STAGE_TRIANGLE_CULL], metrics.stage_cycles[RT3D_STAGE_PAINTER_SORT], metrics.stage_cycles[RT3D_STAGE_COMMAND_SUBMIT], model.triangle_count, model.triangle_count - count, count, crc, rt3d_idle_rate_permille(&idle), bg.units, error ? "MATRIX_ERROR" : "NONE", error ? "FAIL" : "PENDING");
         }
     }
 }

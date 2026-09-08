@@ -5,7 +5,10 @@ import argparse, json
 from pathlib import Path
 def main() -> int:
     ap=argparse.ArgumentParser(); ap.add_argument("jsonl",type=Path); ap.add_argument("--goldens",type=Path,required=True); ap.add_argument("--output",type=Path,required=True); args=ap.parse_args()
-    golden=json.loads(args.goldens.read_text(encoding="utf-8")); table=golden.get("frames",{})
+    golden=json.loads(args.goldens.read_text(encoding="utf-8"))
+    if golden.get("status") != "APPROVED":
+        raise SystemExit(f"REFUSED: golden manifest status is {golden.get('status')!r}; expected 'APPROVED'")
+    table=golden.get("frames",{})
     checked=[]; failures=[]
     for raw in args.jsonl.read_text(encoding="utf-8").splitlines():
         if not raw.strip(): continue

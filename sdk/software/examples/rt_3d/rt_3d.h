@@ -13,7 +13,7 @@
 #define RT3D_REPETITIONS 5u
 #endif
 #define RT3D_TRAJECTORY_LENGTH 16u
-#define RT3D_MODEL_MAGIC 0x33445452u /* RTD3, little endian */
+#define RT3D_MODEL_MAGIC 0x534b3344u /* SK3D, little endian */
 
 typedef enum {
     RT3D_BACKEND_CPU_ONLY = 0,

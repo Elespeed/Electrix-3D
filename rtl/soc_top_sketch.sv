@@ -39,7 +39,8 @@ THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 // Scene support is part of the Sketch SoC baseline.  Legacy 2D software
 // leaves the Scene controller idle and continues to use the CPU MMIO path.
-module soc_top_sketch #(parameter SIMULATION=1'b0, parameter ENABLE_SCENE=1'b1)
+module soc_top_sketch #(parameter SIMULATION=1'b0, parameter ENABLE_SCENE=1'b1,
+                        parameter MATMUL_LATCHED_READ_RESPONSE=1'b0)
 (
     input           clk,
     input           reset,
@@ -934,7 +935,7 @@ wire [1 :0] axiOut_7_bresp  ;
 wire        axiOut_7_bvalid ;
 wire        axiOut_7_bready ;
 
-matmul_axi_slave u_matmul_axi_slave (
+matmul_axi_slave #(.LATCHED_READ_RESPONSE(MATMUL_LATCHED_READ_RESPONSE)) u_matmul_axi_slave (
     .clk     (sys_clk),
     .resetn  (sys_resetn),
 

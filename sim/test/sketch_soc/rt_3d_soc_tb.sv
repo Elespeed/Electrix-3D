@@ -18,6 +18,13 @@ module rt_3d_soc_tb #(
 );
     import uart_agent_pkg::*;
     localparam int UART_WAIT_TIMEOUT = 2_000_000;
+`ifdef RT3D_MODE_CPU_ONLY
+    localparam string EXPECT_BACKEND = "CPU_ONLY";
+`elsif RT3D_MODE_CPU_MATMUL
+    localparam string EXPECT_BACKEND = "CPU_MATMUL";
+`else
+    localparam string EXPECT_BACKEND = "SCENE_CONTROLLER";
+`endif
     logic clk = 1'b0, reset = 1'b1;
     logic [3:0] touch_btn = '0;
     logic [31:0] dip_sw = '0;
@@ -31,6 +38,8 @@ module rt_3d_soc_tb #(
     wire base_ram_ce_n, base_ram_oe_n, base_ram_we_n;
     wire ext_ram_ce_n, ext_ram_oe_n, ext_ram_we_n;
     integer irq_edges = 0, cpu_irq_edges = 0, scene_reads = 0, scene_cmds = 0;
+    integer cpu_mmio_writes = 0, matmul_writes = 0, matmul_reads = 0;
+    integer cpu_clear_cmds = 0, cpu_triangle_cmds = 0, cpu_present_cmds = 0;
     integer captured_frame_before = 0;
     logic [2:0] irq_status_seen = 3'b000;
     logic saw_wait = 1'b0, saw_wake = 1'b0, done = 1'b0;
@@ -72,13 +81,45 @@ module rt_3d_soc_tb #(
         if (!reset && dut.dma_m_arvalid && dut.dma_m_arready) scene_reads = scene_reads + 1;
         if (!reset && dut.scene_mmio_valid && dut.scene_mmio_ready && dut.scene_mmio_we)
             scene_cmds = scene_cmds + 1;
+        if (!reset && dut.sketch_mmio_valid && dut.sketch_mmio_ready && dut.sketch_mmio_we) begin
+            cpu_mmio_writes = cpu_mmio_writes + 1;
+            if (dut.sketch_mmio_addr[11:0] == 12'h018) begin
+                case (dut.u_sketch_book.cmd0[4:0])
+                    5'd0: cpu_clear_cmds = cpu_clear_cmds + 1;
+                    5'd5: cpu_triangle_cmds = cpu_triangle_cmds + 1;
+                    5'd6: cpu_present_cmds = cpu_present_cmds + 1;
+                    default: ;
+                endcase
+            end
+        end
+        if (!reset && dut.axiOut_7_awvalid && dut.axiOut_7_awready)
+            matmul_writes = matmul_writes + 1;
+        if (!reset && dut.axiOut_7_arvalid && dut.axiOut_7_arready)
+            matmul_reads = matmul_reads + 1;
         if (!reset && dut.u_sketch_book.err_active_write)
             $fatal(1, "active-page SketchBook write");
     end
 
     initial begin
         #200; reset = 1'b0; wait(dut.sys_resetn);
-        uart.uart_wait_tx_string("RT3D START backend=SCENE_CONTROLLER", UART_WAIT_TIMEOUT, 1'b1);
+        uart.uart_wait_tx_string({"RT3D START backend=", EXPECT_BACKEND}, UART_WAIT_TIMEOUT, 1'b1);
+`ifdef RT3D_MODE_CPU_ONLY
+        // CPU modes report completion through SketchBook's frame-done status,
+        // rather than the Scene Controller IRQ path.
+        uart.uart_wait_tx_string("RT3D JSON {\"record\":\"frame\"", UART_WAIT_TIMEOUT, 1'b1);
+        if (scene_cmds != 0 || scene_reads != 0)
+            $fatal(1, "CPU_ONLY unexpectedly used Scene MMIO/master reads cmds=%0d reads=%0d", scene_cmds, scene_reads);
+        if (cpu_clear_cmds == 0 || cpu_triangle_cmds == 0 || cpu_present_cmds == 0)
+            $fatal(1, "CPU_ONLY missing SketchBook commands clear=%0d tri=%0d present=%0d", cpu_clear_cmds, cpu_triangle_cmds, cpu_present_cmds);
+`elsif RT3D_MODE_CPU_MATMUL
+        uart.uart_wait_tx_string("RT3D JSON {\"record\":\"frame\"", UART_WAIT_TIMEOUT, 1'b1);
+        if (scene_cmds != 0 || scene_reads != 0)
+            $fatal(1, "CPU_MATMUL unexpectedly used Scene MMIO/master reads cmds=%0d reads=%0d", scene_cmds, scene_reads);
+        if (cpu_clear_cmds == 0 || cpu_triangle_cmds == 0 || cpu_present_cmds == 0)
+            $fatal(1, "CPU_MATMUL missing SketchBook commands clear=%0d tri=%0d present=%0d", cpu_clear_cmds, cpu_triangle_cmds, cpu_present_cmds);
+        if (matmul_writes == 0 || matmul_reads == 0)
+            $fatal(1, "CPU_MATMUL missing matrix MMIO traffic writes=%0d reads=%0d", matmul_writes, matmul_reads);
+`else
         uart.uart_wait_tx_string("RT3D IRQ WAIT seq=1", UART_WAIT_TIMEOUT, 1'b1);
         saw_wait = 1'b1;
         if (irq_edges == 0) $fatal(1, "Scene completion did not assert confreg bit6 IRQ");
@@ -102,6 +143,7 @@ module rt_3d_soc_tb #(
                    dut.g_scene_ctrl.u_scene_ctrl.perf_load_bytes,
                    dut.g_scene_ctrl.u_scene_ctrl.perf_transform_cycles,
                    dut.g_scene_ctrl.u_scene_ctrl.perf_input_triangles);
+`endif
         // FRAME_DONE proves rendering completed, but the double-buffered DVI
         // output becomes observable only after the PRESENT reaches vblank and
         // the monitor completes the following scanout frame.
@@ -112,8 +154,11 @@ module rt_3d_soc_tb #(
         mon.dump_captured_frame("rt_3d_soc_render");
         mon.flush_and_close();
         done = 1'b1;
-        $display("[rt_3d_soc_tb] PASS irq_edges=%0d cpu_irq_edges=%0d reads=%0d cmds=%0d frames=%0d load=%0d transform=%0d tris=%0d",
+        $display("[rt_3d_soc_tb] PASS backend=%s irq_edges=%0d cpu_irq_edges=%0d reads=%0d cmds=%0d cpu_mmio=%0d clear=%0d tri=%0d present=%0d matmul_wr=%0d matmul_rd=%0d frames=%0d load=%0d transform=%0d tris=%0d",
+                 EXPECT_BACKEND,
                  irq_edges, cpu_irq_edges, scene_reads, scene_cmds,
+                 cpu_mmio_writes, cpu_clear_cmds, cpu_triangle_cmds, cpu_present_cmds,
+                 matmul_writes, matmul_reads,
                  dut.g_scene_ctrl.u_scene_ctrl.u_pipeline.u_engine.frame_count,
                  dut.g_scene_ctrl.u_scene_ctrl.perf_load_bytes,
                  dut.g_scene_ctrl.u_scene_ctrl.perf_transform_cycles,

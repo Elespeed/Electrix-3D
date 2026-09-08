@@ -8,6 +8,25 @@ def percentile(values:list[int], p:float)->int:
 def main()->int:
     ap=argparse.ArgumentParser(); ap.add_argument("jsonl",type=Path); ap.add_argument("--output-dir",type=Path,required=True); args=ap.parse_args()
     rows=[json.loads(x) for x in args.jsonl.read_text(encoding="utf-8").splitlines() if x.strip()]
+    # A structural JSONL validation is intentionally separate from the
+    # publication gate.  Until golden_check.py has attached an approved
+    # command/frame CRC equivalence result, the records are only diagnostic
+    # evidence and must not enter benchmark statistics.
+    blockers=[]
+    for index, row in enumerate(rows, 1):
+        scene=row.get("scene", {})
+        if row.get("equivalence") != "PASS":
+            blockers.append(f"line {index}: equivalence={row.get('equivalence')!r}")
+        if row.get("error") != "NONE" or row.get("timeout") is not False or row.get("status") != "PASS":
+            blockers.append(f"line {index}: error/timeout/status is not a passing tuple")
+        for name in ("command_crc", "frame_crc"):
+            value=scene.get(name)
+            if not isinstance(value, int) or not 0 < value <= 0xffffffff:
+                blockers.append(f"line {index}: scene.{name} is not a non-zero uint32")
+    if blockers:
+        sample="; ".join(blockers[:3])
+        more="" if len(blockers) <= 3 else f" (+{len(blockers)-3} more)"
+        raise SystemExit("REFUSED: CRC equivalence gate not closed; run golden_check.py and provide monitor frame_crc. " + sample + more)
     valid=[r for r in rows if r["equivalence"]=="PASS" and r["error"]=="NONE" and r["timeout"] is False and r["status"]=="PASS"]
     metrics={}
     for name, getter in {"active_cycles":lambda r:r["cycles"]["active"],"frame_latency_ns":lambda r:r["cycles"]["latency_ns"],"idle_rate_permille":lambda r:r["rtos"]["idle_rate_permille"]}.items():

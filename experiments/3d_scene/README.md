@@ -1,7 +1,7 @@
 # Scene Controller experiment system
 
-The current phase records only `SCENE_CONTROLLER`; `CPU_ONLY` and
-`CPU_MATMUL` are intentionally excluded. Generate deterministic S0--S4
+Runs support `CPU_ONLY`, `CPU_MATMUL`, and `SCENE_CONTROLLER`. Select the
+backend with `MODE=...`; generate deterministic S0--S4
 SK3D-v4 assets with `make -C experiments/3d_scene assets`. Formal evidence is
 written to ignored `runs/<run_id>/`; its manifest retains asset and config
 hashes.
@@ -25,4 +25,19 @@ Validate with:
 
 ```text
 python tools/validate_3d_jsonl.py experiments/3d_scene/fixtures/valid.jsonl
+```
+
+`validate_run.py` checks record structure only. `summarize.py` is the
+publication gate: it refuses records whose `equivalence` is not `PASS`, whose
+status tuple is not passing, or whose command/frame CRC is zero or outside a
+uint32. Run `golden_check.py` on a run after a monitor-provided framebuffer
+CRC has been attached; a `PENDING` record is diagnostic evidence, not a
+publishable benchmark result.
+
+Examples:
+
+```text
+make -C experiments/3d_scene MODE=CPU_ONLY MODEL=S0 smoke
+make -C experiments/3d_scene MODE=CPU_MATMUL MODEL=S1 run
+make -C experiments/3d_scene MODE=SCENE_CONTROLLER run-matrix
 ```

@@ -3,7 +3,7 @@
 from __future__ import annotations
 import argparse, json
 from pathlib import Path
-SCHEMA="scene-controller-experiment/v1"; REQUIRED={"run_id","mode","rep","frame","asset","config_hash","cycles","scene","equivalence","error","timeout","status"}
+SCHEMA="scene-controller-experiment/v1"; MODES={"CPU_ONLY","CPU_MATMUL","SCENE_CONTROLLER"}; REQUIRED={"run_id","mode","rep","frame","asset","config_hash","cycles","scene","equivalence","error","timeout","status"}
 def fail(line: int, message: str) -> None: raise ValueError(f"line {line}: {message}")
 def main() -> int:
     ap=argparse.ArgumentParser(); ap.add_argument("jsonl",type=Path); args=ap.parse_args(); expected={}; count=0
@@ -13,7 +13,7 @@ def main() -> int:
         if row.get("schema") != SCHEMA or row.get("record") != "frame": fail(line,"expected scene-controller frame record")
         missing=REQUIRED-row.keys()
         if missing: fail(line,"missing "+", ".join(sorted(missing)))
-        if row["mode"] != "SCENE_CONTROLLER": fail(line,"only SCENE_CONTROLLER is valid in this phase")
+        if row["mode"] not in MODES: fail(line,"unsupported benchmark mode")
         if not isinstance(row["rep"],int) or row["rep"] < 1 or not isinstance(row["frame"],int) or row["frame"] < 1: fail(line,"rep/frame must be positive integers")
         asset=row["asset"]
         if not isinstance(asset,dict) or not all(k in asset for k in ("id","sha256","V","T","M")): fail(line,"asset identity incomplete")
