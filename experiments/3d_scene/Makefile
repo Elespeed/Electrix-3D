@@ -16,7 +16,7 @@ ifneq ($(filter $(MODE),$(VALID_MODES)),$(MODE))
 $(error MODE must be CPU_ONLY, CPU_MATMUL, or SCENE_CONTROLLER (got '$(MODE)'))
 endif
 
-.PHONY: assets build smoke cpu-matmul-smoke run-s0 run-s1 run-s2 run-s3 run-s4 run-matrix validate summarize golden-check
+.PHONY: assets build smoke cpu-matmul-smoke run-s0 run-s1 run-s2 run-s3 run-s4 run-matrix verify-cpu-matmul verify-cpu-matmul-s1-s4 validate summarize golden-check
 
 assets:
 	@$(PYTHON) scripts/generate_bench_assets.py --root $(ROOT)
@@ -40,11 +40,25 @@ run-s2: ; @$(MAKE) run MODEL=S2
 run-s3: ; @$(MAKE) run MODEL=S3
 run-s4: ; @$(MAKE) run MODEL=S4
 
-run: build
-	@$(PYTHON) scripts/run_scene_matrix.py --root $(ROOT) --model $(MODEL) --mode $(MODE) --run-id $(RUN_ID) --tb $(TB)
+run: assets
+	@$(PYTHON) scripts/run_scene_matrix.py --root $(ROOT) --model $(MODEL) --mode $(MODE) --run-id $(RUN_ID) --tb $(TB) --warmup $(RT3D_WARMUP) --frames $(RT3D_FRAMES) --repetitions $(RT3D_REPETITIONS)
 
 run-matrix: assets
-	@$(PYTHON) scripts/run_scene_matrix.py --root $(ROOT) --models S0 S1 S2 S3 S4 --mode $(MODE) --run-id $(RUN_ID) --tb $(TB)
+	@$(PYTHON) scripts/run_scene_matrix.py --root $(ROOT) --models S0 S1 S2 S3 S4 --mode $(MODE) --run-id $(RUN_ID) --tb $(TB) --warmup $(RT3D_WARMUP) --frames $(RT3D_FRAMES) --repetitions $(RT3D_REPETITIONS)
+
+# Short, run-local CPU equivalence gate.  Each model is run once per backend
+# with 1 warmup / 1 measured frame / 1 repetition; no approved golden is read
+# or modified by this target.
+verify-cpu-matmul verify-cpu-matmul-s1-s4: assets
+	@$(MAKE) run RUN_ID=$(RUN_ID) MODE=CPU_ONLY MODEL=S1 RT3D_WARMUP=1u RT3D_FRAMES=1u RT3D_REPETITIONS=1u TB=$(TB)
+	@$(MAKE) run RUN_ID=$(RUN_ID) MODE=CPU_MATMUL MODEL=S1 RT3D_WARMUP=1u RT3D_FRAMES=1u RT3D_REPETITIONS=1u TB=$(TB)
+	@$(MAKE) run RUN_ID=$(RUN_ID) MODE=CPU_ONLY MODEL=S2 RT3D_WARMUP=1u RT3D_FRAMES=1u RT3D_REPETITIONS=1u TB=$(TB)
+	@$(MAKE) run RUN_ID=$(RUN_ID) MODE=CPU_MATMUL MODEL=S2 RT3D_WARMUP=1u RT3D_FRAMES=1u RT3D_REPETITIONS=1u TB=$(TB)
+	@$(MAKE) run RUN_ID=$(RUN_ID) MODE=CPU_ONLY MODEL=S3 RT3D_WARMUP=1u RT3D_FRAMES=1u RT3D_REPETITIONS=1u TB=$(TB)
+	@$(MAKE) run RUN_ID=$(RUN_ID) MODE=CPU_MATMUL MODEL=S3 RT3D_WARMUP=1u RT3D_FRAMES=1u RT3D_REPETITIONS=1u TB=$(TB)
+	@$(MAKE) run RUN_ID=$(RUN_ID) MODE=CPU_ONLY MODEL=S4 RT3D_WARMUP=1u RT3D_FRAMES=1u RT3D_REPETITIONS=1u TB=$(TB)
+	@$(MAKE) run RUN_ID=$(RUN_ID) MODE=CPU_MATMUL MODEL=S4 RT3D_WARMUP=1u RT3D_FRAMES=1u RT3D_REPETITIONS=1u TB=$(TB)
+	@$(PYTHON) scripts/check_cpu_matmul_equivalence.py $(ROOT)/experiments/3d_scene/runs/$(RUN_ID)
 
 validate:
 	@$(PYTHON) scripts/validate_run.py $(RUN_DIR)/validated/frames.jsonl

@@ -17,7 +17,10 @@ module rt_3d_soc_tb #(
 `endif
 );
     import uart_agent_pkg::*;
-    localparam int UART_WAIT_TIMEOUT = 2_000_000;
+    // S4's CPU-only software transform is substantially longer than the
+    // original S0 smoke.  Keep the timeout above the largest benchmark while
+    // preserving an explicit bounded failure for a real boot/render stall.
+    localparam int UART_WAIT_TIMEOUT = 20_000_000;
 `ifdef RT3D_MODE_CPU_ONLY
     localparam string EXPECT_BACKEND = "CPU_ONLY";
 `elsif RT3D_MODE_CPU_MATMUL
@@ -106,13 +109,18 @@ module rt_3d_soc_tb #(
 `ifdef RT3D_MODE_CPU_ONLY
         // CPU modes report completion through SketchBook's frame-done status,
         // rather than the Scene Controller IRQ path.
-        uart.uart_wait_tx_string("RT3D JSON {\"record\":\"frame\"", UART_WAIT_TIMEOUT, 1'b1);
+        uart.uart_wait_tx_string("RT3D FRAME mode=CPU_ONLY", UART_WAIT_TIMEOUT, 1'b1);
+        // Do not finish immediately after the JSON prefix: UART transmits the
+        // long record serially, and the parser needs its newline-complete
+        // record before DVI evidence is emitted.
+        uart.uart_wait_tx_string("RT3D COMPLETE", UART_WAIT_TIMEOUT, 1'b1);
         if (scene_cmds != 0 || scene_reads != 0)
             $fatal(1, "CPU_ONLY unexpectedly used Scene MMIO/master reads cmds=%0d reads=%0d", scene_cmds, scene_reads);
         if (cpu_clear_cmds == 0 || cpu_triangle_cmds == 0 || cpu_present_cmds == 0)
             $fatal(1, "CPU_ONLY missing SketchBook commands clear=%0d tri=%0d present=%0d", cpu_clear_cmds, cpu_triangle_cmds, cpu_present_cmds);
 `elsif RT3D_MODE_CPU_MATMUL
-        uart.uart_wait_tx_string("RT3D JSON {\"record\":\"frame\"", UART_WAIT_TIMEOUT, 1'b1);
+        uart.uart_wait_tx_string("RT3D FRAME mode=CPU_MATMUL", UART_WAIT_TIMEOUT, 1'b1);
+        uart.uart_wait_tx_string("RT3D COMPLETE", UART_WAIT_TIMEOUT, 1'b1);
         if (scene_cmds != 0 || scene_reads != 0)
             $fatal(1, "CPU_MATMUL unexpectedly used Scene MMIO/master reads cmds=%0d reads=%0d", scene_cmds, scene_reads);
         if (cpu_clear_cmds == 0 || cpu_triangle_cmds == 0 || cpu_present_cmds == 0)
@@ -166,7 +174,7 @@ module rt_3d_soc_tb #(
         $finish;
     end
     initial begin
-        repeat (8_000_000) @(posedge clk);
+        repeat (25_000_000) @(posedge clk);
         if (!done) $fatal(1, "rt_3d SoC timeout wait=%0b wake=%0b irq=%0d pc=%08x",
                           saw_wait, saw_wake, irq_edges, dut.debug_wb_pc);
     end

@@ -2,10 +2,11 @@
 """Create immutable run folders and orchestrate a selected RT3D simulation."""
 from __future__ import annotations
 import argparse,hashlib,json,subprocess,sys
+import shutil
 from pathlib import Path
 def sha(path:Path)->str: return hashlib.sha256(path.read_bytes()).hexdigest()
 MODES = {"CPU_ONLY", "CPU_MATMUL", "SCENE_CONTROLLER"}
-def invoke(root:Path,model:str,mode:str,run_id:str,tb:str)->None:
+def invoke(root:Path,model:str,mode:str,run_id:str,tb:str,warmup:str,frames:str,repetitions:str)->None:
     if mode not in MODES: raise SystemExit(f"unsupported mode {mode!r}; expected {sorted(MODES)}")
     run=root/"experiments/3d_scene/runs"/run_id/mode/model; raw=run/"raw"; out=run/"validated"; raw.mkdir(parents=True,exist_ok=False); out.mkdir()
     config=root/"experiments/3d_scene/configs/formal.json"; asset=root/"experiments/3d_scene/assets"/model/"model.s3d.bin"
@@ -13,19 +14,32 @@ def invoke(root:Path,model:str,mode:str,run_id:str,tb:str)->None:
     (run/"manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
     # The LoongArch toolchain is hosted in WSL; keep the C-image build there.
     linux_dir="/mnt/" + root.drive[0].lower() + root.as_posix()[2:] + "/sdk/software/examples/rt_3d"
-    subprocess.run(["wsl", "bash", "-lc", f"cd '{linux_dir}' && make BENCH_MODE={mode} RT3D_SIMULATION=1 RT3D_MODEL={model}"], cwd=root, check=True)
+    cflags = (f"-DRT3D_WARMUP_FRAMES={warmup} "
+              f"-DRT3D_FORMAL_FRAMES={frames} "
+              f"-DRT3D_REPETITIONS={repetitions}")
+    subprocess.run(["wsl", "bash", "-lc", f"cd '{linux_dir}' && make BENCH_MODE={mode} RT3D_SIMULATION=1 RT3D_MODEL={model} CFLAGS_EXTRA='{cflags}'"], cwd=root, check=True)
     # The TB parameter is compile-time; keep MIF selection explicit instead of
     # overwriting the shared default asset.
-    command=["make","-C",str(root/"fpga/verilator"),f"TB={tb}","run-batch","CLEAN_FRAME_OUTPUT=0","RUN_ARGS=+UART_ECHO",f"VERILATOR_EXTRA=-DRT3D_MODEL_{model} -DRT3D_MODE_{mode}"]
+    frame_dir = run / "raw" / "frames"
+    frame_dir.mkdir()
+    frame_dir_rel = "../../" + frame_dir.relative_to(root).as_posix()
+    make_args=["make","-C",str(root/"fpga/verilator"),f"TB={tb}","CLEAN_FRAME_OUTPUT=0","RUN_ARGS=+UART_ECHO",f"DVI_OUT_DIR_REL={frame_dir_rel}",f"VERILATOR_EXTRA=-DRT3D_MODEL_{model} -DRT3D_MODE_{mode}"]
+    # The batch runner may reuse a binary when only the C image changed.
+    # Force a compile after each mode/model image build so the shared MIF is
+    # definitely linked into the simulation before run-batch executes.
+    subprocess.run(make_args + ["compile"], cwd=root, check=True)
+    command=make_args + ["run-batch"]
     with (raw/"driver.log").open("w",encoding="utf-8") as log:
         rc=subprocess.run(command,cwd=root,stdout=log,stderr=subprocess.STDOUT).returncode
     transcript=root/"fpga/verilator/logs"/f"transcript_{tb}.log"
     if transcript.exists(): (raw/"transcript.log").write_bytes(transcript.read_bytes())
+    result=root/"fpga/verilator/logs"/f"result_{tb}.json"
+    if result.exists(): shutil.copy2(result, raw/"result.json")
     if rc: raise SystemExit(f"simulation failed ({rc}); inspect {raw/'driver.log'}")
-    subprocess.run([sys.executable,str(root/"experiments/3d_scene/scripts/parse_rt3d_uart.py"),str(raw/"transcript.log"),"--output",str(out/"frames.jsonl")],check=True)
+    subprocess.run([sys.executable,str(root/"experiments/3d_scene/scripts/parse_rt3d_uart.py"),str(raw/"transcript.log"),"--model",model,"--output",str(out/"frames.jsonl")],check=True)
     subprocess.run([sys.executable,str(root/"experiments/3d_scene/scripts/validate_run.py"),str(out/"frames.jsonl")],check=True)
 def main()->int:
-    ap=argparse.ArgumentParser(); ap.add_argument("--root",type=Path,required=True); ap.add_argument("--model"); ap.add_argument("--models",nargs="+"); ap.add_argument("--mode",default="SCENE_CONTROLLER",choices=sorted(MODES)); ap.add_argument("--run-id",required=True); ap.add_argument("--tb",default="rt_3d_soc_tb"); a=ap.parse_args()
-    for model in a.models or [a.model]: invoke(a.root,model,a.mode,a.run_id,a.tb)
+    ap=argparse.ArgumentParser(); ap.add_argument("--root",type=Path,required=True); ap.add_argument("--model"); ap.add_argument("--models",nargs="+"); ap.add_argument("--mode",default="SCENE_CONTROLLER",choices=sorted(MODES)); ap.add_argument("--run-id",required=True); ap.add_argument("--tb",default="rt_3d_soc_tb"); ap.add_argument("--warmup",default="30u"); ap.add_argument("--frames",default="300u"); ap.add_argument("--repetitions",default="5u"); a=ap.parse_args()
+    for model in a.models or [a.model]: invoke(a.root,model,a.mode,a.run_id,a.tb,a.warmup,a.frames,a.repetitions)
     return 0
 if __name__ == "__main__": raise SystemExit(main())

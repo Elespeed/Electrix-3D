@@ -199,7 +199,11 @@ void rt3d_run(void)
             count = cpu_frame(frame, &model, &metrics, &ok); crc = command_crc(phase_of(frame), count); if (!ok) error = SCENE_CTRL_IRQ_ERROR;
 #endif
             rt3d_frame_end(&metrics); rt3d_idle_sample(&idle); rt3d_background_sample(&bg);
-            rt_kprintf("RT3D JSON {\"record\":\"frame\",\"schema\":\"scene-controller-experiment/v1\",\"run_id\":\"firmware\",\"mode\":\"%s\",\"rep\":%u,\"frame\":%u,\"asset\":{\"id\":\"%s\",\"sha256\":\"%s\",\"V\":%u,\"T\":%u,\"M\":%u},\"config_hash\":\"%s\",\"cycles\":{\"active\":%u,\"polling\":%u,\"blocked\":%u,\"wall\":%u,\"latency_ns\":%u},\"scene\":{\"load_bytes\":0,\"axi_transactions\":0,\"transform_cycles\":%u,\"cull_cycles\":%u,\"sort_cycles\":%u,\"command_cycles\":%u,\"input_triangles\":%u,\"culled_triangles\":%u,\"output_triangles\":%u,\"command_crc\":%u,\"frame_crc\":0},\"rtos\":{\"idle_rate_permille\":%u,\"background_units\":%u},\"equivalence\":\"PENDING\",\"error\":\"%s\",\"timeout\":false,\"status\":\"%s\"}\n", rt3d_backend_name(), rep, frame + 1u, RT3D_ASSET_ID, RT3D_ASSET_SHA256, model.vertex_count, model.triangle_count, model.mesh_count, RT3D_CONFIG_HASH, metrics.active_cycles, metrics.polling_cycles, metrics.blocked_cycles, metrics.wall_cycles, metrics.frame_latency_ns, metrics.stage_cycles[RT3D_STAGE_TRANSFORM], metrics.stage_cycles[RT3D_STAGE_TRIANGLE_CULL], metrics.stage_cycles[RT3D_STAGE_PAINTER_SORT], metrics.stage_cycles[RT3D_STAGE_COMMAND_SUBMIT], model.triangle_count, model.triangle_count - count, count, crc, rt3d_idle_rate_permille(&idle), bg.units, error ? "MATRIX_ERROR" : "NONE", error ? "FAIL" : "PENDING");
+            /* rt_kprintf has a bounded staging buffer.  Keep the wire record
+             * compact and let the host-side experiment parser expand it to
+             * schema JSONL; a truncated JSON document is not usable evidence. */
+            rt_kprintf("RT3D FRAME mode=%s rep=%u frame=%u err=%u cmd=%08x\n",
+                       rt3d_backend_name(), rep, frame + 1u, error, crc);
         }
     }
 }
