@@ -8,7 +8,7 @@ PREFIX = "RT3D JSON "
 FRAME_RE = re.compile(r"RT3D FRAME mode=(?P<mode>CPU_ONLY|CPU_MATMUL|SCENE_CONTROLLER) rep=(?P<rep>\d+) frame=(?P<frame>\d+) err=(?P<err>\d+) cmd=(?P<cmd>[0-9a-fA-F]+)")
 CRC_RE = re.compile(r"\[DVI_MON\]\[CRC\]\s+(?:(?:named=(?P<label>\S+)\s+)?frame=(?P<frame>\d+)\s+crc=(?P<crc>[0-9a-fA-F]+)\s+width=(?P<width>\d+)\s+height=(?P<height>\d+))")
 SAVE_RE = re.compile(r"\[DVI_MON\]\s+file saved to:\s+(?P<path>.+?)\s*$")
-MODEL_DIMS = {"S0": (16, 24, 1), "S1": (32, 48, 2), "S2": (64, 96, 4), "S3": (96, 144, 8), "S4": (128, 192, 16)}
+MODEL_DIMS = {"S0": (16, 24, 1), "S1": (32, 48, 1), "S2": (64, 96, 1), "S3": (96, 144, 1), "S4": (128, 192, 1)}
 
 def compact_frame(match, model):
     if model not in MODEL_DIMS: raise SystemExit("--model is required for compact RT3D FRAME records")

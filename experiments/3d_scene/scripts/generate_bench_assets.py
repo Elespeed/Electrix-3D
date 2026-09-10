@@ -4,7 +4,9 @@ from __future__ import annotations
 import argparse, hashlib, json, struct
 from pathlib import Path
 
-SIZES = {"S0": (16,24,1), "S1": (32,48,2), "S2": (64,96,4), "S3": (96,144,8), "S4": (128,192,16)}
+# Benchmark scale is geometry-only: keep every scene a single mesh so the
+# comparison does not measure multi-mesh scheduling or command overhead.
+SIZES = {"S0": (16,24,1), "S1": (32,48,1), "S2": (64,96,1), "S3": (96,144,1), "S4": (128,192,1)}
 MAGIC = 0x534B3344  # SK3D (the v4 marker is carried in header word3)
 
 def words_for(v: int, t: int, m: int) -> list[int]:
@@ -36,7 +38,8 @@ def main() -> int:
     models = [write_model(args.root, key, value) for key, value in SIZES.items()]
     manifest = {"schema": "scene-controller-assets/v1", "generator": "generate_bench_assets.py/v1", "models": models}
     path = args.root / "experiments" / "3d_scene" / "assets" / "manifest.json"; path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    # The tracked manifest uses CRLF; preserve it on both Windows and WSL.
+    path.write_bytes((json.dumps(manifest, indent=2) + "\n").replace("\n", "\r\n").encode("utf-8"))
     print(path)
     return 0
 if __name__ == "__main__": raise SystemExit(main())

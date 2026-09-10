@@ -15,37 +15,37 @@
       "id": "S1",
       "V": 32,
       "T": 48,
-      "M": 2,
-      "bytes": 688,
+      "M": 1,
+      "bytes": 672,
       "path": "experiments/3d_scene/assets/S1/model.s3d.bin",
-      "sha256": "b77137be87d3e8de1e502ad619a420d1218b70d282159fb8082673538788524b"
+      "sha256": "656fcdfb9b252655e63013fe149918280f45df9323236c33f04fc0e406e14457"
     },
     {
       "id": "S2",
       "V": 64,
       "T": 96,
-      "M": 4,
-      "bytes": 1360,
+      "M": 1,
+      "bytes": 1312,
       "path": "experiments/3d_scene/assets/S2/model.s3d.bin",
-      "sha256": "3416a41362100bcc75dbe793ff79e102cc43e40cb754390bd45fbd4a24378c1f"
+      "sha256": "565ee67dda09ff519e923755c0c9d5e68d7758a7f0e28068fce28692c121a980"
     },
     {
       "id": "S3",
       "V": 96,
       "T": 144,
-      "M": 8,
-      "bytes": 2064,
+      "M": 1,
+      "bytes": 1952,
       "path": "experiments/3d_scene/assets/S3/model.s3d.bin",
-      "sha256": "6001a419621d7f94289ca6b8a66f50247ac13a5ca8f3a155c0a52dbba582fa48"
+      "sha256": "1075416f14925321889e07720951b7513c4a63764745e0d104a6e7f3facd0441"
     },
     {
       "id": "S4",
       "V": 128,
       "T": 192,
-      "M": 16,
-      "bytes": 2832,
+      "M": 1,
+      "bytes": 2592,
       "path": "experiments/3d_scene/assets/S4/model.s3d.bin",
-      "sha256": "2f1274706bc3b40ed801c7eaa43654c62e28ddb1b8db3f5dd9cb5c286657e7f9"
+      "sha256": "efcd971672cf7c33a4cae6d921ff433f62200a7f51fcda97f958b12b3adb48ed"
     }
   ]
 }
