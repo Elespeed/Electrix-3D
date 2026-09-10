@@ -79,7 +79,9 @@ module rt_3d_soc_matmul_tb #(
         #200 reset = 1'b0;
         wait(dut.u_soc.u_soc_base.sys_resetn);
         uart.uart_wait_tx_string("RT3D START backend=CPU_MATMUL", UART_WAIT_TIMEOUT, 1'b1);
-        uart.uart_wait_tx_string("RT3D JSON {\"record\":\"frame\"", UART_WAIT_TIMEOUT, 1'b1);
+        // Firmware emits compact records so that rt_kprintf cannot truncate a
+        // long JSON document; the host parser expands this line to JSONL.
+        uart.uart_wait_tx_string("RT3D FRAME mode=CPU_MATMUL", UART_WAIT_TIMEOUT, 1'b1);
         if (matmul_writes == 0 || matmul_reads == 0) $fatal(1, "missing Matmul MMIO writes=%0d reads=%0d", matmul_writes, matmul_reads);
         if (dut.u_soc.u_soc_base.u_matmul_axi_slave.error || !dut.u_soc.u_soc_base.u_matmul_axi_slave.done)
             $fatal(1, "Matmul terminal state done=%0b error=%0b", dut.u_soc.u_soc_base.u_matmul_axi_slave.done, dut.u_soc.u_soc_base.u_matmul_axi_slave.error);

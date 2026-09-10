@@ -120,15 +120,31 @@ static U32 build_triangles(const rt3d_model_t *model)
         if (i0 >= model->vertex_count || i1 >= model->vertex_count || i2 >= model->vertex_count) continue;
         area = ((S32)screen_vertices[i1].x - screen_vertices[i0].x) * ((S32)screen_vertices[i2].y - screen_vertices[i0].y) - ((S32)screen_vertices[i1].y - screen_vertices[i0].y) * ((S32)screen_vertices[i2].x - screen_vertices[i0].x);
         if (area >= 0 || count == RT3D_MAX_TRIANGLES) continue;
-        visible_triangles[count].i0 = i0; visible_triangles[count].i1 = i1; visible_triangles[count].i2 = i2; visible_triangles[count].color = (U8)(words[triangle_base + 2u * i + 1u] | 1u); visible_triangles[count].source = (U8)i; visible_triangles[count].depth = screen_vertices[i0].z + screen_vertices[i1].z + screen_vertices[i2].z; ++count;
+        /* Preserve the SK3D material byte exactly.  The Scene Controller
+         * consumes this byte without the historical CPU-side `| 1` tweak,
+         * so forcing the low bit here makes the reference framebuffer differ
+         * even for identical geometry. */
+        visible_triangles[count].i0 = i0; visible_triangles[count].i1 = i1; visible_triangles[count].i2 = i2; visible_triangles[count].color = (U8)words[triangle_base + 2u * i + 1u]; visible_triangles[count].source = (U8)i; visible_triangles[count].depth = screen_vertices[i0].z + screen_vertices[i1].z + screen_vertices[i2].z; ++count;
     }
     return count;
 }
 
 static void sort_triangles(U32 count)
 {
-    U32 i;
-    for (i = 1u; i < count; ++i) { tri_t value = visible_triangles[i]; U32 j = i; while (j && (visible_triangles[j - 1u].depth < value.depth || (visible_triangles[j - 1u].depth == value.depth && visible_triangles[j - 1u].source > value.source))) { visible_triangles[j] = visible_triangles[j - 1u]; --j; } visible_triangles[j] = value; }
+    U32 i, j;
+    /* Match scene_ctrl_engine's SORT_COMPARE exactly: hold sort_i fixed,
+     * scan later records, and immediately exchange on a strictly smaller
+     * depth.  This intentionally differs from a stable sort for equal-depth
+     * triangles, whose painter order is part of the rendered result. */
+    for (i = 0u; i + 1u < count; ++i) {
+        for (j = i + 1u; j < count; ++j) {
+            if (visible_triangles[j].depth < visible_triangles[i].depth) {
+                tri_t temp = visible_triangles[i];
+                visible_triangles[i] = visible_triangles[j];
+                visible_triangles[j] = temp;
+            }
+        }
+    }
 }
 
 static U32 command_crc(U8 phase, U32 count)
@@ -194,7 +210,11 @@ void rt3d_run(void)
             rt3d_frame_metrics_t metrics; rt3d_background_metrics_t bg; U32 count, crc; U8 error = 0u, ok = 1u;
             rt3d_frame_begin(&metrics);
 #if defined(RT3D_MODE_SCENE_CONTROLLER)
-            rt3d_stage_begin(&metrics, RT3D_STAGE_COMMAND_SUBMIT); error = scene_frame(frame, &metrics); rt3d_stage_end(&metrics, RT3D_STAGE_COMMAND_SUBMIT); count = scene_ctrl_read(SCENE_CTRL_REG_PERF_OUTPUT_TRIANGLES); crc = 0u;
+            /* scene_frame() returns the Scene IRQ status.  FRAME_DONE is a
+             * successful completion bit, not an error code; only propagate
+             * the actual error bit into the compact UART record consumed by
+             * the host-side CRC pipeline. */
+            rt3d_stage_begin(&metrics, RT3D_STAGE_COMMAND_SUBMIT); error = scene_frame(frame, &metrics) & SCENE_CTRL_IRQ_ERROR; rt3d_stage_end(&metrics, RT3D_STAGE_COMMAND_SUBMIT); count = scene_ctrl_read(SCENE_CTRL_REG_PERF_OUTPUT_TRIANGLES); crc = 0u;
 #else
             count = cpu_frame(frame, &model, &metrics, &ok); crc = command_crc(phase_of(frame), count); if (!ok) error = SCENE_CTRL_IRQ_ERROR;
 #endif
