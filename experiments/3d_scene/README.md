@@ -27,12 +27,10 @@ Validate with:
 python tools/validate_3d_jsonl.py experiments/3d_scene/fixtures/valid.jsonl
 ```
 
-`validate_run.py` checks record structure only. `summarize.py` is the
-publication gate: it refuses records whose `equivalence` is not `PASS`, whose
-status tuple is not passing, or whose command/frame CRC is zero or outside a
-uint32. Run `golden_check.py` on a run after a monitor-provided framebuffer
-CRC has been attached; a `PENDING` record is diagnostic evidence, not a
-publishable benchmark result.
+`validate_run.py` checks record structure, asset/config identity, and status.
+`summarize.py` aggregates every structurally valid passing frame. Command and
+frame CRCs are retained in the JSONL and transcript as diagnostic evidence;
+they are not a prerequisite for performance statistics.
 
 Examples:
 

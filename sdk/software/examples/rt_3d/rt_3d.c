@@ -25,6 +25,11 @@
 #ifndef RT3D_CONFIG_HASH
 #define RT3D_CONFIG_HASH "UNFROZEN"
 #endif
+#ifndef RT3D_MODEL_V
+#define RT3D_MODEL_V 0u
+#define RT3D_MODEL_T 0u
+#define RT3D_MODEL_M 0u
+#endif
 
 typedef struct { S32 x, y, z; } vec_t;
 typedef struct { S16 x, y; S32 z; } screen_t;
@@ -175,7 +180,11 @@ static U32 cpu_frame(U32 frame, const rt3d_model_t *model, rt3d_frame_metrics_t 
 static U8 scene_frame(U32 frame, rt3d_frame_metrics_t *metrics)
 {
     U32 completed = scene_ctrl_cmd_frame_count(); scene_ctrl_cmd_t cmd = scene_ctrl_cmd_clear(RT3D_CLEAR_COLOR); U8 phase = phase_of(frame), status; U32 start;
+    /* Submission is CPU active work.  The subsequent semaphore wait is not;
+     * keep the two intervals disjoint so active + blocked are meaningful. */
+    rt3d_stage_begin(metrics, RT3D_STAGE_COMMAND_SUBMIT);
     scene_ctrl_wait_prepare(); scene_ctrl_irq_clear(SCENE_CTRL_IRQ_FRAME_DONE | SCENE_CTRL_IRQ_ERROR); scene_ctrl_cmd_push(&cmd); cmd = scene_ctrl_cmd_draw(0u, 0, 0, 0, phase, 0u, 0u, 0x0100u); scene_ctrl_cmd_push(&cmd); cmd = scene_ctrl_cmd_present(); scene_ctrl_cmd_push(&cmd); scene_ctrl_cmd_start_frame();
+    rt3d_stage_end(metrics, RT3D_STAGE_COMMAND_SUBMIT);
     /* Keep the IRQ wait observable in the UART transcript.  The SoC smoke TB
        uses these markers to prove that completion took the intended
        interrupt path, rather than merely observing a later JSON record. */
@@ -183,6 +192,50 @@ static U8 scene_frame(U32 frame, rt3d_frame_metrics_t *metrics)
     start = get_cpu_clock_count(); status = scene_ctrl_wait_irq(completed, RT_WAITING_FOREVER); rt3d_blocked_add(metrics, get_cpu_clock_count() - start);
     rt_kprintf("RT3D IRQ WAKE seq=%u\n", frame + 1u);
     return status;
+}
+
+static void rt3d_emit_frame(const rt3d_frame_metrics_t *m,
+                            const rt3d_idle_metrics_t *idle,
+                            const rt3d_background_metrics_t *bg,
+                            const scene_ctrl_perf_t *before,
+                            const scene_ctrl_perf_t *after,
+                            U32 rep, U32 frame, U32 command_crc, U32 frame_crc, U32 output_count,
+                            U32 error)
+{
+    U32 load=0, txn=0, transform=0, cull=0, sort=0, command=0;
+    U32 in=RT3D_MODEL_T, culled=0, out=0;
+#if defined(RT3D_MODE_SCENE_CONTROLLER)
+    if (before && after) {
+        /* The controller clears render-stage and triangle counters at each
+         * RENDER/DRAW start.  They are therefore frame-local snapshots, not
+         * cumulative counters: subtracting the previous frame would wrap. */
+        (void)before;
+        transform=after->transform_cycles; cull=after->cull_cycles;
+        sort=after->sort_cycles; command=after->command_cycles;
+        in=after->input_triangles; culled=after->culled_triangles; out=after->output_triangles;
+        /* Model-load counters belong to initialization, outside frame timing. */
+        load=0u; txn=0u;
+    }
+#else
+    (void)before; (void)after;
+    transform=m->stage_cycles[RT3D_STAGE_TRANSFORM]; cull=m->stage_cycles[RT3D_STAGE_TRIANGLE_CULL];
+    sort=m->stage_cycles[RT3D_STAGE_PAINTER_SORT]; command=m->stage_cycles[RT3D_STAGE_COMMAND_SUBMIT];
+    out=output_count; culled=RT3D_MODEL_T > out ? RT3D_MODEL_T - out : 0u;
+#endif
+    /* RT_CONSOLEBUF_SIZE is 128 in the RT-Thread image.  Each fragment below
+     * is bounded independently; the host joins them by (rep, frame), and only
+     * emits a row after the final CFG fragment has arrived. */
+    rt_kprintf("RT3D FRAME mode=%s rep=%u frame=%u err=%u cmd=%08x asset=%s V=%u T=%u M=%u\n", rt3d_backend_name(),rep,frame,error,command_crc,RT3D_ASSET_ID,RT3D_MODEL_V,RT3D_MODEL_T,RT3D_MODEL_M);
+    rt_kprintf("RT3D CYC rep=%u frame=%u active=%u polling=%u blocked=%u wall=%u latency_ns=%u\n",rep,frame,m->active_cycles,m->polling_cycles,m->blocked_cycles,m->wall_cycles,m->frame_latency_ns);
+    rt_kprintf("RT3D SCENE rep=%u frame=%u load_bytes=%u axi_transactions=%u\n",rep,frame,load,txn);
+    rt_kprintf("RT3D STAGE rep=%u frame=%u transform_cycles=%u cull_cycles=%u\n",rep,frame,transform,cull);
+    rt_kprintf("RT3D STAGE2 rep=%u frame=%u sort_cycles=%u command_cycles=%u\n",rep,frame,sort,command);
+    rt_kprintf("RT3D TRI rep=%u frame=%u input_triangles=%u culled_triangles=%u output_triangles=%u\n",rep,frame,in,culled,out);
+    rt_kprintf("RT3D CRC rep=%u frame=%u frame_crc=%08x\n",rep,frame,frame_crc);
+    rt_kprintf("RT3D RTOS rep=%u frame=%u idle_rate_permille=%u background_units=%u\n",rep,frame,rt3d_idle_rate_permille(idle),bg->units);
+    rt_kprintf("RT3D RATE rep=%u frame=%u background_units_per_second=%u\n",rep,frame,bg->units_per_second);
+    rt_kprintf("RT3D HASH rep=%u frame=%u sha=%s\n",rep,frame,RT3D_ASSET_SHA256);
+    rt_kprintf("RT3D CFG rep=%u frame=%u cfg=%s\n",rep,frame,RT3D_CONFIG_HASH);
 }
 
 void rt3d_run(void)
@@ -207,23 +260,23 @@ void rt3d_run(void)
 #endif
         }
         for (frame = 0; frame < RT3D_FORMAL_FRAMES; ++frame) {
-            rt3d_frame_metrics_t metrics; rt3d_background_metrics_t bg; U32 count, crc; U8 error = 0u, ok = 1u;
+            rt3d_frame_metrics_t metrics; rt3d_background_metrics_t bg; scene_ctrl_perf_t perf_before, perf_after; U32 count, crc; U8 error = 0u, ok = 1u;
             rt3d_frame_begin(&metrics);
 #if defined(RT3D_MODE_SCENE_CONTROLLER)
+            scene_ctrl_perf_read(&perf_before);
             /* scene_frame() returns the Scene IRQ status.  FRAME_DONE is a
              * successful completion bit, not an error code; only propagate
              * the actual error bit into the compact UART record consumed by
              * the host-side CRC pipeline. */
-            rt3d_stage_begin(&metrics, RT3D_STAGE_COMMAND_SUBMIT); error = scene_frame(frame, &metrics) & SCENE_CTRL_IRQ_ERROR; rt3d_stage_end(&metrics, RT3D_STAGE_COMMAND_SUBMIT); count = scene_ctrl_read(SCENE_CTRL_REG_PERF_OUTPUT_TRIANGLES); crc = 0u;
+            error = scene_frame(frame, &metrics) & SCENE_CTRL_IRQ_ERROR; count = scene_ctrl_read(SCENE_CTRL_REG_PERF_OUTPUT_TRIANGLES); crc = 0u;
 #else
             count = cpu_frame(frame, &model, &metrics, &ok); crc = command_crc(phase_of(frame), count); if (!ok) error = SCENE_CTRL_IRQ_ERROR;
 #endif
             rt3d_frame_end(&metrics); rt3d_idle_sample(&idle); rt3d_background_sample(&bg);
-            /* rt_kprintf has a bounded staging buffer.  Keep the wire record
-             * compact and let the host-side experiment parser expand it to
-             * schema JSONL; a truncated JSON document is not usable evidence. */
-            rt_kprintf("RT3D FRAME mode=%s rep=%u frame=%u err=%u cmd=%08x\n",
-                       rt3d_backend_name(), rep, frame + 1u, error, crc);
+#if defined(RT3D_MODE_SCENE_CONTROLLER)
+            scene_ctrl_perf_read(&perf_after);
+#endif
+            rt3d_emit_frame(&metrics,&idle,&bg,&perf_before,&perf_after,rep,frame+1u,crc,0u,count,error);
         }
     }
 }

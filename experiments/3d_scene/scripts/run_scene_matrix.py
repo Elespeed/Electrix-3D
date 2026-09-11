@@ -16,7 +16,9 @@ def invoke(root:Path,model:str,mode:str,run_id:str,tb:str,warmup:str,frames:str,
     linux_dir="/mnt/" + root.drive[0].lower() + root.as_posix()[2:] + "/sdk/software/examples/rt_3d"
     cflags = (f"-DRT3D_WARMUP_FRAMES={warmup} "
               f"-DRT3D_FORMAL_FRAMES={frames} "
-              f"-DRT3D_REPETITIONS={repetitions}")
+              f"-DRT3D_REPETITIONS={repetitions} "
+              f"-DRT3D_ASSET_SHA256=\\\"{sha(asset)}\\\" "
+              f"-DRT3D_CONFIG_HASH=\\\"{sha(config)}\\\"")
     subprocess.run(["wsl", "bash", "-lc", f"cd '{linux_dir}' && make BENCH_MODE={mode} RT3D_SIMULATION=1 RT3D_MODEL={model} CFLAGS_EXTRA='{cflags}'"], cwd=root, check=True)
     # The TB parameter is compile-time; keep MIF selection explicit instead of
     # overwriting the shared default asset.
@@ -40,6 +42,7 @@ def invoke(root:Path,model:str,mode:str,run_id:str,tb:str,warmup:str,frames:str,
     subprocess.run([sys.executable,str(root/"experiments/3d_scene/scripts/validate_run.py"),str(out/"frames.jsonl")],check=True)
 def main()->int:
     ap=argparse.ArgumentParser(); ap.add_argument("--root",type=Path,required=True); ap.add_argument("--model"); ap.add_argument("--models",nargs="+"); ap.add_argument("--mode",default="SCENE_CONTROLLER",choices=sorted(MODES)); ap.add_argument("--run-id",required=True); ap.add_argument("--tb",default="rt_3d_soc_tb"); ap.add_argument("--warmup",default="30u"); ap.add_argument("--frames",default="300u"); ap.add_argument("--repetitions",default="5u"); a=ap.parse_args()
+    a.root = a.root.resolve()
     for model in a.models or [a.model]: invoke(a.root,model,a.mode,a.run_id,a.tb,a.warmup,a.frames,a.repetitions)
     return 0
 if __name__ == "__main__": raise SystemExit(main())

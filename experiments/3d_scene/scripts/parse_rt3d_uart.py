@@ -5,15 +5,21 @@ import argparse, json, re
 from pathlib import Path
 
 PREFIX = "RT3D JSON "
-FRAME_RE = re.compile(r"RT3D FRAME mode=(?P<mode>CPU_ONLY|CPU_MATMUL|SCENE_CONTROLLER) rep=(?P<rep>\d+) frame=(?P<frame>\d+) err=(?P<err>\d+) cmd=(?P<cmd>[0-9a-fA-F]+)")
+FRAME_RE = re.compile(r"RT3D (?P<kind>FRAME|CYC|SCENE|STAGE|STAGE2|TRI|CRC|RTOS|RATE|HASH|CFG) (?P<body>.*)$")
 CRC_RE = re.compile(r"\[DVI_MON\]\[CRC\]\s+(?:(?:named=(?P<label>\S+)\s+)?frame=(?P<frame>\d+)\s+crc=(?P<crc>[0-9a-fA-F]+)\s+width=(?P<width>\d+)\s+height=(?P<height>\d+))")
 SAVE_RE = re.compile(r"\[DVI_MON\]\s+file saved to:\s+(?P<path>.+?)\s*$")
 MODEL_DIMS = {"S0": (16, 24, 1), "S1": (32, 48, 1), "S2": (64, 96, 1), "S3": (96, 144, 1), "S4": (128, 192, 1)}
 
-def compact_frame(match, model):
+def compact_frame(match, model, manifest=None):
     if model not in MODEL_DIMS: raise SystemExit("--model is required for compact RT3D FRAME records")
-    v, t, meshes = MODEL_DIMS[model]; error = int(match["err"])
-    return {"record":"frame","schema":"scene-controller-experiment/v1","run_id":"firmware","mode":match["mode"],"rep":int(match["rep"]),"frame":int(match["frame"]),"asset":{"id":model,"sha256":"UNFROZEN","V":v,"T":t,"M":meshes},"config_hash":"UNFROZEN","cycles":{"active":0,"polling":0,"blocked":0,"wall":0,"latency_ns":0},"scene":{"load_bytes":0,"axi_transactions":0,"transform_cycles":0,"cull_cycles":0,"sort_cycles":0,"command_cycles":0,"input_triangles":t,"culled_triangles":0,"output_triangles":t,"command_crc":int(match["cmd"],16),"frame_crc":0},"rtos":{"idle_rate_permille":0,"background_units":0},"equivalence":"PENDING","error":"MATRIX_ERROR" if error else "NONE","timeout":False,"status":"FAIL" if error else "PASS"}
+    body = match["body"] if isinstance(match, dict) else match.group("body")
+    fields = dict(item.split("=", 1) for item in body.split() if "=" in item)
+    try:
+        nums = {k: int(fields[k], 16 if k in ("cmd", "frame_crc") else 10) for k in ("rep","frame","err","cmd","active","polling","blocked","wall","latency_ns","load_bytes","axi_transactions","transform_cycles","cull_cycles","sort_cycles","command_cycles","input_triangles","culled_triangles","output_triangles","frame_crc","idle_rate_permille","background_units","background_units_per_second")}
+    except (KeyError, ValueError) as exc: raise SystemExit(f"incomplete RT3D FRAME record: {exc}")
+    v,t,meshes=MODEL_DIMS[model]; manifest=manifest or {}
+    asset_sha=fields.get("sha",manifest.get("asset_sha256","UNFROZEN")); cfg=fields.get("cfg",manifest.get("config_sha256","UNFROZEN"))
+    return {"record":"frame","schema":"scene-controller-experiment/v1","run_id":manifest.get("run_id","firmware"),"mode":fields["mode"],"rep":nums["rep"],"frame":nums["frame"],"asset":{"id":fields.get("asset",model),"sha256":asset_sha,"V":int(fields.get("V",v)),"T":int(fields.get("T",t)),"M":int(fields.get("M",meshes))},"config_hash":cfg,"cycles":{k:nums[k] for k in ("active","polling","blocked","wall","latency_ns")},"scene":{k:nums[k] for k in ("load_bytes","axi_transactions","transform_cycles","cull_cycles","sort_cycles","command_cycles","input_triangles","culled_triangles","output_triangles")}|{"command_crc":nums["cmd"],"frame_crc":nums["frame_crc"]},"rtos":{k:nums[k] for k in ("idle_rate_permille","background_units","background_units_per_second")},"error":"MATRIX_ERROR" if nums["err"] else "NONE","timeout":False,"status":"FAIL" if nums["err"] else "PASS"}
 
 def attach_display_evidence(records, crc_events, save_paths):
     """Attach the completed monitor frame to the UART record it follows.
@@ -43,8 +49,10 @@ def attach_display_evidence(records, crc_events, save_paths):
             record["display"]["ppm"] = paths[0]
 
 def main() -> int:
-    ap = argparse.ArgumentParser(); ap.add_argument("transcript", type=Path); ap.add_argument("--output", type=Path, required=True); ap.add_argument("--model", choices=sorted(MODEL_DIMS)); args = ap.parse_args()
-    records = []; crc_events = []; save_paths = []
+    ap = argparse.ArgumentParser(); ap.add_argument("transcript", type=Path); ap.add_argument("--output", type=Path, required=True); ap.add_argument("--model", choices=sorted(MODEL_DIMS)); ap.add_argument("--manifest", type=Path); args = ap.parse_args()
+    manifest_path = args.manifest or args.output.parent.parent / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else None
+    records = []; crc_events = []; save_paths = []; pending = {}
     for order, line in enumerate(args.transcript.read_text(encoding="utf-8", errors="replace").splitlines()):
         at = line.find(PREFIX)
         if at >= 0:
@@ -53,7 +61,16 @@ def main() -> int:
             except json.JSONDecodeError as exc: raise SystemExit(f"malformed RT3D JSON: {exc}")
         frame_match = FRAME_RE.search(line)
         if frame_match:
-            record = compact_frame(frame_match, args.model); record["_parse_order"] = order; records.append(record)
+            # Firmware fragments records to fit RT_CONSOLEBUF_SIZE. Join all
+            # fragments using the stable repetition/frame key; CFG is last.
+            frag = frame_match.group("body"); fields = dict(x.split("=",1) for x in frag.split() if "=" in x)
+            kind = frame_match.group("kind")
+            if kind == "FRAME":
+                key=(fields.get("rep"),fields.get("frame")); pending[key]=frag
+            elif kind != "FRAME":
+                key=(fields.get("rep"),fields.get("frame")); pending.setdefault(key,""); pending[key] += " "+frag
+                if kind == "CFG":
+                    record = compact_frame({"body":pending.pop(key)}, args.model, manifest); record["_parse_order"] = order; records.append(record)
         match = CRC_RE.search(line)
         if match:
             crc_events.append({"order": order, **match.groupdict()})

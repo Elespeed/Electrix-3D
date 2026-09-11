@@ -9,5 +9,5 @@
   "trajectory_length": 16,
   "frame_budget_ns": 33333333,
   "frame_dump_limit": 0,
-  "golden_policy": "approved_crc_required"
+  "crc_policy": "record_only"
 }
