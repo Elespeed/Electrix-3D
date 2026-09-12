@@ -25,9 +25,10 @@ module sketch_perf_tb;
     logic [31:0] cmd_push_w3 = '0;
     logic cmd_push_ready, cmd_full, busy, idle, frame_closed, present_req, error;
     logic write_attempt, gru_we, gru_page;
+    logic [7:0] gru_wstrb;
     logic [$clog2(16 + 1)-1:0] cmd_level;
     logic [ADDR_W-1:0] gru_addr;
-    logic [15:0] gru_wdata;
+    logic [63:0] gru_wdata;
     logic measure_enable = 1'b0;
     logic renderer_active;
     logic [31:0] total_cycles, renderer_cycles, span_count, pixel_write_count;
@@ -43,7 +44,7 @@ module sketch_perf_tb;
         .cmd_push_ready(cmd_push_ready), .cmd_level(cmd_level), .cmd_full(cmd_full),
         .busy(busy), .idle(idle), .frame_closed(frame_closed), .present_req(present_req),
         .error(error), .write_attempt(write_attempt), .gru_we(gru_we),
-        .gru_page(gru_page), .gru_addr(gru_addr), .gru_wdata(gru_wdata)
+        .gru_page(gru_page), .gru_addr(gru_addr), .gru_wdata(gru_wdata), .gru_wstrb(gru_wstrb)
     );
 
     // State 4 is ST_GLYPH and state 6 is ST_WAIT_DONE.  This is a testbench
@@ -55,6 +56,7 @@ module sketch_perf_tb;
         .clk(clk), .resetn(resetn), .measure_enable(measure_enable),
         .renderer_active(renderer_active), .span_valid(dut.span_valid),
         .span_ready(dut.span_ready), .pixel_write(gru_we),
+        .pixel_write_mask(dut.gru_wstrb),
         .total_cycles(total_cycles), .renderer_cycles(renderer_cycles),
         .span_count(span_count), .pixel_write_count(pixel_write_count)
     );

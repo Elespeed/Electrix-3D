@@ -6,11 +6,19 @@ import shutil
 from pathlib import Path
 def sha(path:Path)->str: return hashlib.sha256(path.read_bytes()).hexdigest()
 MODES = {"CPU_ONLY", "CPU_MATMUL", "SCENE_CONTROLLER"}
+def count_arg(value: str) -> int:
+    value = value.strip().lower()
+    if value.endswith("u"):
+        value = value[:-1]
+    return int(value)
 def invoke(root:Path,model:str,mode:str,run_id:str,tb:str,warmup:str,frames:str,repetitions:str)->None:
     if mode not in MODES: raise SystemExit(f"unsupported mode {mode!r}; expected {sorted(MODES)}")
     run=root/"experiments/3d_scene/runs"/run_id/mode/model; raw=run/"raw"; out=run/"validated"; raw.mkdir(parents=True,exist_ok=False); out.mkdir()
     config=root/"experiments/3d_scene/configs/formal.json"; asset=root/"experiments/3d_scene/assets"/model/"model.s3d.bin"
-    manifest={"schema":"scene-controller-run/v1","run_id":run_id,"model":model,"mode":mode,"asset_sha256":sha(asset),"config_sha256":sha(config),"raw":"raw/transcript.log","frame_dump_limit":0}
+    warmup_n, frames_n, repetitions_n = map(count_arg, (warmup, frames, repetitions))
+    timeout_cycles = min(2_000_000_000, max(25_000_000, (warmup_n + frames_n + 20) * 2_000_000 * repetitions_n))
+    expected_frames = frames_n * repetitions_n
+    manifest={"schema":"scene-controller-run/v1","run_id":run_id,"run_class":"PILOT" if run_id.upper().startswith("PILOT") else "FORMAL","model":model,"mode":mode,"asset_sha256":sha(asset),"config_sha256":sha(config),"raw":"raw/transcript.log","frame_dump_limit":0,"warmup_frames":warmup_n,"formal_frames":frames_n,"repetitions":repetitions_n,"expected_formal_frames":expected_frames,"test_timeout_cycles":timeout_cycles}
     (run/"manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
     # The LoongArch toolchain is hosted in WSL; keep the C-image build there.
     linux_dir="/mnt/" + root.drive[0].lower() + root.as_posix()[2:] + "/sdk/software/examples/rt_3d"
@@ -25,7 +33,7 @@ def invoke(root:Path,model:str,mode:str,run_id:str,tb:str,warmup:str,frames:str,
     frame_dir = run / "raw" / "frames"
     frame_dir.mkdir()
     frame_dir_rel = "../../" + frame_dir.relative_to(root).as_posix()
-    make_args=["make","-C",str(root/"fpga/verilator"),f"TB={tb}","CLEAN_FRAME_OUTPUT=0","RUN_ARGS=+UART_ECHO",f"DVI_OUT_DIR_REL={frame_dir_rel}",f"VERILATOR_EXTRA=-DRT3D_MODEL_{model} -DRT3D_MODE_{mode}"]
+    make_args=["make","-C",str(root/"fpga/verilator"),f"TB={tb}","CLEAN_FRAME_OUTPUT=0","RUN_ARGS=+UART_ECHO",f"DVI_OUT_DIR_REL={frame_dir_rel}",f"VERILATOR_EXTRA=-DRT3D_MODEL_{model} -DRT3D_MODE_{mode} -GTEST_TIMEOUT_CYCLES={timeout_cycles} -GRT3D_EXPECT_FORMAL_FRAMES={expected_frames}"]
     # The batch runner may reuse a binary when only the C image changed.
     # Force a compile after each mode/model image build so the shared MIF is
     # definitely linked into the simulation before run-batch executes.

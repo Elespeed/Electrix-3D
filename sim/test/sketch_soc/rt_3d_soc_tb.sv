@@ -1,5 +1,7 @@
 `timescale 1ns/1ps
 module rt_3d_soc_tb #(
+    parameter int TEST_TIMEOUT_CYCLES = 25_000_000,
+    parameter int RT3D_EXPECT_FORMAL_FRAMES = 1,
 `ifdef RT3D_MODEL_S0
     parameter string SCENE_EXT_INIT_FILE = "../../experiments/3d_scene/assets/S0/model.s3d.mif"
 `elsif RT3D_MODEL_S1
@@ -17,10 +19,10 @@ module rt_3d_soc_tb #(
 `endif
 );
     import uart_agent_pkg::*;
-    // S4's CPU-only software transform is substantially longer than the
-    // original S0 smoke.  Keep the timeout above the largest benchmark while
-    // preserving an explicit bounded failure for a real boot/render stall.
-    localparam int UART_WAIT_TIMEOUT = 20_000_000;
+    // Warmup is intentionally excluded from formal records, so the first
+    // frame marker can arrive well after the original S0 smoke timeout.
+    // Keep a bounded timeout above the pilot/formal warmup+render window.
+    localparam int UART_WAIT_TIMEOUT = 500_000_000;
 `ifdef RT3D_MODE_CPU_ONLY
     localparam string EXPECT_BACKEND = "CPU_ONLY";
 `elsif RT3D_MODE_CPU_MATMUL
@@ -109,7 +111,8 @@ module rt_3d_soc_tb #(
 `ifdef RT3D_MODE_CPU_ONLY
         // CPU modes report completion through SketchBook's frame-done status,
         // rather than the Scene Controller IRQ path.
-        uart.uart_wait_tx_string("RT3D FRAME mode=CPU_ONLY", UART_WAIT_TIMEOUT, 1'b1);
+        uart.uart_wait_tx_string_count("RT3D FRAME mode=CPU_ONLY", RT3D_EXPECT_FORMAL_FRAMES,
+                                       UART_WAIT_TIMEOUT, 1'b1);
         // Do not finish immediately after the JSON prefix: UART transmits the
         // long record serially, and the parser needs its newline-complete
         // record before DVI evidence is emitted.
@@ -119,7 +122,8 @@ module rt_3d_soc_tb #(
         if (cpu_clear_cmds == 0 || cpu_triangle_cmds == 0 || cpu_present_cmds == 0)
             $fatal(1, "CPU_ONLY missing SketchBook commands clear=%0d tri=%0d present=%0d", cpu_clear_cmds, cpu_triangle_cmds, cpu_present_cmds);
 `elsif RT3D_MODE_CPU_MATMUL
-        uart.uart_wait_tx_string("RT3D FRAME mode=CPU_MATMUL", UART_WAIT_TIMEOUT, 1'b1);
+        uart.uart_wait_tx_string_count("RT3D FRAME mode=CPU_MATMUL", RT3D_EXPECT_FORMAL_FRAMES,
+                                       UART_WAIT_TIMEOUT, 1'b1);
         uart.uart_wait_tx_string("RT3D COMPLETE", UART_WAIT_TIMEOUT, 1'b1);
         if (scene_cmds != 0 || scene_reads != 0)
             $fatal(1, "CPU_MATMUL unexpectedly used Scene MMIO/master reads cmds=%0d reads=%0d", scene_cmds, scene_reads);
@@ -151,6 +155,9 @@ module rt_3d_soc_tb #(
                    dut.g_scene_ctrl.u_scene_ctrl.perf_load_bytes,
                    dut.g_scene_ctrl.u_scene_ctrl.perf_transform_cycles,
                    dut.g_scene_ctrl.u_scene_ctrl.perf_input_triangles);
+        uart.uart_wait_tx_string_count("RT3D FRAME mode=SCENE_CONTROLLER", RT3D_EXPECT_FORMAL_FRAMES,
+                                       UART_WAIT_TIMEOUT, 1'b1);
+        uart.uart_wait_tx_string("RT3D COMPLETE", UART_WAIT_TIMEOUT, 1'b1);
 `endif
         // FRAME_DONE proves rendering completed, but the double-buffered DVI
         // output becomes observable only after the PRESENT reaches vblank and
@@ -174,7 +181,7 @@ module rt_3d_soc_tb #(
         $finish;
     end
     initial begin
-        repeat (25_000_000) @(posedge clk);
+        repeat (TEST_TIMEOUT_CYCLES) @(posedge clk);
         if (!done) $fatal(1, "rt_3d SoC timeout wait=%0b wake=%0b irq=%0d pc=%08x",
                           saw_wait, saw_wake, irq_edges, dut.debug_wb_pc);
     end

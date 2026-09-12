@@ -138,6 +138,15 @@ module uart_agent (
     u_monitor.uart_wait_tx_string(expect_str, timeout_cycles, ignore_crlf);
   endtask
 
+  task automatic uart_wait_tx_string_count(
+    input string expect_str,
+    input int expected_count,
+    input int timeout_cycles,
+    input bit ignore_crlf = 1'b0
+  );
+    u_monitor.uart_wait_tx_string_count(expect_str, expected_count, timeout_cycles, ignore_crlf);
+  endtask
+
   task automatic uart_wait_tx_idle(input int char_times);
     u_monitor.uart_wait_tx_idle(char_times);
   endtask

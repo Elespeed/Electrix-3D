@@ -9,6 +9,11 @@ CPU_MATMUL_TB ?= rt_3d_soc_matmul_tb
 RT3D_WARMUP ?= 30u
 RT3D_FRAMES ?= 300u
 RT3D_REPETITIONS ?= 5u
+# Fast, descriptive pilot defaults.  Override only deliberately and preserve
+# the requested frame-dump policy in the run manifest.
+PILOT_WARMUP ?= 0u
+PILOT_FRAMES ?= 4u
+PILOT_REPETITIONS ?= 1u
 RUN_DIR := $(ROOT)/experiments/3d_scene/runs/$(RUN_ID)/$(MODE)/$(MODEL)
 
 VALID_MODES := CPU_ONLY CPU_MATMUL SCENE_CONTROLLER
@@ -16,7 +21,7 @@ ifneq ($(filter $(MODE),$(VALID_MODES)),$(MODE))
 $(error MODE must be CPU_ONLY, CPU_MATMUL, or SCENE_CONTROLLER (got '$(MODE)'))
 endif
 
-.PHONY: assets build smoke cpu-matmul-smoke run-s0 run-s1 run-s2 run-s3 run-s4 run-matrix validate summarize
+.PHONY: assets build smoke cpu-matmul-smoke pilot-scale run-s0 run-s1 run-s2 run-s3 run-s4 run-matrix validate summarize
 
 assets:
 	@$(PYTHON) scripts/generate_bench_assets.py --root $(ROOT)
@@ -33,6 +38,17 @@ smoke:
 # Keep this explicit so the shared rt_3d_soc_tb path remains unchanged.
 cpu-matmul-smoke:
 	@$(MAKE) smoke MODE=CPU_MATMUL MODEL=S0 TB=$(CPU_MATMUL_TB)
+
+# Descriptive pilot for one fixed scale. No warmup frames are used: the four
+# collected frames are the complete data set. Keep modes sequential because
+# each run rebuilds the shared sdk/axi_ram.mif image; outputs remain
+# mode-isolated below one RUN_ID and are aggregated only after all validators
+# pass.
+pilot-scale: assets
+	@$(MAKE) run MODE=CPU_ONLY MODEL=$(MODEL) RUN_ID=$(RUN_ID) RT3D_WARMUP=$(PILOT_WARMUP) RT3D_FRAMES=$(PILOT_FRAMES) RT3D_REPETITIONS=$(PILOT_REPETITIONS)
+	@$(MAKE) run MODE=CPU_MATMUL MODEL=$(MODEL) RUN_ID=$(RUN_ID) RT3D_WARMUP=$(PILOT_WARMUP) RT3D_FRAMES=$(PILOT_FRAMES) RT3D_REPETITIONS=$(PILOT_REPETITIONS)
+	@$(MAKE) run MODE=SCENE_CONTROLLER MODEL=$(MODEL) RUN_ID=$(RUN_ID) RT3D_WARMUP=$(PILOT_WARMUP) RT3D_FRAMES=$(PILOT_FRAMES) RT3D_REPETITIONS=$(PILOT_REPETITIONS)
+	@$(PYTHON) scripts/aggregate_pilot.py --root $(ROOT) --run-id $(RUN_ID) --model $(MODEL)
 
 run-s0: ; @$(MAKE) run MODEL=S0
 run-s1: ; @$(MAKE) run MODEL=S1
