@@ -26,6 +26,18 @@
 #define SCENE_CTRL_REG_CMD_PUSH 0x4cu
 #define SCENE_CTRL_REG_CMD_FRAME_START 0x50u
 #define SCENE_CTRL_REG_CMD_STATUS 0x54u
+#define SCENE_CTRL_REG_IRQ_ENABLE 0x58u
+#define SCENE_CTRL_REG_IRQ_STATUS 0x5cu
+#define SCENE_CTRL_REG_IRQ_CLEAR 0x60u
+#define SCENE_CTRL_REG_PERF_LOAD_BYTES 0x64u
+#define SCENE_CTRL_REG_PERF_LOAD_TRANSACTIONS 0x68u
+#define SCENE_CTRL_REG_PERF_TRANSFORM_CYCLES 0x6cu
+#define SCENE_CTRL_REG_PERF_CULL_CYCLES 0x70u
+#define SCENE_CTRL_REG_PERF_SORT_CYCLES 0x74u
+#define SCENE_CTRL_REG_PERF_COMMAND_CYCLES 0x78u
+#define SCENE_CTRL_REG_PERF_INPUT_TRIANGLES 0x7cu
+#define SCENE_CTRL_REG_PERF_CULLED_TRIANGLES 0x80u
+#define SCENE_CTRL_REG_PERF_OUTPUT_TRIANGLES 0x84u
 
 #define SCENE_CTRL_CTRL_ABORT 0x08u
 #define SCENE_CTRL_CTRL_LOAD_START 0x02u
@@ -35,6 +47,11 @@
 #define SCENE_CTRL_STATUS_RENDER_DONE 0x04u
 #define SCENE_CTRL_STATUS_ERROR 0x08u
 #define SCENE_CTRL_STATUS_MODEL_VALID 0x20u
+
+#define SCENE_CTRL_IRQ_RENDER_DONE 0x01u
+#define SCENE_CTRL_IRQ_FRAME_DONE 0x02u
+#define SCENE_CTRL_IRQ_ERROR 0x04u
+#define SCENE_CTRL_IRQ_ALL (SCENE_CTRL_IRQ_RENDER_DONE | SCENE_CTRL_IRQ_FRAME_DONE | SCENE_CTRL_IRQ_ERROR)
 
 #define SCENE_CTRL_RENDER_CFG_CLEAR_BEFORE 0x01u
 #define SCENE_CTRL_RENDER_CFG_AUTO_PRESENT 0x02u
@@ -64,6 +81,12 @@ typedef struct {
     U32 word3;
 } scene_ctrl_cmd_t;
 
+typedef struct {
+    U32 load_bytes, load_transactions, transform_cycles, cull_cycles;
+    U32 sort_cycles, command_cycles, input_triangles, culled_triangles;
+    U32 output_triangles;
+} scene_ctrl_perf_t;
+
 static inline void scene_ctrl_write(U32 offset, U32 value) { *(volatile U32 *)(SCENE_CTRL_BASE_ADDR + offset) = value; }
 static inline U32 scene_ctrl_read(U32 offset) { return *(volatile U32 *)(SCENE_CTRL_BASE_ADDR + offset); }
 static inline void scene_ctrl_configure(U32 base, U32 size) { scene_ctrl_write(SCENE_CTRL_REG_MODEL_BASE, base); scene_ctrl_write(SCENE_CTRL_REG_MODEL_SIZE, size); }
@@ -87,7 +110,22 @@ static inline void scene_ctrl_set_viewport(U16 x, U16 y, U16 width, U16 height, 
 static inline void scene_ctrl_load(void) { scene_ctrl_write(SCENE_CTRL_REG_CTRL, SCENE_CTRL_CTRL_LOAD_START); }
 static inline void scene_ctrl_render(void) { scene_ctrl_write(SCENE_CTRL_REG_CTRL, SCENE_CTRL_CTRL_RENDER_START); }
 static inline void scene_ctrl_abort(void) { scene_ctrl_write(SCENE_CTRL_REG_CTRL, SCENE_CTRL_CTRL_ABORT); }
+static inline void scene_ctrl_irq_enable(U8 mask) { scene_ctrl_write(SCENE_CTRL_REG_IRQ_ENABLE, mask); }
+static inline U8 scene_ctrl_irq_status(void) { return (U8)scene_ctrl_read(SCENE_CTRL_REG_IRQ_STATUS); }
+static inline void scene_ctrl_irq_clear(U8 mask) { scene_ctrl_write(SCENE_CTRL_REG_IRQ_CLEAR, mask); }
 static inline U8 scene_ctrl_error_code(void) { return (U8)(scene_ctrl_read(SCENE_CTRL_REG_STATUS) >> 8); }
+static inline void scene_ctrl_perf_read(scene_ctrl_perf_t *out) {
+    if (!out) return;
+    out->load_bytes=scene_ctrl_read(SCENE_CTRL_REG_PERF_LOAD_BYTES);
+    out->load_transactions=scene_ctrl_read(SCENE_CTRL_REG_PERF_LOAD_TRANSACTIONS);
+    out->transform_cycles=scene_ctrl_read(SCENE_CTRL_REG_PERF_TRANSFORM_CYCLES);
+    out->cull_cycles=scene_ctrl_read(SCENE_CTRL_REG_PERF_CULL_CYCLES);
+    out->sort_cycles=scene_ctrl_read(SCENE_CTRL_REG_PERF_SORT_CYCLES);
+    out->command_cycles=scene_ctrl_read(SCENE_CTRL_REG_PERF_COMMAND_CYCLES);
+    out->input_triangles=scene_ctrl_read(SCENE_CTRL_REG_PERF_INPUT_TRIANGLES);
+    out->culled_triangles=scene_ctrl_read(SCENE_CTRL_REG_PERF_CULLED_TRIANGLES);
+    out->output_triangles=scene_ctrl_read(SCENE_CTRL_REG_PERF_OUTPUT_TRIANGLES);
+}
 static inline void scene_ctrl_cmd_enable(void) { scene_ctrl_write(SCENE_CTRL_REG_CMD_CFG, 1u); }
 static inline U32 scene_ctrl_cmd_status(void) { return scene_ctrl_read(SCENE_CTRL_REG_CMD_STATUS); }
 static inline U32 scene_ctrl_cmd_frame_count(void) { return scene_ctrl_cmd_status() >> SCENE_CTRL_CMD_STATUS_FRAME_SHIFT; }

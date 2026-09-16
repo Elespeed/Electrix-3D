@@ -21,7 +21,13 @@ module scene_ctrl_pipeline #(
     output logic busy, output logic error, output logic [31:0] frame_count,
     output logic [7:0] error_code,
     output logic cache_valid, output logic load_done, output logic render_done,
+    output logic frame_done,
     output logic [15:0] model_vertex_count, output logic [15:0] model_triangle_count,
+    output logic [31:0] perf_load_bytes, output logic [31:0] perf_load_transactions,
+    output logic [31:0] perf_transform_cycles, output logic [31:0] perf_cull_cycles,
+    output logic [31:0] perf_sort_cycles, output logic [31:0] perf_command_cycles,
+    output logic [31:0] perf_input_triangles, output logic [31:0] perf_culled_triangles,
+    output logic [31:0] perf_output_triangles,
     output logic mmio_valid, output logic mmio_we, output logic [31:0] mmio_addr,
     output logic [31:0] mmio_wdata, input logic [31:0] mmio_rdata, input logic mmio_ready,
     output logic [4:0] m_axi_arid, output logic [31:0] m_axi_araddr, output logic [7:0] m_axi_arlen,
@@ -46,7 +52,7 @@ module scene_ctrl_pipeline #(
     logic signed [15:0] cmd_tx,cmd_ty,cmd_tz; logic [15:0] cmd_scale;
     logic front_error; logic [7:0] front_error_code;
 
-    scene_cmd_fifo #(.DEPTH(16), .WIDTH(128)) u_cmd_fifo (
+    scene_cmd_fifo #(.DEPTH(32), .WIDTH(128)) u_cmd_fifo (
         .clk, .resetn, .push_valid(cmd_push && cmd_mode), .push_data(cmd_data), .push_ready(cmd_ready),
         .level(cmd_level), .full(cmd_full), .locked(cmd_locked), .frame_start(cmd_frame_start && cmd_mode),
         .frame_complete(fifo_complete), .frame_error(fifo_error), .pop(fifo_pop), .head(fifo_head), .empty(fifo_empty));
@@ -73,6 +79,10 @@ module scene_ctrl_pipeline #(
     assign error_code = engine_error ? engine_error_code : front_error_code;
     assign load_done = engine_load_done;
     assign render_done = engine_render_done;
+    // Explicit command-mode PRESENT completion is the display/frame event.
+    // fifo_complete is a one-cycle pulse after the SketchBook frame-done
+    // status has been observed and the old sticky status has been cleared.
+    assign frame_done = fifo_complete;
 
     always_ff @(posedge clk or negedge resetn) begin
         if (!resetn) begin
@@ -116,6 +126,9 @@ module scene_ctrl_pipeline #(
         .scene_keep_current_frame(cmd_mode ? 1'b1 : keep_current_frame), .scene_clear_color(clear_color),
         .scene_viewport_enable(viewport_enable), .scene_viewport_local_clear(viewport_local_clear), .scene_viewport_x(viewport_x), .scene_viewport_y(viewport_y), .scene_viewport_w(viewport_w), .scene_viewport_h(viewport_h),
         .busy(engine_busy), .error(engine_error), .error_code(engine_error_code), .frame_count, .cache_valid, .load_done(engine_load_done), .render_done(engine_render_done), .model_vertex_count, .model_triangle_count,
+        .perf_load_bytes, .perf_load_transactions, .perf_transform_cycles, .perf_cull_cycles,
+        .perf_sort_cycles, .perf_command_cycles, .perf_input_triangles, .perf_culled_triangles,
+        .perf_output_triangles,
         .mmio_valid(engine_mmio_valid), .mmio_we(engine_mmio_we), .mmio_addr(engine_mmio_addr), .mmio_wdata(engine_mmio_wdata), .mmio_rdata(engine_mmio_rdata), .mmio_ready(engine_mmio_ready),
         .m_axi_arid, .m_axi_araddr, .m_axi_arlen, .m_axi_arsize, .m_axi_arburst, .m_axi_arlock, .m_axi_arcache, .m_axi_arprot, .m_axi_arvalid,
         .m_axi_arready, .m_axi_rid, .m_axi_rdata, .m_axi_rresp, .m_axi_rlast, .m_axi_rvalid, .m_axi_rready);

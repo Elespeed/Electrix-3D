@@ -126,6 +126,70 @@ module uart_monitor #(
     end
   endtask
 
+  function automatic int uart_count_tx_string(
+    input string needle,
+    input bit ignore_crlf = 1'b0
+  );
+    int index;
+    int count;
+    int limit;
+    begin
+      count = 0;
+      if (needle.len() == 0) begin
+        return 0;
+      end
+      limit = tx_buffer.len() - needle.len();
+      for (index = 0; index <= limit; index = index + 1) begin
+        if (uart_contains(tx_buffer.substr(index, index + needle.len() - 1), needle, ignore_crlf))
+          count = count + 1;
+      end
+      return count;
+    end
+  endfunction
+
+  task automatic uart_wait_tx_string_count(
+    input string expect_str,
+    input int expected_count,
+    input int timeout_cycles,
+    input bit ignore_crlf = 1'b0
+  );
+    int unsigned start_cycle;
+    bit matched;
+    begin
+      if (expected_count <= 0) begin
+        return;
+      end
+      start_cycle = cycle_count;
+      // Check once before waiting so callers do not miss a record that was
+      // already received.  Thereafter only UART arrivals can alter the count;
+      // scanning the buffer on every simulation clock is prohibitively slow.
+      matched = uart_count_tx_string(expect_str, ignore_crlf) >= expected_count;
+      if (matched) begin
+        return;
+      end
+      fork : wait_for_uart_count
+        begin
+          while (!matched) begin
+            @tx_char_ev;
+            matched = uart_count_tx_string(expect_str, ignore_crlf) >= expected_count;
+          end
+        end
+        begin
+          if (timeout_cycles >= 0) begin
+            repeat (timeout_cycles) @(posedge clk);
+            if (!matched) begin
+              $display("[UART_AGENT] wait_tx_string_count timeout expect='%s' count=%0d expected=%0d start=%0d now=%0d",
+                       expect_str, uart_count_tx_string(expect_str, ignore_crlf), expected_count,
+                       start_cycle, cycle_count);
+              $fatal(1, "[UART_AGENT] uart_wait_tx_string_count timeout");
+            end
+          end
+        end
+      join_any
+      disable wait_for_uart_count;
+    end
+  endtask
+
   task automatic uart_wait_tx_idle(input int char_times);
     int unsigned local_char_times;
     int unsigned local_bit_cycles;

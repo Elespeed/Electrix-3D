@@ -44,6 +44,7 @@ integer frame_id;
 integer captured_frame_id;
 integer captured_frame_width;
 integer captured_frame_height;
+reg [31:0] captured_frame_crc;
 integer meta_fd;
 integer pixel_index;
 
@@ -71,6 +72,31 @@ function [7:0] expand6_to_8;
         expand6_to_8 = {v, v[5:4]};
     end
 endfunction
+
+// FNV-1a over the completed display frame in row-major RGB byte order.  The
+// monitor stores expanded 8-bit RGB values, so this is independent of the
+// source bus packing and is suitable for cross-backend frame equivalence.
+function [31:0] fnv1a_byte;
+    input [31:0] hash;
+    input [7:0] value;
+    begin
+        fnv1a_byte = (hash ^ value) * 32'h01000193;
+    end
+endfunction
+
+task compute_captured_crc;
+    integer crc_idx;
+    reg [31:0] crc_value;
+    begin
+        crc_value = 32'h811c9dc5;
+        for (crc_idx = 0; crc_idx < MAX_PIXELS; crc_idx = crc_idx + 1) begin
+            crc_value = fnv1a_byte(crc_value, frame_r[crc_idx]);
+            crc_value = fnv1a_byte(crc_value, frame_g[crc_idx]);
+            crc_value = fnv1a_byte(crc_value, frame_b[crc_idx]);
+        end
+        captured_frame_crc = crc_value;
+    end
+endtask
 
 task init_output_dir;
     integer plusarg_rc;
@@ -182,6 +208,9 @@ task dump_current_frame;
             captured_frame_id = frame_id;
             captured_frame_width = frame_width;
             captured_frame_height = frame_height;
+            compute_captured_crc();
+            $display("[DVI_MON][CRC] frame=%0d crc=%08x width=%0d height=%0d", frame_id,
+                     captured_frame_crc, frame_width, frame_height);
 
             do_dump = (FRAME_DUMP_LIMIT == 0) || (frame_id <= FRAME_DUMP_LIMIT);
             if (do_dump) begin
@@ -263,6 +292,9 @@ task dump_captured_frame;
         end
         $fclose(ppm_fd);
         $display("[DVI_MON] named capture saved to: %0s", frame_path);
+        $display("[DVI_MON][CRC] named=%0s frame=%0d crc=%08x width=%0d height=%0d",
+                 label, captured_frame_id, captured_frame_crc,
+                 captured_frame_width, captured_frame_height);
     end
 endtask
 
@@ -342,6 +374,7 @@ initial begin
     captured_frame_id = 0;
     captured_frame_width = 0;
     captured_frame_height = 0;
+    captured_frame_crc = 32'h00000000;
     meta_fd = 0;
     testcase_name = TESTCASE;
     run_stamp = 0;

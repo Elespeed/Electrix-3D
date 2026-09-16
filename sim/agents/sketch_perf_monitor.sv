@@ -9,6 +9,7 @@ module sketch_perf_monitor (
     input  logic        span_valid,
     input  logic        span_ready,
     input  logic        pixel_write,
+    input  logic [7:0]  pixel_write_mask,
     output logic [31:0] total_cycles,
     output logic [31:0] renderer_cycles,
     output logic [31:0] span_count,
@@ -36,8 +37,10 @@ module sketch_perf_monitor (
                     renderer_cycles <= renderer_cycles + 1'b1;
                 if (span_valid && span_ready)
                     span_count <= span_count + 1'b1;
+                // A span beat can carry up to eight pixels; count valid
+                // lanes rather than beat-level write enables.
                 if (pixel_write)
-                    pixel_write_count <= pixel_write_count + 1'b1;
+                    pixel_write_count <= pixel_write_count + $countones(pixel_write_mask);
             end
         end
     end

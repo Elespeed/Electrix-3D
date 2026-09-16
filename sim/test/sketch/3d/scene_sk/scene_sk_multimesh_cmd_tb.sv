@@ -23,6 +23,19 @@ module scene_sk_multimesh_cmd_tb;
    push(draw(2,-16'sd18, 16'sd11,0)); // arm_r pivot (-17.88,  11.06, -2.32)
    push(draw(3, 16'sd18, 16'sd11,0)); // arm_l pivot ( 17.89,  10.89, -2.32)
    push(draw(4,0,16'sd31,0));          // body  pivot ( -0.41,  30.62, 13.38)
+   // Fill out the required 16-DRAW submission while retaining deterministic
+   // mesh transforms; a depth-32 FIFO must accept CLEAR + 16 DRAW + PRESENT.
+   push(draw(0,-16'sd11,-16'sd25,0));
+   push(draw(1, 16'sd11,-16'sd25,0));
+   push(draw(2,-16'sd18, 16'sd11,0));
+   push(draw(3, 16'sd18, 16'sd11,0));
+   push(draw(4,0,16'sd31,0));
+   push(draw(0,-16'sd11,-16'sd25,0));
+   push(draw(1, 16'sd11,-16'sd25,0));
+   push(draw(2,-16'sd18, 16'sd11,0));
+   push(draw(3, 16'sd18, 16'sd11,0));
+   push(draw(4,0,16'sd31,0));
+   push(draw(0,-16'sd11,-16'sd25,0));
    push({124'd0,4'd3}); @(negedge clk);frame_start=1;@(negedge clk);frame_start=0; wait(frame_done); if(error)$fatal(1,"frame error %d",error_code); if(clears!=1||presents!=1||tris==0)$fatal(1,"commands clear=%0d tri=%0d present=%0d",clears,tris,presents); if(reads!=reads_after_load)$fatal(1,"rerender reread ExtRAM");
    // PRESENT only swaps at a GDU frame boundary; the rendered page reaches the
    // front during the NEXT frame.  Wait until that frame has been displayed and
