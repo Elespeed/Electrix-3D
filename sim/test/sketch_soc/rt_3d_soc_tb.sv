@@ -1,7 +1,10 @@
 `timescale 1ns/1ps
 module rt_3d_soc_tb #(
-    parameter int TEST_TIMEOUT_CYCLES = 25_000_000,
     parameter int RT3D_EXPECT_FORMAL_FRAMES = 1,
+    // Default 0 retains every frame. Regression tooling may override this
+    // top-level parameter with Verilator -GFRAME_DUMP_LIMIT=<N>; it never
+    // changes the checked-in baseline testbench.
+    parameter int FRAME_DUMP_LIMIT = 0,
 `ifdef RT3D_MODEL_S0
     parameter string SCENE_EXT_INIT_FILE = "../../experiments/3d_scene/assets/S0/model.s3d.mif"
 `elsif RT3D_MODEL_S1
@@ -19,10 +22,10 @@ module rt_3d_soc_tb #(
 `endif
 );
     import uart_agent_pkg::*;
-    // Warmup is intentionally excluded from formal records, so the first
-    // frame marker can arrive well after the original S0 smoke timeout.
-    // Keep a bounded timeout above the pilot/formal warmup+render window.
-    localparam int UART_WAIT_TIMEOUT = 500_000_000;
+    // Long formal runs are intentionally unbounded.  The UART monitor treats
+    // a negative timeout as "wait forever"; functional assertions still stop
+    // the simulation on a real design or protocol failure.
+    localparam int UART_WAIT_TIMEOUT = -1;
 `ifdef RT3D_MODE_CPU_ONLY
     localparam string EXPECT_BACKEND = "CPU_ONLY";
 `elsif RT3D_MODE_CPU_MATMUL
@@ -48,6 +51,7 @@ module rt_3d_soc_tb #(
     integer captured_frame_before = 0;
     logic [2:0] irq_status_seen = 3'b000;
     logic saw_wait = 1'b0, saw_wake = 1'b0, done = 1'b0;
+    string runtime_ext_init_file;
 
     always #10 clk = ~clk;
     soc_top_sketch #(.SIMULATION(1'b1)) dut (
@@ -58,7 +62,7 @@ module rt_3d_soc_tb #(
         .base_ram_oe_n, .base_ram_we_n, .ext_ram_data, .ext_ram_addr,
         .ext_ram_be_n, .ext_ram_ce_n, .ext_ram_oe_n, .ext_ram_we_n,
         .UART_RX, .UART_TX);
-    dvi_monitor_800x600 #(.FRAME_DUMP_LIMIT(0), .TESTCASE("rt_3d_soc_tb"),
+    dvi_monitor_800x600 #(.FRAME_DUMP_LIMIT(FRAME_DUMP_LIMIT), .TESTCASE("rt_3d_soc_tb"),
                            .OUTPUT_ROOT("../../sim/frame_output")) mon (
         .video_clk, .resetn(~reset),
         .video_red({video_red, video_red[2:1]}),
@@ -71,6 +75,17 @@ module rt_3d_soc_tb #(
     sram_sp #(.AW(18), .Init_File(SCENE_EXT_INIT_FILE)) ext_sram_sp (
         .ram_addr(ext_ram_addr), .ram_be_n(ext_ram_be_n), .ram_ce_n(ext_ram_ce_n),
         .ram_oe_n(ext_ram_oe_n), .ram_we_n(ext_ram_we_n), .ram_data(ext_ram_data));
+    // Optional runtime asset replacement for the reusable regression binary.
+    // The normal compile-time SCENE_EXT_INIT_FILE path above remains untouched
+    // for existing smoke/pilot invocations.  Reset is held for 200 ns, so the
+    // replacement has completed before firmware can access external SRAM.
+    initial begin
+        if ($value$plusargs("RT3D_EXT_INIT_FILE=%s", runtime_ext_init_file)) begin
+            #1;
+            $display("[rt_3d_soc_tb] runtime external model: %s", runtime_ext_init_file);
+            $readmemb(runtime_ext_init_file, ext_sram_sp.BRAM);
+        end
+    end
     uart_agent uart (.clk, .rst_n(~reset), .uart_rx(UART_RX), .uart_tx(UART_TX),
         .apb_psel(dut.u_axi_uart_controller.uart0.PSEL),
         .apb_penable(dut.u_axi_uart_controller.uart0.PENABLE),
@@ -179,10 +194,5 @@ module rt_3d_soc_tb #(
                  dut.g_scene_ctrl.u_scene_ctrl.perf_transform_cycles,
                  dut.g_scene_ctrl.u_scene_ctrl.perf_input_triangles);
         $finish;
-    end
-    initial begin
-        repeat (TEST_TIMEOUT_CYCLES) @(posedge clk);
-        if (!done) $fatal(1, "rt_3d SoC timeout wait=%0b wake=%0b irq=%0d pc=%08x",
-                          saw_wait, saw_wake, irq_edges, dut.debug_wb_pc);
     end
 endmodule

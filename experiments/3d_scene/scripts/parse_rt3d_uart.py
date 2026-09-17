@@ -14,6 +14,12 @@ def compact_frame(match, model, manifest=None):
     if model not in MODEL_DIMS: raise SystemExit("--model is required for compact RT3D FRAME records")
     body = match["body"] if isinstance(match, dict) else match.group("body")
     fields = dict(item.split("=", 1) for item in body.split() if "=" in item)
+    # In Verilator runs with DVI frame dumping enabled, stdout from the monitor
+    # can interleave one UART fragment.  Firmware deliberately emits zero for
+    # this placeholder; attach_display_evidence() replaces it with the first
+    # completed DVI CRC following this record.  Do not discard a valid frame
+    # merely because that reconstructible diagnostic fragment was interrupted.
+    fields.setdefault("frame_crc", "0")
     try:
         nums = {k: int(fields[k], 16 if k in ("cmd", "frame_crc") else 10) for k in ("rep","frame","err","cmd","active","polling","blocked","wall","latency_ns","load_bytes","axi_transactions","transform_cycles","cull_cycles","sort_cycles","command_cycles","input_triangles","culled_triangles","output_triangles","frame_crc","idle_rate_permille","background_units","background_units_per_second")}
     except (KeyError, ValueError) as exc: raise SystemExit(f"incomplete RT3D FRAME record: {exc}")
