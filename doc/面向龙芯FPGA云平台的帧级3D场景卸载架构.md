@@ -1,12 +1,12 @@
 # 面向龙芯 FPGA 云平台的帧级 3D 场景卸载架构
 
-> **稿件状态：**已完成先导仿真、综合与时序分析。性能结果来自每个规模点/方案 4 帧短跑，文中以“P99 代理”标注由短跑循环外推得到的保守值；其不替代冻结实验协议规定的 5×300 帧正式 P99。
+> **稿件状态：**定稿（先导实验口径）。性能结果来自每个规模点/方案 4 帧短跑；文中“P99 代理”均指将短跑观测值按循环扩展得到的保守估计，不等同于 5×300 帧正式实验的实测 P99。
 
 陈麒安<mark>，作者2，作者3，作者4</mark>
 
 （浙江大学，杭州 310000）
 
-摘要：针对资源受限 FPGA SoC 中 3D 几何处理占用 CPU 时间、通用图形处理器资源代价较高的问题，本文面向龙芯中科 FPGA 云平台提出一种帧级 3D 场景卸载架构。该架构以 Scene Controller 完成模型加载、定点顶点变换、构面、背面剔除和 Painter 深度排序，以 SketchBook 复用统一的二维图元光栅化与显示后端；通过 Model Cache 和帧命令 FIFO，使 CPU 仅需提交模型地址、变换参数及 CLEAR DRAW PRESENT 帧事务。系统采用 RGB332 双帧缓冲、64 bit 八像素打包和局部视口刷新，并在 RT Thread Nano 下实现模型切换与多 Mesh 动画。S0--S2 的先导仿真表明，相对仅卸载矩阵变换的方案，帧级卸载使 CPU active cycles 中位数下降 97.27%--99.71%，其短跑外推的保守 P99 代理不超过 20.663 ms。综合结果显示，该实现占用 31.75% LUT、14.79% FF、23.29% BRAM 和 5.41% DSP，全部用户时序约束满足。
+摘要：针对资源受限 FPGA SoC 中 3D 几何处理占用 CPU 时间、通用图形处理器资源代价较高的问题，本文面向龙芯中科 FPGA 云平台提出一种帧级 3D 场景卸载架构。该架构以 Scene Controller 完成模型加载、定点顶点变换、构面、背面剔除和 Painter 深度排序，以 SketchBook 复用统一的二维图元光栅化与显示后端；通过 Model Cache 和帧命令 FIFO，使 CPU 仅需提交模型地址、变换参数及 CLEAR DRAW PRESENT 帧事务。系统采用 RGB332 双帧缓冲、64 bit 八像素打包和局部视口刷新，并在 RT Thread Nano 下实现模型切换与场景动画。S0--S4 的单 Mesh 先导仿真表明，相对仅卸载矩阵变换的方案，帧级卸载使 CPU active cycles 中位数下降 97.27%--99.82%；S0--S2 的短跑外推保守 P99 代理不超过 20.663 ms。综合结果显示，该实现占用 31.75% LUT、14.79% FF、23.29% BRAM 和 5.41% DSP，全部用户时序约束满足。
 
 **关键词：**帧级场景卸载；FPGA SoC；RT Thread；软硬件协同；国产平台；轻量化图形
 
@@ -20,7 +20,7 @@
 
 (Zhejiang University, Hangzhou 310000, China)
 
-Abstract: To reduce CPU occupation caused by 3D geometry processing on resource-constrained FPGA SoCs, this paper proposes a frame-level 3D scene offloading architecture for the Loongson FPGA cloud platform. A Scene Controller performs model loading, fixed-point vertex transformation, triangle assembly, back-face culling, and Painter depth sorting, while a shared SketchBook engine provides primitive rasterization and display output. With an on-chip model cache and a frame-command FIFO, the CPU submits only model addresses, transformation parameters, and CLEAR-DRAW-PRESENT transactions. The prototype integrates RGB332 double buffering, 64-bit eight-pixel packing, viewport refresh, RT-Thread Nano software, model switching, and multi-mesh animation. In pilot simulations at S0--S2, frame-level offloading reduced median CPU active cycles by 97.27%--99.71% relative to matrix-only offloading, while the conservative short-run P99 proxy was no more than 20.663 ms. The implementation uses 31.75% LUT, 14.79% FF, 23.29% BRAM, and 5.41% DSP, and meets all user timing constraints.
+Abstract: To reduce CPU occupation caused by 3D geometry processing on resource-constrained FPGA SoCs, this paper proposes a frame-level 3D scene offloading architecture for the Loongson FPGA cloud platform. A Scene Controller performs model loading, fixed-point vertex transformation, triangle assembly, back-face culling, and Painter depth sorting, while a shared SketchBook engine provides primitive rasterization and display output. With an on-chip model cache and a frame-command FIFO, the CPU submits only model addresses, transformation parameters, and CLEAR-DRAW-PRESENT transactions. The prototype integrates RGB332 double buffering, 64-bit eight-pixel packing, viewport refresh, RT-Thread Nano software, model switching, and scene animation. In single-mesh pilot simulations at S0--S4, frame-level offloading reduced median CPU active cycles by 97.27%--99.82% relative to matrix-only offloading; the conservative short-run P99 proxy was no more than 20.663 ms at S0--S2. The implementation uses 31.75% LUT, 14.79% FF, 23.29% BRAM, and 5.41% DSP, and meets all user timing constraints.
 
 **Keywords:** frame-level scene offloading; FPGA SoC; RT-Thread; hardware-software co-design; lightweight graphics
 
@@ -233,25 +233,25 @@ Table 2 Three hardware-software partition schemes
 
 ### 5.2 工作负载与等价性
 
-模型族按顶点数 V、三角形数 T 和 Mesh 数 M 设置 S0 至 S4 五个规模点，并补充 V only、T only 和 M only 单因素控制组。每个条件采用固定资产哈希和 16 帧循环轨迹，预热 30 帧后正式运行 300 帧，独立重复 5 次；仿真扫描完整模型族，上板选择轻载、中载拐点和满载。
+模型族按顶点数 V 与三角形数 T 设置 S0 至 S4 五个单 Mesh 规模点。各规模点使用固定资产哈希和 16 帧循环轨迹；本稿报告每个条件 4 帧的先导短跑结果，冻结协议中的预热 30 帧、正式运行 300 帧并独立重复 5 次作为后续完整实验口径，不将其写作本次已完成的观测。
 
 表3 模型规模点
 
 Table 3 Model scale points
 
-| **规模** | **V T M**  | **用途** |
+| **规模** | **V T**  | **用途** |
 |----------|------------|----------|
-| S0       | 16 24 1    | 轻载     |
-| S1       | 32 48 1    | 规模扫描 |
-| S2       | 64 96 1    | 中载候选 |
-| S3       | 96 144 1   | 规模扫描 |
-| S4       | 128 192 1  | 满载     |
+| S0       | 16 24    | 轻载     |
+| S1       | 32 48    | 规模扫描 |
+| S2       | 64 96    | 中载候选 |
+| S3       | 96 144   | 规模扫描 |
+| S4       | 128 192  | 满载     |
 
-现有先导批次的原始记录显示 S0--S4 均为单 Mesh 资产，故本节仅验证顶点数与三角形数的规模扫描；16 Mesh 是架构容量上限而非本批性能实验变量。功能回归记录显示三种模式在 S0--S4 的 12 项测试均通过且 CRC 一致。性能短跑批中，Scene Controller 与另两种方案除首帧外的 framebuffer CRC 不一致，因而本批数据只用于描述性性能比较，不能作为逐帧等价性的正式证据。
+功能回归记录显示三种模式在 S0--S4 的 12 项测试均通过且 CRC 一致。性能短跑批中，Scene Controller 与另两种方案除首帧外的 framebuffer CRC 不一致，因而本批数据只用于描述性性能比较，不能作为逐帧等价性的正式证据。
 
 ### 5.3 指标与成功判据
 
-主指标为每帧 CPU active cycles，即处理器实际执行该方案软件工作所消耗的周期数。约束指标为从帧处理开始到 PRESENT 完成的墙钟延迟及其 P99，30 frame/s 的实时预算为 33.333 ms。支持指标包括 RT Thread 空闲率、固定低优先级后台任务吞吐、Scene 与 AXI 事务量，以及 LUT、FF、BRAM、DSP 和最高工作频率。
+主指标为每帧 CPU active cycles，即处理器在统一插桩边界内执行该方案渲染软件工作所消耗的周期数。辅助指标为逐帧 `active/wall`，即该已插桩 CPU 有效工作在帧窗口中的占比。二者用于比较渲染路径的 CPU 开销，不等同于全系统 CPU 利用率或 RTOS 空闲率。约束指标为从帧处理开始到 PRESENT 完成的墙钟延迟及其 P99，30 frame/s 的实时预算为 33.333 ms。支持指标包括固定低优先级后台任务吞吐、Scene 与 AXI 事务量，以及 LUT、FF、BRAM、DSP 和最高工作频率。RT-Thread idle 字段随原始帧记录留存，但当前 Idle hook 的计账未经调度切换边界校准，故不参与方案比较或结论。
 
 预先规定的成立条件为：相对 CPU MATMUL，SCENE CONTROLLER 的 active cycles 中位数下降不少于 30%，P99 帧延迟增幅不超过 10%，且 P99 不超过 33.333 ms。均值、中位数、标准差、P95、P99、最大值和 95% 置信区间均需报告，失败帧、超时帧和输出不等价帧单独计数，不得静默删除。
 
@@ -259,7 +259,7 @@ Table 3 Model scale points
 
 **功能与等价性结果：**归档功能回归覆盖 S0--S4、CPU ONLY、CPU MATMUL 与 SCENE CONTROLLER 三种模式；各组合均完成 12 项测试并通过，归档结论为模式间 CRC 一致。短跑性能批共记录 60 帧，所有帧均为 `PASS`，且 `error=NONE`、`timeout=false`；然而 Scene Controller 在每个规模点仅与另两种方案的首帧 framebuffer CRC 相同，后续轨迹帧不一致，命令 CRC 字段为 0。因此，这 60 帧不计入等价帧数，也不用于正式协议的主判据。
 
-**CPU 与实时性结果：**表4和图4--图5给出 4 帧先导样本的描述性结果。帧级卸载的 CPU active cycles 在全部规模点均显著低于另外两种方案，相对矩阵卸载的中位数降幅为 97.27%--99.82%。S0--S2 的 P99 代理均不超过 33.333 ms；S3 和 S4 分别为 34.741 ms 和 34.723 ms，略超预算。帧级卸载的 RTOS 空闲率为 99.95%--99.97%，后台任务吞吐为 12.0--51.2 units/s；CPU 全软件和矩阵卸载批次未记录后台吞吐。P99 代理将观测到的 4 帧循环扩展至 1,500 帧后按最近秩法计算，等于观测最大值，并非正式实测 P99。
+**CPU 与实时性结果：**表4和图4--图5给出 4 帧先导样本的描述性结果。帧级卸载的 CPU active cycles 在全部规模点均低于另外两种方案，相对矩阵卸载的中位数降幅为 97.27%--99.82%。同一帧窗口内，S4 的平均 `active/wall` 从 CPU 全软件的 82.64% 和矩阵卸载的 82.25% 降至帧级卸载的 0.32%，与 active cycles 的降幅方向一致；该比例仅描述已插桩渲染工作，不可解释为全系统 CPU 利用率。S0--S2 的 P99 代理均不超过 33.333 ms；S3 和 S4 分别为 34.741 ms 和 34.723 ms，略超预算。帧级卸载批次记录到的后台任务吞吐为 12.0--51.2 units/s，而 CPU 全软件和矩阵卸载批次均为 0.0 units/s；该字段仅作辅助观测。原始 `idle_rate_permille` 在各方案中均接近 999--1000‰，且与 `active/wall` 不一致，当前不作为 RTOS 空闲率结果报告。P99 代理将观测到的 4 帧循环扩展至 1,500 帧后按最近秩法计算，等于观测最大值，并非正式实测 P99。
 
 ![图4 不同规模下三级方案的 CPU active cycles 中位数（对数坐标）](data/figures/fig4_active_cycles.svg)
 
@@ -303,15 +303,15 @@ Table 4 Summary of pilot experimental results (n=4 per cell)
 | **指标**             | **CPU全软件**                  | **矩阵卸载**                   | **帧级卸载**                   |
 |----------------------|--------------------------------|--------------------------------|--------------------------------|
 | active cycles 中位数（S4） | 1,968,009 | 1,863,108 | 3,405 |
+| active/wall 均值（S4）/% | 82.64 | 82.25 | 0.32 |
 | P99 代理帧延迟（S4）/ms | 75.823 | 73.680 | 34.723 |
-| RTOS 空闲率均值（S4）/% | 99.97 | 99.97 | 99.95 |
 | 等价帧数（性能短跑批） | 0 | 0 | 0 |
 
 ## 6 结论
 
-本文面向龙芯中科 FPGA 云平台，构建了由 Scene Controller、SketchBook、RT Thread Nano 和离线资产工具链组成的轻量化二维三维图形系统。所提架构以帧事务为软硬件边界，将模型加载、定点顶点变换、构面、背面剔除和 Painter 排序从 CPU 侧移入 FPGA，并通过 Model Cache、多 Mesh 命令队列、RGB332 span 写入和显示边界换页控制形成完整实现。
+本文面向龙芯中科 FPGA 云平台，构建了由 Scene Controller、SketchBook、RT Thread Nano 和离线资产工具链组成的轻量化二维三维图形系统。所提架构以帧事务为软硬件边界，将模型加载、定点顶点变换、构面、背面剔除和 Painter 排序从 CPU 侧移入 FPGA，并通过 Model Cache、帧命令队列、RGB332 span 写入和显示边界换页控制形成完整实现。
 
-先导仿真表明，帧级卸载相对矩阵卸载可将 CPU active cycles 中位数降低 97.27%--99.82%；在 S0--S2 中，其保守 P99 代理不超过 20.663 ms，而 S3、S4 的代理值略高于 33.333 ms 实时预算。因此，现有证据支持该架构有效释放 CPU 可调度时间，但尚不足以宣称其在满载 S4 下通过正式实时性判据。冻结实现的 LUT、FF、BRAM 和 DSP 利用率分别为 31.75%、14.79%、23.29% 和 5.41%，且全部用户时序约束满足；功耗估算为 0.537 W。当前结论适用于正交投影、无纹理、RGB332、最多 128 顶点和 192 三角形的单 Mesh 低模场景；16 Mesh 是已实现接口容量，尚未在本批性能扫描中量化。后续可在保持帧级接口不变的前提下研究分块几何处理、局部深度缓存和更深的模型流式读取，并完成 5×300 帧、逐帧等价的正式实验。
+在 S0--S4 单 Mesh 先导短跑中，帧级卸载相对矩阵卸载使 CPU active cycles 中位数降低 97.27%--99.82%；S4 的平均 `active/wall` 由 82.25% 降至 0.32%，说明在统一插桩边界内，CPU 承担的渲染路径工作显著减少。该指标不等同于全系统 CPU 利用率或 RTOS 空闲率。在实时性方面，S0--S2 的保守 P99 代理不超过 20.663 ms，S3 和 S4 分别为 34.741 ms 与 34.723 ms，略高于 30 frame/s 对应的 33.333 ms 预算；因此，本稿仅将低至中等规模下的实时性结果表述为短跑外推结论，不将其替代为正式 P99 结论。冻结实现的 LUT、FF、BRAM 和 DSP 利用率分别为 31.75%、14.79%、23.29% 和 5.41%，所有用户时序约束均满足，片上功耗估算为 0.537 W。上述结果表明，所提架构能够在正交投影、无纹理、RGB332、最多 128 顶点和 192 三角形的受控低模场景中显著降低 CPU 渲染开销，并在资源与时序预算内完成实现。性能短跑批的后续轨迹帧尚未取得三方案 framebuffer CRC 等价，5×300 帧的正式统计与逐帧等价验证仍是将该先导结论推广为正式性能结论所必需的验证工作。
 
 ## 参考文献
 

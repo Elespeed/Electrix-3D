@@ -43,6 +43,8 @@ def load_rows(scale: str, mode: str) -> list[dict]:
 
 def describe(rows: list[dict]) -> dict:
     active = [r["cycles"]["active"] for r in rows]
+    wall = [r["cycles"]["wall"] for r in rows]
+    active_wall_pct = [100.0 * a / w for a, w in zip(active, wall)]
     latency = [r["cycles"]["latency_ns"] for r in rows]
     idle = [r["rtos"]["idle_rate_permille"] / 10 for r in rows]
     background = [r["rtos"]["background_units_per_second"] for r in rows]
@@ -52,10 +54,12 @@ def describe(rows: list[dict]) -> dict:
         "n_observed": len(rows),
         "active_mean": mean(active), "active_sd": stdev(active) if len(active) > 1 else 0,
         "active_median": median(active), "active_p95": nearest_rank(active, .95), "active_max": max(active),
+        "active_wall_mean_pct": mean(active_wall_pct),
+        "active_wall_min_pct": min(active_wall_pct), "active_wall_max_pct": max(active_wall_pct),
         "latency_median_ns": median(latency), "latency_p95_ns": nearest_rank(latency, .95),
         "latency_max_ns": max(latency), "p99_proxy_ns": max(latency),
         "budget_over_observed": sum(x > 33_333_333 for x in latency),
-        "idle_rate_mean_pct": mean(idle), "background_units_per_second_mean": mean(background),
+        "idle_rate_mean_pct_unvalidated": mean(idle), "background_units_per_second_mean": mean(background),
     }
 
 
@@ -72,6 +76,7 @@ def main() -> None:
                     "scale": scale, "run_id": RUNS[scale], "mode": mode, "frame": row["frame"],
                     "active_cycles": row["cycles"]["active"], "blocked_cycles": row["cycles"]["blocked"],
                     "wall_cycles": row["cycles"]["wall"], "latency_ns": row["cycles"]["latency_ns"],
+                    "active_wall_pct": 100.0 * row["cycles"]["active"] / row["cycles"]["wall"],
                     "idle_rate_permille": row["rtos"]["idle_rate_permille"],
                     "background_units_per_second": row["rtos"]["background_units_per_second"],
                     "framebuffer_crc": row["display"]["crc"], "status": row["status"],
@@ -90,15 +95,16 @@ def main() -> None:
         "- 每个规模点/方案仅有 4 个 PASS 帧，均为先导样本；不满足冻结协议规定的 5×300 帧正式统计。",
         "- 因此本文档中的“P99代理”不是实测 P99：将已观测 4 帧视为可重复循环，扩展至 1,500 帧后按最近秩法得到的保守最大值。论文应写为“短跑外推的保守 P99 代理值”，不能写成正式 P99。",
         "- 所有帧均 `status=PASS`、`error=NONE`、`timeout=false`；但本批 Scene Controller 与另外两种方案除首帧外的 framebuffer CRC 不一致，不能将本批性能数据表述为三方案逐帧输出等价验证。",
+        "- `idle_rate_permille` 原始字段在所有方案中均接近 999--1000‰，与同一帧窗口内显著变化的 `active/wall` 相矛盾；当前 Idle hook 计账会将非 Idle 时段累计为 idle。因此该字段仅随原始记录保留，不作为 RTOS 空闲率、CPU 利用率或方案比较证据。",
         "",
         "## 表 A：各规模点的核心填写数据", "",
-        "|规模|方案|样本 n|active 中位数 (cycles)|active 均值±SD|帧延迟中位数 (ms)|P99代理 (ms)|观测超预算帧|RTOS 空闲率均值|后台吞吐 (units/s)|",
+        "|规模|方案|样本 n|active 中位数 (cycles)|active 均值±SD|active/wall 均值|帧延迟中位数 (ms)|P99代理 (ms)|观测超预算帧|后台吞吐 (units/s)|",
         "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for scale in RUNS:
         for mode in MODES:
             s = stats[scale][mode]
-            lines.append(f"|{scale}|{MODE_CN[mode]}|{s['n_observed']}|{s['active_median']:.0f}|{s['active_mean']:.1f}±{s['active_sd']:.1f}|{s['latency_median_ns']/1e6:.3f}|{s['p99_proxy_ns']/1e6:.3f}|{s['budget_over_observed']}/{s['n_observed']}|{s['idle_rate_mean_pct']:.2f}%|{s['background_units_per_second_mean']:.1f}|")
+            lines.append(f"|{scale}|{MODE_CN[mode]}|{s['n_observed']}|{s['active_median']:.0f}|{s['active_mean']:.1f}±{s['active_sd']:.1f}|{s['active_wall_mean_pct']:.2f}%|{s['latency_median_ns']/1e6:.3f}|{s['p99_proxy_ns']/1e6:.3f}|{s['budget_over_observed']}/{s['n_observed']}|{s['background_units_per_second_mean']:.1f}|")
     lines += ["", "## 表 B：帧级卸载相对矩阵卸载", "", "|规模|active 降幅|延迟中位数变化|P99代理变化|短跑结论|", "|---|---:|---:|---:|---|"]
     for scale in RUNS:
         m, sc = stats[scale]["CPU_MATMUL"], stats[scale]["SCENE_CONTROLLER"]
@@ -107,7 +113,7 @@ def main() -> None:
         p99_change = sc["p99_proxy_ns"] / m["p99_proxy_ns"] - 1
         conclusion = "满足三项代理门槛" if (active_reduction >= .3 and p99_change <= .1 and sc["p99_proxy_ns"] <= 33_333_333) else "不满足代理门槛"
         lines.append(f"|{scale}|{active_reduction:.2%}|{latency_change:.2%}|{p99_change:.2%}|{conclusion}|")
-    lines += ["", "## 可直接填入论文表 4 的 S4 行（短跑外推版）", "", "", "|指标|CPU全软件|矩阵卸载|帧级卸载|", "|---|---:|---:|---:|", f"|active cycles 中位数|{stats['S4']['CPU_ONLY']['active_median']:.0f}|{stats['S4']['CPU_MATMUL']['active_median']:.0f}|{stats['S4']['SCENE_CONTROLLER']['active_median']:.0f}|", f"|P99代理帧延迟/ms|{stats['S4']['CPU_ONLY']['p99_proxy_ns']/1e6:.3f}|{stats['S4']['CPU_MATMUL']['p99_proxy_ns']/1e6:.3f}|{stats['S4']['SCENE_CONTROLLER']['p99_proxy_ns']/1e6:.3f}|", f"|RTOS空闲率均值/%|{stats['S4']['CPU_ONLY']['idle_rate_mean_pct']:.2f}|{stats['S4']['CPU_MATMUL']['idle_rate_mean_pct']:.2f}|{stats['S4']['SCENE_CONTROLLER']['idle_rate_mean_pct']:.2f}|", "|等价帧数|0（本批无三方案逐帧CRC等价）|0（本批无三方案逐帧CRC等价）|0（本批无三方案逐帧CRC等价）|", "", "## 文件说明", "", "- `pilot_frame_records.csv`：60 条逐帧原始记录的扁平化副本。", "- `pilot_descriptive_statistics.json`：机器可读的完整统计量。", "- 本文档：论文填写表、计算口径与不可跨越的证据边界。", ""]
+    lines += ["", "## 可直接填入论文表 4 的 S4 行（短跑外推版）", "", "", "|指标|CPU全软件|矩阵卸载|帧级卸载|", "|---|---:|---:|---:|", f"|active cycles 中位数|{stats['S4']['CPU_ONLY']['active_median']:.0f}|{stats['S4']['CPU_MATMUL']['active_median']:.0f}|{stats['S4']['SCENE_CONTROLLER']['active_median']:.0f}|", f"|active/wall 均值/%|{stats['S4']['CPU_ONLY']['active_wall_mean_pct']:.2f}|{stats['S4']['CPU_MATMUL']['active_wall_mean_pct']:.2f}|{stats['S4']['SCENE_CONTROLLER']['active_wall_mean_pct']:.2f}|", f"|P99代理帧延迟/ms|{stats['S4']['CPU_ONLY']['p99_proxy_ns']/1e6:.3f}|{stats['S4']['CPU_MATMUL']['p99_proxy_ns']/1e6:.3f}|{stats['S4']['SCENE_CONTROLLER']['p99_proxy_ns']/1e6:.3f}|", "|等价帧数|0（本批无三方案逐帧CRC等价）|0（本批无三方案逐帧CRC等价）|0（本批无三方案逐帧CRC等价）|", "", "## 文件说明", "", "- `pilot_frame_records.csv`：60 条逐帧原始记录的扁平化副本。", "- `pilot_descriptive_statistics.json`：机器可读的完整统计量。", "- 本文档：论文填写表、计算口径与不可跨越的证据边界。", ""]
     (OUT / "论文填写数据包.md").write_text("\n".join(lines), encoding="utf-8")
 
 
